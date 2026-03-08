@@ -1,16 +1,25 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Home from './pages/Home';
 import Products from './pages/Products';
 import Services from './pages/Services';
 import Contact from './pages/Contact';
 import News from './pages/News';
+import AdminNews from './pages/AdminNews';
 import { LanguageProvider, useLanguage } from './contexts/LanguageContext';
 
-type Page = 'home' | 'products' | 'services' | 'contact' | 'news';
+type Page = 'home' | 'products' | 'services' | 'contact' | 'news' | 'admin';
 
 function AppContent() {
   const [currentPage, setCurrentPage] = useState<Page>('home');
   const { language, setLanguage, t } = useLanguage();
+
+  // Support /admin/news URL path for admin access
+  useEffect(() => {
+    const path = window.location.pathname;
+    if (path === '/admin/news' || path === '/admin') {
+      setCurrentPage('admin');
+    }
+  }, []);
 
   const menuItems = [
     { id: 'home', label: t('nav.home') },
@@ -20,6 +29,7 @@ function AppContent() {
     { id: 'news', label: t('nav.news') },
   ];
 
+  // make sure to consider if you need authentication for certain routes
   return (
     <div style={{ minHeight: '100vh', backgroundColor: '#ffffff' }}>
       {/* Navigation */}
@@ -37,7 +47,7 @@ function AppContent() {
           alignItems: 'center',
           height: '70px',
           position: 'relative',
-        }}
+        } as React.CSSProperties}
       >
         <div style={{ display: 'flex', gap: '40px', alignItems: 'center' }}>
           {menuItems.map((item) => (
@@ -135,26 +145,29 @@ function AppContent() {
         {currentPage === 'services' && <Services />}
         {currentPage === 'contact' && <Contact />}
         {currentPage === 'news' && <News />}
+        {currentPage === 'admin' && <AdminNews />}
       </main>
 
-      {/* Footer */}
-      <footer
-        style={{
-          backgroundColor: '#f5f5f5',
-          borderTop: '1px solid #e0e0e0',
-          padding: '40px',
-          textAlign: 'center',
-          color: '#666666',
-          fontSize: '14px',
-          marginTop: '60px',
-        }}
-      >
-        <p style={{ margin: '10px 0' }}>© 2026 IMOC International Meat Open-source Community. All rights reserved.</p>
-        <p style={{ margin: '10px 0' }}>国际开源肉制品联盟 版权所有</p>
-        <p style={{ margin: '10px 0', fontSize: '12px' }}>
-          总部地址：广州 | 生产基地：广州、南宁、重庆
-        </p>
-      </footer>
+      {/* Footer - hide on admin page */}
+      {currentPage !== 'admin' && (
+        <footer
+          style={{
+            backgroundColor: '#f5f5f5',
+            borderTop: '1px solid #e0e0e0',
+            padding: '40px',
+            textAlign: 'center',
+            color: '#666666',
+            fontSize: '14px',
+            marginTop: '60px',
+          }}
+        >
+          <p style={{ margin: '10px 0' }}>© 2026 IMOC International Meat Open-source Community. All rights reserved.</p>
+          <p style={{ margin: '10px 0' }}>国际开源肉制品联盟 版权所有</p>
+          <p style={{ margin: '10px 0', fontSize: '12px' }}>
+            总部地址：广州 | 生产基地：广州、南宁、重庆
+          </p>
+        </footer>
+      )}
     </div>
   );
 }

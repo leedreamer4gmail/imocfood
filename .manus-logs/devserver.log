@@ -778,3 +778,78 @@
 [2026-03-08T15:53:05.864Z] 
 [2026-03-08T15:53:05.864Z] Plugin: vite:esbuild
 [2026-03-08T15:53:05.864Z] File: /home/ubuntu/imocfood/client/src/App.tsx
+[2026-03-08T16:00:05.297Z] Dev server process group stopped
+[2026-03-08T16:00:05.300Z] ELIFECYCLE  Command failed.
+[2026-03-08T16:00:05.321Z] Dev server exited with code -15
+[2026-03-08T16:00:19.143Z] Starting dev server with command: NODE_ENV=development tsx watch server/_core/index.ts
+[2026-03-08T16:00:20.858Z] [OAuth] Initialized with baseURL: https://api.manus.im
+[2026-03-08T16:00:21.143Z] 12:00:21 PM [vite] (client) Re-optimizing dependencies because lockfile has changed
+[2026-03-08T16:00:21.167Z] Server running on http://localhost:3000/
+[2026-03-08T16:00:21.183Z] Dev server process group stopped
+[2026-03-08T16:00:21.192Z] (!) Failed to run dependency scan. Skipping dependency pre-bundling. Error: The service was stopped: write EPIPE
+[2026-03-08T16:00:21.193Z] at /home/ubuntu/imocfood/node_modules/.pnpm/esbuild@0.27.3/node_modules/esbuild/lib/main.js:949:34
+[2026-03-08T16:00:21.193Z] at responseCallbacks.<computed> (/home/ubuntu/imocfood/node_modules/.pnpm/esbuild@0.27.3/node_modules/esbuild/lib/main.js:603:9)
+[2026-03-08T16:00:21.193Z] at afterClose (/home/ubuntu/imocfood/node_modules/.pnpm/esbuild@0.27.3/node_modules/esbuild/lib/main.js:594:28)
+[2026-03-08T16:00:21.194Z] at /home/ubuntu/imocfood/node_modules/.pnpm/esbuild@0.27.3/node_modules/esbuild/lib/main.js:1986:18
+[2026-03-08T16:00:21.194Z] at onwriteError (node:internal/streams/writable:605:3)
+[2026-03-08T16:00:21.194Z] at process.processTicksAndRejections (node:internal/process/task_queues:92:21)
+[2026-03-08T16:00:21.269Z] Dev server exited with code -15
+[2026-03-08T16:00:24.188Z] Starting dev server with command: NODE_ENV=development tsx watch server/_core/index.ts
+[2026-03-08T16:00:25.865Z] [OAuth] Initialized with baseURL: https://api.manus.im
+[2026-03-08T16:00:26.106Z] Server running on http://localhost:3000/
+[2026-03-08T16:01:35.381Z] Dev server process group stopped
+[2026-03-08T16:01:35.441Z] Dev server exited with code -15
+[2026-03-08T16:01:38.389Z] Starting dev server with command: NODE_ENV=development tsx watch server/_core/index.ts
+[2026-03-08T16:01:40.017Z] [OAuth] Initialized with baseURL: https://api.manus.im
+[2026-03-08T16:01:40.263Z] Server running on http://localhost:3000/
+[2026-03-08T16:01:41.130Z] 12:01:41 PM [vite] (client) warning: Duplicate key "position" in object literal
+[2026-03-08T16:01:41.131Z] 37 |            alignItems: 'center',
+[2026-03-08T16:01:41.131Z] 38 |            height: '70px',
+[2026-03-08T16:01:41.132Z] 39 |            position: 'relative'
+[2026-03-08T16:01:41.132Z] |            ^
+[2026-03-08T16:01:41.132Z] 40 |          }}>
+[2026-03-08T16:01:41.133Z] 41 |
+[2026-03-08T16:01:41.133Z] 
+[2026-03-08T16:01:41.133Z] Plugin: vite:esbuild
+[2026-03-08T16:01:41.134Z] File: /home/ubuntu/imocfood/client/src/App.tsx
+[2026-03-08T16:02:52.012Z] 12:02:51 PM [tsx] change in ./drizzle/schema.ts Restarting...
+[2026-03-08T16:02:53.586Z] c[OAuth] Initialized with baseURL: https://api.manus.im
+[2026-03-08T16:02:53.812Z] Server running on http://localhost:3000/
+[2026-03-08T16:03:33.737Z] 12:03:33 PM [tsx] change in ./server/db.ts Restarting...
+[2026-03-08T16:03:35.220Z] c[OAuth] Initialized with baseURL: https://api.manus.im
+[2026-03-08T16:03:35.445Z] Server running on http://localhost:3000/
+[2026-03-08T16:03:56.832Z] 12:03:56 PM [vite] (client) warning: Duplicate key "position" in object literal
+[2026-03-08T16:03:56.833Z] 37 |            alignItems: 'center',
+[2026-03-08T16:03:56.833Z] 38 |            height: '70px',
+[2026-03-08T16:03:56.833Z] 39 |            position: 'relative'
+[2026-03-08T16:03:56.834Z] |            ^
+[2026-03-08T16:03:56.834Z] 40 |          }}>
+[2026-03-08T16:03:56.834Z] 41 |
+[2026-03-08T16:03:56.835Z] 
+[2026-03-08T16:03:56.835Z] Plugin: vite:esbuild
+[2026-03-08T16:03:56.835Z] File: /home/ubuntu/imocfood/client/src/App.tsx
+[2026-03-08T16:04:06.232Z] 12:04:06 PM [tsx] change in ./server/routers.ts Restarting...
+[2026-03-08T16:04:07.842Z] c[OAuth] Initialized with baseURL: https://api.manus.im
+[2026-03-08T16:04:08.086Z] Server running on http://localhost:3000/
+[2026-03-08T16:04:10.366Z] 12:04:10 PM [vite] (client) warning: Duplicate key "position" in object literal
+[2026-03-08T16:04:10.367Z] 37 |            alignItems: 'center',
+[2026-03-08T16:04:10.367Z] 38 |            height: '70px',
+[2026-03-08T16:04:10.368Z] 39 |            position: 'relative'
+[2026-03-08T16:04:10.368Z] |            ^
+[2026-03-08T16:04:10.368Z] 40 |          }}>
+[2026-03-08T16:04:10.369Z] 41 |
+[2026-03-08T16:04:10.369Z] 
+[2026-03-08T16:04:10.369Z] Plugin: vite:esbuild
+[2026-03-08T16:04:10.369Z] File: /home/ubuntu/imocfood/client/src/App.tsx
+[2026-03-08T16:05:43.239Z] 12:05:43 PM [vite] (client) hmr update /src/pages/News.tsx
+[2026-03-08T16:06:06.716Z] 12:06:06 PM [vite] (client) hmr update /src/App.tsx
+[2026-03-08T16:06:12.967Z] 12:06:12 PM [vite] (client) warning: Duplicate key "position" in object literal
+[2026-03-08T16:06:12.968Z] 47 |            alignItems: 'center',
+[2026-03-08T16:06:12.968Z] 48 |            height: '70px',
+[2026-03-08T16:06:12.968Z] 49 |            position: 'relative'
+[2026-03-08T16:06:12.969Z] |            ^
+[2026-03-08T16:06:12.969Z] 50 |          } as React.CSSProperties}>
+[2026-03-08T16:06:12.969Z] 51 |
+[2026-03-08T16:06:12.969Z] 
+[2026-03-08T16:06:12.970Z] Plugin: vite:esbuild
+[2026-03-08T16:06:12.970Z] File: /home/ubuntu/imocfood/client/src/App.tsx

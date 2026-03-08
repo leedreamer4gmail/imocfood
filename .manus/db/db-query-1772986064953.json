@@ -1,0 +1,9 @@
+{
+  "query": "SELECT id, openId, name, email, role, createdAt FROM users LIMIT 10;",
+  "command": "mysql --batch --raw --column-names --default-character-set=utf8mb4 --host gateway02.us-east-1.prod.aws.tidbcloud.com --port 4000 --user dyVa7gYeKqfH2MA.f279fb310475 --database Dn3NKGa7uppqoDB4SUPuXq --execute SELECT id, openId, name, email, role, createdAt FROM users LIMIT 10;",
+  "rows": [],
+  "messages": [],
+  "stdout": "",
+  "stderr": "",
+  "execution_time_ms": 1705
+}
