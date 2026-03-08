@@ -4,18 +4,20 @@ import Products from './pages/Products';
 import Services from './pages/Services';
 import Contact from './pages/Contact';
 import News from './pages/News';
+import { LanguageProvider, useLanguage } from './contexts/LanguageContext';
 
 type Page = 'home' | 'products' | 'services' | 'contact' | 'news';
 
-export default function App() {
+function AppContent() {
   const [currentPage, setCurrentPage] = useState<Page>('home');
+  const { language, setLanguage, t } = useLanguage();
 
   const menuItems = [
-    { id: 'home', label: '主页' },
-    { id: 'products', label: '我们的产品' },
-    { id: 'services', label: '提供服务' },
-    { id: 'contact', label: '联系我们' },
-    { id: 'news', label: '最新动态' },
+    { id: 'home', label: t('nav.home') },
+    { id: 'products', label: t('nav.products') },
+    { id: 'services', label: t('nav.services') },
+    { id: 'contact', label: t('nav.contact') },
+    { id: 'news', label: t('nav.news') },
   ];
 
   return (
@@ -31,41 +33,98 @@ export default function App() {
           borderBottom: '1px solid rgba(167, 32, 39, 0.1)',
           padding: '0 40px',
           display: 'flex',
-          justifyContent: 'center',
-          gap: '40px',
-          height: '70px',
+          justifyContent: 'space-between',
           alignItems: 'center',
+          height: '70px',
         }}
       >
-        {menuItems.map((item) => (
+        <div style={{ display: 'flex', gap: '40px', alignItems: 'center' }}>
+          {menuItems.map((item) => (
+            <button
+              key={item.id}
+              onClick={() => setCurrentPage(item.id as Page)}
+              style={{
+                background: 'none',
+                border: 'none',
+                fontSize: '16px',
+                fontWeight: currentPage === item.id ? '600' : '400',
+                color: currentPage === item.id ? '#a72027' : '#333333',
+                cursor: 'pointer',
+                padding: '8px 16px',
+                borderRadius: '6px',
+                transition: 'all 0.3s ease',
+                backgroundColor: currentPage === item.id ? 'rgba(167, 32, 39, 0.1)' : 'transparent',
+              }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.backgroundColor = '#a72027';
+                e.currentTarget.style.color = '#ffffff';
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.backgroundColor =
+                  currentPage === item.id ? 'rgba(167, 32, 39, 0.1)' : 'transparent';
+                e.currentTarget.style.color = currentPage === item.id ? '#a72027' : '#333333';
+              }}
+            >
+              {item.label}
+            </button>
+          ))}
+        </div>
+
+        {/* Language Switcher */}
+        <div style={{ display: 'flex', gap: '10px', alignItems: 'center' }}>
           <button
-            key={item.id}
-            onClick={() => setCurrentPage(item.id as Page)}
+            onClick={() => setLanguage('zh')}
             style={{
-              background: 'none',
-              border: 'none',
-              fontSize: '16px',
-              fontWeight: currentPage === item.id ? '600' : '400',
-              color: currentPage === item.id ? '#a72027' : '#333333',
+              background: language === 'zh' ? '#a72027' : 'transparent',
+              color: language === 'zh' ? '#ffffff' : '#333333',
+              border: '1px solid #a72027',
+              padding: '6px 12px',
+              borderRadius: '4px',
               cursor: 'pointer',
-              padding: '8px 16px',
-              borderRadius: '6px',
+              fontSize: '14px',
+              fontWeight: language === 'zh' ? '600' : '400',
               transition: 'all 0.3s ease',
-              backgroundColor: currentPage === item.id ? 'rgba(167, 32, 39, 0.1)' : 'transparent',
             }}
             onMouseEnter={(e) => {
-              e.currentTarget.style.backgroundColor = '#a72027';
-              e.currentTarget.style.color = '#ffffff';
+              if (language !== 'zh') {
+                e.currentTarget.style.backgroundColor = 'rgba(167, 32, 39, 0.1)';
+              }
             }}
             onMouseLeave={(e) => {
-              e.currentTarget.style.backgroundColor =
-                currentPage === item.id ? 'rgba(167, 32, 39, 0.1)' : 'transparent';
-              e.currentTarget.style.color = currentPage === item.id ? '#a72027' : '#333333';
+              if (language !== 'zh') {
+                e.currentTarget.style.backgroundColor = 'transparent';
+              }
             }}
           >
-            {item.label}
+            中文
           </button>
-        ))}
+          <button
+            onClick={() => setLanguage('en')}
+            style={{
+              background: language === 'en' ? '#a72027' : 'transparent',
+              color: language === 'en' ? '#ffffff' : '#333333',
+              border: '1px solid #a72027',
+              padding: '6px 12px',
+              borderRadius: '4px',
+              cursor: 'pointer',
+              fontSize: '14px',
+              fontWeight: language === 'en' ? '600' : '400',
+              transition: 'all 0.3s ease',
+            }}
+            onMouseEnter={(e) => {
+              if (language !== 'en') {
+                e.currentTarget.style.backgroundColor = 'rgba(167, 32, 39, 0.1)';
+              }
+            }}
+            onMouseLeave={(e) => {
+              if (language !== 'en') {
+                e.currentTarget.style.backgroundColor = 'transparent';
+              }
+            }}
+          >
+            English
+          </button>
+        </div>
       </nav>
 
       {/* Page Content */}
@@ -96,5 +155,13 @@ export default function App() {
         </p>
       </footer>
     </div>
+  );
+}
+
+export default function App() {
+  return (
+    <LanguageProvider>
+      <AppContent />
+    </LanguageProvider>
   );
 }

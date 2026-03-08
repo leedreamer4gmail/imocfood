@@ -1,30 +1,32 @@
 import React from 'react';
+import { useLanguage } from '../contexts/LanguageContext';
 
 const News = () => {
   const today = new Date();
   const dateString = `${today.getFullYear()}年${today.getMonth() + 1}月${today.getDate()}日`;
+  const { t } = useLanguage();
 
   const news = [
     {
       date: dateString,
-      title: '🚀 IMOC 官方网站正式上线',
+      title: '🚀 IMOC Official Website Launch',
       description:
-        '国际开源肉制品联盟官方网站今日正式上线！我们致力于为全球消费者提供优质的肉制品，欢迎各位合作伙伴加入我们的联盟。',
-      category: '公司动态',
+        'The official website of the International Meat Open-Source Community is now live! We are committed to providing high-quality meat products to consumers worldwide. We welcome partners to join our alliance.',
+      category: 'Company News',
     },
     {
       date: dateString,
-      title: '📦 新产品上市预告',
+      title: '📦 New Product Launch Coming Soon',
       description:
-        '敬请期待我们即将推出的新产品系列。我们正在研发更多创新的肉制品，为您带来全新的美食体验。',
-      category: '产品动态',
+        'Stay tuned for our upcoming new product series. We are developing more innovative meat products to bring you a fresh culinary experience.',
+      category: 'Product News',
     },
     {
       date: dateString,
-      title: '🤝 诚邀合作伙伴',
+      title: '🤝 Inviting Partners to Collaborate',
       description:
-        '无论您是电商平台、实体店铺还是OEM合作伙伴，我们都期待与您携手共创美好未来。欢迎联系我们的市场部了解更多合作机会。',
-      category: '合作邀请',
+        'Whether you are an e-commerce platform, retail store, or OEM partner, we look forward to working with you to create a better future. Please contact our marketing department for more collaboration opportunities.',
+      category: 'Partnership Invitation',
     },
   ];
 
@@ -40,7 +42,7 @@ const News = () => {
             textAlign: 'center',
           }}
         >
-          最新动态
+          {t('news.title')}
         </h2>
 
         {/* News List */}

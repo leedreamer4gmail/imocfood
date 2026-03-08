@@ -1,25 +1,51 @@
 import React from 'react';
+import { useLanguage } from '../contexts/LanguageContext';
 
 const Products = () => {
   const characterImageUrl = 'https://d2xsxph8kpxj0f.cloudfront.net/85413465/Dn3NKGa7uppqoDB4SUPuXq/4man_b5b08e13.jpg';
   const taobaoQrUrl = 'https://d2xsxph8kpxj0f.cloudfront.net/85413465/Dn3NKGa7uppqoDB4SUPuXq/tb二维码_5374b85d.png';
+  const { t } = useLanguage();
 
   const productCategories = [
     {
-      title: '茫然牛负责管理',
-      products: ['牛肉干', '牛腱子', '牛罐头', '牛孖筋', '牛肉酱', '兼管羊肉'],
+      title: t('products.bull'),
+      products: [
+        t('products.bull_1'),
+        t('products.bull_2'),
+        t('products.bull_3'),
+        t('products.bull_4'),
+        t('products.bull_5'),
+        t('products.bull_6'),
+      ],
     },
     {
-      title: '社恐猪负责管理',
-      products: ['猪肉干', '猪罐头', '绵绵肉', '猪谈肉', '糯糯肉粽'],
+      title: t('products.pig'),
+      products: [
+        t('products.pig_1'),
+        t('products.pig_2'),
+        t('products.pig_3'),
+        t('products.pig_4'),
+        t('products.pig_5'),
+      ],
     },
     {
-      title: '呆滞鸡负责管理',
-      products: ['无抗土鸡腿', '农家土鸡腿', '朴实鸡腿', '鸡肉罐头', '鸡肉干', '鸡肉丸'],
+      title: t('products.chicken'),
+      products: [
+        t('products.chicken_1'),
+        t('products.chicken_2'),
+        t('products.chicken_3'),
+        t('products.chicken_4'),
+        t('products.chicken_5'),
+        t('products.chicken_6'),
+      ],
     },
     {
-      title: '好嗨鱿负责管理',
-      products: ['烤鱿鱼干', '烤虾干', '烤鱼干'],
+      title: t('products.squid'),
+      products: [
+        t('products.squid_1'),
+        t('products.squid_2'),
+        t('products.squid_3'),
+      ],
     },
   ];
 
@@ -139,7 +165,7 @@ const Products = () => {
                 margin: '0 0 40px 0',
               }}
             >
-              直接购买我们的产品
+              {t('products.buy')}
             </h3>
 
             <div style={{ textAlign: 'center', marginBottom: '40px' }}>
@@ -170,7 +196,7 @@ const Products = () => {
                   e.currentTarget.style.transform = 'scale(1)';
                 }}
               >
-                访问淘宝店铺 →
+                {t('products.taobao')} →
               </a>
               <p
                 style={{
@@ -207,7 +233,7 @@ const Products = () => {
                   fontSize: '13px',
                 }}
               >
-                扫描二维码进入淘宝店铺
+                {t('news.news1_title')}
               </p>
             </div>
           </div>

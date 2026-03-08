@@ -1,8 +1,10 @@
 import React from 'react';
+import { useLanguage } from '../contexts/LanguageContext';
 
 const Contact = () => {
   const lmQrUrl = 'https://d2xsxph8kpxj0f.cloudfront.net/85413465/Dn3NKGa7uppqoDB4SUPuXq/lm二维码_7265883d.jpg';
   const phlQrUrl = 'https://d2xsxph8kpxj0f.cloudfront.net/85413465/Dn3NKGa7uppqoDB4SUPuXq/market二维码_989005d0.jpg';
+  const { t } = useLanguage();
 
   const contacts = [
     {
@@ -19,16 +21,16 @@ const Contact = () => {
 
   const locations = [
     {
-      city: '广州',
-      address: '广东省广州市荔湾区逢西大街4号',
+      city: t('contact.guangzhou'),
+      address: t('contact.guangzhou_addr'),
     },
     {
-      city: '南宁',
-      address: '广西省南宁市兴宁区金桥农批市场加工1号楼2楼',
+      city: t('contact.nanning'),
+      address: t('contact.nanning_addr'),
     },
     {
-      city: '重庆',
-      address: '重庆市梁平区预制菜产业园区4号楼4楼',
+      city: t('contact.chongqing'),
+      address: t('contact.chongqing_addr'),
     },
   ];
 
@@ -44,7 +46,7 @@ const Contact = () => {
             textAlign: 'center',
           }}
         >
-          联系我们
+          {t('contact.title')}
         </h2>
 
         {/* Contact Cards */}
@@ -103,7 +105,7 @@ const Contact = () => {
                       {contact.email}
                     </a>
                   ) : (
-                    <span style={{ color: '#999999' }}>email：</span>
+                    <span style={{ color: '#999999' }}>{t('contact.email')}</span>
                   )}
                 </p>
               </div>
@@ -133,7 +135,7 @@ const Contact = () => {
                       margin: '8px 0 0 0',
                     }}
                   >
-                    微信二维码
+                    {t('contact.wechat')}
                   </p>
                 </div>
               )}
@@ -157,7 +159,7 @@ const Contact = () => {
               textAlign: 'center',
             }}
           >
-            地址
+            {t('contact.address')}
           </h3>
 
           <div

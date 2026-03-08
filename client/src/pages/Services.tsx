@@ -1,28 +1,30 @@
 import React from 'react';
+import { useLanguage } from '../contexts/LanguageContext';
 
 const Services = () => {
   const marketingQrUrl = 'https://d2xsxph8kpxj0f.cloudfront.net/85413465/Dn3NKGa7uppqoDB4SUPuXq/市场部微信_f2920d6e.jpg';
+  const { t } = useLanguage();
 
   const services = [
     {
-      title: '大宗订货',
-      description: '支持大批量订单，提供优惠价格和专业的物流配送方案',
+      title: t('services.service1'),
+      description: 'OEM manufacturing services with customization support',
     },
     {
-      title: '来料加工',
-      description: '接收客户提供的原料，按照要求进行专业加工处理',
+      title: t('services.service2'),
+      description: 'Strategic brand partnerships and collaboration opportunities',
     },
     {
-      title: 'OEM代工',
-      description: '为品牌方提供完整的代工服务，支持定制化生产',
+      title: t('services.service3'),
+      description: 'Complete e-commerce channel support and logistics',
     },
     {
-      title: '一件代发',
-      description: '电商卖家无需囤货，我们负责打包和物流配送',
+      title: t('services.service4'),
+      description: 'Comprehensive quality assurance and certification',
     },
     {
-      title: '平台佣金',
-      description: '支持入驻各大电商平台，提供完整的平台运营支持',
+      title: t('services.service5'),
+      description: 'Reliable logistics and distribution network',
     },
   ];
 
@@ -49,7 +51,7 @@ const Services = () => {
                 margin: '0 0 40px 0',
               }}
             >
-              我们提供的服务
+              {t('services.title')}
             </h2>
 
             <div style={{ fontSize: '14px' }}>
@@ -142,7 +144,7 @@ const Services = () => {
                 margin: '0 0 30px 0',
               }}
             >
-              具体服务详情，请联系市场部
+              {t('services.contact')}
             </h3>
 
             {/* WeChat QR Code */}

@@ -1,8 +1,10 @@
 import React from 'react';
+import { useLanguage } from '../contexts/LanguageContext';
 
 const Home = () => {
   const logoUrl = 'https://d2xsxph8kpxj0f.cloudfront.net/85413465/Dn3NKGa7uppqoDB4SUPuXq/logoweb_eed8c41b.jpg';
   const productImageUrl = 'https://d2xsxph8kpxj0f.cloudfront.net/85413465/Dn3NKGa7uppqoDB4SUPuXq/chanpin_e5ff5e4d.jpg';
+  const { t } = useLanguage();
 
   return (
     <div style={{ backgroundColor: '#ffffff' }}>
@@ -58,20 +60,20 @@ const Home = () => {
         >
           <p style={{ marginBottom: '20px' }}>
             <span style={{ color: '#a72027', fontWeight: '700', fontSize: '16px' }}>
-              IMOC：international meat open-source community 国际开源肉制品联盟
+              {t('home.title')}
             </span>
           </p>
           <p style={{ marginBottom: '20px' }}>
-            是一家致力于推动全球肉制品产业创新与透明化的食品公司。我们拥有年轻、充满活力的团队，坚持真材实料的承诺，为消费者提供无添加、健康、天然的肉制品。
+            {t('home.description')}
           </p>
           <p style={{ marginBottom: '20px' }}>
-            我们的产品涵盖牛肉、猪肉、鸡肉等多个品类，总部位于广州，在广州、南宁、重庆三地拥有现代化生产基地。我们崇尚创新，接受现代生产理念，既提供OEM代工服务，也欢迎电商和实体渠道的合作伙伴加入我们的联盟。
+            {t('home.description2')}
           </p>
           <p style={{ marginBottom: '20px' }}>
-            无论您是电商平台、实体店铺还是OEM合作伙伴，我们都期待与您携手共创美好未来。我们强调个性化定制，拥有自有电商渠道，为每一位合作伙伴提供专业的支持与服务。
+            {t('home.description3')}
           </p>
           <p style={{ marginBottom: '20px', color: '#a72027', fontWeight: '600' }}>
-            欢迎加入 IMOC 联盟，一起为全球消费者带来更好的肉制品体验。
+            {t('home.description4')}
           </p>
         </div>
       </section>
