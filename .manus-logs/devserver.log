@@ -255,3 +255,37 @@
 [2026-03-08T08:22:20.816Z] 
 [2026-03-08T08:22:20.816Z] ➜  Local:   http://localhost:3000/
 [2026-03-08T08:22:20.817Z] ➜  Network: http://169.254.0.21:3000/
+[2026-03-08T10:25:32.881Z] 6:25:32 AM [vite] (client) hmr update /src/pages/Home.tsx
+[2026-03-08T10:25:33.329Z] 6:25:33 AM [vite] (client) warning: Duplicate key "display" in object literal
+[2026-03-08T10:25:33.330Z] 420 |              backgroundColor: '#fff',
+[2026-03-08T10:25:33.330Z] 421 |              borderRadius: '8px',
+[2026-03-08T10:25:33.331Z] 422 |              display: 'flex',
+[2026-03-08T10:25:33.331Z] |              ^
+[2026-03-08T10:25:33.332Z] 423 |              alignItems: 'center',
+[2026-03-08T10:25:33.332Z] 424 |              justifyContent: 'center',
+[2026-03-08T10:25:33.332Z] 
+[2026-03-08T10:25:33.333Z] Plugin: vite:esbuild
+[2026-03-08T10:25:33.333Z] File: /home/ubuntu/imocfood/client/src/pages/Home.tsx
+[2026-03-08T10:25:38.223Z] Dev server process group stopped
+[2026-03-08T10:25:38.248Z] ELIFECYCLE  Command failed.
+[2026-03-08T10:25:38.271Z] Dev server exited with code -15
+[2026-03-08T10:25:41.246Z] Starting dev server with command: pnpm run dev
+[2026-03-08T10:25:42.108Z] 
+[2026-03-08T10:25:42.109Z] > imocfood@1.0.0 dev /home/ubuntu/imocfood
+[2026-03-08T10:25:42.109Z] > vite --host
+[2026-03-08T10:25:42.109Z] 
+[2026-03-08T10:25:42.531Z] 
+[2026-03-08T10:25:42.532Z] VITE v7.3.1  ready in 372 ms
+[2026-03-08T10:25:42.532Z] 
+[2026-03-08T10:25:42.532Z] ➜  Local:   http://localhost:3000/
+[2026-03-08T10:25:42.533Z] ➜  Network: http://169.254.0.21:3000/
+[2026-03-08T10:25:44.038Z] 6:25:44 AM [vite] (client) warning: Duplicate key "display" in object literal
+[2026-03-08T10:25:44.039Z] 420 |              backgroundColor: '#fff',
+[2026-03-08T10:25:44.040Z] 421 |              borderRadius: '8px',
+[2026-03-08T10:25:44.040Z] 422 |              display: 'flex',
+[2026-03-08T10:25:44.041Z] |              ^
+[2026-03-08T10:25:44.041Z] 423 |              alignItems: 'center',
+[2026-03-08T10:25:44.042Z] 424 |              justifyContent: 'center',
+[2026-03-08T10:25:44.042Z] 
+[2026-03-08T10:25:44.042Z] Plugin: vite:esbuild
+[2026-03-08T10:25:44.043Z] File: /home/ubuntu/imocfood/client/src/pages/Home.tsx
