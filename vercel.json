@@ -2,22 +2,7 @@
   "buildCommand": "pnpm run build:vercel",
   "outputDirectory": "dist/public",
   "installCommand": "pnpm install --frozen-lockfile",
-  "routes": [
-    {
-      "src": "/api/trpc/(.*)",
-      "dest": "/api/trpc/[...trpc]"
-    },
-    {
-      "src": "/api/oauth/callback",
-      "dest": "/api/oauth/callback"
-    },
-    {
-      "src": "/api/test/(.*)",
-      "dest": "/api/test/$1"
-    },
-    {
-      "src": "/(.*)",
-      "dest": "/index.html"
-    }
+  "rewrites": [
+    { "source": "/((?!api/).*)", "destination": "/index.html" }
   ]
 }
