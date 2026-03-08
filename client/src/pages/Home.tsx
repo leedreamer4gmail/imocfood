@@ -2,7 +2,7 @@ import React from 'react';
 
 const Home = () => {
   const logoUrl = 'https://d2xsxph8kpxj0f.cloudfront.net/85413465/Dn3NKGa7uppqoDB4SUPuXq/logoweb_eed8c41b.jpg';
-  const productImageUrl = 'https://d2xsxph8kpxj0f.cloudfront.net/85413465/Dn3NKGa7uppqoDB4SUPuXq/chanpin_ca1136e6.jpg';
+  const productImageUrl = 'https://d2xsxph8kpxj0f.cloudfront.net/85413465/Dn3NKGa7uppqoDB4SUPuXq/pasted_file_L4r23g_image_c01dd3d1.png';
 
   return (
     <div style={{ backgroundColor: '#ffffff' }}>
