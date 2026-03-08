@@ -33,9 +33,10 @@ function AppContent() {
           borderBottom: '1px solid rgba(167, 32, 39, 0.1)',
           padding: '0 40px',
           display: 'flex',
-          justifyContent: 'space-between',
+          justifyContent: 'center',
           alignItems: 'center',
           height: '70px',
+          position: 'relative',
         }}
       >
         <div style={{ display: 'flex', gap: '40px', alignItems: 'center' }}>
@@ -71,7 +72,7 @@ function AppContent() {
         </div>
 
         {/* Language Switcher */}
-        <div style={{ display: 'flex', gap: '10px', alignItems: 'center' }}>
+        <div style={{ display: 'flex', gap: '10px', alignItems: 'center', position: 'absolute', right: '40px' }}>
           <button
             onClick={() => setLanguage('zh')}
             style={{

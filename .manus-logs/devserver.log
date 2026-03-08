@@ -753,3 +753,28 @@
 [2026-03-08T15:47:11.419Z] 
 [2026-03-08T15:47:11.419Z] ➜  Local:   http://localhost:3000/
 [2026-03-08T15:47:11.420Z] ➜  Network: http://169.254.0.21:3000/
+[2026-03-08T15:52:42.399Z] 11:52:42 AM [vite] (client) hmr update /src/App.tsx
+[2026-03-08T15:52:53.606Z] 11:52:53 AM [vite] (client) hmr update /src/App.tsx
+[2026-03-08T15:53:00.267Z] Dev server process group stopped
+[2026-03-08T15:53:00.269Z] ELIFECYCLE  Command failed.
+[2026-03-08T15:53:00.290Z] Dev server exited with code -15
+[2026-03-08T15:53:03.271Z] Starting dev server with command: pnpm run dev
+[2026-03-08T15:53:04.044Z] 
+[2026-03-08T15:53:04.044Z] > imocfood@1.0.0 dev /home/ubuntu/imocfood
+[2026-03-08T15:53:04.045Z] > vite --host
+[2026-03-08T15:53:04.045Z] 
+[2026-03-08T15:53:04.426Z] 
+[2026-03-08T15:53:04.426Z] VITE v7.3.1  ready in 338 ms
+[2026-03-08T15:53:04.427Z] 
+[2026-03-08T15:53:04.427Z] ➜  Local:   http://localhost:3000/
+[2026-03-08T15:53:04.428Z] ➜  Network: http://169.254.0.21:3000/
+[2026-03-08T15:53:05.861Z] 11:53:05 AM [vite] (client) warning: Duplicate key "position" in object literal
+[2026-03-08T15:53:05.861Z] 37 |            alignItems: 'center',
+[2026-03-08T15:53:05.862Z] 38 |            height: '70px',
+[2026-03-08T15:53:05.862Z] 39 |            position: 'relative'
+[2026-03-08T15:53:05.863Z] |            ^
+[2026-03-08T15:53:05.863Z] 40 |          }}>
+[2026-03-08T15:53:05.863Z] 41 |
+[2026-03-08T15:53:05.864Z] 
+[2026-03-08T15:53:05.864Z] Plugin: vite:esbuild
+[2026-03-08T15:53:05.864Z] File: /home/ubuntu/imocfood/client/src/App.tsx
