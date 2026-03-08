@@ -93,7 +93,7 @@ export default function AdminNews() {
       <div style={{ padding: '60px', textAlign: 'center' }}>
         <p style={{ marginBottom: '20px', color: '#666' }}>请先登录以访问管理后台</p>
         <a
-          href={getLoginUrl('/admin/news')}
+          href={getLoginUrl()}
           style={{
             backgroundColor: '#a72027',
             color: '#fff',

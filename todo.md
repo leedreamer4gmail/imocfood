@@ -20,6 +20,6 @@
 
 ## Pending
 - [ ] Set admin role for website owner in database
-- [ ] Push to GitHub and deploy to Vercel
+- [x] Push to GitHub and deploy to Vercel
 - [ ] Add image upload support to CMS (optional)
 - [ ] Add rich text editor to CMS (optional)

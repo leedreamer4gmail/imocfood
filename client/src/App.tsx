@@ -35,7 +35,7 @@ function AppContent() {
       {/* Navigation */}
       <nav
         style={{
-          position: 'sticky',
+          position: 'sticky' as const,
           top: 0,
           zIndex: 1000,
           backgroundColor: 'rgba(255, 255, 255, 0.95)',
@@ -46,8 +46,7 @@ function AppContent() {
           justifyContent: 'center',
           alignItems: 'center',
           height: '70px',
-          position: 'relative',
-        } as React.CSSProperties}
+        }}
       >
         <div style={{ display: 'flex', gap: '40px', alignItems: 'center' }}>
           {menuItems.map((item) => (

@@ -853,3 +853,7 @@
 [2026-03-08T16:06:12.969Z] 
 [2026-03-08T16:06:12.970Z] Plugin: vite:esbuild
 [2026-03-08T16:06:12.970Z] File: /home/ubuntu/imocfood/client/src/App.tsx
+[2026-03-08T16:14:52.911Z] 12:14:52 PM [vite] (client) hmr update /src/App.tsx
+[2026-03-08T16:14:59.050Z] 12:14:59 PM [vite] (client) hmr update /src/App.tsx
+[2026-03-08T16:15:38.388Z] 12:15:38 PM [vite] (client) hmr update /src/pages/AdminNews.tsx
+[2026-03-08T16:16:02.710Z] 12:16:02 PM [vite] (client) hmr update /src/App.tsx
