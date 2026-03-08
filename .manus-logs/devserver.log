@@ -872,3 +872,28 @@
 [2026-03-08T16:37:28.424Z] 12:37:28 PM [tsx] change in ./server/chromaDb.ts Restarting...
 [2026-03-08T16:37:30.171Z] c[OAuth] Initialized with baseURL: https://api.manus.im
 [2026-03-08T16:37:30.437Z] Server running on http://localhost:3000/
+[2026-03-08T17:28:16.482Z] 1:28:16 PM [tsx] unlink in ./server/routers.ts Restarting...
+[2026-03-08T17:28:16.754Z] c
+[2026-03-08T17:28:16.755Z] node:internal/modules/run_main:122
+[2026-03-08T17:28:16.755Z] triggerUncaughtException(
+[2026-03-08T17:28:16.756Z] ^
+[2026-03-08T17:28:16.756Z] Error [ERR_MODULE_NOT_FOUND]: Cannot find module '/home/ubuntu/imocfood/server/routers/_core/cookies' imported from /home/ubuntu/imocfood/server/routers/index.ts
+[2026-03-08T17:28:16.756Z] at finalizeResolution (node:internal/modules/esm/resolve:275:11)
+[2026-03-08T17:28:16.757Z] at moduleResolve (node:internal/modules/esm/resolve:932:10)
+[2026-03-08T17:28:16.757Z] at defaultResolve (node:internal/modules/esm/resolve:1056:11)
+[2026-03-08T17:28:16.757Z] at nextResolve (node:internal/modules/esm/hooks:748:28)
+[2026-03-08T17:28:16.758Z] at resolveBase (file:///home/ubuntu/imocfood/node_modules/.pnpm/tsx@4.21.0/node_modules/tsx/dist/esm/index.mjs?1772990896613:2:3744)
+[2026-03-08T17:28:16.758Z] at async resolveDirectory (file:///home/ubuntu/imocfood/node_modules/.pnpm/tsx@4.21.0/node_modules/tsx/dist/esm/index.mjs?1772990896613:2:4237)
+[2026-03-08T17:28:16.758Z] at async resolve (file:///home/ubuntu/imocfood/node_modules/.pnpm/tsx@4.21.0/node_modules/tsx/dist/esm/index.mjs?1772990896613:2:5355)
+[2026-03-08T17:28:16.759Z] at async nextResolve (node:internal/modules/esm/hooks:748:22)
+[2026-03-08T17:28:16.759Z] at async Hooks.resolve (node:internal/modules/esm/hooks:240:24)
+[2026-03-08T17:28:16.760Z] at async handleMessage (node:internal/modules/esm/worker:199:18) {
+[2026-03-08T17:28:16.760Z] code: 'ERR_MODULE_NOT_FOUND',
+[2026-03-08T17:28:16.760Z] url: 'file:///home/ubuntu/imocfood/server/routers/_core/cookies'
+[2026-03-08T17:28:16.760Z] }
+[2026-03-08T17:28:16.761Z] 
+[2026-03-08T17:28:16.761Z] Node.js v22.13.0
+[2026-03-08T17:29:10.350Z] 1:29:10 PM [tsx] change in ./server/routers/index.ts Rerunning...
+[2026-03-08T17:29:11.694Z] c[OAuth] Initialized with baseURL: https://api.manus.im
+[2026-03-08T17:29:11.929Z] 1:29:11 PM [vite] (client) Re-optimizing dependencies because lockfile has changed
+[2026-03-08T17:29:11.951Z] Server running on http://localhost:3000/
