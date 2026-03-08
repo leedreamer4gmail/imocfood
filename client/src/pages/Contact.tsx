@@ -8,16 +8,19 @@ const Contact = () => {
       name: '李梦',
       email: 'leedreamer4@gmail.com',
       qrUrl: lmQrUrl,
+      address: '广州：广东省广州市荔湾区逢西大街4号',
     },
     {
       name: '梁平',
       email: 'liangping@imoc.com',
       qrUrl: null, // 用户后续补充
+      address: '南宁：广西省南宁市兴宁区金桥农批市场加工1号楼2楼',
     },
     {
       name: '王刚',
       email: 'wanggang@imoc.com',
       qrUrl: null, // 用户后续补充
+      address: '重庆：重庆市梁平区预制菜产业园区4号楼4楼',
     },
   ];
 
@@ -89,6 +92,9 @@ const Contact = () => {
                   📧 <a href={`mailto:${contact.email}`} style={{ color: '#a72027', textDecoration: 'none' }}>
                     {contact.email}
                   </a>
+                </p>
+                <p style={{ margin: '8px 0', fontSize: '12px', color: '#999999' }}>
+                  📍 {contact.address}
                 </p>
               </div>
 

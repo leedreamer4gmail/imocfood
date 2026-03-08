@@ -43,8 +43,8 @@ const Home = () => {
       {/* Company Description */}
       <section
         style={{
-          padding: '60px 40px',
-          maxWidth: '1200px',
+          padding: '80px 40px 60px 40px',
+          maxWidth: '800px',
           margin: '0 auto',
         }}
       >
@@ -57,7 +57,12 @@ const Home = () => {
           }}
         >
           <p style={{ marginBottom: '20px' }}>
-            IMOC（国际开源肉制品联盟）是一家致力于推动全球肉制品产业创新与透明化的食品公司。我们拥有年轻、充满活力的团队，坚持真材实料的承诺，为消费者提供无添加、健康、天然的肉制品。
+            <span style={{ color: '#a72027', fontWeight: '700', fontSize: '16px' }}>
+              IMOC：international meat open-source community 国际开源肉制品联盟
+            </span>
+          </p>
+          <p style={{ marginBottom: '20px' }}>
+            是一家致力于推动全球肉制品产业创新与透明化的食品公司。我们拥有年轻、充满活力的团队，坚持真材实料的承诺，为消费者提供无添加、健康、天然的肉制品。
           </p>
           <p style={{ marginBottom: '20px' }}>
             我们的产品涵盖牛肉、猪肉、鸡肉等多个品类，总部位于广州，在广州、南宁、重庆三地拥有现代化生产基地。我们崇尚创新，接受现代生产理念，既提供OEM代工服务，也欢迎电商和实体渠道的合作伙伴加入我们的联盟。
