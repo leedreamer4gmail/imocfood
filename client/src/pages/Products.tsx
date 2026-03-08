@@ -6,19 +6,23 @@ const Products = () => {
 
   const productCategories = [
     {
-      character: '茫然牛负责管理',
+      character: '牛',
+      title: '茫然牛负责管理',
       products: ['牛肉干', '牛腱子', '牛罐头', '牛孖筋', '牛肉酱', '兼管羊肉'],
     },
     {
-      character: '社恐猪负责管理',
+      character: '猪',
+      title: '社恐猪负责管理',
       products: ['猪肉干', '猪罐头', '绵绵肉', '猪谈肉', '糯糯肉粽'],
     },
     {
-      character: '呆滞鸡负责管理',
+      character: '鸡',
+      title: '呆滞鸡负责管理',
       products: ['无抗土鸡腿', '农家土鸡腿', '朴实鸡腿', '鸡肉罐头', '鸡肉干', '鸡肉丸'],
     },
     {
-      character: '好嗨鱿负责管理',
+      character: '鱿鱼',
+      title: '好嗨鱿负责管理',
       products: ['烤鱿鱼干', '烤虾干', '烤鱼干'],
     },
   ];
@@ -40,7 +44,7 @@ const Products = () => {
             {/* Character Image */}
             <div
               style={{
-                marginBottom: '30px',
+                marginBottom: '40px',
                 display: 'flex',
                 justifyContent: 'center',
               }}
@@ -56,15 +60,20 @@ const Products = () => {
               />
             </div>
 
-            {/* Character Responsibilities */}
-            <div style={{ fontSize: '13px' }}>
+            {/* Character Responsibilities Grid */}
+            <div
+              style={{
+                display: 'grid',
+                gridTemplateColumns: '1fr 1fr',
+                gap: '30px',
+                fontSize: '13px',
+              }}
+            >
               {productCategories.map((category, index) => (
                 <div
                   key={index}
                   style={{
-                    marginBottom: '25px',
-                    paddingBottom: '25px',
-                    borderBottom: index < productCategories.length - 1 ? '1px solid #e0e0e0' : 'none',
+                    textAlign: 'center',
                   }}
                 >
                   <h4
@@ -72,17 +81,18 @@ const Products = () => {
                       color: '#a72027',
                       fontSize: '14px',
                       fontWeight: '600',
-                      marginBottom: '10px',
-                      margin: '0 0 10px 0',
+                      marginBottom: '8px',
+                      margin: '0 0 8px 0',
                     }}
                   >
-                    {category.character}
+                    {category.title}
                   </h4>
                   <ul
                     style={{
                       listStyle: 'none',
                       padding: 0,
                       margin: 0,
+                      textAlign: 'left',
                     }}
                   >
                     {category.products.map((item, rIndex) => (
