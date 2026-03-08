@@ -1,24 +1,41 @@
-import { createExpressMiddleware } from "@trpc/server/adapters/express";
 import type { VercelRequest, VercelResponse } from "@vercel/node";
-import express from "express";
-import { appRouter } from "../../server/routers";
-import { createContext } from "../../server/_core/context";
 
-const app = express();
-app.use(express.json({ limit: "10mb" }));
+let _handler: ((req: any, res: any) => void) | null = null;
+let _initError: string | null = null;
 
-// Mount at root - Vercel already routes /api/trpc/* to this function
-// so req.url will be something like /api/trpc/news.list?batch=1...
-// We mount tRPC middleware at /api/trpc to match that path
-app.use(
-  "/api/trpc",
-  createExpressMiddleware({
-    router: appRouter,
-    createContext,
-  })
-);
+async function getHandler() {
+  if (_handler) return _handler;
+  if (_initError) return null;
+  
+  try {
+    const { createExpressMiddleware } = await import("@trpc/server/adapters/express");
+    const express = (await import("express")).default;
+    const { appRouter } = await import("../../server/routers");
+    const { createContext } = await import("../../server/_core/context");
 
-export default function handler(req: VercelRequest, res: VercelResponse) {
-  // Do NOT rewrite req.url - Vercel already passes the full path including /api/trpc
-  return app(req as any, res as any);
+    const app = express();
+    app.use(express.json({ limit: "10mb" }));
+    app.use(
+      "/api/trpc",
+      createExpressMiddleware({
+        router: appRouter,
+        createContext,
+      })
+    );
+    _handler = (req: any, res: any) => app(req, res);
+    return _handler;
+  } catch (err: any) {
+    _initError = err?.message || String(err);
+    console.error("[tRPC init error]", err);
+    return null;
+  }
+}
+
+export default async function handler(req: VercelRequest, res: VercelResponse) {
+  const h = await getHandler();
+  if (!h) {
+    res.status(500).json({ error: "tRPC init failed", detail: _initError });
+    return;
+  }
+  return h(req, res);
 }
