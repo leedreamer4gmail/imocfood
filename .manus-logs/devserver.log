@@ -331,3 +331,200 @@
 [2026-03-08T12:06:42.873Z] 
 [2026-03-08T12:06:42.873Z] ➜  Local:   http://localhost:3000/
 [2026-03-08T12:06:42.874Z] ➜  Network: http://169.254.0.21:3000/
+[2026-03-08T12:55:28.766Z] 8:55:28 AM [vite] (client) hmr update /src/App.tsx
+[2026-03-08T12:55:29.014Z] 8:55:29 AM [vite] Internal server error: Failed to resolve import "./pages/Products" from "client/src/App.tsx". Does the file exist?
+[2026-03-08T12:55:29.015Z] Plugin: vite:import-analysis
+[2026-03-08T12:55:29.015Z] File: /home/ubuntu/imocfood/client/src/App.tsx:3:21
+[2026-03-08T12:55:29.016Z] 3  |  import { useState } from "react";
+[2026-03-08T12:55:29.016Z] 4  |  import Home from "./pages/Home";
+[2026-03-08T12:55:29.016Z] 5  |  import Products from "./pages/Products";
+[2026-03-08T12:55:29.017Z] |                        ^
+[2026-03-08T12:55:29.017Z] 6  |  import Services from "./pages/Services";
+[2026-03-08T12:55:29.017Z] 7  |  import Contact from "./pages/Contact";
+[2026-03-08T12:55:29.018Z] at TransformPluginContext._formatLog (file:///home/ubuntu/imocfood/node_modules/.pnpm/vite@7.3.1_@types+node@24.12.0_jiti@2.6.1_lightningcss@1.31.1_tsx@4.21.0/node_modules/vite/dist/node/chunks/config.js:28999:43)
+[2026-03-08T12:55:29.018Z] at TransformPluginContext.error (file:///home/ubuntu/imocfood/node_modules/.pnpm/vite@7.3.1_@types+node@24.12.0_jiti@2.6.1_lightningcss@1.31.1_tsx@4.21.0/node_modules/vite/dist/node/chunks/config.js:28996:14)
+[2026-03-08T12:55:29.018Z] at normalizeUrl (file:///home/ubuntu/imocfood/node_modules/.pnpm/vite@7.3.1_@types+node@24.12.0_jiti@2.6.1_lightningcss@1.31.1_tsx@4.21.0/node_modules/vite/dist/node/chunks/config.js:27119:18)
+[2026-03-08T12:55:29.019Z] at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+[2026-03-08T12:55:29.019Z] at async file:///home/ubuntu/imocfood/node_modules/.pnpm/vite@7.3.1_@types+node@24.12.0_jiti@2.6.1_lightningcss@1.31.1_tsx@4.21.0/node_modules/vite/dist/node/chunks/config.js:27177:32
+[2026-03-08T12:55:29.019Z] at async Promise.all (index 3)
+[2026-03-08T12:55:29.019Z] at async TransformPluginContext.transform (file:///home/ubuntu/imocfood/node_modules/.pnpm/vite@7.3.1_@types+node@24.12.0_jiti@2.6.1_lightningcss@1.31.1_tsx@4.21.0/node_modules/vite/dist/node/chunks/config.js:27145:4)
+[2026-03-08T12:55:29.020Z] at async EnvironmentPluginContainer.transform (file:///home/ubuntu/imocfood/node_modules/.pnpm/vite@7.3.1_@types+node@24.12.0_jiti@2.6.1_lightningcss@1.31.1_tsx@4.21.0/node_modules/vite/dist/node/chunks/config.js:28797:14)
+[2026-03-08T12:55:29.020Z] at async loadAndTransform (file:///home/ubuntu/imocfood/node_modules/.pnpm/vite@7.3.1_@types+node@24.12.0_jiti@2.6.1_lightningcss@1.31.1_tsx@4.21.0/node_modules/vite/dist/node/chunks/config.js:22670:26)
+[2026-03-08T12:55:29.020Z] at async viteTransformMiddleware (file:///home/ubuntu/imocfood/node_modules/.pnpm/vite@7.3.1_@types+node@24.12.0_jiti@2.6.1_lightningcss@1.31.1_tsx@4.21.0/node_modules/vite/dist/node/chunks/config.js:24542:20)
+[2026-03-08T12:55:35.044Z] 8:55:35 AM [vite] (client) Pre-transform error: Failed to resolve import "./pages/Products" from "client/src/App.tsx". Does the file exist?
+[2026-03-08T12:55:35.045Z] Plugin: vite:import-analysis
+[2026-03-08T12:55:35.045Z] File: /home/ubuntu/imocfood/client/src/App.tsx:3:21
+[2026-03-08T12:55:35.046Z] 3  |  import { useState } from "react";
+[2026-03-08T12:55:35.046Z] 4  |  import Home from "./pages/Home";
+[2026-03-08T12:55:35.047Z] 5  |  import Products from "./pages/Products";
+[2026-03-08T12:55:35.047Z] |                        ^
+[2026-03-08T12:55:35.047Z] 6  |  import Services from "./pages/Services";
+[2026-03-08T12:55:35.048Z] 7  |  import Contact from "./pages/Contact";
+[2026-03-08T12:55:35.984Z] 8:55:35 AM [vite] Internal server error: Failed to resolve import "./pages/Products" from "client/src/App.tsx". Does the file exist?
+[2026-03-08T12:55:35.985Z] Plugin: vite:import-analysis
+[2026-03-08T12:55:35.985Z] File: /home/ubuntu/imocfood/client/src/App.tsx:3:21
+[2026-03-08T12:55:35.986Z] 3  |  import { useState } from "react";
+[2026-03-08T12:55:35.986Z] 4  |  import Home from "./pages/Home";
+[2026-03-08T12:55:35.986Z] 5  |  import Products from "./pages/Products";
+[2026-03-08T12:55:35.986Z] |                        ^
+[2026-03-08T12:55:35.987Z] 6  |  import Services from "./pages/Services";
+[2026-03-08T12:55:35.987Z] 7  |  import Contact from "./pages/Contact";
+[2026-03-08T12:55:35.987Z] at TransformPluginContext._formatLog (file:///home/ubuntu/imocfood/node_modules/.pnpm/vite@7.3.1_@types+node@24.12.0_jiti@2.6.1_lightningcss@1.31.1_tsx@4.21.0/node_modules/vite/dist/node/chunks/config.js:28999:43)
+[2026-03-08T12:55:35.988Z] at TransformPluginContext.error (file:///home/ubuntu/imocfood/node_modules/.pnpm/vite@7.3.1_@types+node@24.12.0_jiti@2.6.1_lightningcss@1.31.1_tsx@4.21.0/node_modules/vite/dist/node/chunks/config.js:28996:14)
+[2026-03-08T12:55:35.988Z] at normalizeUrl (file:///home/ubuntu/imocfood/node_modules/.pnpm/vite@7.3.1_@types+node@24.12.0_jiti@2.6.1_lightningcss@1.31.1_tsx@4.21.0/node_modules/vite/dist/node/chunks/config.js:27119:18)
+[2026-03-08T12:55:35.988Z] at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+[2026-03-08T12:55:35.988Z] at async file:///home/ubuntu/imocfood/node_modules/.pnpm/vite@7.3.1_@types+node@24.12.0_jiti@2.6.1_lightningcss@1.31.1_tsx@4.21.0/node_modules/vite/dist/node/chunks/config.js:27177:32
+[2026-03-08T12:55:35.989Z] at async Promise.all (index 3)
+[2026-03-08T12:55:35.989Z] at async TransformPluginContext.transform (file:///home/ubuntu/imocfood/node_modules/.pnpm/vite@7.3.1_@types+node@24.12.0_jiti@2.6.1_lightningcss@1.31.1_tsx@4.21.0/node_modules/vite/dist/node/chunks/config.js:27145:4)
+[2026-03-08T12:55:35.989Z] at async EnvironmentPluginContainer.transform (file:///home/ubuntu/imocfood/node_modules/.pnpm/vite@7.3.1_@types+node@24.12.0_jiti@2.6.1_lightningcss@1.31.1_tsx@4.21.0/node_modules/vite/dist/node/chunks/config.js:28797:14)
+[2026-03-08T12:55:35.990Z] at async loadAndTransform (file:///home/ubuntu/imocfood/node_modules/.pnpm/vite@7.3.1_@types+node@24.12.0_jiti@2.6.1_lightningcss@1.31.1_tsx@4.21.0/node_modules/vite/dist/node/chunks/config.js:22670:26)
+[2026-03-08T12:55:35.990Z] at async viteTransformMiddleware (file:///home/ubuntu/imocfood/node_modules/.pnpm/vite@7.3.1_@types+node@24.12.0_jiti@2.6.1_lightningcss@1.31.1_tsx@4.21.0/node_modules/vite/dist/node/chunks/config.js:24542:20)
+[2026-03-08T12:55:41.556Z] 8:55:41 AM [vite] (client) hmr update /src/pages/Home.tsx
+[2026-03-08T12:55:41.774Z] 8:55:41 AM [vite] (client) Pre-transform error: Failed to resolve import "./pages/Products" from "client/src/App.tsx". Does the file exist?
+[2026-03-08T12:55:41.775Z] Plugin: vite:import-analysis
+[2026-03-08T12:55:41.775Z] File: /home/ubuntu/imocfood/client/src/App.tsx:3:21
+[2026-03-08T12:55:41.775Z] 3  |  import { useState } from "react";
+[2026-03-08T12:55:41.775Z] 4  |  import Home from "./pages/Home";
+[2026-03-08T12:55:41.776Z] 5  |  import Products from "./pages/Products";
+[2026-03-08T12:55:41.776Z] |                        ^
+[2026-03-08T12:55:41.776Z] 6  |  import Services from "./pages/Services";
+[2026-03-08T12:55:41.777Z] 7  |  import Contact from "./pages/Contact";
+[2026-03-08T12:55:42.428Z] 8:55:42 AM [vite] Internal server error: Failed to resolve import "./pages/Products" from "client/src/App.tsx". Does the file exist?
+[2026-03-08T12:55:42.429Z] Plugin: vite:import-analysis
+[2026-03-08T12:55:42.429Z] File: /home/ubuntu/imocfood/client/src/App.tsx:3:21
+[2026-03-08T12:55:42.429Z] 3  |  import { useState } from "react";
+[2026-03-08T12:55:42.430Z] 4  |  import Home from "./pages/Home";
+[2026-03-08T12:55:42.430Z] 5  |  import Products from "./pages/Products";
+[2026-03-08T12:55:42.430Z] |                        ^
+[2026-03-08T12:55:42.430Z] 6  |  import Services from "./pages/Services";
+[2026-03-08T12:55:42.431Z] 7  |  import Contact from "./pages/Contact";
+[2026-03-08T12:55:42.431Z] at TransformPluginContext._formatLog (file:///home/ubuntu/imocfood/node_modules/.pnpm/vite@7.3.1_@types+node@24.12.0_jiti@2.6.1_lightningcss@1.31.1_tsx@4.21.0/node_modules/vite/dist/node/chunks/config.js:28999:43)
+[2026-03-08T12:55:42.431Z] at TransformPluginContext.error (file:///home/ubuntu/imocfood/node_modules/.pnpm/vite@7.3.1_@types+node@24.12.0_jiti@2.6.1_lightningcss@1.31.1_tsx@4.21.0/node_modules/vite/dist/node/chunks/config.js:28996:14)
+[2026-03-08T12:55:42.432Z] at normalizeUrl (file:///home/ubuntu/imocfood/node_modules/.pnpm/vite@7.3.1_@types+node@24.12.0_jiti@2.6.1_lightningcss@1.31.1_tsx@4.21.0/node_modules/vite/dist/node/chunks/config.js:27119:18)
+[2026-03-08T12:55:42.432Z] at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+[2026-03-08T12:55:42.432Z] at async file:///home/ubuntu/imocfood/node_modules/.pnpm/vite@7.3.1_@types+node@24.12.0_jiti@2.6.1_lightningcss@1.31.1_tsx@4.21.0/node_modules/vite/dist/node/chunks/config.js:27177:32
+[2026-03-08T12:55:42.433Z] at async Promise.all (index 3)
+[2026-03-08T12:55:42.433Z] at async TransformPluginContext.transform (file:///home/ubuntu/imocfood/node_modules/.pnpm/vite@7.3.1_@types+node@24.12.0_jiti@2.6.1_lightningcss@1.31.1_tsx@4.21.0/node_modules/vite/dist/node/chunks/config.js:27145:4)
+[2026-03-08T12:55:42.433Z] at async EnvironmentPluginContainer.transform (file:///home/ubuntu/imocfood/node_modules/.pnpm/vite@7.3.1_@types+node@24.12.0_jiti@2.6.1_lightningcss@1.31.1_tsx@4.21.0/node_modules/vite/dist/node/chunks/config.js:28797:14)
+[2026-03-08T12:55:42.434Z] at async loadAndTransform (file:///home/ubuntu/imocfood/node_modules/.pnpm/vite@7.3.1_@types+node@24.12.0_jiti@2.6.1_lightningcss@1.31.1_tsx@4.21.0/node_modules/vite/dist/node/chunks/config.js:22670:26)
+[2026-03-08T12:55:42.434Z] at async viteTransformMiddleware (file:///home/ubuntu/imocfood/node_modules/.pnpm/vite@7.3.1_@types+node@24.12.0_jiti@2.6.1_lightningcss@1.31.1_tsx@4.21.0/node_modules/vite/dist/node/chunks/config.js:24542:20)
+[2026-03-08T12:55:54.953Z] 8:55:54 AM [vite] Internal server error: Failed to resolve import "./pages/Products" from "client/src/App.tsx". Does the file exist?
+[2026-03-08T12:55:54.954Z] Plugin: vite:import-analysis
+[2026-03-08T12:55:54.954Z] File: /home/ubuntu/imocfood/client/src/App.tsx:3:21
+[2026-03-08T12:55:54.955Z] 3  |  import { useState } from "react";
+[2026-03-08T12:55:54.955Z] 4  |  import Home from "./pages/Home";
+[2026-03-08T12:55:54.955Z] 5  |  import Products from "./pages/Products";
+[2026-03-08T12:55:54.956Z] |                        ^
+[2026-03-08T12:55:54.956Z] 6  |  import Services from "./pages/Services";
+[2026-03-08T12:55:54.956Z] 7  |  import Contact from "./pages/Contact";
+[2026-03-08T12:55:54.957Z] at TransformPluginContext._formatLog (file:///home/ubuntu/imocfood/node_modules/.pnpm/vite@7.3.1_@types+node@24.12.0_jiti@2.6.1_lightningcss@1.31.1_tsx@4.21.0/node_modules/vite/dist/node/chunks/config.js:28999:43)
+[2026-03-08T12:55:54.957Z] at TransformPluginContext.error (file:///home/ubuntu/imocfood/node_modules/.pnpm/vite@7.3.1_@types+node@24.12.0_jiti@2.6.1_lightningcss@1.31.1_tsx@4.21.0/node_modules/vite/dist/node/chunks/config.js:28996:14)
+[2026-03-08T12:55:54.957Z] at normalizeUrl (file:///home/ubuntu/imocfood/node_modules/.pnpm/vite@7.3.1_@types+node@24.12.0_jiti@2.6.1_lightningcss@1.31.1_tsx@4.21.0/node_modules/vite/dist/node/chunks/config.js:27119:18)
+[2026-03-08T12:55:54.957Z] at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+[2026-03-08T12:55:54.958Z] at async file:///home/ubuntu/imocfood/node_modules/.pnpm/vite@7.3.1_@types+node@24.12.0_jiti@2.6.1_lightningcss@1.31.1_tsx@4.21.0/node_modules/vite/dist/node/chunks/config.js:27177:32
+[2026-03-08T12:55:54.958Z] at async Promise.all (index 3)
+[2026-03-08T12:55:54.958Z] at async TransformPluginContext.transform (file:///home/ubuntu/imocfood/node_modules/.pnpm/vite@7.3.1_@types+node@24.12.0_jiti@2.6.1_lightningcss@1.31.1_tsx@4.21.0/node_modules/vite/dist/node/chunks/config.js:27145:4)
+[2026-03-08T12:55:54.959Z] at async EnvironmentPluginContainer.transform (file:///home/ubuntu/imocfood/node_modules/.pnpm/vite@7.3.1_@types+node@24.12.0_jiti@2.6.1_lightningcss@1.31.1_tsx@4.21.0/node_modules/vite/dist/node/chunks/config.js:28797:14)
+[2026-03-08T12:55:54.959Z] at async loadAndTransform (file:///home/ubuntu/imocfood/node_modules/.pnpm/vite@7.3.1_@types+node@24.12.0_jiti@2.6.1_lightningcss@1.31.1_tsx@4.21.0/node_modules/vite/dist/node/chunks/config.js:22670:26)
+[2026-03-08T12:55:54.959Z] at async viteTransformMiddleware (file:///home/ubuntu/imocfood/node_modules/.pnpm/vite@7.3.1_@types+node@24.12.0_jiti@2.6.1_lightningcss@1.31.1_tsx@4.21.0/node_modules/vite/dist/node/chunks/config.js:24542:20)
+[2026-03-08T12:55:58.284Z] 8:55:58 AM [vite] (client) page reload src/pages/Products.tsx
+[2026-03-08T12:55:58.519Z] 8:55:58 AM [vite] (client) Pre-transform error: Failed to resolve import "./pages/Services" from "client/src/App.tsx". Does the file exist?
+[2026-03-08T12:55:58.520Z] Plugin: vite:import-analysis
+[2026-03-08T12:55:58.520Z] File: /home/ubuntu/imocfood/client/src/App.tsx:4:21
+[2026-03-08T12:55:58.520Z] 4  |  import Home from "./pages/Home";
+[2026-03-08T12:55:58.521Z] 5  |  import Products from "./pages/Products";
+[2026-03-08T12:55:58.521Z] 6  |  import Services from "./pages/Services";
+[2026-03-08T12:55:58.521Z] |                        ^
+[2026-03-08T12:55:58.522Z] 7  |  import Contact from "./pages/Contact";
+[2026-03-08T12:55:58.522Z] 8  |  import News from "./pages/News";
+[2026-03-08T12:55:59.096Z] 8:55:59 AM [vite] Internal server error: Failed to resolve import "./pages/Services" from "client/src/App.tsx". Does the file exist?
+[2026-03-08T12:55:59.097Z] Plugin: vite:import-analysis
+[2026-03-08T12:55:59.097Z] File: /home/ubuntu/imocfood/client/src/App.tsx:4:21
+[2026-03-08T12:55:59.097Z] 4  |  import Home from "./pages/Home";
+[2026-03-08T12:55:59.098Z] 5  |  import Products from "./pages/Products";
+[2026-03-08T12:55:59.098Z] 6  |  import Services from "./pages/Services";
+[2026-03-08T12:55:59.098Z] |                        ^
+[2026-03-08T12:55:59.099Z] 7  |  import Contact from "./pages/Contact";
+[2026-03-08T12:55:59.099Z] 8  |  import News from "./pages/News";
+[2026-03-08T12:55:59.099Z] at TransformPluginContext._formatLog (file:///home/ubuntu/imocfood/node_modules/.pnpm/vite@7.3.1_@types+node@24.12.0_jiti@2.6.1_lightningcss@1.31.1_tsx@4.21.0/node_modules/vite/dist/node/chunks/config.js:28999:43)
+[2026-03-08T12:55:59.099Z] at TransformPluginContext.error (file:///home/ubuntu/imocfood/node_modules/.pnpm/vite@7.3.1_@types+node@24.12.0_jiti@2.6.1_lightningcss@1.31.1_tsx@4.21.0/node_modules/vite/dist/node/chunks/config.js:28996:14)
+[2026-03-08T12:55:59.100Z] at normalizeUrl (file:///home/ubuntu/imocfood/node_modules/.pnpm/vite@7.3.1_@types+node@24.12.0_jiti@2.6.1_lightningcss@1.31.1_tsx@4.21.0/node_modules/vite/dist/node/chunks/config.js:27119:18)
+[2026-03-08T12:55:59.100Z] at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+[2026-03-08T12:55:59.100Z] at async file:///home/ubuntu/imocfood/node_modules/.pnpm/vite@7.3.1_@types+node@24.12.0_jiti@2.6.1_lightningcss@1.31.1_tsx@4.21.0/node_modules/vite/dist/node/chunks/config.js:27177:32
+[2026-03-08T12:55:59.101Z] at async Promise.all (index 4)
+[2026-03-08T12:55:59.101Z] at async TransformPluginContext.transform (file:///home/ubuntu/imocfood/node_modules/.pnpm/vite@7.3.1_@types+node@24.12.0_jiti@2.6.1_lightningcss@1.31.1_tsx@4.21.0/node_modules/vite/dist/node/chunks/config.js:27145:4)
+[2026-03-08T12:55:59.101Z] at async EnvironmentPluginContainer.transform (file:///home/ubuntu/imocfood/node_modules/.pnpm/vite@7.3.1_@types+node@24.12.0_jiti@2.6.1_lightningcss@1.31.1_tsx@4.21.0/node_modules/vite/dist/node/chunks/config.js:28797:14)
+[2026-03-08T12:55:59.101Z] at async loadAndTransform (file:///home/ubuntu/imocfood/node_modules/.pnpm/vite@7.3.1_@types+node@24.12.0_jiti@2.6.1_lightningcss@1.31.1_tsx@4.21.0/node_modules/vite/dist/node/chunks/config.js:22670:26)
+[2026-03-08T12:55:59.102Z] at async viteTransformMiddleware (file:///home/ubuntu/imocfood/node_modules/.pnpm/vite@7.3.1_@types+node@24.12.0_jiti@2.6.1_lightningcss@1.31.1_tsx@4.21.0/node_modules/vite/dist/node/chunks/config.js:24542:20)
+[2026-03-08T12:56:12.166Z] 8:56:12 AM [vite] (client) page reload src/pages/Services.tsx
+[2026-03-08T12:56:13.248Z] 8:56:13 AM [vite] (client) Pre-transform error: Failed to resolve import "./pages/Contact" from "client/src/App.tsx". Does the file exist?
+[2026-03-08T12:56:13.249Z] Plugin: vite:import-analysis
+[2026-03-08T12:56:13.250Z] File: /home/ubuntu/imocfood/client/src/App.tsx:5:20
+[2026-03-08T12:56:13.250Z] 5  |  import Products from "./pages/Products";
+[2026-03-08T12:56:13.250Z] 6  |  import Services from "./pages/Services";
+[2026-03-08T12:56:13.250Z] 7  |  import Contact from "./pages/Contact";
+[2026-03-08T12:56:13.251Z] |                       ^
+[2026-03-08T12:56:13.251Z] 8  |  import News from "./pages/News";
+[2026-03-08T12:56:13.251Z] 9  |  export default function App() {
+[2026-03-08T12:56:13.837Z] 8:56:13 AM [vite] Internal server error: Failed to resolve import "./pages/Contact" from "client/src/App.tsx". Does the file exist?
+[2026-03-08T12:56:13.838Z] Plugin: vite:import-analysis
+[2026-03-08T12:56:13.838Z] File: /home/ubuntu/imocfood/client/src/App.tsx:5:20
+[2026-03-08T12:56:13.838Z] 5  |  import Products from "./pages/Products";
+[2026-03-08T12:56:13.839Z] 6  |  import Services from "./pages/Services";
+[2026-03-08T12:56:13.839Z] 7  |  import Contact from "./pages/Contact";
+[2026-03-08T12:56:13.839Z] |                       ^
+[2026-03-08T12:56:13.840Z] 8  |  import News from "./pages/News";
+[2026-03-08T12:56:13.840Z] 9  |  export default function App() {
+[2026-03-08T12:56:13.840Z] at TransformPluginContext._formatLog (file:///home/ubuntu/imocfood/node_modules/.pnpm/vite@7.3.1_@types+node@24.12.0_jiti@2.6.1_lightningcss@1.31.1_tsx@4.21.0/node_modules/vite/dist/node/chunks/config.js:28999:43)
+[2026-03-08T12:56:13.840Z] at TransformPluginContext.error (file:///home/ubuntu/imocfood/node_modules/.pnpm/vite@7.3.1_@types+node@24.12.0_jiti@2.6.1_lightningcss@1.31.1_tsx@4.21.0/node_modules/vite/dist/node/chunks/config.js:28996:14)
+[2026-03-08T12:56:13.841Z] at normalizeUrl (file:///home/ubuntu/imocfood/node_modules/.pnpm/vite@7.3.1_@types+node@24.12.0_jiti@2.6.1_lightningcss@1.31.1_tsx@4.21.0/node_modules/vite/dist/node/chunks/config.js:27119:18)
+[2026-03-08T12:56:13.841Z] at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+[2026-03-08T12:56:13.841Z] at async file:///home/ubuntu/imocfood/node_modules/.pnpm/vite@7.3.1_@types+node@24.12.0_jiti@2.6.1_lightningcss@1.31.1_tsx@4.21.0/node_modules/vite/dist/node/chunks/config.js:27177:32
+[2026-03-08T12:56:13.842Z] at async Promise.all (index 5)
+[2026-03-08T12:56:13.842Z] at async TransformPluginContext.transform (file:///home/ubuntu/imocfood/node_modules/.pnpm/vite@7.3.1_@types+node@24.12.0_jiti@2.6.1_lightningcss@1.31.1_tsx@4.21.0/node_modules/vite/dist/node/chunks/config.js:27145:4)
+[2026-03-08T12:56:13.842Z] at async EnvironmentPluginContainer.transform (file:///home/ubuntu/imocfood/node_modules/.pnpm/vite@7.3.1_@types+node@24.12.0_jiti@2.6.1_lightningcss@1.31.1_tsx@4.21.0/node_modules/vite/dist/node/chunks/config.js:28797:14)
+[2026-03-08T12:56:13.843Z] at async loadAndTransform (file:///home/ubuntu/imocfood/node_modules/.pnpm/vite@7.3.1_@types+node@24.12.0_jiti@2.6.1_lightningcss@1.31.1_tsx@4.21.0/node_modules/vite/dist/node/chunks/config.js:22670:26)
+[2026-03-08T12:56:13.843Z] at async viteTransformMiddleware (file:///home/ubuntu/imocfood/node_modules/.pnpm/vite@7.3.1_@types+node@24.12.0_jiti@2.6.1_lightningcss@1.31.1_tsx@4.21.0/node_modules/vite/dist/node/chunks/config.js:24542:20)
+[2026-03-08T12:56:30.100Z] 8:56:30 AM [vite] (client) page reload src/pages/Contact.tsx
+[2026-03-08T12:56:31.237Z] 8:56:31 AM [vite] (client) Pre-transform error: Failed to resolve import "./pages/News" from "client/src/App.tsx". Does the file exist?
+[2026-03-08T12:56:31.238Z] Plugin: vite:import-analysis
+[2026-03-08T12:56:31.238Z] File: /home/ubuntu/imocfood/client/src/App.tsx:6:17
+[2026-03-08T12:56:31.238Z] 6  |  import Services from "./pages/Services";
+[2026-03-08T12:56:31.239Z] 7  |  import Contact from "./pages/Contact";
+[2026-03-08T12:56:31.239Z] 8  |  import News from "./pages/News";
+[2026-03-08T12:56:31.239Z] |                    ^
+[2026-03-08T12:56:31.239Z] 9  |  export default function App() {
+[2026-03-08T12:56:31.240Z] 10 |    _s();
+[2026-03-08T12:56:31.815Z] 8:56:31 AM [vite] Internal server error: Failed to resolve import "./pages/News" from "client/src/App.tsx". Does the file exist?
+[2026-03-08T12:56:31.816Z] Plugin: vite:import-analysis
+[2026-03-08T12:56:31.817Z] File: /home/ubuntu/imocfood/client/src/App.tsx:6:17
+[2026-03-08T12:56:31.817Z] 6  |  import Services from "./pages/Services";
+[2026-03-08T12:56:31.817Z] 7  |  import Contact from "./pages/Contact";
+[2026-03-08T12:56:31.817Z] 8  |  import News from "./pages/News";
+[2026-03-08T12:56:31.818Z] |                    ^
+[2026-03-08T12:56:31.818Z] 9  |  export default function App() {
+[2026-03-08T12:56:31.818Z] 10 |    _s();
+[2026-03-08T12:56:31.819Z] at TransformPluginContext._formatLog (file:///home/ubuntu/imocfood/node_modules/.pnpm/vite@7.3.1_@types+node@24.12.0_jiti@2.6.1_lightningcss@1.31.1_tsx@4.21.0/node_modules/vite/dist/node/chunks/config.js:28999:43)
+[2026-03-08T12:56:31.819Z] at TransformPluginContext.error (file:///home/ubuntu/imocfood/node_modules/.pnpm/vite@7.3.1_@types+node@24.12.0_jiti@2.6.1_lightningcss@1.31.1_tsx@4.21.0/node_modules/vite/dist/node/chunks/config.js:28996:14)
+[2026-03-08T12:56:31.819Z] at normalizeUrl (file:///home/ubuntu/imocfood/node_modules/.pnpm/vite@7.3.1_@types+node@24.12.0_jiti@2.6.1_lightningcss@1.31.1_tsx@4.21.0/node_modules/vite/dist/node/chunks/config.js:27119:18)
+[2026-03-08T12:56:31.819Z] at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+[2026-03-08T12:56:31.820Z] at async file:///home/ubuntu/imocfood/node_modules/.pnpm/vite@7.3.1_@types+node@24.12.0_jiti@2.6.1_lightningcss@1.31.1_tsx@4.21.0/node_modules/vite/dist/node/chunks/config.js:27177:32
+[2026-03-08T12:56:31.820Z] at async Promise.all (index 6)
+[2026-03-08T12:56:31.820Z] at async TransformPluginContext.transform (file:///home/ubuntu/imocfood/node_modules/.pnpm/vite@7.3.1_@types+node@24.12.0_jiti@2.6.1_lightningcss@1.31.1_tsx@4.21.0/node_modules/vite/dist/node/chunks/config.js:27145:4)
+[2026-03-08T12:56:31.821Z] at async EnvironmentPluginContainer.transform (file:///home/ubuntu/imocfood/node_modules/.pnpm/vite@7.3.1_@types+node@24.12.0_jiti@2.6.1_lightningcss@1.31.1_tsx@4.21.0/node_modules/vite/dist/node/chunks/config.js:28797:14)
+[2026-03-08T12:56:31.821Z] at async loadAndTransform (file:///home/ubuntu/imocfood/node_modules/.pnpm/vite@7.3.1_@types+node@24.12.0_jiti@2.6.1_lightningcss@1.31.1_tsx@4.21.0/node_modules/vite/dist/node/chunks/config.js:22670:26)
+[2026-03-08T12:56:31.821Z] at async viteTransformMiddleware (file:///home/ubuntu/imocfood/node_modules/.pnpm/vite@7.3.1_@types+node@24.12.0_jiti@2.6.1_lightningcss@1.31.1_tsx@4.21.0/node_modules/vite/dist/node/chunks/config.js:24542:20)
+[2026-03-08T12:56:43.285Z] 8:56:43 AM [vite] (client) page reload src/pages/News.tsx
+[2026-03-08T12:56:49.020Z] Dev server process group stopped
+[2026-03-08T12:56:49.023Z] ELIFECYCLE  Command failed.
+[2026-03-08T12:56:49.048Z] Dev server exited with code -15
+[2026-03-08T12:56:52.043Z] Starting dev server with command: pnpm run dev
+[2026-03-08T12:56:52.802Z] 
+[2026-03-08T12:56:52.803Z] > imocfood@1.0.0 dev /home/ubuntu/imocfood
+[2026-03-08T12:56:52.804Z] > vite --host
+[2026-03-08T12:56:52.804Z] 
+[2026-03-08T12:56:53.158Z] 
+[2026-03-08T12:56:53.159Z] VITE v7.3.1  ready in 317 ms
+[2026-03-08T12:56:53.159Z] 
+[2026-03-08T12:56:53.160Z] ➜  Local:   http://localhost:3000/
+[2026-03-08T12:56:53.160Z] ➜  Network: http://169.254.0.21:3000/
