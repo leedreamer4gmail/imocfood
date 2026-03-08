@@ -10,8 +10,9 @@ async function getHandler() {
   try {
     const { createExpressMiddleware } = await import("@trpc/server/adapters/express");
     const express = (await import("express")).default;
-    const { appRouter } = await import("../../server/routers");
-    const { createContext } = await import("../../server/_core/context");
+    // Explicitly import from routers/index.ts (not the directory) to avoid ESM directory import error
+    const { appRouter } = await import("../../server/routers/index.js");
+    const { createContext } = await import("../../server/_core/context.js");
 
     const app = express();
     app.use(express.json({ limit: "10mb" }));
