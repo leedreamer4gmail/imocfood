@@ -66,10 +66,15 @@ const translations: Record<Language, Record<string, string>> = {
     // Services
     'services.title': '提供服务',
     'services.service1': '产品代工（OEM）',
+    'services.service1_desc': '提供定制化OEM生产服务，满足您的个性化需求',
     'services.service2': '品牌合作',
+    'services.service2_desc': '战略品牌合作与合作机会',
     'services.service3': '电商渠道支持',
+    'services.service3_desc': '完整的电商渠道支持与物流解决方案',
     'services.service4': '质量保证',
+    'services.service4_desc': '全面的质量保证与认证体系',
     'services.service5': '物流配送',
+    'services.service5_desc': '可靠的物流与配送网络',
     'services.contact': '联系方式',
 
     // Contact
@@ -148,10 +153,15 @@ const translations: Record<Language, Record<string, string>> = {
     // Services
     'services.title': 'Services',
     'services.service1': 'Product OEM Manufacturing',
+    'services.service1_desc': 'OEM manufacturing services with customization support',
     'services.service2': 'Brand Cooperation',
+    'services.service2_desc': 'Strategic brand partnerships and collaboration opportunities',
     'services.service3': 'E-commerce Channel Support',
+    'services.service3_desc': 'Complete e-commerce channel support and logistics',
     'services.service4': 'Quality Assurance',
+    'services.service4_desc': 'Comprehensive quality assurance and certification',
     'services.service5': 'Logistics & Distribution',
+    'services.service5_desc': 'Reliable logistics and distribution network',
     'services.contact': 'Contact Information',
 
     // Contact

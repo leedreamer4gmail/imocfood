@@ -8,23 +8,23 @@ const Services = () => {
   const services = [
     {
       title: t('services.service1'),
-      description: 'OEM manufacturing services with customization support',
+      description: t('services.service1_desc'),
     },
     {
       title: t('services.service2'),
-      description: 'Strategic brand partnerships and collaboration opportunities',
+      description: t('services.service2_desc'),
     },
     {
       title: t('services.service3'),
-      description: 'Complete e-commerce channel support and logistics',
+      description: t('services.service3_desc'),
     },
     {
       title: t('services.service4'),
-      description: 'Comprehensive quality assurance and certification',
+      description: t('services.service4_desc'),
     },
     {
       title: t('services.service5'),
-      description: 'Reliable logistics and distribution network',
+      description: t('services.service5_desc'),
     },
   ];
 
@@ -103,13 +103,14 @@ const Services = () => {
                         style={{
                           color: '#666666',
                           fontSize: '13px',
-                          lineHeight: '1.6',
-                          margin: 0,
+                          margin: '0',
+                          lineHeight: '1.5',
                         }}
                       >
                         {service.description}
                       </p>
                     </div>
+
                   </div>
                 </div>
               ))}
