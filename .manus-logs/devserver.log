@@ -135,3 +135,123 @@
 [2026-03-08T08:13:38.826Z] at async EnvironmentPluginContainer.transform (file:///home/ubuntu/imocfood/node_modules/.pnpm/vite@7.3.1_@types+node@24.12.0_jiti@2.6.1_lightningcss@1.31.1_tsx@4.21.0/node_modules/vite/dist/node/chunks/config.js:28797:14)
 [2026-03-08T08:13:38.826Z] at async loadAndTransform (file:///home/ubuntu/imocfood/node_modules/.pnpm/vite@7.3.1_@types+node@24.12.0_jiti@2.6.1_lightningcss@1.31.1_tsx@4.21.0/node_modules/vite/dist/node/chunks/config.js:22670:26)
 [2026-03-08T08:13:38.827Z] at async viteTransformMiddleware (file:///home/ubuntu/imocfood/node_modules/.pnpm/vite@7.3.1_@types+node@24.12.0_jiti@2.6.1_lightningcss@1.31.1_tsx@4.21.0/node_modules/vite/dist/node/chunks/config.js:24542:20)
+[2026-03-08T08:20:20.570Z] 4:20:20 AM [vite] (client) hmr update /src/pages/Home.tsx
+[2026-03-08T08:20:29.947Z] 4:20:29 AM [vite] (client) hmr update /src/index.css
+[2026-03-08T08:20:30.127Z] 4:20:30 AM [vite] Internal server error: Cannot apply unknown utility class `border-gray-200`. Are you using CSS modules or similar and missing `@reference`? https://tailwindcss.com/docs/functions-and-directives#reference-directive
+[2026-03-08T08:20:30.128Z] Plugin: @tailwindcss/vite:generate:serve
+[2026-03-08T08:20:30.128Z] File: /home/ubuntu/imocfood/client/src/index.css
+[2026-03-08T08:20:30.129Z] at onInvalidCandidate (file:///home/ubuntu/imocfood/node_modules/.pnpm/tailwindcss@4.2.1/node_modules/tailwindcss/dist/chunk-L5IEUH3R.mjs:21:1314)
+[2026-03-08T08:20:30.129Z] at $e (file:///home/ubuntu/imocfood/node_modules/.pnpm/tailwindcss@4.2.1/node_modules/tailwindcss/dist/chunk-L5IEUH3R.mjs:16:37066)
+[2026-03-08T08:20:30.129Z] at file:///home/ubuntu/imocfood/node_modules/.pnpm/tailwindcss@4.2.1/node_modules/tailwindcss/dist/chunk-L5IEUH3R.mjs:21:355
+[2026-03-08T08:20:30.130Z] at Ar (file:///home/ubuntu/imocfood/node_modules/.pnpm/tailwindcss@4.2.1/node_modules/tailwindcss/dist/chunk-L5IEUH3R.mjs:3:1733)
+[2026-03-08T08:20:30.130Z] at I (file:///home/ubuntu/imocfood/node_modules/.pnpm/tailwindcss@4.2.1/node_modules/tailwindcss/dist/chunk-L5IEUH3R.mjs:3:1377)
+[2026-03-08T08:20:30.130Z] at Ce (file:///home/ubuntu/imocfood/node_modules/.pnpm/tailwindcss@4.2.1/node_modules/tailwindcss/dist/chunk-L5IEUH3R.mjs:21:172)
+[2026-03-08T08:20:30.131Z] at Gi (file:///home/ubuntu/imocfood/node_modules/.pnpm/tailwindcss@4.2.1/node_modules/tailwindcss/dist/chunk-L5IEUH3R.mjs:38:294)
+[2026-03-08T08:20:30.131Z] at async ao (file:///home/ubuntu/imocfood/node_modules/.pnpm/tailwindcss@4.2.1/node_modules/tailwindcss/dist/chunk-L5IEUH3R.mjs:38:631)
+[2026-03-08T08:20:30.131Z] at async vf (file:///home/ubuntu/imocfood/node_modules/.pnpm/tailwindcss@4.2.1/node_modules/tailwindcss/dist/chunk-L5IEUH3R.mjs:38:1406)
+[2026-03-08T08:20:30.132Z] at async uu (file:///home/ubuntu/imocfood/node_modules/.pnpm/@tailwindcss+node@4.2.1/node_modules/@tailwindcss/node/dist/index.mjs:10:3458)
+[2026-03-08T08:20:30.132Z] at async B.generate (file:///home/ubuntu/imocfood/node_modules/.pnpm/@tailwindcss+vite@4.2.1_vite@7.3.1_@types+node@24.12.0_jiti@2.6.1_lightningcss@1.31.1_tsx@4.21.0_/node_modules/@tailwindcss/vite/dist/index.mjs:1:5049)
+[2026-03-08T08:20:30.132Z] at async TransformPluginContext.handler (file:///home/ubuntu/imocfood/node_modules/.pnpm/@tailwindcss+vite@4.2.1_vite@7.3.1_@types+node@24.12.0_jiti@2.6.1_lightningcss@1.31.1_tsx@4.21.0_/node_modules/@tailwindcss/vite/dist/index.mjs:1:2719)
+[2026-03-08T08:20:30.133Z] at async EnvironmentPluginContainer.transform (file:///home/ubuntu/imocfood/node_modules/.pnpm/vite@7.3.1_@types+node@24.12.0_jiti@2.6.1_lightningcss@1.31.1_tsx@4.21.0/node_modules/vite/dist/node/chunks/config.js:28797:14)
+[2026-03-08T08:20:30.133Z] at async loadAndTransform (file:///home/ubuntu/imocfood/node_modules/.pnpm/vite@7.3.1_@types+node@24.12.0_jiti@2.6.1_lightningcss@1.31.1_tsx@4.21.0/node_modules/vite/dist/node/chunks/config.js:22670:26)
+[2026-03-08T08:20:30.133Z] at async viteTransformMiddleware (file:///home/ubuntu/imocfood/node_modules/.pnpm/vite@7.3.1_@types+node@24.12.0_jiti@2.6.1_lightningcss@1.31.1_tsx@4.21.0/node_modules/vite/dist/node/chunks/config.js:24542:20)
+[2026-03-08T08:20:35.448Z] 4:20:35 AM [vite] (client) hmr update /src/index.css
+[2026-03-08T08:20:35.628Z] 4:20:35 AM [vite] Internal server error: Cannot apply unknown utility class `bg-white`. Are you using CSS modules or similar and missing `@reference`? https://tailwindcss.com/docs/functions-and-directives#reference-directive
+[2026-03-08T08:20:35.628Z] Plugin: @tailwindcss/vite:generate:serve
+[2026-03-08T08:20:35.629Z] File: /home/ubuntu/imocfood/client/src/index.css
+[2026-03-08T08:20:35.629Z] at onInvalidCandidate (file:///home/ubuntu/imocfood/node_modules/.pnpm/tailwindcss@4.2.1/node_modules/tailwindcss/dist/chunk-L5IEUH3R.mjs:21:1314)
+[2026-03-08T08:20:35.629Z] at $e (file:///home/ubuntu/imocfood/node_modules/.pnpm/tailwindcss@4.2.1/node_modules/tailwindcss/dist/chunk-L5IEUH3R.mjs:16:37066)
+[2026-03-08T08:20:35.630Z] at file:///home/ubuntu/imocfood/node_modules/.pnpm/tailwindcss@4.2.1/node_modules/tailwindcss/dist/chunk-L5IEUH3R.mjs:21:355
+[2026-03-08T08:20:35.630Z] at Ar (file:///home/ubuntu/imocfood/node_modules/.pnpm/tailwindcss@4.2.1/node_modules/tailwindcss/dist/chunk-L5IEUH3R.mjs:3:1733)
+[2026-03-08T08:20:35.630Z] at I (file:///home/ubuntu/imocfood/node_modules/.pnpm/tailwindcss@4.2.1/node_modules/tailwindcss/dist/chunk-L5IEUH3R.mjs:3:1377)
+[2026-03-08T08:20:35.630Z] at Ce (file:///home/ubuntu/imocfood/node_modules/.pnpm/tailwindcss@4.2.1/node_modules/tailwindcss/dist/chunk-L5IEUH3R.mjs:21:172)
+[2026-03-08T08:20:35.631Z] at Gi (file:///home/ubuntu/imocfood/node_modules/.pnpm/tailwindcss@4.2.1/node_modules/tailwindcss/dist/chunk-L5IEUH3R.mjs:38:294)
+[2026-03-08T08:20:35.631Z] at async ao (file:///home/ubuntu/imocfood/node_modules/.pnpm/tailwindcss@4.2.1/node_modules/tailwindcss/dist/chunk-L5IEUH3R.mjs:38:631)
+[2026-03-08T08:20:35.631Z] at async vf (file:///home/ubuntu/imocfood/node_modules/.pnpm/tailwindcss@4.2.1/node_modules/tailwindcss/dist/chunk-L5IEUH3R.mjs:38:1406)
+[2026-03-08T08:20:35.631Z] at async uu (file:///home/ubuntu/imocfood/node_modules/.pnpm/@tailwindcss+node@4.2.1/node_modules/@tailwindcss/node/dist/index.mjs:10:3458)
+[2026-03-08T08:20:35.632Z] at async B.generate (file:///home/ubuntu/imocfood/node_modules/.pnpm/@tailwindcss+vite@4.2.1_vite@7.3.1_@types+node@24.12.0_jiti@2.6.1_lightningcss@1.31.1_tsx@4.21.0_/node_modules/@tailwindcss/vite/dist/index.mjs:1:5049)
+[2026-03-08T08:20:35.632Z] at async TransformPluginContext.handler (file:///home/ubuntu/imocfood/node_modules/.pnpm/@tailwindcss+vite@4.2.1_vite@7.3.1_@types+node@24.12.0_jiti@2.6.1_lightningcss@1.31.1_tsx@4.21.0_/node_modules/@tailwindcss/vite/dist/index.mjs:1:2719)
+[2026-03-08T08:20:35.632Z] at async EnvironmentPluginContainer.transform (file:///home/ubuntu/imocfood/node_modules/.pnpm/vite@7.3.1_@types+node@24.12.0_jiti@2.6.1_lightningcss@1.31.1_tsx@4.21.0/node_modules/vite/dist/node/chunks/config.js:28797:14)
+[2026-03-08T08:20:35.633Z] at async loadAndTransform (file:///home/ubuntu/imocfood/node_modules/.pnpm/vite@7.3.1_@types+node@24.12.0_jiti@2.6.1_lightningcss@1.31.1_tsx@4.21.0/node_modules/vite/dist/node/chunks/config.js:22670:26)
+[2026-03-08T08:20:35.633Z] at async viteTransformMiddleware (file:///home/ubuntu/imocfood/node_modules/.pnpm/vite@7.3.1_@types+node@24.12.0_jiti@2.6.1_lightningcss@1.31.1_tsx@4.21.0/node_modules/vite/dist/node/chunks/config.js:24542:20)
+[2026-03-08T08:20:40.743Z] Dev server process group stopped
+[2026-03-08T08:20:40.745Z] ELIFECYCLE  Command failed.
+[2026-03-08T08:20:40.769Z] Dev server exited with code -15
+[2026-03-08T08:20:43.765Z] Starting dev server with command: pnpm run dev
+[2026-03-08T08:20:44.578Z] 
+[2026-03-08T08:20:44.579Z] > imocfood@1.0.0 dev /home/ubuntu/imocfood
+[2026-03-08T08:20:44.579Z] > vite --host
+[2026-03-08T08:20:44.580Z] 
+[2026-03-08T08:20:44.941Z] 
+[2026-03-08T08:20:44.942Z] VITE v7.3.1  ready in 322 ms
+[2026-03-08T08:20:44.942Z] 
+[2026-03-08T08:20:44.943Z] ➜  Local:   http://localhost:3000/
+[2026-03-08T08:20:44.947Z] ➜  Network: http://169.254.0.21:3000/
+[2026-03-08T08:20:46.278Z] 4:20:46 AM [vite] Internal server error: Cannot apply unknown utility class `bg-white`. Are you using CSS modules or similar and missing `@reference`? https://tailwindcss.com/docs/functions-and-directives#reference-directive
+[2026-03-08T08:20:46.279Z] Plugin: @tailwindcss/vite:generate:serve
+[2026-03-08T08:20:46.279Z] File: /home/ubuntu/imocfood/client/src/index.css
+[2026-03-08T08:20:46.279Z] at onInvalidCandidate (file:///home/ubuntu/imocfood/node_modules/.pnpm/tailwindcss@4.2.1/node_modules/tailwindcss/dist/chunk-L5IEUH3R.mjs:21:1314)
+[2026-03-08T08:20:46.280Z] at $e (file:///home/ubuntu/imocfood/node_modules/.pnpm/tailwindcss@4.2.1/node_modules/tailwindcss/dist/chunk-L5IEUH3R.mjs:16:37066)
+[2026-03-08T08:20:46.280Z] at file:///home/ubuntu/imocfood/node_modules/.pnpm/tailwindcss@4.2.1/node_modules/tailwindcss/dist/chunk-L5IEUH3R.mjs:21:355
+[2026-03-08T08:20:46.280Z] at Ar (file:///home/ubuntu/imocfood/node_modules/.pnpm/tailwindcss@4.2.1/node_modules/tailwindcss/dist/chunk-L5IEUH3R.mjs:3:1733)
+[2026-03-08T08:20:46.281Z] at I (file:///home/ubuntu/imocfood/node_modules/.pnpm/tailwindcss@4.2.1/node_modules/tailwindcss/dist/chunk-L5IEUH3R.mjs:3:1377)
+[2026-03-08T08:20:46.281Z] at Ce (file:///home/ubuntu/imocfood/node_modules/.pnpm/tailwindcss@4.2.1/node_modules/tailwindcss/dist/chunk-L5IEUH3R.mjs:21:172)
+[2026-03-08T08:20:46.281Z] at Gi (file:///home/ubuntu/imocfood/node_modules/.pnpm/tailwindcss@4.2.1/node_modules/tailwindcss/dist/chunk-L5IEUH3R.mjs:38:294)
+[2026-03-08T08:20:46.282Z] at async ao (file:///home/ubuntu/imocfood/node_modules/.pnpm/tailwindcss@4.2.1/node_modules/tailwindcss/dist/chunk-L5IEUH3R.mjs:38:631)
+[2026-03-08T08:20:46.282Z] at async vf (file:///home/ubuntu/imocfood/node_modules/.pnpm/tailwindcss@4.2.1/node_modules/tailwindcss/dist/chunk-L5IEUH3R.mjs:38:1406)
+[2026-03-08T08:20:46.282Z] at async uu (file:///home/ubuntu/imocfood/node_modules/.pnpm/@tailwindcss+node@4.2.1/node_modules/@tailwindcss/node/dist/index.mjs:10:3458)
+[2026-03-08T08:20:46.283Z] at async B.generate (file:///home/ubuntu/imocfood/node_modules/.pnpm/@tailwindcss+vite@4.2.1_vite@7.3.1_@types+node@24.12.0_jiti@2.6.1_lightningcss@1.31.1_tsx@4.21.0_/node_modules/@tailwindcss/vite/dist/index.mjs:1:5049)
+[2026-03-08T08:20:46.283Z] at async TransformPluginContext.handler (file:///home/ubuntu/imocfood/node_modules/.pnpm/@tailwindcss+vite@4.2.1_vite@7.3.1_@types+node@24.12.0_jiti@2.6.1_lightningcss@1.31.1_tsx@4.21.0_/node_modules/@tailwindcss/vite/dist/index.mjs:1:2719)
+[2026-03-08T08:20:46.283Z] at async EnvironmentPluginContainer.transform (file:///home/ubuntu/imocfood/node_modules/.pnpm/vite@7.3.1_@types+node@24.12.0_jiti@2.6.1_lightningcss@1.31.1_tsx@4.21.0/node_modules/vite/dist/node/chunks/config.js:28797:14)
+[2026-03-08T08:20:46.284Z] at async loadAndTransform (file:///home/ubuntu/imocfood/node_modules/.pnpm/vite@7.3.1_@types+node@24.12.0_jiti@2.6.1_lightningcss@1.31.1_tsx@4.21.0/node_modules/vite/dist/node/chunks/config.js:22670:26)
+[2026-03-08T08:20:46.285Z] 4:20:46 AM [vite] (client) Pre-transform error: Cannot apply unknown utility class `bg-white`. Are you using CSS modules or similar and missing `@reference`? https://tailwindcss.com/docs/functions-and-directives#reference-directive
+[2026-03-08T08:20:46.289Z] Plugin: @tailwindcss/vite:generate:serve
+[2026-03-08T08:20:46.290Z] File: /home/ubuntu/imocfood/client/src/index.css
+[2026-03-08T08:21:47.014Z] 4:21:47 AM [vite] (client) hmr update /src/pages/Home.tsx
+[2026-03-08T08:21:52.139Z] Dev server process group stopped
+[2026-03-08T08:21:52.143Z] ELIFECYCLE  Command failed.
+[2026-03-08T08:21:52.166Z] Dev server exited with code -15
+[2026-03-08T08:21:55.143Z] Starting dev server with command: pnpm run dev
+[2026-03-08T08:21:55.938Z] 
+[2026-03-08T08:21:55.939Z] > imocfood@1.0.0 dev /home/ubuntu/imocfood
+[2026-03-08T08:21:55.940Z] > vite --host
+[2026-03-08T08:21:55.941Z] 
+[2026-03-08T08:21:56.343Z] 
+[2026-03-08T08:21:56.344Z] VITE v7.3.1  ready in 364 ms
+[2026-03-08T08:21:56.344Z] 
+[2026-03-08T08:21:56.345Z] ➜  Local:   http://localhost:3000/
+[2026-03-08T08:21:56.345Z] ➜  Network: http://169.254.0.21:3000/
+[2026-03-08T08:21:57.685Z] 4:21:57 AM [vite] (client) Pre-transform error: Cannot apply unknown utility class `px-6`. Are you using CSS modules or similar and missing `@reference`? https://tailwindcss.com/docs/functions-and-directives#reference-directive
+[2026-03-08T08:21:57.686Z] Plugin: @tailwindcss/vite:generate:serve
+[2026-03-08T08:21:57.686Z] File: /home/ubuntu/imocfood/client/src/index.css
+[2026-03-08T08:21:57.745Z] 4:21:57 AM [vite] Internal server error: Cannot apply unknown utility class `px-6`. Are you using CSS modules or similar and missing `@reference`? https://tailwindcss.com/docs/functions-and-directives#reference-directive
+[2026-03-08T08:21:57.746Z] Plugin: @tailwindcss/vite:generate:serve
+[2026-03-08T08:21:57.746Z] File: /home/ubuntu/imocfood/client/src/index.css
+[2026-03-08T08:21:57.746Z] at onInvalidCandidate (file:///home/ubuntu/imocfood/node_modules/.pnpm/tailwindcss@4.2.1/node_modules/tailwindcss/dist/chunk-L5IEUH3R.mjs:21:1314)
+[2026-03-08T08:21:57.747Z] at $e (file:///home/ubuntu/imocfood/node_modules/.pnpm/tailwindcss@4.2.1/node_modules/tailwindcss/dist/chunk-L5IEUH3R.mjs:16:37066)
+[2026-03-08T08:21:57.747Z] at file:///home/ubuntu/imocfood/node_modules/.pnpm/tailwindcss@4.2.1/node_modules/tailwindcss/dist/chunk-L5IEUH3R.mjs:21:355
+[2026-03-08T08:21:57.747Z] at Ar (file:///home/ubuntu/imocfood/node_modules/.pnpm/tailwindcss@4.2.1/node_modules/tailwindcss/dist/chunk-L5IEUH3R.mjs:3:1733)
+[2026-03-08T08:21:57.747Z] at I (file:///home/ubuntu/imocfood/node_modules/.pnpm/tailwindcss@4.2.1/node_modules/tailwindcss/dist/chunk-L5IEUH3R.mjs:3:1377)
+[2026-03-08T08:21:57.748Z] at Ce (file:///home/ubuntu/imocfood/node_modules/.pnpm/tailwindcss@4.2.1/node_modules/tailwindcss/dist/chunk-L5IEUH3R.mjs:21:172)
+[2026-03-08T08:21:57.748Z] at Gi (file:///home/ubuntu/imocfood/node_modules/.pnpm/tailwindcss@4.2.1/node_modules/tailwindcss/dist/chunk-L5IEUH3R.mjs:38:294)
+[2026-03-08T08:21:57.749Z] at async ao (file:///home/ubuntu/imocfood/node_modules/.pnpm/tailwindcss@4.2.1/node_modules/tailwindcss/dist/chunk-L5IEUH3R.mjs:38:631)
+[2026-03-08T08:21:57.750Z] at async vf (file:///home/ubuntu/imocfood/node_modules/.pnpm/tailwindcss@4.2.1/node_modules/tailwindcss/dist/chunk-L5IEUH3R.mjs:38:1406)
+[2026-03-08T08:21:57.751Z] at async uu (file:///home/ubuntu/imocfood/node_modules/.pnpm/@tailwindcss+node@4.2.1/node_modules/@tailwindcss/node/dist/index.mjs:10:3458)
+[2026-03-08T08:21:57.751Z] at async B.generate (file:///home/ubuntu/imocfood/node_modules/.pnpm/@tailwindcss+vite@4.2.1_vite@7.3.1_@types+node@24.12.0_jiti@2.6.1_lightningcss@1.31.1_tsx@4.21.0_/node_modules/@tailwindcss/vite/dist/index.mjs:1:5049)
+[2026-03-08T08:21:57.751Z] at async TransformPluginContext.handler (file:///home/ubuntu/imocfood/node_modules/.pnpm/@tailwindcss+vite@4.2.1_vite@7.3.1_@types+node@24.12.0_jiti@2.6.1_lightningcss@1.31.1_tsx@4.21.0_/node_modules/@tailwindcss/vite/dist/index.mjs:1:2719)
+[2026-03-08T08:21:57.752Z] at async EnvironmentPluginContainer.transform (file:///home/ubuntu/imocfood/node_modules/.pnpm/vite@7.3.1_@types+node@24.12.0_jiti@2.6.1_lightningcss@1.31.1_tsx@4.21.0/node_modules/vite/dist/node/chunks/config.js:28797:14)
+[2026-03-08T08:21:57.752Z] at async loadAndTransform (file:///home/ubuntu/imocfood/node_modules/.pnpm/vite@7.3.1_@types+node@24.12.0_jiti@2.6.1_lightningcss@1.31.1_tsx@4.21.0/node_modules/vite/dist/node/chunks/config.js:22670:26)
+[2026-03-08T08:21:57.752Z] at async viteTransformMiddleware (file:///home/ubuntu/imocfood/node_modules/.pnpm/vite@7.3.1_@types+node@24.12.0_jiti@2.6.1_lightningcss@1.31.1_tsx@4.21.0/node_modules/vite/dist/node/chunks/config.js:24542:20)
+[2026-03-08T08:22:16.694Z] Dev server process group stopped
+[2026-03-08T08:22:16.697Z] ELIFECYCLE  Command failed.
+[2026-03-08T08:22:16.714Z] Dev server exited with code -15
+[2026-03-08T08:22:19.698Z] Starting dev server with command: pnpm run dev
+[2026-03-08T08:22:20.439Z] 
+[2026-03-08T08:22:20.440Z] > imocfood@1.0.0 dev /home/ubuntu/imocfood
+[2026-03-08T08:22:20.440Z] > vite --host
+[2026-03-08T08:22:20.441Z] 
+[2026-03-08T08:22:20.815Z] 
+[2026-03-08T08:22:20.816Z] VITE v7.3.1  ready in 334 ms
+[2026-03-08T08:22:20.816Z] 
+[2026-03-08T08:22:20.816Z] ➜  Local:   http://localhost:3000/
+[2026-03-08T08:22:20.817Z] ➜  Network: http://169.254.0.21:3000/
