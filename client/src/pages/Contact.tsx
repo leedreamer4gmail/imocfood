@@ -2,6 +2,7 @@ import React from 'react';
 
 const Contact = () => {
   const lmQrUrl = 'https://d2xsxph8kpxj0f.cloudfront.net/85413465/Dn3NKGa7uppqoDB4SUPuXq/lm二维码_7265883d.jpg';
+  const phlQrUrl = 'https://d2xsxph8kpxj0f.cloudfront.net/85413465/Dn3NKGa7uppqoDB4SUPuXq/market二维码_989005d0.jpg';
 
   const contacts = [
     {
@@ -10,14 +11,9 @@ const Contact = () => {
       qrUrl: lmQrUrl,
     },
     {
-      name: '梁平',
-      email: 'liangping@imoc.com',
-      qrUrl: null, // 用户后续补充
-    },
-    {
-      name: '王刚',
-      email: 'wanggang@imoc.com',
-      qrUrl: null, // 用户后续补充
+      name: '潘海露',
+      email: '',
+      qrUrl: phlQrUrl,
     },
   ];
 
@@ -101,15 +97,17 @@ const Contact = () => {
                   marginBottom: '20px',
                 }}
               >
-                <p style={{ margin: '8px 0' }}>
-                  📧 <a href={`mailto:${contact.email}`} style={{ color: '#a72027', textDecoration: 'none' }}>
-                    {contact.email}
-                  </a>
-                </p>
+                {contact.email && (
+                  <p style={{ margin: '8px 0' }}>
+                    📧 <a href={`mailto:${contact.email}`} style={{ color: '#a72027', textDecoration: 'none' }}>
+                      {contact.email}
+                    </a>
+                  </p>
+                )}
               </div>
 
               {/* WeChat QR Code */}
-              {contact.qrUrl ? (
+              {contact.qrUrl && (
                 <div
                   style={{
                     marginTop: '20px',
@@ -136,24 +134,12 @@ const Contact = () => {
                     微信二维码
                   </p>
                 </div>
-              ) : (
-                <div
-                  style={{
-                    marginTop: '20px',
-                    paddingTop: '20px',
-                    borderTop: '1px solid #e0e0e0',
-                    fontSize: '12px',
-                    color: '#999999',
-                  }}
-                >
-                  微信二维码待补充
-                </div>
               )}
             </div>
           ))}
         </div>
 
-        {/* Locations Section */}
+        {/* Locations Section - Simple Text Format */}
         <div
           style={{
             paddingTop: '40px',
@@ -169,48 +155,25 @@ const Contact = () => {
               textAlign: 'center',
             }}
           >
-            集团地址
+            地址
           </h3>
 
           <div
             style={{
-              display: 'grid',
-              gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))',
-              gap: '30px',
+              maxWidth: '600px',
+              margin: '0 auto',
+              fontSize: '14px',
+              lineHeight: '2',
+              color: '#333333',
             }}
           >
             {locations.map((location, index) => (
-              <div
-                key={index}
-                style={{
-                  padding: '20px',
-                  backgroundColor: '#fafafa',
-                  borderRadius: '8px',
-                  border: '1px solid #e0e0e0',
-                  textAlign: 'center',
-                }}
-              >
-                <h4
-                  style={{
-                    fontSize: '16px',
-                    fontWeight: '600',
-                    color: '#a72027',
-                    margin: '0 0 10px 0',
-                  }}
-                >
+              <p key={index} style={{ margin: '0' }}>
+                <span style={{ fontWeight: '700', color: '#a72027' }}>
                   {location.city}
-                </h4>
-                <p
-                  style={{
-                    fontSize: '13px',
-                    color: '#666666',
-                    margin: '0',
-                    lineHeight: '1.6',
-                  }}
-                >
-                  {location.address}
-                </p>
-              </div>
+                </span>
+                ：{location.address}
+              </p>
             ))}
           </div>
         </div>
