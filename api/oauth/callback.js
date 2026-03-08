@@ -378,7 +378,7 @@ var SDKServer = class {
 };
 var sdk = new SDKServer();
 
-// api/oauth/callback.ts
+// _api-src/oauth/callback.ts
 async function handler(req, res) {
   const code = req.query["code"];
   const state = req.query["state"];

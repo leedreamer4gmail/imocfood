@@ -1,11 +1,12 @@
 #!/usr/bin/env node
 /**
  * Build script for Vercel API functions.
- * Bundles TypeScript API handlers with esbuild, resolving @shared/* path aliases
- * that Vercel's @vercel/node TypeScript compiler cannot handle natively.
  * 
- * Outputs bundled .js files alongside the .ts source files in api/ directory.
- * Vercel will use the pre-built .js files instead of trying to compile .ts files.
+ * TypeScript source files live in _api-src/ (underscore prefix = not a Vercel function).
+ * This script bundles them with esbuild into api/ directory as .js files.
+ * 
+ * esbuild resolves @shared/* path aliases that Vercel's TS compiler cannot handle.
+ * Vercel auto-discovers the .js files in api/ as serverless functions.
  */
 import { build } from "esbuild";
 import path from "path";
@@ -19,12 +20,11 @@ const sharedAliases = {
   "@shared/types": path.resolve(__dirname, "shared/types.ts"),
 };
 
-// Build each API entry point - output .js files in the same api/ directory
-// Vercel prioritizes .js over .ts files, so these pre-bundled files will be used
+// Source files in _api-src/ → bundled output in api/
 const entryPoints = [
-  { in: "api/trpc/[...trpc].ts", out: "api/trpc/[...trpc].js" },
-  { in: "api/oauth/callback.ts", out: "api/oauth/callback.js" },
-  { in: "api/test/ping.ts", out: "api/test/ping.js" },
+  { in: "_api-src/trpc/[...trpc].ts", out: "api/trpc/[...trpc].js" },
+  { in: "_api-src/oauth/callback.ts", out: "api/oauth/callback.js" },
+  { in: "_api-src/test/ping.ts", out: "api/test/ping.js" },
 ];
 
 console.log("Building API functions...");
