@@ -14,7 +14,6 @@ const Home = () => {
           flexDirection: 'column',
           alignItems: 'center',
           justifyContent: 'center',
-          minHeight: '400px',
         }}
       >
         <img
@@ -24,40 +23,21 @@ const Home = () => {
             maxWidth: '400px',
             width: '100%',
             height: 'auto',
-            marginBottom: '40px',
+            marginBottom: '80px',
           }}
         />
-      </section>
 
-      {/* Products Preview */}
-      <section
-        style={{
-          padding: '40px 40px 20px 40px',
-          backgroundColor: '#fafafa',
-          overflow: 'hidden',
-        }}
-      >
-        <div
+        {/* Products Image - Full Width */}
+        <img
+          src={productImageUrl}
+          alt="Products"
           style={{
             width: '100%',
-            height: '70px',
-            overflow: 'hidden',
-            borderRadius: '8px',
-            marginBottom: '0',
+            maxWidth: '1200px',
+            height: 'auto',
+            display: 'block',
           }}
-        >
-          <img
-            src={productImageUrl}
-            alt="Products"
-            style={{
-              width: '100%',
-              height: '100%',
-              objectFit: 'cover',
-              objectPosition: 'center',
-              imageRendering: 'crisp-edges',
-            }}
-          />
-        </div>
+        />
       </section>
 
       {/* Company Description */}
