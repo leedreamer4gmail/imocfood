@@ -1,4 +1,3 @@
-import "dotenv/config";
 import type { VercelRequest, VercelResponse } from "@vercel/node";
 import * as db from "../../server/db";
 import { getSessionCookieOptions } from "../../server/_core/cookies";
