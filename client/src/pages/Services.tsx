@@ -28,155 +28,161 @@ const Services = () => {
 
   return (
     <div style={{ backgroundColor: '#ffffff', padding: '60px 40px' }}>
-      <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
-        <h2
-          style={{
-            fontSize: '32px',
-            fontWeight: '600',
-            color: '#333333',
-            marginBottom: '50px',
-            textAlign: 'center',
-          }}
-        >
-          我们提供的服务
-        </h2>
-
-        {/* Services Grid */}
+      <div style={{ maxWidth: '1400px', margin: '0 auto' }}>
+        {/* Two-column layout */}
         <div
           style={{
             display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
-            gap: '30px',
-            marginBottom: '60px',
+            gridTemplateColumns: '1fr 1px 1fr',
+            gap: '60px',
+            alignItems: 'flex-start',
           }}
         >
-          {services.map((service, index) => (
-            <div
-              key={index}
+          {/* Left Column - Services List */}
+          <div>
+            <h2
               style={{
-                padding: '30px',
-                backgroundColor: '#fafafa',
-                borderRadius: '8px',
-                border: '2px solid transparent',
-                transition: 'all 0.3s ease',
-                cursor: 'pointer',
-              }}
-              onMouseEnter={(e) => {
-                e.currentTarget.style.borderColor = '#a72027';
-                e.currentTarget.style.boxShadow = '0 8px 24px rgba(167, 32, 39, 0.15)';
-                e.currentTarget.style.transform = 'translateY(-4px)';
-              }}
-              onMouseLeave={(e) => {
-                e.currentTarget.style.borderColor = 'transparent';
-                e.currentTarget.style.boxShadow = 'none';
-                e.currentTarget.style.transform = 'translateY(0)';
+                fontSize: '24px',
+                fontWeight: '600',
+                color: '#333333',
+                marginBottom: '40px',
+                margin: '0 0 40px 0',
               }}
             >
-              <div
-                style={{
-                  width: '50px',
-                  height: '50px',
-                  backgroundColor: '#a72027',
-                  borderRadius: '8px',
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                  color: '#ffffff',
-                  fontSize: '24px',
-                  fontWeight: '600',
-                  marginBottom: '20px',
-                }}
-              >
-                {index + 1}
-              </div>
-              <h3
-                style={{
-                  fontSize: '18px',
-                  fontWeight: '600',
-                  color: '#333333',
-                  marginBottom: '12px',
-                }}
-              >
-                {service.title}
-              </h3>
-              <p
-                style={{
-                  fontSize: '14px',
-                  color: '#666666',
-                  lineHeight: '1.6',
-                  margin: 0,
-                }}
-              >
-                {service.description}
-              </p>
+              我们提供的服务
+            </h2>
+
+            <div style={{ fontSize: '14px' }}>
+              {services.map((service, index) => (
+                <div
+                  key={index}
+                  style={{
+                    marginBottom: '30px',
+                    paddingBottom: '30px',
+                    borderBottom: index < services.length - 1 ? '1px solid #e0e0e0' : 'none',
+                  }}
+                >
+                  <div
+                    style={{
+                      display: 'flex',
+                      alignItems: 'flex-start',
+                      gap: '12px',
+                    }}
+                  >
+                    <div
+                      style={{
+                        width: '32px',
+                        height: '32px',
+                        backgroundColor: '#a72027',
+                        borderRadius: '50%',
+                        display: 'flex',
+                        alignItems: 'center',
+                        justifyContent: 'center',
+                        color: '#ffffff',
+                        fontSize: '14px',
+                        fontWeight: '600',
+                        flexShrink: 0,
+                      }}
+                    >
+                      {index + 1}
+                    </div>
+                    <div>
+                      <h4
+                        style={{
+                          color: '#333333',
+                          fontSize: '15px',
+                          fontWeight: '600',
+                          margin: '0 0 8px 0',
+                        }}
+                      >
+                        {service.title}
+                      </h4>
+                      <p
+                        style={{
+                          color: '#666666',
+                          fontSize: '13px',
+                          lineHeight: '1.6',
+                          margin: 0,
+                        }}
+                      >
+                        {service.description}
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              ))}
             </div>
-          ))}
-        </div>
+          </div>
 
-        {/* Contact Section */}
-        <div
-          style={{
-            backgroundColor: '#fafafa',
-            padding: '40px',
-            borderRadius: '8px',
-            border: '2px solid #a72027',
-            textAlign: 'center',
-          }}
-        >
-          <h3
+          {/* Red Divider Line */}
+          <div
             style={{
-              color: '#a72027',
-              fontSize: '22px',
-              fontWeight: '600',
-              marginBottom: '30px',
+              backgroundColor: '#a72027',
+              height: '100%',
+              minHeight: '600px',
             }}
-          >
-            具体服务详情，请直接联系市场部
-          </h3>
+          />
 
+          {/* Right Column - Contact Information */}
           <div
             style={{
               display: 'flex',
-              justifyContent: 'center',
+              flexDirection: 'column',
               alignItems: 'center',
-              gap: '40px',
-              flexWrap: 'wrap',
+              justifyContent: 'flex-start',
             }}
           >
+            <h3
+              style={{
+                color: '#a72027',
+                fontSize: '20px',
+                fontWeight: '600',
+                marginBottom: '40px',
+                textAlign: 'center',
+                margin: '0 0 40px 0',
+              }}
+            >
+              具体服务详情，请联系市场部
+            </h3>
+
+            {/* WeChat QR Code */}
             <div
               style={{
                 textAlign: 'center',
+                marginBottom: '40px',
               }}
             >
               <img
                 src={marketingQrUrl}
                 alt="Marketing Department WeChat"
                 style={{
-                  width: '180px',
-                  height: '180px',
+                  maxWidth: '100%',
+                  height: 'auto',
                   borderRadius: '8px',
                   border: '2px solid #a72027',
                   padding: '8px',
                   backgroundColor: '#ffffff',
+                  marginBottom: '16px',
                 }}
               />
               <p
                 style={{
-                  marginTop: '12px',
+                  marginTop: '0',
                   color: '#666666',
-                  fontSize: '12px',
+                  fontSize: '13px',
                 }}
               >
                 扫描微信二维码咨询
               </p>
             </div>
 
+            {/* Contact Details */}
             <div
               style={{
                 fontSize: '14px',
                 color: '#666666',
-                maxWidth: '300px',
-                textAlign: 'left',
+                width: '100%',
+                textAlign: 'center',
               }}
             >
               <p style={{ margin: '0 0 15px 0', fontWeight: '600', color: '#333333' }}>

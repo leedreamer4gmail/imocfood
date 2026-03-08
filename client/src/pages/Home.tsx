@@ -25,14 +25,6 @@ const Home = () => {
             width: '100%',
             height: 'auto',
             marginBottom: '40px',
-            transition: 'transform 0.3s ease',
-            cursor: 'pointer',
-          }}
-          onMouseEnter={(e) => {
-            e.currentTarget.style.transform = 'scale(1.05)';
-          }}
-          onMouseLeave={(e) => {
-            e.currentTarget.style.transform = 'scale(1)';
           }}
         />
       </section>
@@ -48,7 +40,7 @@ const Home = () => {
         <div
           style={{
             width: '100%',
-            height: '120px',
+            height: '80px',
             overflow: 'hidden',
             borderRadius: '8px',
             marginBottom: '40px',
