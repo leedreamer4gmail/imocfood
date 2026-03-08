@@ -1,0 +1,137 @@
+[2026-03-08T03:49:02.742Z] Starting dev server with command: pnpm run dev
+[2026-03-08T03:49:03.640Z] 
+[2026-03-08T03:49:03.641Z] > imocfood@1.0.0 dev /home/ubuntu/imocfood
+[2026-03-08T03:49:03.642Z] > vite --host
+[2026-03-08T03:49:03.642Z] 
+[2026-03-08T03:49:04.209Z] 
+[2026-03-08T03:49:04.210Z] VITE v7.1.9  ready in 528 ms
+[2026-03-08T03:49:04.210Z] 
+[2026-03-08T03:49:04.211Z] ➜  Local:   http://localhost:3000/
+[2026-03-08T03:49:04.211Z] ➜  Network: http://169.254.0.21:3000/
+[2026-03-08T03:49:43.471Z] 10:49:43 PM [vite] (client) page reload index.html
+[2026-03-08T03:52:13.799Z] [baseline-browser-mapping] The data in this module is over two months old.  To ensure accurate Baseline data, please update: `npm i baseline-browser-mapping@latest -D`
+[2026-03-08T06:23:48.338Z] 1:23:48 AM [vite] changed tsconfig file detected: /home/ubuntu/imocfood/tsconfig.json - Clearing cache and forcing full-reload to ensure TypeScript is compiled with updated config values.
+[2026-03-08T06:23:48.342Z] 1:23:48 AM [vite] vite.config.ts changed, restarting server...
+[2026-03-08T06:23:48.343Z] 1:23:48 AM [vite] (client) page reload index.html
+[2026-03-08T06:23:48.343Z] 1:23:48 AM [vite] (client) page reload public/.gitkeep
+[2026-03-08T06:23:48.344Z] 1:23:48 AM [vite] (client) page reload public/__manus__/debug-collector.js
+[2026-03-08T06:23:48.344Z] 1:23:48 AM [vite] (client) page reload src/App.tsx
+[2026-03-08T06:23:48.344Z] 1:23:48 AM [vite] (client) page reload src/components/ErrorBoundary.tsx
+[2026-03-08T06:23:48.344Z] 1:23:48 AM [vite] (client) page reload src/components/ManusDialog.tsx
+[2026-03-08T06:23:48.345Z] 1:23:48 AM [vite] (client) page reload src/components/Map.tsx
+[2026-03-08T06:23:48.345Z] 1:23:48 AM [vite] (client) page reload src/components/ui/accordion.tsx
+[2026-03-08T06:23:48.345Z] 1:23:48 AM [vite] (client) page reload src/components/ui/alert-dialog.tsx
+[2026-03-08T06:23:48.346Z] 1:23:48 AM [vite] (client) page reload src/components/ui/alert.tsx
+[2026-03-08T06:23:48.346Z] 1:23:48 AM [vite] (client) page reload src/components/ui/aspect-ratio.tsx
+[2026-03-08T06:23:48.346Z] 1:23:48 AM [vite] (client) page reload src/components/ui/avatar.tsx
+[2026-03-08T06:23:48.347Z] 1:23:48 AM [vite] (client) page reload src/components/ui/badge.tsx
+[2026-03-08T06:23:48.347Z] 1:23:48 AM [vite] (client) page reload src/components/ui/breadcrumb.tsx
+[2026-03-08T06:23:48.347Z] 1:23:48 AM [vite] (client) page reload src/components/ui/button-group.tsx
+[2026-03-08T06:23:48.347Z] 1:23:48 AM [vite] (client) page reload src/components/ui/button.tsx
+[2026-03-08T06:23:48.348Z] 1:23:48 AM [vite] (client) page reload src/components/ui/calendar.tsx
+[2026-03-08T06:23:48.348Z] 1:23:48 AM [vite] (client) page reload src/components/ui/card.tsx
+[2026-03-08T06:23:48.348Z] 1:23:48 AM [vite] (client) page reload src/components/ui/carousel.tsx
+[2026-03-08T06:23:48.348Z] 1:23:48 AM [vite] (client) page reload src/components/ui/chart.tsx
+[2026-03-08T06:23:48.349Z] 1:23:48 AM [vite] (client) page reload src/components/ui/checkbox.tsx
+[2026-03-08T06:23:48.349Z] 1:23:48 AM [vite] (client) page reload src/components/ui/collapsible.tsx
+[2026-03-08T06:23:48.349Z] 1:23:48 AM [vite] (client) page reload src/components/ui/command.tsx
+[2026-03-08T06:23:48.350Z] 1:23:48 AM [vite] (client) page reload src/components/ui/context-menu.tsx
+[2026-03-08T06:23:48.350Z] 1:23:48 AM [vite] (client) page reload src/components/ui/dialog.tsx
+[2026-03-08T06:23:48.350Z] 1:23:48 AM [vite] (client) page reload src/components/ui/drawer.tsx
+[2026-03-08T06:23:48.351Z] 1:23:48 AM [vite] (client) page reload src/components/ui/dropdown-menu.tsx
+[2026-03-08T06:23:48.351Z] 1:23:48 AM [vite] (client) page reload src/components/ui/empty.tsx
+[2026-03-08T06:23:48.351Z] 1:23:48 AM [vite] (client) page reload src/components/ui/field.tsx
+[2026-03-08T06:23:48.351Z] 1:23:48 AM [vite] (client) page reload src/components/ui/form.tsx
+[2026-03-08T06:23:48.352Z] 1:23:48 AM [vite] (client) page reload src/components/ui/hover-card.tsx
+[2026-03-08T06:23:48.352Z] 1:23:48 AM [vite] (client) page reload src/components/ui/input-group.tsx
+[2026-03-08T06:23:48.352Z] 1:23:48 AM [vite] (client) page reload src/components/ui/input-otp.tsx
+[2026-03-08T06:23:48.353Z] 1:23:48 AM [vite] (client) page reload src/components/ui/input.tsx
+[2026-03-08T06:23:48.353Z] 1:23:48 AM [vite] (client) page reload src/components/ui/item.tsx
+[2026-03-08T06:23:48.353Z] 1:23:48 AM [vite] (client) page reload src/components/ui/kbd.tsx
+[2026-03-08T06:23:48.353Z] 1:23:48 AM [vite] (client) page reload src/components/ui/label.tsx
+[2026-03-08T06:23:48.354Z] 1:23:48 AM [vite] (client) page reload src/components/ui/menubar.tsx
+[2026-03-08T06:23:48.354Z] 1:23:48 AM [vite] (client) page reload src/components/ui/navigation-menu.tsx
+[2026-03-08T06:23:48.354Z] 1:23:48 AM [vite] (client) page reload src/components/ui/pagination.tsx
+[2026-03-08T06:23:48.354Z] 1:23:48 AM [vite] (client) page reload src/components/ui/popover.tsx
+[2026-03-08T06:23:48.355Z] 1:23:48 AM [vite] (client) page reload src/components/ui/progress.tsx
+[2026-03-08T06:23:48.355Z] 1:23:48 AM [vite] (client) page reload src/components/ui/radio-group.tsx
+[2026-03-08T06:23:48.355Z] 1:23:48 AM [vite] (client) page reload src/components/ui/resizable.tsx
+[2026-03-08T06:23:48.355Z] 1:23:48 AM [vite] (client) page reload src/components/ui/scroll-area.tsx
+[2026-03-08T06:23:48.356Z] 1:23:48 AM [vite] (client) page reload src/components/ui/select.tsx
+[2026-03-08T06:23:48.356Z] 1:23:48 AM [vite] (client) page reload src/components/ui/separator.tsx
+[2026-03-08T06:23:48.356Z] 1:23:48 AM [vite] (client) page reload src/components/ui/sheet.tsx
+[2026-03-08T06:23:48.356Z] 1:23:48 AM [vite] (client) page reload src/components/ui/sidebar.tsx
+[2026-03-08T06:23:48.357Z] 1:23:48 AM [vite] (client) page reload src/components/ui/skeleton.tsx
+[2026-03-08T06:23:48.357Z] 1:23:48 AM [vite] (client) page reload src/components/ui/slider.tsx
+[2026-03-08T06:23:48.357Z] 1:23:48 AM [vite] (client) page reload src/components/ui/sonner.tsx
+[2026-03-08T06:23:48.357Z] 1:23:48 AM [vite] (client) page reload src/components/ui/spinner.tsx
+[2026-03-08T06:23:48.358Z] 1:23:48 AM [vite] (client) page reload src/components/ui/switch.tsx
+[2026-03-08T06:23:48.358Z] 1:23:48 AM [vite] (client) page reload src/components/ui/table.tsx
+[2026-03-08T06:23:48.358Z] 1:23:48 AM [vite] (client) page reload src/components/ui/tabs.tsx
+[2026-03-08T06:23:48.359Z] 1:23:48 AM [vite] (client) page reload src/components/ui/textarea.tsx
+[2026-03-08T06:23:48.359Z] 1:23:48 AM [vite] (client) page reload src/components/ui/toggle-group.tsx
+[2026-03-08T06:23:48.359Z] 1:23:48 AM [vite] (client) page reload src/components/ui/toggle.tsx
+[2026-03-08T06:23:48.359Z] 1:23:48 AM [vite] (client) page reload src/components/ui/tooltip.tsx
+[2026-03-08T06:23:48.360Z] 1:23:48 AM [vite] (client) page reload src/const.ts
+[2026-03-08T06:23:48.360Z] 1:23:48 AM [vite] (client) page reload src/contexts/ThemeContext.tsx
+[2026-03-08T06:23:48.360Z] 1:23:48 AM [vite] (client) page reload src/hooks/useComposition.ts
+[2026-03-08T06:23:48.360Z] 1:23:48 AM [vite] (client) page reload src/hooks/useMobile.tsx
+[2026-03-08T06:23:48.361Z] 1:23:48 AM [vite] (client) page reload src/hooks/usePersistFn.ts
+[2026-03-08T06:23:48.361Z] 1:23:48 AM [vite] (client) hmr update /src/index.css
+[2026-03-08T06:23:48.361Z] 1:23:48 AM [vite] (client) page reload src/lib/utils.ts
+[2026-03-08T06:23:48.362Z] 1:23:48 AM [vite] (client) page reload src/main.tsx
+[2026-03-08T06:23:48.362Z] 1:23:48 AM [vite] (client) page reload src/pages/Home.tsx
+[2026-03-08T06:23:48.362Z] 1:23:48 AM [vite] (client) page reload src/pages/NotFound.tsx
+[2026-03-08T06:23:48.376Z] 1:23:48 AM [vite] server restarted.
+[2026-03-08T06:23:48.377Z] 
+[2026-03-08T06:23:48.377Z] ➜  Local:   http://localhost:5173/
+[2026-03-08T06:23:48.378Z] ➜  Network: http://169.254.0.21:5173/
+[2026-03-08T06:28:15.046Z] 1:28:15 AM [vite] (client) page reload index.html
+[2026-03-08T06:28:15.458Z] 1:28:15 AM [vite] (client) page reload index.html
+[2026-03-08T08:11:33.177Z] Dev server process group stopped
+[2026-03-08T08:11:33.286Z] ELIFECYCLE  Command failed.
+[2026-03-08T08:11:33.286Z] WARN   Local package.json exists, but node_modules missing, did you mean to install?
+[2026-03-08T08:11:33.357Z] Dev server exited with code -15
+[2026-03-08T08:11:36.196Z] Starting dev server with command: pnpm run dev
+[2026-03-08T08:11:37.307Z] ERR_PNPM_NO_IMPORTER_MANIFEST_FOUND  No package.json (or package.yaml, or package.json5) was found in "/home/ubuntu/imocfood".
+[2026-03-08T08:11:37.336Z] Dev server exited with code 1
+[2026-03-08T08:12:16.045Z] Starting dev server with command: pnpm run dev
+[2026-03-08T08:12:16.958Z] 
+[2026-03-08T08:12:16.959Z] > imocfood@1.0.0 dev /home/ubuntu/imocfood
+[2026-03-08T08:12:16.959Z] > vite --host
+[2026-03-08T08:12:16.959Z] 
+[2026-03-08T08:12:16.962Z] sh: 1: vite: not found
+[2026-03-08T08:12:16.964Z] ELIFECYCLE  Command failed.
+[2026-03-08T08:12:16.965Z] WARN   Local package.json exists, but node_modules missing, did you mean to install?
+[2026-03-08T08:12:16.994Z] Dev server exited with code 1
+[2026-03-08T08:13:35.808Z] Starting dev server with command: pnpm run dev
+[2026-03-08T08:13:36.771Z] 
+[2026-03-08T08:13:36.772Z] > imocfood@1.0.0 dev /home/ubuntu/imocfood
+[2026-03-08T08:13:36.773Z] > vite --host
+[2026-03-08T08:13:36.773Z] 
+[2026-03-08T08:13:37.314Z] 
+[2026-03-08T08:13:37.315Z] VITE v7.3.1  ready in 499 ms
+[2026-03-08T08:13:37.315Z] 
+[2026-03-08T08:13:37.316Z] ➜  Local:   http://localhost:3000/
+[2026-03-08T08:13:37.317Z] ➜  Network: http://169.254.0.21:3000/
+[2026-03-08T08:13:38.760Z] 4:13:38 AM [vite] (client) Pre-transform error: Cannot apply unknown utility class `border-border`. Are you using CSS modules or similar and missing `@reference`? https://tailwindcss.com/docs/functions-and-directives#reference-directive
+[2026-03-08T08:13:38.761Z] Plugin: @tailwindcss/vite:generate:serve
+[2026-03-08T08:13:38.761Z] File: /home/ubuntu/imocfood/client/src/index.css
+[2026-03-08T08:13:38.818Z] 4:13:38 AM [vite] Internal server error: Cannot apply unknown utility class `border-border`. Are you using CSS modules or similar and missing `@reference`? https://tailwindcss.com/docs/functions-and-directives#reference-directive
+[2026-03-08T08:13:38.818Z] Plugin: @tailwindcss/vite:generate:serve
+[2026-03-08T08:13:38.819Z] File: /home/ubuntu/imocfood/client/src/index.css
+[2026-03-08T08:13:38.819Z] at onInvalidCandidate (file:///home/ubuntu/imocfood/node_modules/.pnpm/tailwindcss@4.2.1/node_modules/tailwindcss/dist/chunk-L5IEUH3R.mjs:21:1314)
+[2026-03-08T08:13:38.819Z] at $e (file:///home/ubuntu/imocfood/node_modules/.pnpm/tailwindcss@4.2.1/node_modules/tailwindcss/dist/chunk-L5IEUH3R.mjs:16:37066)
+[2026-03-08T08:13:38.820Z] at file:///home/ubuntu/imocfood/node_modules/.pnpm/tailwindcss@4.2.1/node_modules/tailwindcss/dist/chunk-L5IEUH3R.mjs:21:355
+[2026-03-08T08:13:38.820Z] at Ar (file:///home/ubuntu/imocfood/node_modules/.pnpm/tailwindcss@4.2.1/node_modules/tailwindcss/dist/chunk-L5IEUH3R.mjs:3:1733)
+[2026-03-08T08:13:38.820Z] at I (file:///home/ubuntu/imocfood/node_modules/.pnpm/tailwindcss@4.2.1/node_modules/tailwindcss/dist/chunk-L5IEUH3R.mjs:3:1377)
+[2026-03-08T08:13:38.821Z] at Ce (file:///home/ubuntu/imocfood/node_modules/.pnpm/tailwindcss@4.2.1/node_modules/tailwindcss/dist/chunk-L5IEUH3R.mjs:21:172)
+[2026-03-08T08:13:38.821Z] at Gi (file:///home/ubuntu/imocfood/node_modules/.pnpm/tailwindcss@4.2.1/node_modules/tailwindcss/dist/chunk-L5IEUH3R.mjs:38:294)
+[2026-03-08T08:13:38.822Z] at async ao (file:///home/ubuntu/imocfood/node_modules/.pnpm/tailwindcss@4.2.1/node_modules/tailwindcss/dist/chunk-L5IEUH3R.mjs:38:631)
+[2026-03-08T08:13:38.822Z] at async vf (file:///home/ubuntu/imocfood/node_modules/.pnpm/tailwindcss@4.2.1/node_modules/tailwindcss/dist/chunk-L5IEUH3R.mjs:38:1406)
+[2026-03-08T08:13:38.823Z] at async uu (file:///home/ubuntu/imocfood/node_modules/.pnpm/@tailwindcss+node@4.2.1/node_modules/@tailwindcss/node/dist/index.mjs:10:3458)
+[2026-03-08T08:13:38.824Z] at async B.generate (file:///home/ubuntu/imocfood/node_modules/.pnpm/@tailwindcss+vite@4.2.1_vite@7.3.1_@types+node@24.12.0_jiti@2.6.1_lightningcss@1.31.1_tsx@4.21.0_/node_modules/@tailwindcss/vite/dist/index.mjs:1:5049)
+[2026-03-08T08:13:38.825Z] at async TransformPluginContext.handler (file:///home/ubuntu/imocfood/node_modules/.pnpm/@tailwindcss+vite@4.2.1_vite@7.3.1_@types+node@24.12.0_jiti@2.6.1_lightningcss@1.31.1_tsx@4.21.0_/node_modules/@tailwindcss/vite/dist/index.mjs:1:2719)
+[2026-03-08T08:13:38.826Z] at async EnvironmentPluginContainer.transform (file:///home/ubuntu/imocfood/node_modules/.pnpm/vite@7.3.1_@types+node@24.12.0_jiti@2.6.1_lightningcss@1.31.1_tsx@4.21.0/node_modules/vite/dist/node/chunks/config.js:28797:14)
+[2026-03-08T08:13:38.826Z] at async loadAndTransform (file:///home/ubuntu/imocfood/node_modules/.pnpm/vite@7.3.1_@types+node@24.12.0_jiti@2.6.1_lightningcss@1.31.1_tsx@4.21.0/node_modules/vite/dist/node/chunks/config.js:22670:26)
+[2026-03-08T08:13:38.827Z] at async viteTransformMiddleware (file:///home/ubuntu/imocfood/node_modules/.pnpm/vite@7.3.1_@types+node@24.12.0_jiti@2.6.1_lightningcss@1.31.1_tsx@4.21.0/node_modules/vite/dist/node/chunks/config.js:24542:20)
