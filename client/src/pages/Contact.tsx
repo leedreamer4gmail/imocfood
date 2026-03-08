@@ -8,19 +8,31 @@ const Contact = () => {
       name: '李梦',
       email: 'leedreamer4@gmail.com',
       qrUrl: lmQrUrl,
-      address: '广州：广东省广州市荔湾区逢西大街4号',
     },
     {
       name: '梁平',
       email: 'liangping@imoc.com',
       qrUrl: null, // 用户后续补充
-      address: '南宁：广西省南宁市兴宁区金桥农批市场加工1号楼2楼',
     },
     {
       name: '王刚',
       email: 'wanggang@imoc.com',
       qrUrl: null, // 用户后续补充
-      address: '重庆：重庆市梁平区预制菜产业园区4号楼4楼',
+    },
+  ];
+
+  const locations = [
+    {
+      city: '广州',
+      address: '广东省广州市荔湾区逢西大街4号',
+    },
+    {
+      city: '南宁',
+      address: '广西省南宁市兴宁区金桥农批市场加工1号楼2楼',
+    },
+    {
+      city: '重庆',
+      address: '重庆市梁平区预制菜产业园区4号楼4楼',
     },
   ];
 
@@ -45,6 +57,7 @@ const Contact = () => {
             display: 'grid',
             gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
             gap: '30px',
+            marginBottom: '60px',
           }}
         >
           {contacts.map((contact, index) => (
@@ -93,9 +106,6 @@ const Contact = () => {
                     {contact.email}
                   </a>
                 </p>
-                <p style={{ margin: '8px 0', fontSize: '12px', color: '#999999' }}>
-                  📍 {contact.address}
-                </p>
               </div>
 
               {/* WeChat QR Code */}
@@ -141,6 +151,68 @@ const Contact = () => {
               )}
             </div>
           ))}
+        </div>
+
+        {/* Locations Section */}
+        <div
+          style={{
+            paddingTop: '40px',
+            borderTop: '2px solid #e0e0e0',
+          }}
+        >
+          <h3
+            style={{
+              fontSize: '24px',
+              fontWeight: '600',
+              color: '#333333',
+              marginBottom: '30px',
+              textAlign: 'center',
+            }}
+          >
+            集团地址
+          </h3>
+
+          <div
+            style={{
+              display: 'grid',
+              gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))',
+              gap: '30px',
+            }}
+          >
+            {locations.map((location, index) => (
+              <div
+                key={index}
+                style={{
+                  padding: '20px',
+                  backgroundColor: '#fafafa',
+                  borderRadius: '8px',
+                  border: '1px solid #e0e0e0',
+                  textAlign: 'center',
+                }}
+              >
+                <h4
+                  style={{
+                    fontSize: '16px',
+                    fontWeight: '600',
+                    color: '#a72027',
+                    margin: '0 0 10px 0',
+                  }}
+                >
+                  {location.city}
+                </h4>
+                <p
+                  style={{
+                    fontSize: '13px',
+                    color: '#666666',
+                    margin: '0',
+                    lineHeight: '1.6',
+                  }}
+                >
+                  {location.address}
+                </p>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </div>
