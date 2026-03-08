@@ -4,11 +4,11 @@ import { trpc } from '../lib/trpc';
 
 const News = () => {
   const { language, t } = useLanguage();
-  const [expandedId, setExpandedId] = useState<number | null>(null);
+  const [expandedId, setExpandedId] = useState<string | null>(null);
 
   const { data: articles, isLoading, error } = trpc.news.list.useQuery();
 
-  const formatDate = (date: Date | string, lang: string) => {
+  const formatDate = (date: Date | string | number, lang: string) => {
     const d = new Date(date);
     if (lang === 'zh') {
       return `${d.getFullYear()}年${d.getMonth() + 1}月${d.getDate()}日`;

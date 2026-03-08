@@ -857,3 +857,18 @@
 [2026-03-08T16:14:59.050Z] 12:14:59 PM [vite] (client) hmr update /src/App.tsx
 [2026-03-08T16:15:38.388Z] 12:15:38 PM [vite] (client) hmr update /src/pages/AdminNews.tsx
 [2026-03-08T16:16:02.710Z] 12:16:02 PM [vite] (client) hmr update /src/App.tsx
+[2026-03-08T16:33:13.390Z] 12:33:13 PM [tsx] change in ./server/routers/news.ts Restarting...
+[2026-03-08T16:33:15.096Z] c[OAuth] Initialized with baseURL: https://api.manus.im
+[2026-03-08T16:33:15.352Z] 12:33:15 PM [vite] (client) Re-optimizing dependencies because lockfile has changed
+[2026-03-08T16:33:15.377Z] Server running on http://localhost:3000/
+[2026-03-08T16:35:05.681Z] Dev server process group stopped
+[2026-03-08T16:35:05.724Z] Dev server exited with code -15
+[2026-03-08T16:35:08.687Z] Starting dev server with command: NODE_ENV=development tsx watch server/_core/index.ts
+[2026-03-08T16:35:10.743Z] [OAuth] Initialized with baseURL: https://api.manus.im
+[2026-03-08T16:35:11.036Z] Server running on http://localhost:3000/
+[2026-03-08T16:36:49.269Z] 12:36:49 PM [tsx] change in ./server/chromaDb.ts Restarting...
+[2026-03-08T16:36:50.779Z] c[OAuth] Initialized with baseURL: https://api.manus.im
+[2026-03-08T16:36:51.008Z] Server running on http://localhost:3000/
+[2026-03-08T16:37:28.424Z] 12:37:28 PM [tsx] change in ./server/chromaDb.ts Restarting...
+[2026-03-08T16:37:30.171Z] c[OAuth] Initialized with baseURL: https://api.manus.im
+[2026-03-08T16:37:30.437Z] Server running on http://localhost:3000/

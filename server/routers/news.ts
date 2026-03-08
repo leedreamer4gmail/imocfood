@@ -7,7 +7,7 @@ import {
   getArticleById,
   getPublishedArticles,
   updateArticle,
-} from "../db";
+} from "../chromaDb";
 import { invokeLLM } from "../_core/llm";
 import { adminProcedure, publicProcedure, router } from "../_core/trpc";
 
@@ -44,9 +44,9 @@ export const newsRouter = router({
     return getPublishedArticles();
   }),
 
-  /** Public: get a single published article */
+  /** Public: get a single published article by string ID */
   getById: publicProcedure
-    .input(z.object({ id: z.number() }))
+    .input(z.object({ id: z.string() }))
     .query(async ({ input }) => {
       const article = await getArticleById(input.id);
       if (!article || !article.published) {
@@ -62,7 +62,7 @@ export const newsRouter = router({
 
   /** Admin: get any article by ID */
   adminGetById: adminProcedure
-    .input(z.object({ id: z.number() }))
+    .input(z.object({ id: z.string() }))
     .query(async ({ input }) => {
       const article = await getArticleById(input.id);
       if (!article) {
@@ -94,14 +94,14 @@ export const newsRouter = router({
 
       await createArticle({
         titleZh: input.titleZh,
-        titleEn: titleEn ?? undefined,
+        titleEn: titleEn,
         contentZh: input.contentZh,
-        contentEn: contentEn ?? undefined,
-        summaryZh: input.summaryZh ?? undefined,
-        summaryEn: summaryEn ?? undefined,
-        author: input.author ?? undefined,
-        category: input.category ?? undefined,
-        coverImageUrl: input.coverImageUrl || undefined,
+        contentEn: contentEn,
+        summaryZh: input.summaryZh ?? null,
+        summaryEn: summaryEn,
+        author: input.author ?? null,
+        category: input.category ?? null,
+        coverImageUrl: input.coverImageUrl || null,
         published: input.published,
       });
 
@@ -112,7 +112,7 @@ export const newsRouter = router({
   update: adminProcedure
     .input(
       z.object({
-        id: z.number(),
+        id: z.string(),
         titleZh: z.string().min(1).optional(),
         contentZh: z.string().min(1).optional(),
         summaryZh: z.string().optional(),
@@ -146,7 +146,7 @@ export const newsRouter = router({
 
   /** Admin: toggle publish status */
   togglePublish: adminProcedure
-    .input(z.object({ id: z.number(), published: z.boolean() }))
+    .input(z.object({ id: z.string(), published: z.boolean() }))
     .mutation(async ({ input }) => {
       await updateArticle(input.id, { published: input.published });
       return { success: true };
@@ -154,7 +154,7 @@ export const newsRouter = router({
 
   /** Admin: delete an article */
   delete: adminProcedure
-    .input(z.object({ id: z.number() }))
+    .input(z.object({ id: z.string() }))
     .mutation(async ({ input }) => {
       await deleteArticle(input.id);
       return { success: true };

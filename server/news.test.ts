@@ -2,11 +2,11 @@ import { describe, expect, it, vi, beforeEach } from "vitest";
 import { appRouter } from "./routers";
 import type { TrpcContext } from "./_core/context";
 
-// Mock the database helpers so tests don't require a real DB connection
-vi.mock("./db", () => ({
+// Mock Chroma DB helpers so tests don't require a real Chroma Cloud connection
+vi.mock("./chromaDb", () => ({
   getPublishedArticles: vi.fn().mockResolvedValue([
     {
-      id: 1,
+      id: "article_1_abc123",
       titleZh: "测试文章",
       titleEn: "Test Article",
       contentZh: "这是测试内容",
@@ -17,13 +17,13 @@ vi.mock("./db", () => ({
       category: "公司动态",
       published: true,
       coverImageUrl: null,
-      createdAt: new Date("2026-01-01"),
-      updatedAt: new Date("2026-01-01"),
+      createdAt: 1735689600000,
+      updatedAt: 1735689600000,
     },
   ]),
   getAllArticles: vi.fn().mockResolvedValue([
     {
-      id: 1,
+      id: "article_1_abc123",
       titleZh: "测试文章",
       titleEn: "Test Article",
       contentZh: "这是测试内容",
@@ -34,11 +34,11 @@ vi.mock("./db", () => ({
       category: "公司动态",
       published: true,
       coverImageUrl: null,
-      createdAt: new Date("2026-01-01"),
-      updatedAt: new Date("2026-01-01"),
+      createdAt: 1735689600000,
+      updatedAt: 1735689600000,
     },
     {
-      id: 2,
+      id: "article_2_def456",
       titleZh: "草稿文章",
       titleEn: null,
       contentZh: "草稿内容",
@@ -49,14 +49,14 @@ vi.mock("./db", () => ({
       category: null,
       published: false,
       coverImageUrl: null,
-      createdAt: new Date("2026-01-02"),
-      updatedAt: new Date("2026-01-02"),
+      createdAt: 1735776000000,
+      updatedAt: 1735776000000,
     },
   ]),
-  getArticleById: vi.fn().mockImplementation(async (id: number) => {
-    if (id === 1) {
+  getArticleById: vi.fn().mockImplementation(async (id: string) => {
+    if (id === "article_1_abc123") {
       return {
-        id: 1,
+        id: "article_1_abc123",
         titleZh: "测试文章",
         titleEn: "Test Article",
         contentZh: "这是测试内容",
@@ -67,18 +67,15 @@ vi.mock("./db", () => ({
         category: "公司动态",
         published: true,
         coverImageUrl: null,
-        createdAt: new Date("2026-01-01"),
-        updatedAt: new Date("2026-01-01"),
+        createdAt: 1735689600000,
+        updatedAt: 1735689600000,
       };
     }
     return undefined;
   }),
-  createArticle: vi.fn().mockResolvedValue({ insertId: 3 }),
-  updateArticle: vi.fn().mockResolvedValue({}),
-  deleteArticle: vi.fn().mockResolvedValue({}),
-  getDb: vi.fn(),
-  upsertUser: vi.fn(),
-  getUserByOpenId: vi.fn(),
+  createArticle: vi.fn().mockResolvedValue("article_3_ghi789"),
+  updateArticle: vi.fn().mockResolvedValue(undefined),
+  deleteArticle: vi.fn().mockResolvedValue(undefined),
 }));
 
 // Mock LLM translation
@@ -143,16 +140,16 @@ describe("news.list (public)", () => {
 });
 
 describe("news.getById (public)", () => {
-  it("returns a published article by ID", async () => {
+  it("returns a published article by string ID", async () => {
     const caller = appRouter.createCaller(createPublicContext());
-    const article = await caller.news.getById({ id: 1 });
-    expect(article.id).toBe(1);
+    const article = await caller.news.getById({ id: "article_1_abc123" });
+    expect(article.id).toBe("article_1_abc123");
     expect(article.titleZh).toBe("测试文章");
   });
 
-  it("throws NOT_FOUND for unpublished article", async () => {
+  it("throws NOT_FOUND for unknown article", async () => {
     const caller = appRouter.createCaller(createPublicContext());
-    await expect(caller.news.getById({ id: 999 })).rejects.toThrow();
+    await expect(caller.news.getById({ id: "nonexistent" })).rejects.toThrow();
   });
 });
 
@@ -161,7 +158,6 @@ describe("news.adminList (admin only)", () => {
     const caller = appRouter.createCaller(createAdminContext());
     const articles = await caller.news.adminList();
     expect(articles).toHaveLength(2);
-    // Should include both published and draft
     const published = articles.filter((a) => a.published);
     const drafts = articles.filter((a) => !a.published);
     expect(published).toHaveLength(1);
@@ -208,7 +204,7 @@ describe("news.create (admin only)", () => {
 describe("news.togglePublish (admin only)", () => {
   it("toggles publish status for admin", async () => {
     const caller = appRouter.createCaller(createAdminContext());
-    const result = await caller.news.togglePublish({ id: 1, published: false });
+    const result = await caller.news.togglePublish({ id: "article_1_abc123", published: false });
     expect(result.success).toBe(true);
   });
 });
@@ -216,12 +212,12 @@ describe("news.togglePublish (admin only)", () => {
 describe("news.delete (admin only)", () => {
   it("deletes an article for admin", async () => {
     const caller = appRouter.createCaller(createAdminContext());
-    const result = await caller.news.delete({ id: 1 });
+    const result = await caller.news.delete({ id: "article_1_abc123" });
     expect(result.success).toBe(true);
   });
 
   it("throws FORBIDDEN for regular users", async () => {
     const caller = appRouter.createCaller(createUserContext());
-    await expect(caller.news.delete({ id: 1 })).rejects.toThrow();
+    await expect(caller.news.delete({ id: "article_1_abc123" })).rejects.toThrow();
   });
 });

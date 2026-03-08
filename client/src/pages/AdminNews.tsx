@@ -28,7 +28,7 @@ type View = 'list' | 'create' | 'edit';
 export default function AdminNews() {
   const { user, loading: authLoading } = useAuth();
   const [view, setView] = useState<View>('list');
-  const [editId, setEditId] = useState<number | null>(null);
+  const [editId, setEditId] = useState<string | null>(null);
   const [form, setForm] = useState<ArticleForm>(emptyForm);
   const [submitting, setSubmitting] = useState(false);
   const [message, setMessage] = useState<{ type: 'success' | 'error'; text: string } | null>(null);
@@ -166,7 +166,7 @@ export default function AdminNews() {
     setMessage(null);
   };
 
-  const handleDelete = (id: number) => {
+  const handleDelete = (id: string) => {
     if (window.confirm('确定要删除这篇文章吗？')) {
       deleteMutation.mutate({ id });
     }

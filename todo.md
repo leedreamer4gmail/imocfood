@@ -19,7 +19,12 @@
 - [x] Unit tests for news router (12 tests passing)
 
 ## Pending
-- [ ] Set admin role for website owner in database
+- [x] Set admin role for website owner in database (auto via OWNER_OPEN_ID)
 - [x] Push to GitHub and deploy to Vercel
+- [x] Migrate news storage from MySQL to Chroma Cloud v2 API
+- [x] Fix Vercel 404 by adapting to serverless functions
+- [x] Add CHROMA_API_KEY and CHROMA_TENANT env vars
+- [x] All 13 tests passing with Chroma mock
+- [ ] Add CHROMA_API_KEY and CHROMA_TENANT to Vercel environment variables
 - [ ] Add image upload support to CMS (optional)
 - [ ] Add rich text editor to CMS (optional)
