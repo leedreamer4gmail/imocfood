@@ -6,22 +6,18 @@ const Products = () => {
 
   const productCategories = [
     {
-      character: '牛',
       title: '茫然牛负责管理',
       products: ['牛肉干', '牛腱子', '牛罐头', '牛孖筋', '牛肉酱', '兼管羊肉'],
     },
     {
-      character: '猪',
       title: '社恐猪负责管理',
       products: ['猪肉干', '猪罐头', '绵绵肉', '猪谈肉', '糯糯肉粽'],
     },
     {
-      character: '鸡',
       title: '呆滞鸡负责管理',
       products: ['无抗土鸡腿', '农家土鸡腿', '朴实鸡腿', '鸡肉罐头', '鸡肉干', '鸡肉丸'],
     },
     {
-      character: '鱿鱼',
       title: '好嗨鱿负责管理',
       products: ['烤鱿鱼干', '烤虾干', '烤鱼干'],
     },
@@ -60,12 +56,12 @@ const Products = () => {
               />
             </div>
 
-            {/* Character Responsibilities Grid */}
+            {/* Character Responsibilities - 4 columns in a row */}
             <div
               style={{
                 display: 'grid',
-                gridTemplateColumns: '1fr 1fr',
-                gap: '30px',
+                gridTemplateColumns: 'repeat(4, 1fr)',
+                gap: '20px',
                 fontSize: '13px',
               }}
             >
@@ -79,10 +75,11 @@ const Products = () => {
                   <h4
                     style={{
                       color: '#a72027',
-                      fontSize: '14px',
+                      fontSize: '12px',
                       fontWeight: '600',
-                      marginBottom: '8px',
-                      margin: '0 0 8px 0',
+                      marginBottom: '12px',
+                      margin: '0 0 12px 0',
+                      lineHeight: '1.4',
                     }}
                   >
                     {category.title}
@@ -93,18 +90,19 @@ const Products = () => {
                       padding: 0,
                       margin: 0,
                       textAlign: 'left',
+                      fontSize: '11px',
                     }}
                   >
                     {category.products.map((item, rIndex) => (
                       <li
                         key={rIndex}
                         style={{
-                          padding: '4px 0',
+                          padding: '3px 0',
                           color: '#333333',
-                          fontSize: '12px',
+                          fontSize: '11px',
                         }}
                       >
-                        • {item}
+                        {item}
                       </li>
                     ))}
                   </ul>
