@@ -2,7 +2,7 @@ import React from 'react';
 
 const Home = () => {
   const logoUrl = 'https://d2xsxph8kpxj0f.cloudfront.net/85413465/Dn3NKGa7uppqoDB4SUPuXq/logoweb_eed8c41b.jpg';
-  const productImageUrl = 'https://d2xsxph8kpxj0f.cloudfront.net/85413465/Dn3NKGa7uppqoDB4SUPuXq/pasted_file_L4r23g_image_c01dd3d1.png';
+  const productImageUrl = 'https://d2xsxph8kpxj0f.cloudfront.net/85413465/Dn3NKGa7uppqoDB4SUPuXq/chanpin_e5ff5e4d.jpg';
 
   return (
     <div style={{ backgroundColor: '#ffffff' }}>
@@ -32,7 +32,7 @@ const Home = () => {
       {/* Products Preview */}
       <section
         style={{
-          padding: '40px',
+          padding: '40px 40px 20px 40px',
           backgroundColor: '#fafafa',
           overflow: 'hidden',
         }}
@@ -40,10 +40,10 @@ const Home = () => {
         <div
           style={{
             width: '100%',
-            height: '80px',
+            height: '70px',
             overflow: 'hidden',
             borderRadius: '8px',
-            marginBottom: '40px',
+            marginBottom: '0',
           }}
         >
           <img
@@ -54,6 +54,7 @@ const Home = () => {
               height: '100%',
               objectFit: 'cover',
               objectPosition: 'center',
+              imageRendering: 'crisp-edges',
             }}
           />
         </div>

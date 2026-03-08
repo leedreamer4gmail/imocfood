@@ -1,7 +1,7 @@
 import React from 'react';
 
 const Services = () => {
-  const marketingQrUrl = 'https://d2xsxph8kpxj0f.cloudfront.net/85413465/Dn3NKGa7uppqoDB4SUPuXq/市场部微信_12157f5e.jpg';
+  const marketingQrUrl = 'https://d2xsxph8kpxj0f.cloudfront.net/85413465/Dn3NKGa7uppqoDB4SUPuXq/市场部微信_f2920d6e.jpg';
 
   const services = [
     {
@@ -135,11 +135,11 @@ const Services = () => {
             <h3
               style={{
                 color: '#a72027',
-                fontSize: '20px',
+                fontSize: '18px',
                 fontWeight: '600',
-                marginBottom: '40px',
+                marginBottom: '30px',
                 textAlign: 'center',
-                margin: '0 0 40px 0',
+                margin: '0 0 30px 0',
               }}
             >
               具体服务详情，请联系市场部
@@ -149,7 +149,6 @@ const Services = () => {
             <div
               style={{
                 textAlign: 'center',
-                marginBottom: '40px',
               }}
             >
               <img
@@ -159,38 +158,8 @@ const Services = () => {
                   maxWidth: '100%',
                   height: 'auto',
                   borderRadius: '8px',
-                  border: '2px solid #a72027',
-                  padding: '8px',
-                  backgroundColor: '#ffffff',
-                  marginBottom: '16px',
                 }}
               />
-              <p
-                style={{
-                  marginTop: '0',
-                  color: '#666666',
-                  fontSize: '13px',
-                }}
-              >
-                扫描微信二维码咨询
-              </p>
-            </div>
-
-            {/* Contact Details */}
-            <div
-              style={{
-                fontSize: '14px',
-                color: '#666666',
-                width: '100%',
-                textAlign: 'center',
-              }}
-            >
-              <p style={{ margin: '0 0 15px 0', fontWeight: '600', color: '#333333' }}>
-                市场部负责人：梁平
-              </p>
-              <p style={{ margin: '0 0 10px 0' }}>📍 地址：重庆</p>
-              <p style={{ margin: '0 0 10px 0' }}>💬 微信：扫描二维码</p>
-              <p style={{ margin: '0' }}>⏰ 工作时间：周一至周五 9:00-18:00</p>
             </div>
           </div>
         </div>

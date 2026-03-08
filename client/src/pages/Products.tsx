@@ -1,25 +1,25 @@
 import React from 'react';
 
 const Products = () => {
-  const characterImageUrl = 'https://d2xsxph8kpxj0f.cloudfront.net/85413465/Dn3NKGa7uppqoDB4SUPuXq/4man_c2e0e3c9.jpg';
-  const taobaoQrUrl = 'https://d2xsxph8kpxj0f.cloudfront.net/85413465/Dn3NKGa7uppqoDB4SUPuXq/tb二维码_a748285a.jpg';
+  const characterImageUrl = 'https://d2xsxph8kpxj0f.cloudfront.net/85413465/Dn3NKGa7uppqoDB4SUPuXq/4man_b5b08e13.jpg';
+  const taobaoQrUrl = 'https://d2xsxph8kpxj0f.cloudfront.net/85413465/Dn3NKGa7uppqoDB4SUPuXq/tb二维码_5374b85d.png';
 
   const productCategories = [
     {
-      character: '茫然牛',
-      responsibilities: ['牛肉干', '牛腱子', '牛罐头', '牛孖筋', '牛肉酱', '兼管羊肉'],
+      character: '茫然牛负责管理',
+      products: ['牛肉干', '牛腱子', '牛罐头', '牛孖筋', '牛肉酱', '兼管羊肉'],
     },
     {
-      character: '社恐猪',
-      responsibilities: ['猪肉干', '猪罐头', '绵绵肉', '猪谈肉', '糯糯肉粽'],
+      character: '社恐猪负责管理',
+      products: ['猪肉干', '猪罐头', '绵绵肉', '猪谈肉', '糯糯肉粽'],
     },
     {
-      character: '呆滞鸡',
-      responsibilities: ['无抗土鸡腿', '农家土鸡腿', '朴实鸡腿', '鸡肉罐头', '鸡肉干', '鸡肉丸'],
+      character: '呆滞鸡负责管理',
+      products: ['无抗土鸡腿', '农家土鸡腿', '朴实鸡腿', '鸡肉罐头', '鸡肉干', '鸡肉丸'],
     },
     {
-      character: '好嗨鱿',
-      responsibilities: ['烤鱿鱼干', '烤虾干', '烤鱼干'],
+      character: '好嗨鱿负责管理',
+      products: ['烤鱿鱼干', '烤虾干', '烤鱼干'],
     },
   ];
 
@@ -40,7 +40,7 @@ const Products = () => {
             {/* Character Image */}
             <div
               style={{
-                marginBottom: '40px',
+                marginBottom: '30px',
                 display: 'flex',
                 justifyContent: 'center',
               }}
@@ -57,23 +57,23 @@ const Products = () => {
             </div>
 
             {/* Character Responsibilities */}
-            <div style={{ fontSize: '14px' }}>
+            <div style={{ fontSize: '13px' }}>
               {productCategories.map((category, index) => (
                 <div
                   key={index}
                   style={{
-                    marginBottom: '30px',
-                    paddingBottom: '30px',
+                    marginBottom: '25px',
+                    paddingBottom: '25px',
                     borderBottom: index < productCategories.length - 1 ? '1px solid #e0e0e0' : 'none',
                   }}
                 >
                   <h4
                     style={{
                       color: '#a72027',
-                      fontSize: '16px',
+                      fontSize: '14px',
                       fontWeight: '600',
-                      marginBottom: '12px',
-                      margin: '0 0 12px 0',
+                      marginBottom: '10px',
+                      margin: '0 0 10px 0',
                     }}
                   >
                     {category.character}
@@ -85,13 +85,13 @@ const Products = () => {
                       margin: 0,
                     }}
                   >
-                    {category.responsibilities.map((item, rIndex) => (
+                    {category.products.map((item, rIndex) => (
                       <li
                         key={rIndex}
                         style={{
-                          padding: '6px 0',
+                          padding: '4px 0',
                           color: '#333333',
-                          fontSize: '13px',
+                          fontSize: '12px',
                         }}
                       >
                         • {item}
@@ -124,7 +124,7 @@ const Products = () => {
             <h3
               style={{
                 color: '#a72027',
-                fontSize: '22px',
+                fontSize: '20px',
                 fontWeight: '600',
                 marginBottom: '40px',
                 textAlign: 'center',
@@ -177,9 +177,6 @@ const Products = () => {
                   maxWidth: '100%',
                   height: 'auto',
                   borderRadius: '8px',
-                  border: '2px solid #a72027',
-                  padding: '8px',
-                  backgroundColor: '#ffffff',
                   marginBottom: '16px',
                 }}
               />
