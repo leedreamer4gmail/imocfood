@@ -75,7 +75,7 @@ const Products = () => {
                   <h4
                     style={{
                       color: '#a72027',
-                      fontSize: '12px',
+                      fontSize: '13px',
                       fontWeight: '600',
                       marginBottom: '12px',
                       margin: '0 0 12px 0',
@@ -89,17 +89,17 @@ const Products = () => {
                       listStyle: 'none',
                       padding: 0,
                       margin: 0,
-                      textAlign: 'left',
-                      fontSize: '11px',
+                      textAlign: 'center',
+                      fontSize: '13px',
                     }}
                   >
                     {category.products.map((item, rIndex) => (
                       <li
                         key={rIndex}
                         style={{
-                          padding: '3px 0',
+                          padding: '4px 0',
                           color: '#333333',
-                          fontSize: '11px',
+                          fontSize: '13px',
                         }}
                       >
                         {item}
@@ -142,35 +142,47 @@ const Products = () => {
               直接购买我们的产品
             </h3>
 
-            <a
-              href="https://imoc.taobao.com/"
-              target="_blank"
-              rel="noopener noreferrer"
-              style={{
-                display: 'inline-block',
-                marginBottom: '40px',
-                textDecoration: 'none',
-                color: '#ffffff',
-                fontSize: '16px',
-                fontWeight: '600',
-                padding: '12px 32px',
-                backgroundColor: '#a72027',
-                borderRadius: '6px',
-                transition: 'all 0.3s ease',
-                border: 'none',
-                cursor: 'pointer',
-              }}
-              onMouseEnter={(e) => {
-                e.currentTarget.style.backgroundColor = '#8a1a20';
-                e.currentTarget.style.transform = 'scale(1.05)';
-              }}
-              onMouseLeave={(e) => {
-                e.currentTarget.style.backgroundColor = '#a72027';
-                e.currentTarget.style.transform = 'scale(1)';
-              }}
-            >
-              访问淘宝店铺 →
-            </a>
+            <div style={{ textAlign: 'center', marginBottom: '40px' }}>
+              <a
+                href="https://imoc.taobao.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+                style={{
+                  display: 'inline-block',
+                  marginBottom: '12px',
+                  textDecoration: 'none',
+                  color: '#ffffff',
+                  fontSize: '16px',
+                  fontWeight: '600',
+                  padding: '12px 32px',
+                  backgroundColor: '#a72027',
+                  borderRadius: '6px',
+                  transition: 'all 0.3s ease',
+                  border: 'none',
+                  cursor: 'pointer',
+                }}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.backgroundColor = '#8a1a20';
+                  e.currentTarget.style.transform = 'scale(1.05)';
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.backgroundColor = '#a72027';
+                  e.currentTarget.style.transform = 'scale(1)';
+                }}
+              >
+                访问淘宝店铺 →
+              </a>
+              <p
+                style={{
+                  margin: '0',
+                  color: '#666666',
+                  fontSize: '12px',
+                  wordBreak: 'break-all',
+                }}
+              >
+                https://imoc.taobao.com/
+              </p>
+            </div>
 
             {/* Taobao QR Code */}
             <div

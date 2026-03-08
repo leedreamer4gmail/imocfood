@@ -1,27 +1,23 @@
 import React from 'react';
 
 const Contact = () => {
+  const lmQrUrl = 'https://d2xsxph8kpxj0f.cloudfront.net/85413465/Dn3NKGa7uppqoDB4SUPuXq/lm二维码_7265883d.jpg';
+
   const contacts = [
     {
       name: '李梦',
-      title: '销售经理',
-      phone: '+86 138-0013-8888',
-      email: 'limeng@imoc.com',
-      wechat: 'limeng_imoc',
+      email: 'leedreamer4@gmail.com',
+      qrUrl: lmQrUrl,
     },
     {
       name: '梁平',
-      title: '市场部',
-      phone: '+86 138-0013-8889',
       email: 'liangping@imoc.com',
-      wechat: 'liangping_market',
+      qrUrl: null, // 用户后续补充
     },
     {
       name: '王刚',
-      title: '运营总监',
-      phone: '+86 138-0013-8890',
       email: 'wanggang@imoc.com',
-      wechat: 'wanggang_ops',
+      qrUrl: null, // 用户后续补充
     },
   ];
 
@@ -70,67 +66,73 @@ const Contact = () => {
                 e.currentTarget.style.transform = 'translateY(0)';
               }}
             >
-              {/* Avatar Placeholder */}
-              <div
-                style={{
-                  width: '80px',
-                  height: '80px',
-                  backgroundColor: '#a72027',
-                  borderRadius: '50%',
-                  margin: '0 auto 20px',
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                  color: '#ffffff',
-                  fontSize: '32px',
-                  fontWeight: '600',
-                }}
-              >
-                {contact.name.charAt(0)}
-              </div>
-
               <h3
                 style={{
                   fontSize: '18px',
                   fontWeight: '600',
                   color: '#333333',
-                  margin: '0 0 5px 0',
+                  margin: '0 0 15px 0',
                 }}
               >
                 {contact.name}
               </h3>
-              <p
-                style={{
-                  fontSize: '14px',
-                  color: '#a72027',
-                  margin: '0 0 20px 0',
-                  fontWeight: '500',
-                }}
-              >
-                {contact.title}
-              </p>
 
               <div
                 style={{
                   fontSize: '13px',
                   color: '#666666',
                   lineHeight: '1.8',
+                  marginBottom: '20px',
                 }}
               >
-                <p style={{ margin: '8px 0' }}>
-                  📞 <a href={`tel:${contact.phone}`} style={{ color: '#a72027', textDecoration: 'none' }}>
-                    {contact.phone}
-                  </a>
-                </p>
                 <p style={{ margin: '8px 0' }}>
                   📧 <a href={`mailto:${contact.email}`} style={{ color: '#a72027', textDecoration: 'none' }}>
                     {contact.email}
                   </a>
                 </p>
-                <p style={{ margin: '8px 0' }}>
-                  💬 WeChat: <span style={{ fontWeight: '500' }}>{contact.wechat}</span>
-                </p>
               </div>
+
+              {/* WeChat QR Code */}
+              {contact.qrUrl ? (
+                <div
+                  style={{
+                    marginTop: '20px',
+                    paddingTop: '20px',
+                    borderTop: '1px solid #e0e0e0',
+                  }}
+                >
+                  <img
+                    src={contact.qrUrl}
+                    alt={`${contact.name} WeChat QR Code`}
+                    style={{
+                      maxWidth: '150px',
+                      height: 'auto',
+                      borderRadius: '4px',
+                    }}
+                  />
+                  <p
+                    style={{
+                      fontSize: '12px',
+                      color: '#999999',
+                      margin: '8px 0 0 0',
+                    }}
+                  >
+                    微信二维码
+                  </p>
+                </div>
+              ) : (
+                <div
+                  style={{
+                    marginTop: '20px',
+                    paddingTop: '20px',
+                    borderTop: '1px solid #e0e0e0',
+                    fontSize: '12px',
+                    color: '#999999',
+                  }}
+                >
+                  微信二维码待补充
+                </div>
+              )}
             </div>
           ))}
         </div>

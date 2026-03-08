@@ -130,61 +130,7 @@ const News = () => {
           ))}
         </div>
 
-        {/* Call to Action */}
-        <div
-          style={{
-            marginTop: '60px',
-            padding: '40px',
-            backgroundColor: '#fafafa',
-            borderRadius: '8px',
-            border: '2px solid #a72027',
-            textAlign: 'center',
-          }}
-        >
-          <h3
-            style={{
-              color: '#a72027',
-              fontSize: '20px',
-              fontWeight: '600',
-              marginBottom: '20px',
-            }}
-          >
-            想要了解更多最新动态？
-          </h3>
-          <p
-            style={{
-              color: '#666666',
-              fontSize: '14px',
-              marginBottom: '20px',
-            }}
-          >
-            欢迎关注我们的微信公众号或联系市场部获取最新信息
-          </p>
-          <a
-            href="#contact"
-            style={{
-              display: 'inline-block',
-              padding: '12px 30px',
-              backgroundColor: '#a72027',
-              color: '#ffffff',
-              textDecoration: 'none',
-              borderRadius: '6px',
-              fontWeight: '600',
-              transition: 'all 0.3s ease',
-              boxShadow: '0 4px 12px rgba(167, 32, 39, 0.3)',
-            }}
-            onMouseEnter={(e) => {
-              e.currentTarget.style.backgroundColor = '#8a1a1f';
-              e.currentTarget.style.boxShadow = '0 6px 16px rgba(167, 32, 39, 0.4)';
-            }}
-            onMouseLeave={(e) => {
-              e.currentTarget.style.backgroundColor = '#a72027';
-              e.currentTarget.style.boxShadow = '0 4px 12px rgba(167, 32, 39, 0.3)';
-            }}
-          >
-            联系我们 →
-          </a>
-        </div>
+
       </div>
     </div>
   );
