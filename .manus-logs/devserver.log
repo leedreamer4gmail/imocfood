@@ -676,3 +676,17 @@
 [2026-03-08T14:38:27.955Z] 
 [2026-03-08T14:38:27.955Z] ➜  Local:   http://localhost:3000/
 [2026-03-08T14:38:27.956Z] ➜  Network: http://169.254.0.21:3000/
+[2026-03-08T14:42:15.555Z] 10:42:15 AM [vite] (client) hmr update /src/pages/Contact.tsx
+[2026-03-08T14:42:20.920Z] Dev server process group stopped
+[2026-03-08T14:42:20.923Z] ELIFECYCLE  Command failed.
+[2026-03-08T14:42:20.947Z] Dev server exited with code -15
+[2026-03-08T14:42:23.943Z] Starting dev server with command: pnpm run dev
+[2026-03-08T14:42:24.737Z] 
+[2026-03-08T14:42:24.737Z] > imocfood@1.0.0 dev /home/ubuntu/imocfood
+[2026-03-08T14:42:24.738Z] > vite --host
+[2026-03-08T14:42:24.738Z] 
+[2026-03-08T14:42:25.135Z] 
+[2026-03-08T14:42:25.135Z] VITE v7.3.1  ready in 356 ms
+[2026-03-08T14:42:25.136Z] 
+[2026-03-08T14:42:25.136Z] ➜  Local:   http://localhost:3000/
+[2026-03-08T14:42:25.137Z] ➜  Network: http://169.254.0.21:3000/

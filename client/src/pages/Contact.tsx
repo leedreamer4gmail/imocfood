@@ -97,13 +97,15 @@ const Contact = () => {
                   marginBottom: '20px',
                 }}
               >
-                {contact.email && (
-                  <p style={{ margin: '8px 0' }}>
-                    📧 <a href={`mailto:${contact.email}`} style={{ color: '#a72027', textDecoration: 'none' }}>
+                <p style={{ margin: '8px 0' }}>
+                  📧 {contact.email ? (
+                    <a href={`mailto:${contact.email}`} style={{ color: '#a72027', textDecoration: 'none' }}>
                       {contact.email}
                     </a>
-                  </p>
-                )}
+                  ) : (
+                    <span style={{ color: '#999999' }}>email：</span>
+                  )}
+                </p>
               </div>
 
               {/* WeChat QR Code */}
