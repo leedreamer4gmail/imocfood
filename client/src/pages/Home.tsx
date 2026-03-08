@@ -3,9 +3,11 @@ import React, { useState } from 'react';
 const Home: React.FC = () => {
   const [hoveredMenu, setHoveredMenu] = useState<string | null>(null);
   const [activeSection, setActiveSection] = useState<string>('home');
+  const [logoScale, setLogoScale] = useState(1);
 
-  const menuItems = ['主页', '联系我们', '我们的产品'];
+  const menuItems = ['主页', '联系我们', '我们的产品', '提供服务'];
   const redColor = '#a72027';
+  const logoUrl = 'https://d2xsxph8kpxj0f.cloudfront.net/85413465/Dn3NKGa7uppqoDB4SUPuXq/logoweb_e85335f9.jpg';
 
   const renderContent = () => {
     switch (activeSection) {
@@ -107,6 +109,78 @@ const Home: React.FC = () => {
             </div>
           </div>
         );
+      case 'services':
+        return (
+          <div style={{
+            maxWidth: '900px',
+            margin: '0 auto',
+            padding: '60px 40px'
+          }}>
+            <h2 style={{
+              fontSize: '32px',
+              fontWeight: '700',
+              marginBottom: '40px',
+              textAlign: 'center',
+              color: '#333'
+            }}>提供服务</h2>
+            <div style={{
+              display: 'grid',
+              gap: '30px'
+            }}>
+              {[
+                { num: '1', title: '来料加工', desc: '根据您的需求，我们提供专业的来料加工服务' },
+                { num: '2', title: '代加工贴牌', desc: '为您的品牌提供专业的代加工和贴牌服务' },
+                { num: '3', title: '现货发货', desc: '拥有充足库存，支持快速现货发货' },
+                { num: '4', title: '一件代发', desc: '支持一件代发，方便您的电商业务' },
+                { num: '5', title: '入驻平台', desc: '帮助您入驻各大电商平台' }
+              ].map((service, idx) => (
+                <div
+                  key={idx}
+                  style={{
+                    padding: '25px',
+                    border: `1px solid #e0e0e0`,
+                    borderRadius: '8px',
+                    display: 'flex',
+                    gap: '20px',
+                    transition: 'all 0.3s ease'
+                  }}
+                  onMouseEnter={(e) => {
+                    e.currentTarget.style.borderColor = redColor;
+                    e.currentTarget.style.backgroundColor = '#fafafa';
+                  }}
+                  onMouseLeave={(e) => {
+                    e.currentTarget.style.borderColor = '#e0e0e0';
+                    e.currentTarget.style.backgroundColor = 'transparent';
+                  }}
+                >
+                  <div style={{
+                    width: '50px',
+                    height: '50px',
+                    backgroundColor: redColor,
+                    color: '#fff',
+                    borderRadius: '50%',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    fontSize: '24px',
+                    fontWeight: '700',
+                    flexShrink: 0
+                  }}>
+                    {service.num}
+                  </div>
+                  <div>
+                    <h3 style={{ fontSize: '18px', color: '#333', marginBottom: '8px', fontWeight: '600' }}>
+                      {service.title}
+                    </h3>
+                    <p style={{ color: '#666', lineHeight: '1.6', fontSize: '14px' }}>
+                      {service.desc}
+                    </p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        );
       default:
         return (
           <div style={{
@@ -114,52 +188,36 @@ const Home: React.FC = () => {
             display: 'flex',
             flexDirection: 'column',
             justifyContent: 'center',
-            alignItems: 'center',
-            padding: '60px 40px',
-            textAlign: 'center'
+            padding: '60px 40px'
           }}>
             {/* Logo */}
             <div style={{
               marginBottom: '60px',
-              fontSize: '14px',
-              color: '#999',
-              marginTop: '-40px'
+              display: 'flex',
+              justifyContent: 'center'
             }}>
-              <div style={{
-                fontSize: '72px',
-                fontWeight: '700',
-                color: redColor,
-                letterSpacing: '4px',
-                marginBottom: '10px',
-                textShadow: '0 4px 12px rgba(167, 32, 39, 0.15)'
-              }}>
-                IMOC®
-              </div>
-              <div style={{
-                fontSize: '14px',
-                color: redColor,
-                letterSpacing: '2px',
-                marginBottom: '5px',
-                fontWeight: '500'
-              }}>
-                international meat open-source community
-              </div>
-              <div style={{
-                fontSize: '16px',
-                color: '#666',
-                fontWeight: '500',
-                letterSpacing: '2px'
-              }}>
-                国际并源肉制品联盟
-              </div>
+              <img
+                src={logoUrl}
+                alt="IMOC Logo"
+                style={{
+                  maxWidth: '500px',
+                  height: 'auto',
+                  transform: `scale(${logoScale})`,
+                  transition: 'transform 0.3s ease',
+                  cursor: 'pointer'
+                }}
+                onMouseEnter={() => setLogoScale(1.1)}
+                onMouseLeave={() => setLogoScale(1)}
+              />
             </div>
 
-            {/* Description */}
+            {/* Description - Left Aligned */}
             <div style={{
-              maxWidth: '700px',
+              maxWidth: '900px',
               lineHeight: '1.9',
               fontSize: '15px',
-              color: '#555'
+              color: '#555',
+              textAlign: 'left'
             }}>
               <p style={{ marginBottom: '20px' }}>
                 <strong>IMOC（国际开源肉制品联盟）</strong>是一家致力于推动全球肉制品产业创新与透明化的食品公司。我们拥有年轻、充满活力的团队，坚持真材实料的承诺，为消费者提供无添加、健康、天然的肉制品。
@@ -201,7 +259,8 @@ const Home: React.FC = () => {
         backgroundColor: '#fff',
         position: 'sticky',
         top: 0,
-        zIndex: 100
+        zIndex: 100,
+        flexWrap: 'wrap'
       }}>
         {menuItems.map((item) => (
           <button
@@ -210,6 +269,7 @@ const Home: React.FC = () => {
               if (item === '主页') setActiveSection('home');
               if (item === '联系我们') setActiveSection('contact');
               if (item === '我们的产品') setActiveSection('products');
+              if (item === '提供服务') setActiveSection('services');
             }}
             onMouseEnter={() => setHoveredMenu(item)}
             onMouseLeave={() => setHoveredMenu(null)}
@@ -236,9 +296,7 @@ const Home: React.FC = () => {
           flex: 1,
           display: 'flex',
           flexDirection: 'column',
-          justifyContent: 'center',
-          alignItems: 'center',
-          padding: '60px 40px'
+          justifyContent: 'center'
         }}>
           {renderContent()}
         </div>
