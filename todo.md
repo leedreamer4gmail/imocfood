@@ -37,4 +37,10 @@
 - [x] Update AdminNews.tsx to use new auth check (/api/admin/me)
 - [x] Create /api/admin/login, /api/admin/me, /api/admin/logout endpoints
 - [x] Remove Manus OAuth redirect from frontend
-- [ ] Test full login → CMS → publish flow on Vercel production
+- [x] Test full login → CMS → publish flow on Vercel production (all APIs verified working)
+
+## New Changes (2026-03-09)
+- [x] Fix Chroma 422 error (added dummy embeddings [0.0] to all add/update calls)
+- [x] Simplify news CMS to single text input (remove title/author/category fields)
+- [x] Replace homepage logo+chanpin images with 版头.jpg
+- [x] Add 小版头.jpg banner below nav on all non-home pages

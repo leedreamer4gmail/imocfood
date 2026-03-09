@@ -1,19 +1,18 @@
 import { TRPCError } from "@trpc/server";
 import { z } from "zod";
 import {
-  createArticle,
-  deleteArticle,
-  getAllArticles,
-  getArticleById,
-  getPublishedArticles,
-  updateArticle,
+  createPost,
+  deletePost,
+  getAllPosts,
+  getPostById,
+  getPublishedPosts,
+  updatePost,
 } from "../chromaDb";
 import { invokeLLM } from "../_core/llm";
 import { adminProcedure, publicProcedure, router } from "../_core/trpc";
 
 /**
  * Use LLM to translate Chinese text to English.
- * Returns the translated string, or null if translation fails.
  */
 async function translateToEnglish(chineseText: string): Promise<string | null> {
   try {
@@ -39,108 +38,34 @@ async function translateToEnglish(chineseText: string): Promise<string | null> {
 }
 
 export const newsRouter = router({
-  /** Public: list all published articles */
+  /** Public: list all published posts */
   list: publicProcedure.query(async () => {
-    return getPublishedArticles();
+    return getPublishedPosts();
   }),
 
-  /** Public: get a single published article by string ID */
-  getById: publicProcedure
-    .input(z.object({ id: z.string() }))
-    .query(async ({ input }) => {
-      const article = await getArticleById(input.id);
-      if (!article || !article.published) {
-        throw new TRPCError({ code: "NOT_FOUND", message: "Article not found" });
-      }
-      return article;
-    }),
-
-  /** Admin: list all articles (including drafts) */
+  /** Admin: list all posts (including unpublished) */
   adminList: adminProcedure.query(async () => {
-    return getAllArticles();
+    return getAllPosts();
   }),
 
-  /** Admin: get any article by ID */
-  adminGetById: adminProcedure
-    .input(z.object({ id: z.string() }))
-    .query(async ({ input }) => {
-      const article = await getArticleById(input.id);
-      if (!article) {
-        throw new TRPCError({ code: "NOT_FOUND", message: "Article not found" });
-      }
-      return article;
-    }),
-
-  /** Admin: create a new article with auto-translation */
+  /** Admin: create a new post with auto-translation */
   create: adminProcedure
     .input(
       z.object({
-        titleZh: z.string().min(1, "Title is required"),
-        contentZh: z.string().min(1, "Content is required"),
-        summaryZh: z.string().optional(),
-        author: z.string().optional(),
-        category: z.string().optional(),
-        coverImageUrl: z.string().url().optional().or(z.literal("")),
-        published: z.boolean().default(false),
+        contentZh: z.string().min(1, "内容不能为空"),
+        published: z.boolean().default(true),
       })
     )
     .mutation(async ({ input }) => {
-      // Auto-translate title and content
-      const [titleEn, contentEn, summaryEn] = await Promise.all([
-        translateToEnglish(input.titleZh),
-        translateToEnglish(input.contentZh),
-        input.summaryZh ? translateToEnglish(input.summaryZh) : Promise.resolve(null),
-      ]);
+      // Auto-translate content to English
+      const contentEn = await translateToEnglish(input.contentZh);
 
-      await createArticle({
-        titleZh: input.titleZh,
-        titleEn: titleEn,
+      await createPost({
         contentZh: input.contentZh,
         contentEn: contentEn,
-        summaryZh: input.summaryZh ?? null,
-        summaryEn: summaryEn,
-        author: input.author ?? null,
-        category: input.category ?? null,
-        coverImageUrl: input.coverImageUrl || null,
         published: input.published,
       });
 
-      return { success: true };
-    }),
-
-  /** Admin: update an article (re-translate if Chinese content changed) */
-  update: adminProcedure
-    .input(
-      z.object({
-        id: z.string(),
-        titleZh: z.string().min(1).optional(),
-        contentZh: z.string().min(1).optional(),
-        summaryZh: z.string().optional(),
-        author: z.string().optional(),
-        category: z.string().optional(),
-        coverImageUrl: z.string().url().optional().or(z.literal("")),
-        published: z.boolean().optional(),
-        retranslate: z.boolean().default(false),
-      })
-    )
-    .mutation(async ({ input }) => {
-      const { id, retranslate, ...fields } = input;
-
-      const updateData: Record<string, unknown> = { ...fields };
-
-      // Re-translate if Chinese content changed or retranslate flag set
-      if (retranslate || fields.titleZh || fields.contentZh || fields.summaryZh) {
-        const [titleEn, contentEn, summaryEn] = await Promise.all([
-          fields.titleZh ? translateToEnglish(fields.titleZh) : Promise.resolve(undefined),
-          fields.contentZh ? translateToEnglish(fields.contentZh) : Promise.resolve(undefined),
-          fields.summaryZh ? translateToEnglish(fields.summaryZh) : Promise.resolve(undefined),
-        ]);
-        if (titleEn !== undefined) updateData.titleEn = titleEn;
-        if (contentEn !== undefined) updateData.contentEn = contentEn;
-        if (summaryEn !== undefined) updateData.summaryEn = summaryEn;
-      }
-
-      await updateArticle(id, updateData);
       return { success: true };
     }),
 
@@ -148,15 +73,15 @@ export const newsRouter = router({
   togglePublish: adminProcedure
     .input(z.object({ id: z.string(), published: z.boolean() }))
     .mutation(async ({ input }) => {
-      await updateArticle(input.id, { published: input.published });
+      await updatePost(input.id, { published: input.published });
       return { success: true };
     }),
 
-  /** Admin: delete an article */
+  /** Admin: delete a post */
   delete: adminProcedure
     .input(z.object({ id: z.string() }))
     .mutation(async ({ input }) => {
-      await deleteArticle(input.id);
+      await deletePost(input.id);
       return { success: true };
     }),
 });

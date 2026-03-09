@@ -246,7 +246,13 @@ async function getCollectionId() {
   const createRes = await fetch(collectionBase(), {
     method: "POST",
     headers: headers(),
-    body: JSON.stringify({ name: COLLECTION_NAME, get_or_create: true })
+    body: JSON.stringify({
+      name: COLLECTION_NAME,
+      get_or_create: true,
+      configuration: {
+        hnsw: { space: "cosine" }
+      }
+    })
   });
   if (!createRes.ok) {
     const err = await createRes.text();
@@ -255,21 +261,13 @@ async function getCollectionId() {
   const created = await createRes.json();
   return created.id;
 }
-function metaToArticle(id, meta) {
+function metaToPost(id, meta) {
   return {
     id,
-    titleZh: meta.titleZh ?? "",
-    titleEn: meta.titleEn || null,
     contentZh: meta.contentZh ?? "",
     contentEn: meta.contentEn || null,
-    summaryZh: meta.summaryZh || null,
-    summaryEn: meta.summaryEn || null,
-    author: meta.author || null,
-    category: meta.category || null,
     published: Boolean(meta.published),
-    coverImageUrl: meta.coverImageUrl || null,
-    createdAt: meta.createdAt ?? Date.now(),
-    updatedAt: meta.updatedAt ?? Date.now()
+    createdAt: meta.createdAt ?? Date.now()
   };
 }
 async function getAllRecords(where) {
@@ -290,27 +288,27 @@ async function getAllRecords(where) {
   }
   return res.json();
 }
-async function getPublishedArticles() {
+async function getPublishedPosts() {
   const result = await getAllRecords({ published: { $eq: true } });
-  const articles = [];
+  const posts = [];
   for (let i = 0; i < result.ids.length; i++) {
     const id = result.ids[i];
     const meta = result.metadatas?.[i];
-    if (id && meta) articles.push(metaToArticle(id, meta));
+    if (id && meta) posts.push(metaToPost(id, meta));
   }
-  return articles.sort((a, b) => b.createdAt - a.createdAt);
+  return posts.sort((a, b) => b.createdAt - a.createdAt);
 }
-async function getAllArticles() {
+async function getAllPosts() {
   const result = await getAllRecords();
-  const articles = [];
+  const posts = [];
   for (let i = 0; i < result.ids.length; i++) {
     const id = result.ids[i];
     const meta = result.metadatas?.[i];
-    if (id && meta) articles.push(metaToArticle(id, meta));
+    if (id && meta) posts.push(metaToPost(id, meta));
   }
-  return articles.sort((a, b) => b.createdAt - a.createdAt);
+  return posts.sort((a, b) => b.createdAt - a.createdAt);
 }
-async function getArticleById(id) {
+async function getPostById(id) {
   const colId = await getCollectionId();
   const res = await fetch(`${collectionBase()}/${colId}/get`, {
     method: "POST",
@@ -320,32 +318,25 @@ async function getArticleById(id) {
   if (!res.ok) return void 0;
   const result = await res.json();
   if (!result.ids[0] || !result.metadatas?.[0]) return void 0;
-  return metaToArticle(result.ids[0], result.metadatas[0]);
+  return metaToPost(result.ids[0], result.metadatas[0]);
 }
-async function createArticle(data) {
+async function createPost(data) {
   const colId = await getCollectionId();
-  const id = `article_${Date.now()}_${Math.random().toString(36).slice(2, 8)}`;
+  const id = `post_${Date.now()}_${Math.random().toString(36).slice(2, 8)}`;
   const now = Date.now();
   const meta = {
-    titleZh: data.titleZh,
-    titleEn: data.titleEn ?? "",
     contentZh: data.contentZh,
     contentEn: data.contentEn ?? "",
-    summaryZh: data.summaryZh ?? "",
-    summaryEn: data.summaryEn ?? "",
-    author: data.author ?? "",
-    category: data.category ?? "",
-    published: data.published,
-    coverImageUrl: data.coverImageUrl ?? "",
-    createdAt: now,
-    updatedAt: now
+    published: data.published ?? true,
+    createdAt: now
   };
   const res = await fetch(`${collectionBase()}/${colId}/add`, {
     method: "POST",
     headers: headers(),
     body: JSON.stringify({
       ids: [id],
-      documents: [data.titleZh],
+      embeddings: [DUMMY_EMBEDDING],
+      documents: [data.contentZh.slice(0, 200)],
       metadatas: [meta]
     })
   });
@@ -355,30 +346,23 @@ async function createArticle(data) {
   }
   return id;
 }
-async function updateArticle(id, data) {
-  const existing = await getArticleById(id);
-  if (!existing) throw new Error(`Article ${id} not found`);
+async function updatePost(id, data) {
+  const existing = await getPostById(id);
+  if (!existing) throw new Error(`Post ${id} not found`);
   const colId = await getCollectionId();
   const meta = {
-    titleZh: data.titleZh ?? existing.titleZh,
-    titleEn: data.titleEn ?? existing.titleEn ?? "",
     contentZh: data.contentZh ?? existing.contentZh,
     contentEn: data.contentEn ?? existing.contentEn ?? "",
-    summaryZh: data.summaryZh ?? existing.summaryZh ?? "",
-    summaryEn: data.summaryEn ?? existing.summaryEn ?? "",
-    author: data.author ?? existing.author ?? "",
-    category: data.category ?? existing.category ?? "",
     published: data.published ?? existing.published,
-    coverImageUrl: data.coverImageUrl ?? existing.coverImageUrl ?? "",
-    createdAt: existing.createdAt,
-    updatedAt: Date.now()
+    createdAt: existing.createdAt
   };
   const res = await fetch(`${collectionBase()}/${colId}/update`, {
     method: "POST",
     headers: headers(),
     body: JSON.stringify({
       ids: [id],
-      documents: [meta.titleZh],
+      embeddings: [DUMMY_EMBEDDING],
+      documents: [meta.contentZh.slice(0, 200)],
       metadatas: [meta]
     })
   });
@@ -387,7 +371,7 @@ async function updateArticle(id, data) {
     throw new Error(`Chroma update failed: ${res.status} ${err}`);
   }
 }
-async function deleteArticle(id) {
+async function deletePost(id) {
   const colId = await getCollectionId();
   const res = await fetch(`${collectionBase()}/${colId}/delete`, {
     method: "POST",
@@ -399,15 +383,16 @@ async function deleteArticle(id) {
     throw new Error(`Chroma delete failed: ${res.status} ${err}`);
   }
 }
-var CHROMA_API_KEY, CHROMA_TENANT, CHROMA_DATABASE, COLLECTION_NAME, BASE_URL;
+var CHROMA_API_KEY, CHROMA_TENANT, CHROMA_DATABASE, COLLECTION_NAME, BASE_URL, DUMMY_EMBEDDING;
 var init_chromaDb = __esm({
   "server/chromaDb.ts"() {
     "use strict";
     CHROMA_API_KEY = process.env.CHROMA_API_KEY ?? "";
     CHROMA_TENANT = process.env.CHROMA_TENANT ?? "";
     CHROMA_DATABASE = "imocfood";
-    COLLECTION_NAME = "news_articles";
+    COLLECTION_NAME = "news_posts";
     BASE_URL = "https://api.trychroma.com/api/v2";
+    DUMMY_EMBEDDING = [0];
   }
 });
 
@@ -581,7 +566,6 @@ var init_llm = __esm({
 });
 
 // server/routers/news.ts
-import { TRPCError as TRPCError3 } from "@trpc/server";
 import { z as z2 } from "zod";
 async function translateToEnglish(chineseText) {
   try {
@@ -612,98 +596,37 @@ var init_news = __esm({
     init_llm();
     init_trpc();
     newsRouter = router({
-      /** Public: list all published articles */
+      /** Public: list all published posts */
       list: publicProcedure.query(async () => {
-        return getPublishedArticles();
+        return getPublishedPosts();
       }),
-      /** Public: get a single published article by string ID */
-      getById: publicProcedure.input(z2.object({ id: z2.string() })).query(async ({ input }) => {
-        const article = await getArticleById(input.id);
-        if (!article || !article.published) {
-          throw new TRPCError3({ code: "NOT_FOUND", message: "Article not found" });
-        }
-        return article;
-      }),
-      /** Admin: list all articles (including drafts) */
+      /** Admin: list all posts (including unpublished) */
       adminList: adminProcedure.query(async () => {
-        return getAllArticles();
+        return getAllPosts();
       }),
-      /** Admin: get any article by ID */
-      adminGetById: adminProcedure.input(z2.object({ id: z2.string() })).query(async ({ input }) => {
-        const article = await getArticleById(input.id);
-        if (!article) {
-          throw new TRPCError3({ code: "NOT_FOUND", message: "Article not found" });
-        }
-        return article;
-      }),
-      /** Admin: create a new article with auto-translation */
+      /** Admin: create a new post with auto-translation */
       create: adminProcedure.input(
         z2.object({
-          titleZh: z2.string().min(1, "Title is required"),
-          contentZh: z2.string().min(1, "Content is required"),
-          summaryZh: z2.string().optional(),
-          author: z2.string().optional(),
-          category: z2.string().optional(),
-          coverImageUrl: z2.string().url().optional().or(z2.literal("")),
-          published: z2.boolean().default(false)
+          contentZh: z2.string().min(1, "\u5185\u5BB9\u4E0D\u80FD\u4E3A\u7A7A"),
+          published: z2.boolean().default(true)
         })
       ).mutation(async ({ input }) => {
-        const [titleEn, contentEn, summaryEn] = await Promise.all([
-          translateToEnglish(input.titleZh),
-          translateToEnglish(input.contentZh),
-          input.summaryZh ? translateToEnglish(input.summaryZh) : Promise.resolve(null)
-        ]);
-        await createArticle({
-          titleZh: input.titleZh,
-          titleEn,
+        const contentEn = await translateToEnglish(input.contentZh);
+        await createPost({
           contentZh: input.contentZh,
           contentEn,
-          summaryZh: input.summaryZh ?? null,
-          summaryEn,
-          author: input.author ?? null,
-          category: input.category ?? null,
-          coverImageUrl: input.coverImageUrl || null,
           published: input.published
         });
         return { success: true };
       }),
-      /** Admin: update an article (re-translate if Chinese content changed) */
-      update: adminProcedure.input(
-        z2.object({
-          id: z2.string(),
-          titleZh: z2.string().min(1).optional(),
-          contentZh: z2.string().min(1).optional(),
-          summaryZh: z2.string().optional(),
-          author: z2.string().optional(),
-          category: z2.string().optional(),
-          coverImageUrl: z2.string().url().optional().or(z2.literal("")),
-          published: z2.boolean().optional(),
-          retranslate: z2.boolean().default(false)
-        })
-      ).mutation(async ({ input }) => {
-        const { id, retranslate, ...fields } = input;
-        const updateData = { ...fields };
-        if (retranslate || fields.titleZh || fields.contentZh || fields.summaryZh) {
-          const [titleEn, contentEn, summaryEn] = await Promise.all([
-            fields.titleZh ? translateToEnglish(fields.titleZh) : Promise.resolve(void 0),
-            fields.contentZh ? translateToEnglish(fields.contentZh) : Promise.resolve(void 0),
-            fields.summaryZh ? translateToEnglish(fields.summaryZh) : Promise.resolve(void 0)
-          ]);
-          if (titleEn !== void 0) updateData.titleEn = titleEn;
-          if (contentEn !== void 0) updateData.contentEn = contentEn;
-          if (summaryEn !== void 0) updateData.summaryEn = summaryEn;
-        }
-        await updateArticle(id, updateData);
-        return { success: true };
-      }),
       /** Admin: toggle publish status */
       togglePublish: adminProcedure.input(z2.object({ id: z2.string(), published: z2.boolean() })).mutation(async ({ input }) => {
-        await updateArticle(input.id, { published: input.published });
+        await updatePost(input.id, { published: input.published });
         return { success: true };
       }),
-      /** Admin: delete an article */
+      /** Admin: delete a post */
       delete: adminProcedure.input(z2.object({ id: z2.string() })).mutation(async ({ input }) => {
-        await deleteArticle(input.id);
+        await deletePost(input.id);
         return { success: true };
       })
     });

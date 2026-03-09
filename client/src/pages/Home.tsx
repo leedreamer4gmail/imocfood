@@ -1,41 +1,20 @@
 import React from 'react';
 import { useLanguage } from '../contexts/LanguageContext';
 
+const bannerUrl = 'https://d2xsxph8kpxj0f.cloudfront.net/85413465/Dn3NKGa7uppqoDB4SUPuXq/bantou_ea09ef78.jpg';
+
 const Home = () => {
-  const logoUrl = 'https://d2xsxph8kpxj0f.cloudfront.net/85413465/Dn3NKGa7uppqoDB4SUPuXq/logoweb_eed8c41b.jpg';
-  const productImageUrl = 'https://d2xsxph8kpxj0f.cloudfront.net/85413465/Dn3NKGa7uppqoDB4SUPuXq/chanpin_e5ff5e4d.jpg';
   const { t } = useLanguage();
 
   return (
     <div style={{ backgroundColor: '#ffffff' }}>
-      {/* Logo Section */}
-      <section
-        style={{
-          padding: '60px 40px',
-          display: 'flex',
-          flexDirection: 'column',
-          alignItems: 'center',
-          justifyContent: 'center',
-        }}
-      >
+      {/* Full-width banner image */}
+      <section style={{ lineHeight: 0 }}>
         <img
-          src={logoUrl}
-          alt="IMOC Logo"
-          style={{
-            maxWidth: '400px',
-            width: '100%',
-            height: 'auto',
-            marginBottom: '80px',
-          }}
-        />
-
-        {/* Products Image - Full Width */}
-        <img
-          src={productImageUrl}
-          alt="Products"
+          src={bannerUrl}
+          alt="IMOC 国际开源肉制品联盟"
           style={{
             width: '100%',
-            maxWidth: '1200px',
             height: 'auto',
             display: 'block',
           }}
