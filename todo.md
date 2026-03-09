@@ -64,3 +64,9 @@
 
 ## Contact Page Restore (2026-03-09)
 - [x] Restore Contact page to card layout: 16:9 photo + email + phone + WeChat QR, horizontal row
+
+## Contact Page Update (2026-03-09 c)
+- [x] Upload qny QR code to CDN
+- [x] Add Queeny (姚嘉琳) as third contact with email yjl_yao@126.com
+- [x] All cards show Email/Phone/WeChat uniformly (blank label if no data)
+- [x] QR code centered in card

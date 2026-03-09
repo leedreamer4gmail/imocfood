@@ -2,14 +2,14 @@ import React from 'react';
 import { useLanguage } from '../contexts/LanguageContext';
 
 // ============================================================
-// 联系人信息 - 在这里修改电话、邮箱、照片等
-// Contact info - edit phone, email, photo here
+// 联系人信息 - 在这里修改姓名、职位、照片、邮箱、电话、二维码
+// Contact info - edit name, title, photo, email, phone, qrUrl here
 // ============================================================
 const CONTACTS = [
   {
     name: '李梦',
     title: '市场总监',
-    photo: '', // 留空显示占位框，或填入照片URL
+    photo: '',  // 填入照片URL，留空显示红色占位
     email: 'leedreamer4@gmail.com',
     phone: '13800138000',
     qrUrl: 'https://d2xsxph8kpxj0f.cloudfront.net/85413465/Dn3NKGa7uppqoDB4SUPuXq/lm二维码_7265883d.jpg',
@@ -17,10 +17,18 @@ const CONTACTS = [
   {
     name: '潘海露',
     title: '市场部',
-    photo: '', // 留空显示占位框，或填入照片URL
+    photo: '',
     email: '',
     phone: '',
     qrUrl: 'https://d2xsxph8kpxj0f.cloudfront.net/85413465/Dn3NKGa7uppqoDB4SUPuXq/market二维码_989005d0.jpg',
+  },
+  {
+    name: '姚嘉琳 Queeny',
+    title: '',
+    photo: '',
+    email: 'yjl_yao@126.com',
+    phone: '',
+    qrUrl: 'https://d2xsxph8kpxj0f.cloudfront.net/85413465/Dn3NKGa7uppqoDB4SUPuXq/qny-qrcode_41ef5ced.jpg',
   },
 ];
 // ============================================================
@@ -55,7 +63,7 @@ const Contact = () => {
             <div
               key={index}
               style={{
-                flex: '1 1 280px',
+                flex: '1 1 260px',
                 maxWidth: '320px',
                 border: '2px solid #e0e0e0',
                 borderRadius: '8px',
@@ -76,7 +84,7 @@ const Contact = () => {
               <div
                 style={{
                   width: '100%',
-                  paddingTop: '56.25%', /* 16:9 ratio */
+                  paddingTop: '56.25%',
                   position: 'relative',
                   backgroundColor: '#a72027',
                   overflow: 'hidden',
@@ -117,41 +125,64 @@ const Contact = () => {
 
               {/* Card body */}
               <div style={{ padding: '20px' }}>
+                {/* Name */}
                 <h3 style={{ fontSize: '16px', fontWeight: '700', color: '#333', margin: '0 0 4px 0' }}>
                   {contact.name}
                 </h3>
-                {contact.title && (
-                  <p style={{ fontSize: '13px', color: '#a72027', margin: '0 0 14px 0' }}>
-                    {contact.title}
-                  </p>
-                )}
+                {/* Title - always reserve space */}
+                <p style={{ fontSize: '13px', color: '#a72027', margin: '0 0 16px 0', minHeight: '18px' }}>
+                  {contact.title || '\u00a0'}
+                </p>
 
-                {contact.email && (
-                  <p style={{ fontSize: '13px', color: '#555', margin: '0 0 6px 0' }}>
-                    Email:{' '}
+                {/* Email - always show label */}
+                <p style={{ fontSize: '13px', color: '#555', margin: '0 0 8px 0' }}>
+                  Email：{contact.email ? (
                     <a href={`mailto:${contact.email}`} style={{ color: '#a72027', textDecoration: 'none' }}>
                       {contact.email}
                     </a>
-                  </p>
-                )}
+                  ) : ''}
+                </p>
 
-                {contact.phone && (
-                  <p style={{ fontSize: '13px', color: '#555', margin: '0 0 14px 0' }}>
-                    phone: {contact.phone}
-                  </p>
-                )}
+                {/* Phone - always show label */}
+                <p style={{ fontSize: '13px', color: '#555', margin: '0 0 16px 0' }}>
+                  电话：{contact.phone || ''}
+                </p>
 
-                {/* WeChat QR */}
-                {contact.qrUrl && (
-                  <div style={{ marginTop: '14px', paddingTop: '14px', borderTop: '1px solid #e0e0e0' }}>
-                    <p style={{ fontSize: '12px', color: '#999', margin: '0 0 8px 0' }}>微信：</p>
+                {/* WeChat QR - always show label, QR centered */}
+                <div style={{ paddingTop: '14px', borderTop: '1px solid #e0e0e0', textAlign: 'center' }}>
+                  <p style={{ fontSize: '12px', color: '#999', margin: '0 0 10px 0', textAlign: 'left' }}>微信：</p>
+                  {contact.qrUrl ? (
                     <img
                       src={contact.qrUrl}
                       alt={`${contact.name} WeChat`}
-                      style={{ width: '100%', maxWidth: '160px', height: 'auto', borderRadius: '4px' }}
+                      style={{
+                        width: '140px',
+                        height: '140px',
+                        objectFit: 'contain',
+                        borderRadius: '4px',
+                        display: 'block',
+                        margin: '0 auto',
+                      }}
                     />
-                  </div>
-                )}
+                  ) : (
+                    <div
+                      style={{
+                        width: '140px',
+                        height: '140px',
+                        backgroundColor: '#f0f0f0',
+                        borderRadius: '4px',
+                        display: 'flex',
+                        alignItems: 'center',
+                        justifyContent: 'center',
+                        margin: '0 auto',
+                        color: '#ccc',
+                        fontSize: '12px',
+                      }}
+                    >
+                      二维码
+                    </div>
+                  )}
+                </div>
               </div>
             </div>
           ))}
