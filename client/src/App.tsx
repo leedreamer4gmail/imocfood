@@ -11,6 +11,7 @@ type Page = 'home' | 'products' | 'services' | 'contact' | 'news' | 'admin';
 
 function AppContent() {
   const [currentPage, setCurrentPage] = useState<Page>('home');
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const { language, setLanguage, t } = useLanguage();
 
   // Support /admin/news URL path for admin access
@@ -29,7 +30,12 @@ function AppContent() {
     { id: 'news', label: t('nav.news') },
   ];
 
-  // make sure to consider if you need authentication for certain routes
+  const navigate = (page: Page) => {
+    setCurrentPage(page);
+    setMobileMenuOpen(false);
+    window.scrollTo(0, 0);
+  };
+
   return (
     <div style={{ minHeight: '100vh', backgroundColor: '#ffffff' }}>
       {/* Navigation */}
@@ -38,104 +44,223 @@ function AppContent() {
           position: 'sticky' as const,
           top: 0,
           zIndex: 1000,
-          backgroundColor: 'rgba(255, 255, 255, 0.95)',
+          backgroundColor: 'rgba(255, 255, 255, 0.97)',
           backdropFilter: 'blur(10px)',
           borderBottom: '1px solid rgba(167, 32, 39, 0.1)',
-          padding: '0 40px',
-          display: 'flex',
-          justifyContent: 'center',
-          alignItems: 'center',
-          height: '70px',
         }}
       >
-        <div style={{ display: 'flex', gap: '40px', alignItems: 'center' }}>
-          {menuItems.map((item) => (
+        {/* Desktop nav */}
+        <div
+          style={{
+            display: 'flex',
+            justifyContent: 'center',
+            alignItems: 'center',
+            height: '70px',
+            padding: '0 40px',
+            position: 'relative',
+          }}
+          className="desktop-nav"
+        >
+          <div style={{ display: 'flex', gap: '40px', alignItems: 'center' }}>
+            {menuItems.map((item) => (
+              <button
+                key={item.id}
+                onClick={() => navigate(item.id as Page)}
+                style={{
+                  background: 'none',
+                  border: 'none',
+                  fontSize: '16px',
+                  fontWeight: currentPage === item.id ? '600' : '400',
+                  color: currentPage === item.id ? '#a72027' : '#333333',
+                  cursor: 'pointer',
+                  padding: '8px 16px',
+                  borderRadius: '6px',
+                  transition: 'all 0.3s ease',
+                  backgroundColor: currentPage === item.id ? 'rgba(167, 32, 39, 0.1)' : 'transparent',
+                  whiteSpace: 'nowrap' as const,
+                }}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.backgroundColor = '#a72027';
+                  e.currentTarget.style.color = '#ffffff';
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.backgroundColor =
+                    currentPage === item.id ? 'rgba(167, 32, 39, 0.1)' : 'transparent';
+                  e.currentTarget.style.color = currentPage === item.id ? '#a72027' : '#333333';
+                }}
+              >
+                {item.label}
+              </button>
+            ))}
+          </div>
+
+          {/* Language Switcher - desktop */}
+          <div style={{ display: 'flex', gap: '10px', alignItems: 'center', position: 'absolute', right: '40px' }}>
             <button
-              key={item.id}
-              onClick={() => { setCurrentPage(item.id as Page); window.scrollTo(0, 0); }}
+              onClick={() => setLanguage('zh')}
+              style={{
+                background: language === 'zh' ? '#a72027' : 'transparent',
+                color: language === 'zh' ? '#ffffff' : '#333333',
+                border: '1px solid #a72027',
+                padding: '6px 12px',
+                borderRadius: '4px',
+                cursor: 'pointer',
+                fontSize: '14px',
+                fontWeight: language === 'zh' ? '600' : '400',
+                transition: 'all 0.3s ease',
+                whiteSpace: 'nowrap' as const,
+              }}
+            >
+              中文
+            </button>
+            <button
+              onClick={() => setLanguage('en')}
+              style={{
+                background: language === 'en' ? '#a72027' : 'transparent',
+                color: language === 'en' ? '#ffffff' : '#333333',
+                border: '1px solid #a72027',
+                padding: '6px 12px',
+                borderRadius: '4px',
+                cursor: 'pointer',
+                fontSize: '14px',
+                fontWeight: language === 'en' ? '600' : '400',
+                transition: 'all 0.3s ease',
+                whiteSpace: 'nowrap' as const,
+              }}
+            >
+              English
+            </button>
+          </div>
+        </div>
+
+        {/* Mobile nav bar */}
+        <div
+          className="mobile-nav"
+          style={{
+            display: 'none',
+            justifyContent: 'space-between',
+            alignItems: 'center',
+            height: '56px',
+            padding: '0 16px',
+          }}
+        >
+          {/* Current page label */}
+          <span style={{ fontSize: '16px', fontWeight: '600', color: '#a72027' }}>
+            {menuItems.find(m => m.id === currentPage)?.label || 'IMOC'}
+          </span>
+
+          <div style={{ display: 'flex', gap: '8px', alignItems: 'center' }}>
+            {/* Language switcher - mobile */}
+            <button
+              onClick={() => setLanguage(language === 'zh' ? 'en' : 'zh')}
+              style={{
+                background: 'transparent',
+                color: '#a72027',
+                border: '1px solid #a72027',
+                padding: '4px 8px',
+                borderRadius: '4px',
+                cursor: 'pointer',
+                fontSize: '12px',
+                fontWeight: '600',
+              }}
+            >
+              {language === 'zh' ? 'EN' : '中文'}
+            </button>
+
+            {/* Hamburger button */}
+            <button
+              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
               style={{
                 background: 'none',
                 border: 'none',
-                fontSize: '16px',
-                fontWeight: currentPage === item.id ? '600' : '400',
-                color: currentPage === item.id ? '#a72027' : '#333333',
                 cursor: 'pointer',
-                padding: '8px 16px',
-                borderRadius: '6px',
-                transition: 'all 0.3s ease',
-                backgroundColor: currentPage === item.id ? 'rgba(167, 32, 39, 0.1)' : 'transparent',
+                padding: '8px',
+                display: 'flex',
+                flexDirection: 'column' as const,
+                gap: '5px',
+                justifyContent: 'center',
+                alignItems: 'center',
               }}
-              onMouseEnter={(e) => {
-                e.currentTarget.style.backgroundColor = '#a72027';
-                e.currentTarget.style.color = '#ffffff';
-              }}
-              onMouseLeave={(e) => {
-                e.currentTarget.style.backgroundColor =
-                  currentPage === item.id ? 'rgba(167, 32, 39, 0.1)' : 'transparent';
-                e.currentTarget.style.color = currentPage === item.id ? '#a72027' : '#333333';
-              }}
+              aria-label="Toggle menu"
             >
-              {item.label}
+              <span style={{
+                display: 'block',
+                width: '22px',
+                height: '2px',
+                backgroundColor: '#a72027',
+                transition: 'all 0.3s ease',
+                transform: mobileMenuOpen ? 'rotate(45deg) translate(5px, 5px)' : 'none',
+              }} />
+              <span style={{
+                display: 'block',
+                width: '22px',
+                height: '2px',
+                backgroundColor: '#a72027',
+                transition: 'all 0.3s ease',
+                opacity: mobileMenuOpen ? 0 : 1,
+              }} />
+              <span style={{
+                display: 'block',
+                width: '22px',
+                height: '2px',
+                backgroundColor: '#a72027',
+                transition: 'all 0.3s ease',
+                transform: mobileMenuOpen ? 'rotate(-45deg) translate(5px, -5px)' : 'none',
+              }} />
             </button>
-          ))}
+          </div>
         </div>
 
-        {/* Language Switcher */}
-        <div style={{ display: 'flex', gap: '10px', alignItems: 'center', position: 'absolute', right: '40px' }}>
-          <button
-            onClick={() => setLanguage('zh')}
+        {/* Mobile dropdown menu */}
+        {mobileMenuOpen && (
+          <div
+            className="mobile-dropdown"
             style={{
-              background: language === 'zh' ? '#a72027' : 'transparent',
-              color: language === 'zh' ? '#ffffff' : '#333333',
-              border: '1px solid #a72027',
-              padding: '6px 12px',
-              borderRadius: '4px',
-              cursor: 'pointer',
-              fontSize: '14px',
-              fontWeight: language === 'zh' ? '600' : '400',
-              transition: 'all 0.3s ease',
-            }}
-            onMouseEnter={(e) => {
-              if (language !== 'zh') {
-                e.currentTarget.style.backgroundColor = 'rgba(167, 32, 39, 0.1)';
-              }
-            }}
-            onMouseLeave={(e) => {
-              if (language !== 'zh') {
-                e.currentTarget.style.backgroundColor = 'transparent';
-              }
+              backgroundColor: '#ffffff',
+              borderTop: '1px solid rgba(167, 32, 39, 0.1)',
+              padding: '8px 0',
+              boxShadow: '0 4px 12px rgba(0,0,0,0.1)',
             }}
           >
-            中文
-          </button>
-          <button
-            onClick={() => setLanguage('en')}
-            style={{
-              background: language === 'en' ? '#a72027' : 'transparent',
-              color: language === 'en' ? '#ffffff' : '#333333',
-              border: '1px solid #a72027',
-              padding: '6px 12px',
-              borderRadius: '4px',
-              cursor: 'pointer',
-              fontSize: '14px',
-              fontWeight: language === 'en' ? '600' : '400',
-              transition: 'all 0.3s ease',
-            }}
-            onMouseEnter={(e) => {
-              if (language !== 'en') {
-                e.currentTarget.style.backgroundColor = 'rgba(167, 32, 39, 0.1)';
-              }
-            }}
-            onMouseLeave={(e) => {
-              if (language !== 'en') {
-                e.currentTarget.style.backgroundColor = 'transparent';
-              }
-            }}
-          >
-            English
-          </button>
-        </div>
+            {menuItems.map((item) => (
+              <button
+                key={item.id}
+                onClick={() => navigate(item.id as Page)}
+                style={{
+                  display: 'block',
+                  width: '100%',
+                  background: 'none',
+                  border: 'none',
+                  fontSize: '16px',
+                  fontWeight: currentPage === item.id ? '600' : '400',
+                  color: currentPage === item.id ? '#a72027' : '#333333',
+                  cursor: 'pointer',
+                  padding: '14px 24px',
+                  textAlign: 'left' as const,
+                  backgroundColor: currentPage === item.id ? 'rgba(167, 32, 39, 0.06)' : 'transparent',
+                  borderLeft: currentPage === item.id ? '3px solid #a72027' : '3px solid transparent',
+                  transition: 'all 0.2s ease',
+                }}
+              >
+                {item.label}
+              </button>
+            ))}
+          </div>
+        )}
       </nav>
+
+      {/* Responsive CSS */}
+      <style>{`
+        @media (max-width: 768px) {
+          .desktop-nav { display: none !important; }
+          .mobile-nav { display: flex !important; }
+        }
+        @media (min-width: 769px) {
+          .desktop-nav { display: flex !important; }
+          .mobile-nav { display: none !important; }
+          .mobile-dropdown { display: none !important; }
+        }
+      `}</style>
 
       {/* Small banner for non-home pages (directly below nav, no gap) */}
       {currentPage !== 'home' && currentPage !== 'admin' && (

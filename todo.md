@@ -70,3 +70,6 @@
 - [x] Add Queeny (姚嘉琳) as third contact with email yjl_yao@126.com
 - [x] All cards show Email/Phone/WeChat uniformly (blank label if no data)
 - [x] QR code centered in card
+
+## Mobile Menu (2026-03-09)
+- [x] Responsive hamburger menu for mobile: hamburger icon opens dropdown with all nav items, desktop unchanged
