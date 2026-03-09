@@ -61,3 +61,6 @@
 
 ## Jitter Fix (2026-03-09)
 - [x] Fix horizontal layout shift when switching pages (added overflow-y: scroll to html to keep scrollbar always visible)
+
+## Contact Page Restore (2026-03-09)
+- [x] Restore Contact page to card layout: 16:9 photo + email + phone + WeChat QR, horizontal row
