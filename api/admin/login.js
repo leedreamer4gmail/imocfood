@@ -1,6 +1,6 @@
 // _api-src/admin/login.ts
 import { SignJWT } from "jose";
-var ADMIN_USERNAME = process.env.ADMIN_USERNAME ?? "leedreamer";
+var ADMIN_USERNAME = "leedreamer";
 var JWT_SECRET = process.env.JWT_SECRET ?? "fallback-secret-change-me";
 var COOKIE_MAX_AGE = 60 * 60 * 24 * 30;
 async function handler(req, res) {

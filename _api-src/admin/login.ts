@@ -6,7 +6,8 @@
 import type { VercelRequest, VercelResponse } from "@vercel/node";
 import { SignJWT } from "jose";
 
-const ADMIN_USERNAME = process.env.ADMIN_USERNAME ?? "leedreamer";
+// Hardcoded admin username - not using env var to avoid Vercel BYOK override
+const ADMIN_USERNAME = "leedreamer";
 const JWT_SECRET = process.env.JWT_SECRET ?? "fallback-secret-change-me";
 const COOKIE_MAX_AGE = 60 * 60 * 24 * 30; // 30 days
 
