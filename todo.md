@@ -44,3 +44,8 @@
 - [x] Simplify news CMS to single text input (remove title/author/category fields)
 - [x] Replace homepage logo+chanpin images with 版头.jpg
 - [x] Add 小版头.jpg banner below nav on all non-home pages
+- [x] Fix 版头.jpg and 小版头.jpg to display at original size (not stretched full-width)
+- [x] Add pagination to public news page (20 per page, with page number controls)
+- [x] Add bulkDelete tRPC procedure for batch deletion
+- [x] Redesign admin CMS as compact list (one row per post, checkbox + status dot + content preview + date + delete button)
+- [x] Add bulk delete toolbar with select-all checkbox

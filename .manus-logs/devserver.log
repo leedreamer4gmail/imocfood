@@ -921,3 +921,7 @@
 [2026-03-09T04:29:46.080Z] 12:29:46 AM [vite] (client) hmr update /src/pages/News.tsx
 [2026-03-09T04:30:02.764Z] 12:30:02 AM [vite] (client) hmr update /src/pages/Home.tsx
 [2026-03-09T04:30:17.968Z] 12:30:17 AM [vite] (client) hmr update /src/App.tsx
+[2026-03-09T05:12:50.101Z] 1:12:50 AM [vite] (client) hmr update /src/pages/Home.tsx
+[2026-03-09T05:13:17.160Z] 1:13:17 AM [tsx] change in ./server/routers/news.ts Restarting...
+[2026-03-09T05:13:18.666Z] c[OAuth] Initialized with baseURL: https://api.manus.im
+[2026-03-09T05:13:18.907Z] Server running on http://localhost:3000/

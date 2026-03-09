@@ -85,13 +85,22 @@ function createUserContext(): TrpcContext {
   };
 }
 
-describe("news.list (public)", () => {
-  it("returns published posts for public users", async () => {
+describe("news.list (public, paginated)", () => {
+  it("returns paginated published posts for public users", async () => {
     const caller = appRouter.createCaller(createPublicContext());
-    const posts = await caller.news.list();
-    expect(posts).toHaveLength(1);
-    expect(posts[0].contentZh).toBe("这是测试动态内容");
-    expect(posts[0].published).toBe(true);
+    const result = await caller.news.list({ page: 1 });
+    expect(result.posts).toHaveLength(1);
+    expect(result.posts[0].contentZh).toBe("这是测试动态内容");
+    expect(result.posts[0].published).toBe(true);
+    expect(result.total).toBe(1);
+    expect(result.totalPages).toBe(1);
+    expect(result.page).toBe(1);
+  });
+
+  it("returns page 1 by default", async () => {
+    const caller = appRouter.createCaller(createPublicContext());
+    const result = await caller.news.list({});
+    expect(result.page).toBe(1);
   });
 });
 
@@ -130,20 +139,14 @@ describe("news.create (admin only)", () => {
   it("throws FORBIDDEN for regular users", async () => {
     const caller = appRouter.createCaller(createUserContext());
     await expect(
-      caller.news.create({
-        contentZh: "新动态",
-        published: true,
-      })
+      caller.news.create({ contentZh: "新动态", published: true })
     ).rejects.toThrow();
   });
 
   it("throws UNAUTHORIZED for unauthenticated users", async () => {
     const caller = appRouter.createCaller(createPublicContext());
     await expect(
-      caller.news.create({
-        contentZh: "新动态",
-        published: true,
-      })
+      caller.news.create({ contentZh: "新动态", published: true })
     ).rejects.toThrow();
   });
 });
@@ -173,5 +176,28 @@ describe("news.delete (admin only)", () => {
   it("throws FORBIDDEN for regular users", async () => {
     const caller = appRouter.createCaller(createUserContext());
     await expect(caller.news.delete({ id: "post_1_abc123" })).rejects.toThrow();
+  });
+});
+
+describe("news.bulkDelete (admin only)", () => {
+  it("bulk deletes multiple posts for admin", async () => {
+    const caller = appRouter.createCaller(createAdminContext());
+    const result = await caller.news.bulkDelete({ ids: ["post_1_abc123", "post_2_def456"] });
+    expect(result.success).toBe(true);
+    expect(result.deleted).toBe(2);
+  });
+
+  it("throws FORBIDDEN for regular users", async () => {
+    const caller = appRouter.createCaller(createUserContext());
+    await expect(
+      caller.news.bulkDelete({ ids: ["post_1_abc123"] })
+    ).rejects.toThrow();
+  });
+
+  it("throws UNAUTHORIZED for unauthenticated users", async () => {
+    const caller = appRouter.createCaller(createPublicContext());
+    await expect(
+      caller.news.bulkDelete({ ids: ["post_1_abc123"] })
+    ).rejects.toThrow();
   });
 });

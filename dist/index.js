@@ -903,6 +903,7 @@ async function invokeLLM(params) {
 }
 
 // server/routers/news.ts
+var PAGE_SIZE = 20;
 async function translateToEnglish(chineseText) {
   try {
     const response = await invokeLLM({
@@ -925,9 +926,19 @@ async function translateToEnglish(chineseText) {
   }
 }
 var newsRouter = router({
-  /** Public: list all published posts */
-  list: publicProcedure.query(async () => {
-    return getPublishedPosts();
+  /** Public: list published posts with pagination (20 per page) */
+  list: publicProcedure.input(
+    z2.object({
+      page: z2.number().int().min(1).default(1)
+    }).default({ page: 1 })
+  ).query(async ({ input }) => {
+    const allPosts = await getPublishedPosts();
+    const total = allPosts.length;
+    const totalPages = Math.max(1, Math.ceil(total / PAGE_SIZE));
+    const page = Math.min(input.page, totalPages);
+    const start = (page - 1) * PAGE_SIZE;
+    const posts = allPosts.slice(start, start + PAGE_SIZE);
+    return { posts, total, totalPages, page };
   }),
   /** Admin: list all posts (including unpublished) */
   adminList: adminProcedure.query(async () => {
@@ -953,10 +964,15 @@ var newsRouter = router({
     await updatePost(input.id, { published: input.published });
     return { success: true };
   }),
-  /** Admin: delete a post */
+  /** Admin: delete a single post */
   delete: adminProcedure.input(z2.object({ id: z2.string() })).mutation(async ({ input }) => {
     await deletePost(input.id);
     return { success: true };
+  }),
+  /** Admin: bulk delete multiple posts */
+  bulkDelete: adminProcedure.input(z2.object({ ids: z2.array(z2.string()).min(1) })).mutation(async ({ input }) => {
+    await Promise.all(input.ids.map((id) => deletePost(id)));
+    return { success: true, deleted: input.ids.length };
   })
 });
 

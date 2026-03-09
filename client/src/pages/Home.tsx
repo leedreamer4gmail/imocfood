@@ -8,15 +8,20 @@ const Home = () => {
 
   return (
     <div style={{ backgroundColor: '#ffffff' }}>
-      {/* Full-width banner image */}
-      <section style={{ lineHeight: 0 }}>
+      {/* Banner image - original size, centered */}
+      <section
+        style={{
+          padding: '40px',
+          display: 'flex',
+          justifyContent: 'center',
+        }}
+      >
         <img
           src={bannerUrl}
           alt="IMOC 国际开源肉制品联盟"
           style={{
-            width: '100%',
-            height: 'auto',
             display: 'block',
+            maxWidth: '100%',
           }}
         />
       </section>

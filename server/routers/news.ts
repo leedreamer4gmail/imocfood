@@ -1,15 +1,15 @@
-import { TRPCError } from "@trpc/server";
 import { z } from "zod";
 import {
   createPost,
   deletePost,
   getAllPosts,
-  getPostById,
   getPublishedPosts,
   updatePost,
 } from "../chromaDb";
 import { invokeLLM } from "../_core/llm";
 import { adminProcedure, publicProcedure, router } from "../_core/trpc";
+
+const PAGE_SIZE = 20;
 
 /**
  * Use LLM to translate Chinese text to English.
@@ -38,10 +38,22 @@ async function translateToEnglish(chineseText: string): Promise<string | null> {
 }
 
 export const newsRouter = router({
-  /** Public: list all published posts */
-  list: publicProcedure.query(async () => {
-    return getPublishedPosts();
-  }),
+  /** Public: list published posts with pagination (20 per page) */
+  list: publicProcedure
+    .input(
+      z.object({
+        page: z.number().int().min(1).default(1),
+      }).default({ page: 1 })
+    )
+    .query(async ({ input }) => {
+      const allPosts = await getPublishedPosts();
+      const total = allPosts.length;
+      const totalPages = Math.max(1, Math.ceil(total / PAGE_SIZE));
+      const page = Math.min(input.page, totalPages);
+      const start = (page - 1) * PAGE_SIZE;
+      const posts = allPosts.slice(start, start + PAGE_SIZE);
+      return { posts, total, totalPages, page };
+    }),
 
   /** Admin: list all posts (including unpublished) */
   adminList: adminProcedure.query(async () => {
@@ -77,11 +89,19 @@ export const newsRouter = router({
       return { success: true };
     }),
 
-  /** Admin: delete a post */
+  /** Admin: delete a single post */
   delete: adminProcedure
     .input(z.object({ id: z.string() }))
     .mutation(async ({ input }) => {
       await deletePost(input.id);
       return { success: true };
+    }),
+
+  /** Admin: bulk delete multiple posts */
+  bulkDelete: adminProcedure
+    .input(z.object({ ids: z.array(z.string()).min(1) }))
+    .mutation(async ({ input }) => {
+      await Promise.all(input.ids.map((id) => deletePost(id)));
+      return { success: true, deleted: input.ids.length };
     }),
 });
