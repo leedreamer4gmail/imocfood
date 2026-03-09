@@ -36,148 +36,89 @@ const Contact = () => {
 
   return (
     <div style={{ backgroundColor: '#ffffff', padding: '60px 40px' }}>
-      <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
-        <h2
-          style={{
-            fontSize: '32px',
-            fontWeight: '600',
-            color: '#333333',
-            marginBottom: '50px',
-            textAlign: 'center',
-          }}
-        >
-          {t('contact.title')}
-        </h2>
-
-        {/* Contact Cards */}
+      <div style={{ maxWidth: '1197px', margin: '0 auto' }}>
+        {/* Two-column layout: 2/3 left + divider + 1/3 right */}
         <div
           style={{
             display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
-            gap: '30px',
-            marginBottom: '60px',
+            gridTemplateColumns: '2fr 1px 1fr',
+            gap: '40px',
+            alignItems: 'flex-start',
           }}
         >
-          {contacts.map((contact, index) => (
-            <div
-              key={index}
-              style={{
-                padding: '30px',
-                backgroundColor: '#fafafa',
-                borderRadius: '8px',
-                border: '2px solid transparent',
-                transition: 'all 0.3s ease',
-                textAlign: 'center',
-              }}
-              onMouseEnter={(e) => {
-                e.currentTarget.style.borderColor = '#a72027';
-                e.currentTarget.style.boxShadow = '0 8px 24px rgba(167, 32, 39, 0.15)';
-                e.currentTarget.style.transform = 'translateY(-4px)';
-              }}
-              onMouseLeave={(e) => {
-                e.currentTarget.style.borderColor = 'transparent';
-                e.currentTarget.style.boxShadow = 'none';
-                e.currentTarget.style.transform = 'translateY(0)';
-              }}
-            >
-              <h3
-                style={{
-                  fontSize: '18px',
-                  fontWeight: '600',
-                  color: '#333333',
-                  margin: '0 0 15px 0',
-                }}
-              >
-                {contact.name}
-              </h3>
+          {/* Left Column - Contact info + Locations (2/3) */}
+          <div>
+            <h2 style={{ fontSize: '24px', fontWeight: '600', color: '#333333', margin: '0 0 40px 0' }}>
+              {t('contact.title')}
+            </h2>
 
-              <div
-                style={{
-                  fontSize: '13px',
-                  color: '#666666',
-                  lineHeight: '1.8',
-                  marginBottom: '20px',
-                }}
-              >
-                <p style={{ margin: '8px 0' }}>
-                  📧 {contact.email ? (
-                    <a href={`mailto:${contact.email}`} style={{ color: '#a72027', textDecoration: 'none' }}>
-                      {contact.email}
-                    </a>
-                  ) : (
-                    <span style={{ color: '#999999' }}>{t('contact.email')}</span>
-                  )}
-                </p>
-              </div>
-
-              {/* WeChat QR Code */}
-              {contact.qrUrl && (
+            {/* Contact persons */}
+            <div style={{ marginBottom: '40px' }}>
+              {contacts.map((contact, index) => (
                 <div
+                  key={index}
                   style={{
-                    marginTop: '20px',
-                    paddingTop: '20px',
-                    borderTop: '1px solid #e0e0e0',
+                    marginBottom: '20px',
+                    paddingBottom: '20px',
+                    borderBottom: index < contacts.length - 1 ? '1px solid #e0e0e0' : 'none',
+                    fontSize: '14px',
                   }}
                 >
+                  <p style={{ fontWeight: '600', color: '#333', margin: '0 0 6px 0', fontSize: '15px' }}>
+                    {contact.name}
+                  </p>
+                  {contact.email && (
+                    <p style={{ margin: '0', color: '#666' }}>
+                      📧{' '}
+                      <a href={`mailto:${contact.email}`} style={{ color: '#a72027', textDecoration: 'none' }}>
+                        {contact.email}
+                      </a>
+                    </p>
+                  )}
+                </div>
+              ))}
+            </div>
+
+            {/* Locations */}
+            <div style={{ paddingTop: '30px', borderTop: '2px solid #e0e0e0' }}>
+              <h3 style={{ fontSize: '18px', fontWeight: '600', color: '#333333', margin: '0 0 20px 0' }}>
+                {t('contact.address')}
+              </h3>
+              <div style={{ fontSize: '14px', lineHeight: '2', color: '#333333' }}>
+                {locations.map((location, index) => (
+                  <p key={index} style={{ margin: '0' }}>
+                    <span style={{ fontWeight: '700', color: '#a72027' }}>{location.city}</span>
+                    ：{location.address}
+                  </p>
+                ))}
+              </div>
+            </div>
+          </div>
+
+          {/* Red Divider Line */}
+          <div style={{ backgroundColor: '#a72027', height: '100%', minHeight: '400px' }} />
+
+          {/* Right Column - QR Codes (1/3) */}
+          <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '30px' }}>
+            <h3 style={{ color: '#a72027', fontSize: '18px', fontWeight: '600', margin: '0', textAlign: 'center' }}>
+              {t('contact.wechat')}
+            </h3>
+            {contacts.map((contact, index) => (
+              contact.qrUrl ? (
+                <div key={index} style={{ textAlign: 'center' }}>
+                  <p style={{ fontWeight: '600', color: '#333', margin: '0 0 10px 0', fontSize: '14px' }}>
+                    {contact.name}
+                  </p>
                   <img
                     src={contact.qrUrl}
                     alt={`${contact.name} WeChat QR Code`}
-                    style={{
-                      maxWidth: '150px',
-                      height: 'auto',
-                      borderRadius: '4px',
-                    }}
+                    style={{ maxWidth: '100%', height: 'auto', borderRadius: '4px' }}
                   />
-                  <p
-                    style={{
-                      fontSize: '12px',
-                      color: '#999999',
-                      margin: '8px 0 0 0',
-                    }}
-                  >
+                  <p style={{ fontSize: '12px', color: '#999', margin: '6px 0 0 0' }}>
                     {t('contact.wechat')}
                   </p>
                 </div>
-              )}
-            </div>
-          ))}
-        </div>
-
-        {/* Locations Section - Simple Text Format */}
-        <div
-          style={{
-            paddingTop: '40px',
-            borderTop: '2px solid #e0e0e0',
-          }}
-        >
-          <h3
-            style={{
-              fontSize: '24px',
-              fontWeight: '600',
-              color: '#333333',
-              marginBottom: '30px',
-              textAlign: 'center',
-            }}
-          >
-            {t('contact.address')}
-          </h3>
-
-          <div
-            style={{
-              maxWidth: '600px',
-              margin: '0 auto',
-              fontSize: '14px',
-              lineHeight: '2',
-              color: '#333333',
-            }}
-          >
-            {locations.map((location, index) => (
-              <p key={index} style={{ margin: '0' }}>
-                <span style={{ fontWeight: '700', color: '#a72027' }}>
-                  {location.city}
-                </span>
-                ：{location.address}
-              </p>
+              ) : null
             ))}
           </div>
         </div>

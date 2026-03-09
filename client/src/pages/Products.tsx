@@ -51,13 +51,13 @@ const Products = () => {
 
   return (
     <div style={{ backgroundColor: '#ffffff', padding: '60px 40px' }}>
-      <div style={{ maxWidth: '1400px', margin: '0 auto' }}>
-        {/* Two-column layout */}
+      <div style={{ maxWidth: '1197px', margin: '0 auto' }}>
+        {/* Two-column layout: 2/3 left + divider + 1/3 right */}
         <div
           style={{
             display: 'grid',
-            gridTemplateColumns: '1fr 1px 1fr',
-            gap: '60px',
+            gridTemplateColumns: '2fr 1px 1fr',
+            gap: '40px',
             alignItems: 'flex-start',
           }}
         >

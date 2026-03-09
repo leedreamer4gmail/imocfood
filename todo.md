@@ -49,3 +49,12 @@
 - [x] Add bulkDelete tRPC procedure for batch deletion
 - [x] Redesign admin CMS as compact list (one row per post, checkbox + status dot + content preview + date + delete button)
 - [x] Add bulk delete toolbar with select-all checkbox
+
+## Layout Fixes (2026-03-09 batch 2)
+- [x] Constrain all page content width to 1197px (matching banner width)
+- [x] Services page: 2/3 left + 1/3 right column split with red divider
+- [x] Contact page: 2/3 left (info+locations) + 1/3 right (QR codes) with red divider
+- [x] Products page: 2/3 left + 1/3 right column split
+- [x] Home page description section max-width set to 1197px
+- [x] News page max-width set to 1197px
+- [x] Fix news page navigation jitter: scroll to top on nav click, min-height on main

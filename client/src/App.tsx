@@ -52,7 +52,7 @@ function AppContent() {
           {menuItems.map((item) => (
             <button
               key={item.id}
-              onClick={() => setCurrentPage(item.id as Page)}
+              onClick={() => { setCurrentPage(item.id as Page); window.scrollTo(0, 0); }}
               style={{
                 background: 'none',
                 border: 'none',
@@ -149,7 +149,7 @@ function AppContent() {
       )}
 
       {/* Page Content */}
-      <main style={{ margin: 0, padding: 0 }}>
+      <main style={{ margin: 0, padding: 0, minHeight: '60vh' }}>
         {currentPage === 'home' && <Home />}
         {currentPage === 'products' && <Products />}
         {currentPage === 'services' && <Services />}

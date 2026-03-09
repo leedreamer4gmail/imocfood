@@ -27,7 +27,7 @@ const News = () => {
 
   return (
     <div style={{ backgroundColor: '#ffffff', padding: '60px 40px' }}>
-      <div style={{ maxWidth: '900px', margin: '0 auto' }}>
+      <div style={{ maxWidth: '1197px', margin: '0 auto' }}>
         <h2
           style={{
             fontSize: '32px',

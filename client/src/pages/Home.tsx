@@ -32,7 +32,7 @@ const Home = () => {
       <section
         style={{
           padding: '80px 40px 60px 40px',
-          maxWidth: '800px',
+          maxWidth: '1197px',
           margin: '0 auto',
         }}
       >
