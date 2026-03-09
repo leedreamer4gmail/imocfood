@@ -99,3 +99,8 @@
 - [x] Add right-side popup detail panel when clicking each service item
 - [x] Remove OEM代工 and 一件代发 from top navigation
 - [x] Update translation keys for new service items (zh + en)
+
+## Services Panel Full Content (2026-03-09)
+- [x] Embed full OEM page content (factory photo + article) in right panel when clicking OEM service
+- [x] Embed full Dropshipping page content in right panel when clicking 一件代发 service
+- [x] Add scrollable right panel with full rich content for all 5 services
