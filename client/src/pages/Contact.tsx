@@ -8,7 +8,7 @@ import { useLanguage } from '../contexts/LanguageContext';
 const CONTACTS = [
   {
     name: '李梦',
-    title: '市场总监',
+    title: '原料部采',
     photo: 'https://d2xsxph8kpxj0f.cloudfront.net/85413465/Dn3NKGa7uppqoDB4SUPuXq/lm_30a8b78f.jpg',
     email: 'leedreamer4@gmail.com',
     phone: '13800138000',
@@ -16,7 +16,7 @@ const CONTACTS = [
   },
   {
     name: '潘海露',
-    title: '市场部',
+    title: '渠道合作, OEM加工',
     photo: '',
     email: '',
     phone: '',
@@ -24,7 +24,7 @@ const CONTACTS = [
   },
   {
     name: '姚嘉琳 Queeny',
-    title: '',
+    title: '大宗发货',
     photo: '',
     email: 'yjl_yao@126.com',
     phone: '',

@@ -154,3 +154,8 @@
 [2026-03-09T07:19:19.190Z] {"timestamp":1773040757240,"level":"INFO","args":["%cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools","font-weight:bold"],"stack":null}
 [2026-03-09T07:19:38.726Z] {"timestamp":1773040769650,"level":"DEBUG","args":["[Manus] Debug collector initialized (no rrweb, UI events only)"],"stack":null}
 [2026-03-09T07:19:38.727Z] {"timestamp":1773040777148,"level":"DEBUG","args":["[vite] connected."],"stack":null}
+[2026-03-09T07:19:50.413Z] {"timestamp":1773040789138,"level":"DEBUG","args":["[vite]","hot updated: /src/App.tsx"],"stack":null}
+[2026-03-09T07:19:50.413Z] {"timestamp":1773040789139,"level":"DEBUG","args":["[vite]","hot updated: /src/pages/Contact.tsx"],"stack":null}
+[2026-03-09T07:20:46.943Z] {"timestamp":1773040789047,"level":"DEBUG","args":["[vite]","hot updated: /src/App.tsx"],"stack":null}
+[2026-03-09T07:20:46.943Z] {"timestamp":1773040789048,"level":"DEBUG","args":["[vite]","hot updated: /src/pages/Contact.tsx"],"stack":null}
+[2026-03-09T07:27:44.414Z] {"timestamp":1773041225146,"level":"DEBUG","args":["[vite]","hot updated: /src/pages/Contact.tsx"],"stack":null}
