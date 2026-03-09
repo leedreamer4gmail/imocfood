@@ -1,19 +1,21 @@
 import React from 'react';
 import { useLanguage } from '../contexts/LanguageContext';
 
-const bannerUrl = 'https://d2xsxph8kpxj0f.cloudfront.net/85413465/Dn3NKGa7uppqoDB4SUPuXq/bantou_ea09ef78.jpg';
+const bannerUrl = 'https://d2xsxph8kpxj0f.cloudfront.net/85413465/Dn3NKGa7uppqoDB4SUPuXq/bantou_new_6cf15ca7.jpg';
 
 const Home = () => {
   const { t } = useLanguage();
 
   return (
     <div style={{ backgroundColor: '#ffffff' }}>
-      {/* Banner image - original size, centered */}
+      {/* Banner image - original size, no gap below nav */}
       <section
         style={{
-          padding: '40px',
+          padding: 0,
+          margin: 0,
           display: 'flex',
           justifyContent: 'center',
+          lineHeight: 0,
         }}
       >
         <img

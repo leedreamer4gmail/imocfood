@@ -137,11 +137,11 @@ function AppContent() {
         </div>
       </nav>
 
-      {/* Small banner for non-home pages (directly below nav) */}
+      {/* Small banner for non-home pages (directly below nav, no gap) */}
       {currentPage !== 'home' && currentPage !== 'admin' && (
-        <div style={{ display: 'flex', justifyContent: 'center', padding: '20px 40px 0' }}>
+        <div style={{ display: 'flex', justifyContent: 'center', padding: 0, margin: 0, lineHeight: 0 }}>
           <img
-            src="https://d2xsxph8kpxj0f.cloudfront.net/85413465/Dn3NKGa7uppqoDB4SUPuXq/xiaobantou_04bf7d69.jpg"
+            src="https://d2xsxph8kpxj0f.cloudfront.net/85413465/Dn3NKGa7uppqoDB4SUPuXq/xiaobantou_new_b4233f04.jpg"
             alt="IMOC international meat open-source community 国际开源肉制品联盟"
             style={{ display: 'block', maxWidth: '100%' }}
           />
@@ -149,7 +149,7 @@ function AppContent() {
       )}
 
       {/* Page Content */}
-      <main>
+      <main style={{ margin: 0, padding: 0 }}>
         {currentPage === 'home' && <Home />}
         {currentPage === 'products' && <Products />}
         {currentPage === 'services' && <Services />}
