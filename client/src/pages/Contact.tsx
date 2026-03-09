@@ -9,7 +9,7 @@ const CONTACTS = [
   {
     name: '李梦',
     title: '市场总监',
-    photo: '',  // 填入照片URL，留空显示红色占位
+    photo: 'https://d2xsxph8kpxj0f.cloudfront.net/85413465/Dn3NKGa7uppqoDB4SUPuXq/lm_30a8b78f.jpg',
     email: 'leedreamer4@gmail.com',
     phone: '13800138000',
     qrUrl: 'https://d2xsxph8kpxj0f.cloudfront.net/85413465/Dn3NKGa7uppqoDB4SUPuXq/lm二维码_7265883d.jpg',
