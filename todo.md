@@ -73,3 +73,7 @@
 
 ## Mobile Menu (2026-03-09)
 - [x] Responsive hamburger menu for mobile: hamburger icon opens dropdown with all nav items, desktop unchanged
+
+## Services Page Fix (2026-03-09)
+- [x] QR code in right column fills full width on mobile
+- [x] '联系方式' heading stays on one line (white-space: nowrap)

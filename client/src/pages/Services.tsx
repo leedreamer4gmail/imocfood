@@ -29,17 +29,46 @@ const Services = () => {
   ];
 
   return (
-    <div style={{ backgroundColor: '#ffffff', padding: '60px 40px' }}>
+    <div style={{ backgroundColor: '#ffffff', padding: '60px 20px' }}>
+      <style>{`
+        .services-grid {
+          display: grid;
+          grid-template-columns: 2fr 1px 1fr;
+          gap: 40px;
+          align-items: flex-start;
+        }
+        .services-divider {
+          background-color: #a72027;
+          height: 100%;
+          min-height: 600px;
+        }
+        .services-contact-title {
+          white-space: nowrap;
+        }
+        .services-qr img {
+          max-width: 100%;
+          height: auto;
+          border-radius: 8px;
+        }
+        @media (max-width: 768px) {
+          .services-grid {
+            grid-template-columns: 1fr !important;
+            gap: 20px !important;
+          }
+          .services-divider {
+            height: 2px !important;
+            min-height: unset !important;
+            width: 100% !important;
+          }
+          .services-qr img {
+            width: 100% !important;
+            max-width: 100% !important;
+          }
+        }
+      `}</style>
+
       <div style={{ maxWidth: '1197px', margin: '0 auto' }}>
-        {/* Two-column layout: 2/3 left + divider + 1/3 right */}
-        <div
-          style={{
-            display: 'grid',
-            gridTemplateColumns: '2fr 1px 1fr',
-            gap: '40px',
-            alignItems: 'flex-start',
-          }}
-        >
+        <div className="services-grid">
           {/* Left Column - Services List */}
           <div>
             <h2
@@ -47,7 +76,6 @@ const Services = () => {
                 fontSize: '24px',
                 fontWeight: '600',
                 color: '#333333',
-                marginBottom: '40px',
                 margin: '0 0 40px 0',
               }}
             >
@@ -64,13 +92,7 @@ const Services = () => {
                     borderBottom: index < services.length - 1 ? '1px solid #e0e0e0' : 'none',
                   }}
                 >
-                  <div
-                    style={{
-                      display: 'flex',
-                      alignItems: 'flex-start',
-                      gap: '12px',
-                    }}
-                  >
+                  <div style={{ display: 'flex', alignItems: 'flex-start', gap: '12px' }}>
                     <div
                       style={{
                         width: '32px',
@@ -89,28 +111,13 @@ const Services = () => {
                       {index + 1}
                     </div>
                     <div>
-                      <h4
-                        style={{
-                          color: '#333333',
-                          fontSize: '15px',
-                          fontWeight: '600',
-                          margin: '0 0 8px 0',
-                        }}
-                      >
+                      <h4 style={{ color: '#333333', fontSize: '15px', fontWeight: '600', margin: '0 0 8px 0' }}>
                         {service.title}
                       </h4>
-                      <p
-                        style={{
-                          color: '#666666',
-                          fontSize: '13px',
-                          margin: '0',
-                          lineHeight: '1.5',
-                        }}
-                      >
+                      <p style={{ color: '#666666', fontSize: '13px', margin: '0', lineHeight: '1.5' }}>
                         {service.description}
                       </p>
                     </div>
-
                   </div>
                 </div>
               ))}
@@ -118,50 +125,28 @@ const Services = () => {
           </div>
 
           {/* Red Divider Line */}
-          <div
-            style={{
-              backgroundColor: '#a72027',
-              height: '100%',
-              minHeight: '600px',
-            }}
-          />
+          <div className="services-divider" />
 
           {/* Right Column - Contact Information */}
-          <div
-            style={{
-              display: 'flex',
-              flexDirection: 'column',
-              alignItems: 'center',
-              justifyContent: 'flex-start',
-            }}
-          >
+          <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'flex-start' }}>
             <h3
+              className="services-contact-title"
               style={{
                 color: '#a72027',
                 fontSize: '18px',
                 fontWeight: '600',
-                marginBottom: '30px',
-                textAlign: 'center',
                 margin: '0 0 30px 0',
+                textAlign: 'center',
               }}
             >
               {t('services.contact')}
             </h3>
 
             {/* WeChat QR Code */}
-            <div
-              style={{
-                textAlign: 'center',
-              }}
-            >
+            <div className="services-qr" style={{ textAlign: 'center', width: '100%' }}>
               <img
                 src={marketingQrUrl}
                 alt="Marketing Department WeChat"
-                style={{
-                  maxWidth: '100%',
-                  height: 'auto',
-                  borderRadius: '8px',
-                }}
               />
             </div>
           </div>
