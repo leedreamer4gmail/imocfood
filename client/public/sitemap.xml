@@ -1,63 +1,55 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-        xmlns:geo="http://www.google.com/geo/schemas/sitemap/1.0">
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+
+  <!-- Homepage -->
   <url>
     <loc>https://www.imocfood.com/</loc>
-    <lastmod>2026-03-08</lastmod>
+    <lastmod>2026-03-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
-    <geo:geo>
-      <geo:format>kml</geo:format>
-      <geo:location>
-        <![CDATA[
-        <kml xmlns="http://www.opengis.net/kml/2.2">
-          <Document>
-            <Placemark>
-              <name>IMOC Guangzhou</name>
-              <Point>
-                <coordinates>113.2644,23.1291</coordinates>
-              </Point>
-            </Placemark>
-            <Placemark>
-              <name>IMOC Nanning</name>
-              <Point>
-                <coordinates>108.3665,22.8170</coordinates>
-              </Point>
-            </Placemark>
-            <Placemark>
-              <name>IMOC Chongqing</name>
-              <Point>
-                <coordinates>107.8611,30.7617</coordinates>
-              </Point>
-            </Placemark>
-          </Document>
-        </kml>
-        ]]>
-      </geo:location>
-    </geo:geo>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.imocfood.com/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.imocfood.com/"/>
   </url>
+
+  <!-- Products page -->
   <url>
-    <loc>https://www.imocfood.com/?page=products</loc>
-    <lastmod>2026-03-08</lastmod>
+    <loc>https://www.imocfood.com/products</loc>
+    <lastmod>2026-03-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.imocfood.com/products"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.imocfood.com/products"/>
   </url>
+
+  <!-- Services page -->
   <url>
-    <loc>https://www.imocfood.com/?page=services</loc>
-    <lastmod>2026-03-08</lastmod>
-    <changefreq>weekly</changefreq>
+    <loc>https://www.imocfood.com/services</loc>
+    <lastmod>2026-03-09</lastmod>
+    <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.imocfood.com/services"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.imocfood.com/services"/>
   </url>
+
+  <!-- Contact page -->
   <url>
-    <loc>https://www.imocfood.com/?page=contact</loc>
-    <lastmod>2026-03-08</lastmod>
+    <loc>https://www.imocfood.com/contact</loc>
+    <lastmod>2026-03-09</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.imocfood.com/contact"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.imocfood.com/contact"/>
   </url>
+
+  <!-- News page -->
   <url>
-    <loc>https://www.imocfood.com/?page=news</loc>
-    <lastmod>2026-03-08</lastmod>
+    <loc>https://www.imocfood.com/news</loc>
+    <lastmod>2026-03-09</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.imocfood.com/news"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.imocfood.com/news"/>
   </url>
+
 </urlset>
