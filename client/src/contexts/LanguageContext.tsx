@@ -16,6 +16,8 @@ const translations: Record<Language, Record<string, string>> = {
     'nav.home': '主页',
     'nav.products': '我们的产品',
     'nav.services': '提供服务',
+    'nav.oem': 'OEM代工',
+    'nav.dropshipping': '一件代发',
     'nav.contact': '联系我们',
     'nav.news': '最新动态',
 
@@ -114,6 +116,8 @@ const translations: Record<Language, Record<string, string>> = {
     'nav.home': 'Home',
     'nav.products': 'Our Products',
     'nav.services': 'Services',
+    'nav.oem': 'OEM',
+    'nav.dropshipping': 'Dropshipping',
     'nav.contact': 'Contact Us',
     'nav.news': 'News',
 

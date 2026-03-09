@@ -5,20 +5,26 @@ import Services from './pages/Services';
 import Contact from './pages/Contact';
 import News from './pages/News';
 import AdminNews from './pages/AdminNews';
+import OEM from './pages/OEM';
+import Dropshipping from './pages/Dropshipping';
 import { LanguageProvider, useLanguage } from './contexts/LanguageContext';
 
-type Page = 'home' | 'products' | 'services' | 'contact' | 'news' | 'admin';
+type Page = 'home' | 'products' | 'services' | 'contact' | 'news' | 'admin' | 'oem' | 'dropshipping';
 
 function AppContent() {
   const [currentPage, setCurrentPage] = useState<Page>('home');
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const { language, setLanguage, t } = useLanguage();
 
-  // Support /admin/news URL path for admin access
+  // Support URL paths for direct navigation
   useEffect(() => {
     const path = window.location.pathname;
     if (path === '/admin/news' || path === '/admin') {
       setCurrentPage('admin');
+    } else if (path === '/oem') {
+      setCurrentPage('oem');
+    } else if (path === '/dropshipping') {
+      setCurrentPage('dropshipping');
     }
   }, []);
 
@@ -26,6 +32,8 @@ function AppContent() {
     { id: 'home', label: t('nav.home') },
     { id: 'products', label: t('nav.products') },
     { id: 'services', label: t('nav.services') },
+    { id: 'oem', label: t('nav.oem') },
+    { id: 'dropshipping', label: t('nav.dropshipping') },
     { id: 'contact', label: t('nav.contact') },
     { id: 'news', label: t('nav.news') },
   ];
@@ -280,6 +288,8 @@ function AppContent() {
         {currentPage === 'services' && <Services />}
         {currentPage === 'contact' && <Contact />}
         {currentPage === 'news' && <News />}
+        {currentPage === 'oem' && <OEM />}
+        {currentPage === 'dropshipping' && <Dropshipping />}
         {currentPage === 'admin' && <AdminNews />}
       </main>
 

@@ -86,3 +86,10 @@
 - [x] Add FAQ section to Home.tsx (bilingual, visible accordion for users and crawlers)
 - [x] Wrap news posts in semantic <article> tags with itemScope/itemProp in News.tsx
 - [x] Add FAQ translation keys to LanguageContext.tsx (zh + en)
+
+## SEO Content Pages (2026-03-09)
+- [x] Upload factory photo (quanjing.jpg) to CDN
+- [x] Create OEM page (/oem) with user content from oem.txt
+- [x] Create Dropshipping page (/dropshipping) with user content from dropshipping.txt
+- [x] Add OEM and Dropshipping links to navigation
+- [x] Update sitemap.xml with new pages

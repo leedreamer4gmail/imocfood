@@ -953,3 +953,6 @@
 [2026-03-09T09:25:21.384Z] 5:25:21 AM [vite] (client) hmr update /src/App.tsx, /src/pages/Home.tsx, /src/pages/Products.tsx, /src/pages/Contact.tsx, /src/pages/News.tsx, /src/pages/Services.tsx, /src/pages/AdminLogin.tsx
 [2026-03-09T09:25:45.144Z] 5:25:45 AM [vite] (client) hmr update /src/pages/Home.tsx
 [2026-03-09T09:25:57.296Z] 5:25:57 AM [vite] (client) hmr update /src/pages/News.tsx
+[2026-03-09T09:50:08.244Z] 5:50:08 AM [vite] (client) page reload index.html
+[2026-03-09T12:17:50.157Z] 8:17:50 AM [vite] (client) hmr update /src/App.tsx
+[2026-03-09T12:17:59.032Z] 8:17:59 AM [vite] (client) hmr update /src/contexts/LanguageContext.tsx
