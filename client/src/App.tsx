@@ -32,8 +32,6 @@ function AppContent() {
     { id: 'home', label: t('nav.home') },
     { id: 'products', label: t('nav.products') },
     { id: 'services', label: t('nav.services') },
-    { id: 'oem', label: t('nav.oem') },
-    { id: 'dropshipping', label: t('nav.dropshipping') },
     { id: 'contact', label: t('nav.contact') },
     { id: 'news', label: t('nav.news') },
   ];

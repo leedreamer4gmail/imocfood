@@ -93,3 +93,9 @@
 - [x] Create Dropshipping page (/dropshipping) with user content from dropshipping.txt
 - [x] Add OEM and Dropshipping links to navigation
 - [x] Update sitemap.xml with new pages
+
+## Services Page Redesign (2026-03-09)
+- [x] Replace 5 old service items with 5 correct ones (大宗订货/来料加工/OEM/一件代发/平台佣金)
+- [x] Add right-side popup detail panel when clicking each service item
+- [x] Remove OEM代工 and 一件代发 from top navigation
+- [x] Update translation keys for new service items (zh + en)
