@@ -5,8 +5,6 @@ User-agent: *
 Allow: /
 Disallow: /admin
 Disallow: /private
-Disallow: /*.json$
-Disallow: /*.xml$
 
 # Specific rules for search engines
 User-agent: Googlebot
@@ -20,6 +18,19 @@ Crawl-delay: 1
 User-agent: Baidubot
 Allow: /
 Crawl-delay: 1
+
+# AI crawlers - allow for GEO
+User-agent: GPTBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
 
 # Sitemap location
 Sitemap: https://www.imocfood.com/sitemap.xml

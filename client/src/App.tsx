@@ -36,6 +36,54 @@ function AppContent() {
     { id: 'news', label: t('nav.news') },
   ];
 
+  // Dynamic page title and meta description for SEO
+  useEffect(() => {
+    const pageMeta: Record<Page, { title: string; description: string }> = {
+      home: {
+        title: 'IMOC牛肉干-薄片牛肉干-和牛脆片-OEM代工-国际开源肉制品联盟',
+        description: 'IMOC国际开源肉制品联盟 - 专业提供薄片牛肉干、和牛脆片、谷饲牛肉干等高品质肉制品。提供OEM代工、一件代发、出口等服务。',
+      },
+      products: {
+        title: 'IMOC产品列表 - 牛肉干、猪肉干、鸡肉干、海鲜干 | IMOC Food',
+        description: 'IMOC全系列肉制品：牛肉干、和牛脆片、薄片牛肉干、猪肉干、鸡肉干、海鲜干，全部采用高品质原料，无添加天然健康。',
+      },
+      services: {
+        title: '提供服务 - OEM代工/一件代发/大宗订货/来料加工 | IMOC Food',
+        description: 'IMOC提供大宗订货、来料加工、OEM贴牌、一件代发、平台佣金五大服务，全面满足超市、电商、网红等各类客户需求。',
+      },
+      contact: {
+        title: '联系我们 - 李梦/潘海露/姚嘉琳 | IMOC Food',
+        description: 'IMOC联系方式：原料采购联系李梦(leedreamer4@gmail.com)，OEM合作联系潘海露，大宗发货联系姚嘉琳(yjl_yao@126.com)。广州、南宁、重庆均设生产基地。',
+      },
+      news: {
+        title: '最新动态 - IMOC公司动态与行业资讯 | IMOC Food',
+        description: 'IMOC最新动态：公司新闻、产品发布、合作公告、行业资讯。了解IMOC国际开源肉制品联盟的最新动向。',
+      },
+      admin: {
+        title: '管理后台 | IMOC Food',
+        description: 'IMOC管理后台',
+      },
+      oem: {
+        title: 'OEM代工服务 - 牛肉干定制生产 | IMOC Food',
+        description: 'IMOC提供OEM全流程代工服务，包括配方研发、包装定制、质量认证和物流支持，专注于牛肉干等肉制品定制生产。',
+      },
+      dropshipping: {
+        title: '一件代发服务 - 电商卖家首选 | IMOC Food',
+        description: 'IMOC一件代发：您接单我们发货，省心省力。稳定的产品质量和可靠的物流配送，适合各类电商卖家。',
+      },
+    };
+    const meta = pageMeta[currentPage];
+    if (meta) {
+      document.title = meta.title;
+      const descEl = document.querySelector('meta[name="description"]');
+      if (descEl) descEl.setAttribute('content', meta.description);
+      const ogTitleEl = document.querySelector('meta[property="og:title"]');
+      if (ogTitleEl) ogTitleEl.setAttribute('content', meta.title);
+      const ogDescEl = document.querySelector('meta[property="og:description"]');
+      if (ogDescEl) ogDescEl.setAttribute('content', meta.description);
+    }
+  }, [currentPage]);
+
   const navigate = (page: Page) => {
     setCurrentPage(page);
     setMobileMenuOpen(false);

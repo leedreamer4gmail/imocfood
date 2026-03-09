@@ -104,3 +104,16 @@
 - [x] Embed full OEM page content (factory photo + article) in right panel when clicking OEM service
 - [x] Embed full Dropshipping page content in right panel when clicking 一件代发 service
 - [x] Add scrollable right panel with full rich content for all 5 services
+
+## SEO/GEO Full Optimization (2026-03-09)
+- [x] Fix robots.txt: remove /*.xml$ rule, add Allow: /sitemap.xml, add AI crawlers
+- [x] Update OG image from logo to product photo
+- [x] Add twitter:description meta tag
+- [x] Add hreflang x-default tag
+- [x] Add BreadcrumbList JSON-LD schema
+- [x] Add WebSite JSON-LD schema with Sitelinks Searchbox
+- [x] Add License declaration to llms.txt
+- [x] Add dynamic page title/description per route (SPA fix)
+- [x] Upload Pan Hailu photo and update Contact page
+- [x] Shrink contact cards to 2/3 of current size
+- [x] Upload Queeny (姚嘉琳) photo and update Contact page

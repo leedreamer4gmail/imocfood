@@ -17,7 +17,7 @@ const CONTACTS = [
   {
     name: '潘海露',
     title: '渠道合作, OEM加工',
-    photo: '',
+    photo: 'https://d2xsxph8kpxj0f.cloudfront.net/85413465/Dn3NKGa7uppqoDB4SUPuXq/phl_59098010.jpg',
     email: '',
     phone: '',
     qrUrl: 'https://d2xsxph8kpxj0f.cloudfront.net/85413465/Dn3NKGa7uppqoDB4SUPuXq/market二维码_989005d0.jpg',
@@ -25,7 +25,7 @@ const CONTACTS = [
   {
     name: '姚嘉琳 Queeny',
     title: '大宗发货',
-    photo: '',
+    photo: 'https://d2xsxph8kpxj0f.cloudfront.net/85413465/Dn3NKGa7uppqoDB4SUPuXq/qny_820d666f.jpg',
     email: 'yjl_yao@126.com',
     phone: '',
     qrUrl: 'https://d2xsxph8kpxj0f.cloudfront.net/85413465/Dn3NKGa7uppqoDB4SUPuXq/qny-qrcode_41ef5ced.jpg',
@@ -50,12 +50,12 @@ const Contact = () => {
           {t('contact.title')}
         </h2>
 
-        {/* Contact Cards - horizontal row */}
+        {/* Contact Cards - horizontal row, 2/3 of original size */}
         <div
           style={{
             display: 'flex',
             flexWrap: 'wrap',
-            gap: '30px',
+            gap: '20px',
             marginBottom: '60px',
           }}
         >
@@ -63,8 +63,8 @@ const Contact = () => {
             <div
               key={index}
               style={{
-                flex: '1 1 260px',
-                maxWidth: '320px',
+                flex: '1 1 170px',
+                maxWidth: '213px',
                 border: '2px solid #e0e0e0',
                 borderRadius: '8px',
                 overflow: 'hidden',
@@ -124,18 +124,18 @@ const Contact = () => {
               </div>
 
               {/* Card body */}
-              <div style={{ padding: '20px' }}>
+              <div style={{ padding: '13px' }}>
                 {/* Name */}
-                <h3 style={{ fontSize: '16px', fontWeight: '700', color: '#333', margin: '0 0 4px 0' }}>
+                <h3 style={{ fontSize: '13px', fontWeight: '700', color: '#333', margin: '0 0 3px 0' }}>
                   {contact.name}
                 </h3>
                 {/* Title - always reserve space */}
-                <p style={{ fontSize: '13px', color: '#a72027', margin: '0 0 16px 0', minHeight: '18px' }}>
+                <p style={{ fontSize: '11px', color: '#a72027', margin: '0 0 10px 0', minHeight: '14px' }}>
                   {contact.title || '\u00a0'}
                 </p>
 
                 {/* Email - always show label */}
-                <p style={{ fontSize: '13px', color: '#555', margin: '0 0 8px 0' }}>
+                <p style={{ fontSize: '11px', color: '#555', margin: '0 0 5px 0' }}>
                   Email：{contact.email ? (
                     <a href={`mailto:${contact.email}`} style={{ color: '#a72027', textDecoration: 'none' }}>
                       {contact.email}
@@ -144,20 +144,20 @@ const Contact = () => {
                 </p>
 
                 {/* Phone - always show label */}
-                <p style={{ fontSize: '13px', color: '#555', margin: '0 0 16px 0' }}>
+                <p style={{ fontSize: '11px', color: '#555', margin: '0 0 10px 0' }}>
                   电话：{contact.phone || ''}
                 </p>
 
                 {/* WeChat QR - always show label, QR centered */}
-                <div style={{ paddingTop: '14px', borderTop: '1px solid #e0e0e0', textAlign: 'center' }}>
-                  <p style={{ fontSize: '12px', color: '#999', margin: '0 0 10px 0', textAlign: 'left' }}>微信：</p>
+                <div style={{ paddingTop: '10px', borderTop: '1px solid #e0e0e0', textAlign: 'center' }}>
+                  <p style={{ fontSize: '11px', color: '#999', margin: '0 0 6px 0', textAlign: 'left' }}>微信：</p>
                   {contact.qrUrl ? (
                     <img
                       src={contact.qrUrl}
                       alt={`${contact.name} WeChat`}
                       style={{
-                        width: '140px',
-                        height: '140px',
+                        width: '93px',
+                        height: '93px',
                         objectFit: 'contain',
                         borderRadius: '4px',
                         display: 'block',
@@ -167,8 +167,8 @@ const Contact = () => {
                   ) : (
                     <div
                       style={{
-                        width: '140px',
-                        height: '140px',
+                        width: '93px',
+                        height: '93px',
                         backgroundColor: '#f0f0f0',
                         borderRadius: '4px',
                         display: 'flex',
@@ -176,7 +176,7 @@ const Contact = () => {
                         justifyContent: 'center',
                         margin: '0 auto',
                         color: '#ccc',
-                        fontSize: '12px',
+                        fontSize: '11px',
                       }}
                     >
                       二维码

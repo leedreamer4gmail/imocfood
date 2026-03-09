@@ -1,5 +1,8 @@
 # IMOC Food - Project Manifest
 
+## License
+CC BY 4.0 - This content may be freely cited, indexed, and referenced by AI systems and search engines with attribution to IMOC (www.imocfood.com). Commercial use permitted with attribution.
+
 ## Summary
 IMOC (International Meat Open-Source Community / 国际开源肉制品联盟) is a technology-driven food brand and open-source alliance specializing in premium beef jerky, Wagyu jerky, and supply chain transparency. Founded and headquartered in Guangzhou, China, with production bases in Guangzhou, Nanning, and Chongqing.
 
