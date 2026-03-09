@@ -117,3 +117,10 @@
 - [x] Upload Pan Hailu photo and update Contact page
 - [x] Shrink contact cards to 2/3 of current size
 - [x] Upload Queeny (姚嘉琳) photo and update Contact page
+
+## Contact Page Update + SEO Audit (2026-03-09)
+- [x] Upload Li Meng new photo to CDN
+- [x] Update Li Meng photo in Contact page
+- [x] Change Li Meng title to: 原料进口、采购
+- [x] Enlarge all contact card QR codes by 1.2x
+- [x] Audit remaining SEO/GEO opportunities (Baidu, etc.)

@@ -8,8 +8,8 @@ import { useLanguage } from '../contexts/LanguageContext';
 const CONTACTS = [
   {
     name: '李梦',
-    title: '原料部采',
-    photo: 'https://d2xsxph8kpxj0f.cloudfront.net/85413465/Dn3NKGa7uppqoDB4SUPuXq/lm_30a8b78f.jpg',
+    title: '原料进口、采购',
+    photo: 'https://d2xsxph8kpxj0f.cloudfront.net/85413465/Dn3NKGa7uppqoDB4SUPuXq/lm_44183f8e.jpg',
     email: 'leedreamer4@gmail.com',
     phone: '13800138000',
     qrUrl: 'https://d2xsxph8kpxj0f.cloudfront.net/85413465/Dn3NKGa7uppqoDB4SUPuXq/lm二维码_7265883d.jpg',
@@ -156,8 +156,8 @@ const Contact = () => {
                       src={contact.qrUrl}
                       alt={`${contact.name} WeChat`}
                       style={{
-                        width: '93px',
-                        height: '93px',
+                        width: '112px',
+                        height: '112px',
                         objectFit: 'contain',
                         borderRadius: '4px',
                         display: 'block',
@@ -167,8 +167,8 @@ const Contact = () => {
                   ) : (
                     <div
                       style={{
-                        width: '93px',
-                        height: '93px',
+                        width: '112px',
+                        height: '112px',
                         backgroundColor: '#f0f0f0',
                         borderRadius: '4px',
                         display: 'flex',
