@@ -27,6 +27,7 @@ const entryPoints = [
   { in: "_api-src/admin/login.ts", out: "api/admin/login.js" },
   { in: "_api-src/admin/logout.ts", out: "api/admin/logout.js" },
   { in: "_api-src/admin/me.ts", out: "api/admin/me.js" },
+  { in: "_api-src/test/debug-env.ts", out: "api/test/debug-env.js" },
 ];
 
 console.log("Building API functions...");
