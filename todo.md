@@ -30,11 +30,11 @@
 - [ ] Add rich text editor to CMS (optional)
 
 ## Auth Replacement (Manus OAuth → Simple Password Auth)
-- [ ] Create simple password-based admin login (no Manus OAuth dependency)
-- [ ] Store admin credentials in Vercel env vars (ADMIN_PASSWORD_HASH)
-- [ ] Create /admin/login page with username+password form
-- [ ] Issue JWT session cookie on successful login (self-contained, no manus.im)
-- [ ] Update AdminNews.tsx to use new auth check
-- [ ] Replace Manus OAuth callback with simple login API handler
-- [ ] Remove Manus OAuth redirect from frontend
-- [ ] Test full login → CMS → publish flow
+- [x] Create simple username-only admin login (no Manus OAuth dependency)
+- [x] Hardcode admin username 'leedreamer' in code (no env var override risk)
+- [x] Create AdminLogin.tsx login page with username form
+- [x] Issue JWT session cookie on successful login (self-contained, no manus.im)
+- [x] Update AdminNews.tsx to use new auth check (/api/admin/me)
+- [x] Create /api/admin/login, /api/admin/me, /api/admin/logout endpoints
+- [x] Remove Manus OAuth redirect from frontend
+- [ ] Test full login → CMS → publish flow on Vercel production
