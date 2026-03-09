@@ -165,3 +165,34 @@
 [2026-03-09T07:29:16.837Z] {"timestamp":1773041354703,"level":"DEBUG","args":["[Manus] Debug collector initialized (no rrweb, UI events only)"],"stack":null}
 [2026-03-09T07:29:16.837Z] {"timestamp":1773041355398,"level":"DEBUG","args":["[vite] connected."],"stack":null}
 [2026-03-09T07:30:44.425Z] {"timestamp":1773041402014,"level":"DEBUG","args":["[vite]","hot updated: /src/pages/Services.tsx"],"stack":null}
+[2026-03-09T07:31:53.576Z] {"timestamp":1773041511562,"level":"DEBUG","args":["[Manus] Debug collector initialized (no rrweb, UI events only)"],"stack":null}
+[2026-03-09T07:31:53.576Z] {"timestamp":1773041511584,"level":"DEBUG","args":["[vite] connected."],"stack":null}
+[2026-03-09T07:31:53.576Z] {"timestamp":1773041511642,"level":"INFO","args":["%cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools","font-weight:bold"],"stack":null}
+[2026-03-09T07:32:01.442Z] {"timestamp":1773041519094,"level":"DEBUG","args":["[Manus] Debug collector initialized (no rrweb, UI events only)"],"stack":null}
+[2026-03-09T07:32:05.439Z] {"timestamp":1773041524122,"level":"DEBUG","args":["[vite] connected."],"stack":null}
+[2026-03-09T08:39:48.432Z] {"timestamp":1773045585792,"level":"DEBUG","args":["[Manus] Debug collector initialized (no rrweb, UI events only)"],"stack":null}
+[2026-03-09T08:39:48.432Z] {"timestamp":1773045587041,"level":"DEBUG","args":["[vite] connected."],"stack":null}
+[2026-03-09T08:39:50.432Z] {"timestamp":1773045588401,"level":"INFO","args":["%cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools","font-weight:bold"],"stack":null}
+[2026-03-09T08:42:46.373Z] {"timestamp":1773045763817,"level":"DEBUG","args":["[Manus] Debug collector initialized (no rrweb, UI events only)"],"stack":null}
+[2026-03-09T08:42:46.373Z] {"timestamp":1773045764019,"level":"DEBUG","args":["[vite] connected."],"stack":null}
+[2026-03-09T08:42:46.373Z] {"timestamp":1773045764249,"level":"INFO","args":["%cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools","font-weight:bold"],"stack":null}
+[2026-03-09T09:24:15.930Z] {"timestamp":1773048253804,"level":"DEBUG","args":["[Manus] Debug collector initialized (no rrweb, UI events only)"],"stack":null}
+[2026-03-09T09:24:15.930Z] {"timestamp":1773048254299,"level":"DEBUG","args":["[vite] connected."],"stack":null}
+[2026-03-09T09:25:44.459Z] {"timestamp":1773048309945,"level":"DEBUG","args":["[vite]","invalidate /src/contexts/LanguageContext.tsx: Could not Fast Refresh (\"useLanguage\" export is incompatible). Learn more at https://github.com/vitejs/vite-plugin-react/tree/main/packages/plugin-react#consistent-components-exports"],"stack":null}
+[2026-03-09T09:25:44.459Z] {"timestamp":1773048309945,"level":"DEBUG","args":["[vite]","hot updated: /src/contexts/LanguageContext.tsx"],"stack":null}
+[2026-03-09T09:25:44.459Z] {"timestamp":1773048310815,"level":"DEBUG","args":["[vite]","hot updated: /src/App.tsx"],"stack":null}
+[2026-03-09T09:25:44.459Z] {"timestamp":1773048310816,"level":"DEBUG","args":["[vite]","hot updated: /src/pages/Home.tsx"],"stack":null}
+[2026-03-09T09:25:44.459Z] {"timestamp":1773048310816,"level":"DEBUG","args":["[vite]","hot updated: /src/pages/Products.tsx"],"stack":null}
+[2026-03-09T09:25:44.459Z] {"timestamp":1773048310817,"level":"DEBUG","args":["[vite]","hot updated: /src/pages/Contact.tsx"],"stack":null}
+[2026-03-09T09:25:44.459Z] {"timestamp":1773048310817,"level":"DEBUG","args":["[vite]","hot updated: /src/pages/News.tsx"],"stack":null}
+[2026-03-09T09:25:44.459Z] {"timestamp":1773048310817,"level":"DEBUG","args":["[vite]","hot updated: /src/pages/Services.tsx"],"stack":null}
+[2026-03-09T09:25:44.459Z] {"timestamp":1773048310818,"level":"DEBUG","args":["[vite]","hot updated: /src/pages/AdminLogin.tsx"],"stack":null}
+[2026-03-09T09:25:44.459Z] {"timestamp":1773048321325,"level":"DEBUG","args":["[vite]","invalidate /src/contexts/LanguageContext.tsx: Could not Fast Refresh (\"useLanguage\" export is incompatible). Learn more at https://github.com/vitejs/vite-plugin-react/tree/main/packages/plugin-react#consistent-components-exports"],"stack":null}
+[2026-03-09T09:25:44.459Z] {"timestamp":1773048321325,"level":"DEBUG","args":["[vite]","hot updated: /src/contexts/LanguageContext.tsx"],"stack":null}
+[2026-03-09T09:25:44.459Z] {"timestamp":1773048322121,"level":"DEBUG","args":["[vite]","hot updated: /src/App.tsx"],"stack":null}
+[2026-03-09T09:25:44.459Z] {"timestamp":1773048322122,"level":"DEBUG","args":["[vite]","hot updated: /src/pages/Home.tsx"],"stack":null}
+[2026-03-09T09:25:44.459Z] {"timestamp":1773048322122,"level":"DEBUG","args":["[vite]","hot updated: /src/pages/Products.tsx"],"stack":null}
+[2026-03-09T09:25:44.459Z] {"timestamp":1773048322122,"level":"DEBUG","args":["[vite]","hot updated: /src/pages/Contact.tsx"],"stack":null}
+[2026-03-09T09:25:44.459Z] {"timestamp":1773048322122,"level":"DEBUG","args":["[vite]","hot updated: /src/pages/News.tsx"],"stack":null}
+[2026-03-09T09:25:44.459Z] {"timestamp":1773048322122,"level":"DEBUG","args":["[vite]","hot updated: /src/pages/Services.tsx"],"stack":null}
+[2026-03-09T09:25:44.459Z] {"timestamp":1773048322122,"level":"DEBUG","args":["[vite]","hot updated: /src/pages/AdminLogin.tsx"],"stack":null}

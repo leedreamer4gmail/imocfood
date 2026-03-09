@@ -944,3 +944,12 @@
 [2026-03-09T07:19:48.432Z] 3:19:48 AM [vite] (client) hmr update /src/pages/Contact.tsx
 [2026-03-09T07:27:03.880Z] 3:27:03 AM [vite] (client) hmr update /src/pages/Contact.tsx
 [2026-03-09T07:30:01.636Z] 3:30:01 AM [vite] (client) hmr update /src/pages/Services.tsx
+[2026-03-09T08:39:41.637Z] 4:39:41 AM [vite] (client) page reload index.html
+[2026-03-09T09:25:09.292Z] 5:25:09 AM [vite] (client) hmr update /src/contexts/LanguageContext.tsx
+[2026-03-09T09:25:09.988Z] 5:25:09 AM [vite] (client) hmr invalidate /src/contexts/LanguageContext.tsx Could not Fast Refresh ("useLanguage" export is incompatible). Learn more at https://github.com/vitejs/vite-plugin-react/tree/main/packages/plugin-react#consistent-components-exports
+[2026-03-09T09:25:09.989Z] 5:25:09 AM [vite] (client) hmr update /src/App.tsx, /src/pages/Home.tsx, /src/pages/Products.tsx, /src/pages/Contact.tsx, /src/pages/News.tsx, /src/pages/Services.tsx, /src/pages/AdminLogin.tsx
+[2026-03-09T09:25:21.083Z] 5:25:21 AM [vite] (client) hmr update /src/contexts/LanguageContext.tsx
+[2026-03-09T09:25:21.384Z] 5:25:21 AM [vite] (client) hmr invalidate /src/contexts/LanguageContext.tsx Could not Fast Refresh ("useLanguage" export is incompatible). Learn more at https://github.com/vitejs/vite-plugin-react/tree/main/packages/plugin-react#consistent-components-exports
+[2026-03-09T09:25:21.384Z] 5:25:21 AM [vite] (client) hmr update /src/App.tsx, /src/pages/Home.tsx, /src/pages/Products.tsx, /src/pages/Contact.tsx, /src/pages/News.tsx, /src/pages/Services.tsx, /src/pages/AdminLogin.tsx
+[2026-03-09T09:25:45.144Z] 5:25:45 AM [vite] (client) hmr update /src/pages/Home.tsx
+[2026-03-09T09:25:57.296Z] 5:25:57 AM [vite] (client) hmr update /src/pages/News.tsx

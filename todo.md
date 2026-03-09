@@ -77,3 +77,12 @@
 ## Services Page Fix (2026-03-09)
 - [x] QR code in right column fills full width on mobile
 - [x] '联系方式' heading stays on one line (white-space: nowrap)
+
+## GEO Optimization (2026-03-09)
+- [x] Create client/public/llms.txt for AI crawler discovery
+- [x] Update index.html JSON-LD: add knowsAbout and potentialAction to Organization schema
+- [x] Add FAQPage JSON-LD schema to index.html
+- [x] Add AI-readable summary section to index.html body (screen-reader accessible, not hidden)
+- [x] Add FAQ section to Home.tsx (bilingual, visible accordion for users and crawlers)
+- [x] Wrap news posts in semantic <article> tags with itemScope/itemProp in News.tsx
+- [x] Add FAQ translation keys to LanguageContext.tsx (zh + en)

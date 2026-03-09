@@ -1,10 +1,18 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useLanguage } from '../contexts/LanguageContext';
 
 const bannerUrl = 'https://d2xsxph8kpxj0f.cloudfront.net/85413465/Dn3NKGa7uppqoDB4SUPuXq/bantou_new_6cf15ca7.jpg';
 
 const Home = () => {
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
+  const [openFaq, setOpenFaq] = useState<number | null>(null);
+
+  const faqs = [
+    { q: t('faq.q1'), a: t('faq.a1') },
+    { q: t('faq.q2'), a: t('faq.a2') },
+    { q: t('faq.q3'), a: t('faq.a3') },
+    { q: t('faq.q4'), a: t('faq.a4') },
+  ];
 
   return (
     <div style={{ backgroundColor: '#ffffff' }}>
@@ -61,6 +69,107 @@ const Home = () => {
           <p style={{ marginBottom: '20px', color: '#a72027', fontWeight: '600' }}>
             {t('home.description4')}
           </p>
+        </div>
+      </section>
+
+      {/* FAQ Section */}
+      <section
+        aria-label={t('faq.title')}
+        style={{
+          padding: '60px 40px 80px 40px',
+          maxWidth: '1197px',
+          margin: '0 auto',
+          borderTop: '1px solid #f0f0f0',
+        }}
+      >
+        <h2
+          style={{
+            fontSize: '24px',
+            fontWeight: '700',
+            color: '#333333',
+            marginBottom: '32px',
+            textAlign: 'center',
+          }}
+        >
+          {t('faq.title')}
+        </h2>
+
+        <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
+          {faqs.map((faq, i) => (
+            <article
+              key={i}
+              itemScope
+              itemType="https://schema.org/Question"
+              style={{
+                border: '1px solid #e8e8e8',
+                borderRadius: '8px',
+                overflow: 'hidden',
+              }}
+            >
+              <button
+                onClick={() => setOpenFaq(openFaq === i ? null : i)}
+                style={{
+                  width: '100%',
+                  display: 'flex',
+                  justifyContent: 'space-between',
+                  alignItems: 'center',
+                  padding: '18px 24px',
+                  backgroundColor: openFaq === i ? '#fdf5f5' : '#fafafa',
+                  border: 'none',
+                  cursor: 'pointer',
+                  textAlign: 'left',
+                  gap: '16px',
+                }}
+              >
+                <span
+                  itemProp="name"
+                  style={{
+                    fontSize: '15px',
+                    fontWeight: '600',
+                    color: openFaq === i ? '#a72027' : '#333',
+                    lineHeight: '1.5',
+                  }}
+                >
+                  {faq.q}
+                </span>
+                <span
+                  style={{
+                    fontSize: '20px',
+                    color: '#a72027',
+                    flexShrink: 0,
+                    transition: 'transform 0.2s',
+                    transform: openFaq === i ? 'rotate(45deg)' : 'rotate(0deg)',
+                  }}
+                >
+                  +
+                </span>
+              </button>
+
+              {openFaq === i && (
+                <div
+                  itemScope
+                  itemType="https://schema.org/Answer"
+                  style={{
+                    padding: '16px 24px 20px 24px',
+                    backgroundColor: '#ffffff',
+                    borderTop: '1px solid #f0f0f0',
+                  }}
+                >
+                  <p
+                    itemProp="text"
+                    style={{
+                      fontSize: '14px',
+                      color: '#555',
+                      lineHeight: '1.8',
+                      margin: 0,
+                    }}
+                  >
+                    {faq.a}
+                  </p>
+                </div>
+              )}
+            </article>
+          ))}
         </div>
       </section>
     </div>

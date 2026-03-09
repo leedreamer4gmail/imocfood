@@ -92,8 +92,10 @@ const News = () => {
                 : (post.contentEn || post.contentZh);
 
               return (
-                <div
+                <article
                   key={post.id}
+                  itemScope
+                  itemType="https://schema.org/NewsArticle"
                   style={{
                     padding: '24px 28px',
                     backgroundColor: '#fafafa',
@@ -102,6 +104,7 @@ const News = () => {
                   }}
                 >
                   <p
+                    itemProp="articleBody"
                     style={{
                       fontSize: '15px',
                       color: '#333',
@@ -112,10 +115,14 @@ const News = () => {
                   >
                     {content}
                   </p>
-                  <p style={{ fontSize: '12px', color: '#aaa', margin: 0 }}>
+                  <time
+                    itemProp="datePublished"
+                    dateTime={new Date(post.createdAt).toISOString()}
+                    style={{ fontSize: '12px', color: '#aaa', display: 'block' }}
+                  >
                     {formatDate(post.createdAt, language)}
-                  </p>
-                </div>
+                  </time>
+                </article>
               );
             })}
           </div>

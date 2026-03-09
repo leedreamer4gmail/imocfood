@@ -89,6 +89,17 @@ const translations: Record<Language, Record<string, string>> = {
     'contact.chongqing': '重庆',
     'contact.chongqing_addr': '重庆市梁平区预制菜产业园区4号楼4楼',
 
+    // FAQ
+    'faq.title': '常见问题',
+    'faq.q1': 'IMOC是什么？',
+    'faq.a1': 'IMOC（International Meat Open-Source Community，国际开源肉制品联盟）是一家专注于高品质肉制品的食品公司。我们以开源理念推动供应链透明化，核心产品包括薄片牛肉干、和牛脆片、谷饲牛肉干，总部位于广州，在南宁、重庆设有现代化生产基地。',
+    'faq.q2': '如何进行OEM代工合作？',
+    'faq.a2': 'IMOC提供全流程OEM代工服务，包括配方研发、包装定制、质量认证和物流支持。欢迎发邮件至 leedreamer4@gmail.com 或通过联系我们页面与我们取得联系，我们会安排专人对接。',
+    'faq.q3': '支持一件代发吗？',
+    'faq.a3': '支持。IMOC为电商卖家提供一件代发服务，单件起发，产品质量稳定，物流配送可靠。适合淘宝、拼多多、抖音等各大电商平台的卖家。',
+    'faq.q4': '产品在哪里生产？质量如何保证？',
+    'faq.a4': 'IMOC在广州（广东）、南宁（广西）、重庆三地设有现代化生产基地，全部符合国家食品安全标准。我们坚持无添加、真材实料的承诺，采用谷饲和牛等优质原料。',
+
     // News
     'news.title': '最新动态',
     'news.news1_title': '新品上市',
@@ -175,6 +186,17 @@ const translations: Record<Language, Record<string, string>> = {
     'contact.nanning_addr': '2nd Floor, Building 1, Jinqiao Agricultural Wholesale Market, Xingning District, Nanning, Guangxi Province',
     'contact.chongqing': 'Chongqing',
     'contact.chongqing_addr': '4th Floor, Building 4, Prepared Vegetable Industrial Park, Liangping District, Chongqing',
+
+    // FAQ
+    'faq.title': 'FAQ',
+    'faq.q1': 'What is IMOC?',
+    'faq.a1': 'IMOC (International Meat Open-Source Community) is a food company dedicated to premium meat products. We promote supply chain transparency through open-source principles. Core products include thin-sliced beef jerky, Wagyu crispy slices, and grain-fed beef jerky. Headquartered in Guangzhou, with production bases in Nanning and Chongqing.',
+    'faq.q2': 'How to start OEM manufacturing cooperation?',
+    'faq.a2': 'IMOC provides full-service OEM manufacturing including recipe development, custom packaging, quality certification, and logistics support. Email us at leedreamer4@gmail.com or use our Contact page to get in touch, and we will arrange a dedicated contact person.',
+    'faq.q3': 'Does IMOC support dropshipping?',
+    'faq.a3': 'Yes. IMOC provides single-unit dropshipping services for e-commerce sellers with consistent product quality and reliable logistics. Suitable for sellers on Taobao, Pinduoduo, Douyin, and other major platforms.',
+    'faq.q4': 'Where are products made? How is quality guaranteed?',
+    'faq.a4': 'IMOC operates modern production facilities in Guangzhou (Guangdong), Nanning (Guangxi), and Chongqing, all meeting national food safety standards. We are committed to no artificial additives and use quality ingredients including grain-fed and Wagyu beef.',
 
     // News
     'news.title': 'News',
