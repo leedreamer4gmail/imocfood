@@ -58,3 +58,6 @@
 - [x] Home page description section max-width set to 1197px
 - [x] News page max-width set to 1197px
 - [x] Fix news page navigation jitter: scroll to top on nav click, min-height on main
+
+## Jitter Fix (2026-03-09)
+- [x] Fix horizontal layout shift when switching pages (added overflow-y: scroll to html to keep scrollbar always visible)

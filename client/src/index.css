@@ -1,5 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Inter:wght@400;500;600;700&display=swap');
 
+html {
+  overflow-y: scroll; /* Always show scrollbar to prevent layout shift when switching pages */
+}
+
 * {
   margin: 0;
   padding: 0;
