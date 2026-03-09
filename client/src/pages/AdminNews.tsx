@@ -1,7 +1,6 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { trpc } from '../lib/trpc';
-import { useAuth } from '../_core/hooks/useAuth';
-import { getLoginUrl } from '../const';
+import AdminLogin from './AdminLogin';
 
 type ArticleForm = {
   titleZh: string;
@@ -26,7 +25,8 @@ const emptyForm: ArticleForm = {
 type View = 'list' | 'create' | 'edit';
 
 export default function AdminNews() {
-  const { user, loading: authLoading } = useAuth();
+  const [adminUser, setAdminUser] = useState<{ username: string } | null>(null);
+  const [authLoading, setAuthLoading] = useState(true);
   const [view, setView] = useState<View>('list');
   const [editId, setEditId] = useState<string | null>(null);
   const [form, setForm] = useState<ArticleForm>(emptyForm);
@@ -35,8 +35,35 @@ export default function AdminNews() {
 
   const utils = trpc.useUtils();
 
+  // Check admin auth via our own /api/admin/me endpoint
+  useEffect(() => {
+    fetch('/api/admin/me', { credentials: 'include' })
+      .then((r) => r.json())
+      .then((data) => {
+        if (data.ok) setAdminUser({ username: data.username });
+        else setAdminUser(null);
+      })
+      .catch(() => setAdminUser(null))
+      .finally(() => setAuthLoading(false));
+  }, []);
+
+  const handleLoginSuccess = () => {
+    setAuthLoading(true);
+    fetch('/api/admin/me', { credentials: 'include' })
+      .then((r) => r.json())
+      .then((data) => {
+        if (data.ok) setAdminUser({ username: data.username });
+      })
+      .finally(() => setAuthLoading(false));
+  };
+
+  const handleLogout = async () => {
+    await fetch('/api/admin/logout', { method: 'POST', credentials: 'include' });
+    setAdminUser(null);
+  };
+
   const { data: articles, isLoading } = trpc.news.adminList.useQuery(undefined, {
-    enabled: user?.role === 'admin',
+    enabled: !!adminUser,
   });
 
   const createMutation = trpc.news.create.useMutation({
@@ -79,7 +106,7 @@ export default function AdminNews() {
     },
   });
 
-  // Auth check
+  // Loading state
   if (authLoading) {
     return (
       <div style={{ padding: '60px', textAlign: 'center', color: '#666' }}>
@@ -88,34 +115,9 @@ export default function AdminNews() {
     );
   }
 
-  if (!user) {
-    return (
-      <div style={{ padding: '60px', textAlign: 'center' }}>
-        <p style={{ marginBottom: '20px', color: '#666' }}>请先登录以访问管理后台</p>
-        <a
-          href={getLoginUrl()}
-          style={{
-            backgroundColor: '#a72027',
-            color: '#fff',
-            padding: '10px 24px',
-            borderRadius: '6px',
-            textDecoration: 'none',
-            fontWeight: '600',
-          }}
-        >
-          登录
-        </a>
-      </div>
-    );
-  }
-
-  if (user.role !== 'admin') {
-    return (
-      <div style={{ padding: '60px', textAlign: 'center', color: '#666' }}>
-        <p>您没有管理员权限。</p>
-        <p style={{ fontSize: '14px', marginTop: '8px' }}>当前账号：{user.name || user.openId}</p>
-      </div>
-    );
+  // Not logged in → show login form
+  if (!adminUser) {
+    return <AdminLogin onLoginSuccess={handleLoginSuccess} />;
   }
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -199,42 +201,58 @@ export default function AdminNews() {
             新闻管理后台
           </h1>
           <p style={{ color: '#666', fontSize: '14px', marginTop: '4px' }}>
-            管理员：{user.name || user.openId}
+            管理员：{adminUser.username}
           </p>
         </div>
-        {view === 'list' && (
+        <div style={{ display: 'flex', gap: '10px', alignItems: 'center' }}>
+          {view === 'list' && (
+            <button
+              onClick={() => { setView('create'); setForm(emptyForm); setMessage(null); }}
+              style={{
+                backgroundColor: '#a72027',
+                color: '#fff',
+                border: 'none',
+                padding: '10px 20px',
+                borderRadius: '6px',
+                cursor: 'pointer',
+                fontWeight: '600',
+                fontSize: '15px',
+              }}
+            >
+              ＋ 新建文章
+            </button>
+          )}
+          {(view === 'create' || view === 'edit') && (
+            <button
+              onClick={() => { setView('list'); setMessage(null); }}
+              style={{
+                backgroundColor: 'transparent',
+                color: '#666',
+                border: '1px solid #ddd',
+                padding: '10px 20px',
+                borderRadius: '6px',
+                cursor: 'pointer',
+                fontSize: '15px',
+              }}
+            >
+              ← 返回列表
+            </button>
+          )}
           <button
-            onClick={() => { setView('create'); setForm(emptyForm); setMessage(null); }}
-            style={{
-              backgroundColor: '#a72027',
-              color: '#fff',
-              border: 'none',
-              padding: '10px 20px',
-              borderRadius: '6px',
-              cursor: 'pointer',
-              fontWeight: '600',
-              fontSize: '15px',
-            }}
-          >
-            ＋ 新建文章
-          </button>
-        )}
-        {(view === 'create' || view === 'edit') && (
-          <button
-            onClick={() => { setView('list'); setMessage(null); }}
+            onClick={handleLogout}
             style={{
               backgroundColor: 'transparent',
-              color: '#666',
+              color: '#999',
               border: '1px solid #ddd',
-              padding: '10px 20px',
+              padding: '10px 16px',
               borderRadius: '6px',
               cursor: 'pointer',
-              fontSize: '15px',
+              fontSize: '14px',
             }}
           >
-            ← 返回列表
+            退出登录
           </button>
-        )}
+        </div>
       </div>
 
       {/* Status message */}
@@ -317,7 +335,7 @@ export default function AdminNews() {
                         )}
                       </div>
                       {article.titleEn && (
-                        <p style={{ margin: '0 0 6px', fontSize: '13px', color: '#888', fontStyle: 'italic' }}>
+                        <p style={{ margin: '0 0 4px', fontSize: '13px', color: '#888', fontStyle: 'italic' }}>
                           {article.titleEn}
                         </p>
                       )}

@@ -897,3 +897,8 @@
 [2026-03-08T17:29:11.694Z] c[OAuth] Initialized with baseURL: https://api.manus.im
 [2026-03-08T17:29:11.929Z] 1:29:11 PM [vite] (client) Re-optimizing dependencies because lockfile has changed
 [2026-03-08T17:29:11.951Z] Server running on http://localhost:3000/
+[2026-03-09T03:36:39.742Z] 11:36:39 PM [vite] (client) hmr update /src/pages/AdminNews.tsx
+[2026-03-09T03:37:31.694Z] 11:37:31 PM [tsx] change in ./server/_core/context.ts Restarting...
+[2026-03-09T03:37:33.594Z] c[OAuth] Initialized with baseURL: https://api.manus.im
+[2026-03-09T03:37:34.236Z] 11:37:34 PM [vite] (client) Re-optimizing dependencies because lockfile has changed
+[2026-03-09T03:37:34.253Z] Server running on http://localhost:3000/

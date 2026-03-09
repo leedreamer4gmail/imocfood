@@ -1121,12 +1121,40 @@ var context_exports = {};
 __export(context_exports, {
   createContext: () => createContext
 });
+import { jwtVerify as jwtVerify2 } from "jose";
+async function authenticateAdminToken(req) {
+  try {
+    const cookieHeader = req.headers.cookie ?? "";
+    const match = cookieHeader.match(/(?:^|;\s*)admin_token=([^;]+)/);
+    if (!match) return null;
+    const token = match[1];
+    const secret = new TextEncoder().encode(JWT_SECRET);
+    const { payload } = await jwtVerify2(token, secret);
+    if (payload.role !== "admin") return null;
+    return {
+      id: 0,
+      openId: String(payload.username ?? "admin"),
+      name: String(payload.username ?? "admin"),
+      email: null,
+      loginMethod: "admin_token",
+      role: "admin",
+      createdAt: /* @__PURE__ */ new Date(),
+      updatedAt: /* @__PURE__ */ new Date(),
+      lastSignedIn: /* @__PURE__ */ new Date()
+    };
+  } catch {
+    return null;
+  }
+}
 async function createContext(opts) {
   let user = null;
-  try {
-    user = await sdk.authenticateRequest(opts.req);
-  } catch (error) {
-    user = null;
+  user = await authenticateAdminToken(opts.req);
+  if (!user) {
+    try {
+      user = await sdk.authenticateRequest(opts.req);
+    } catch {
+      user = null;
+    }
   }
   return {
     req: opts.req,
@@ -1134,10 +1162,12 @@ async function createContext(opts) {
     user
   };
 }
+var JWT_SECRET;
 var init_context = __esm({
   "server/_core/context.ts"() {
     "use strict";
     init_sdk();
+    JWT_SECRET = process.env.JWT_SECRET ?? "fallback-secret-change-me";
   }
 });
 

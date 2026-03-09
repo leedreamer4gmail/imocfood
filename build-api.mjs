@@ -24,7 +24,9 @@ const sharedAliases = {
 const entryPoints = [
   { in: "_api-src/trpc/[...trpc].ts", out: "api/trpc/[...trpc].js" },
   { in: "_api-src/oauth/callback.ts", out: "api/oauth/callback.js" },
-  { in: "_api-src/test/ping.ts", out: "api/test/ping.js" },
+  { in: "_api-src/admin/login.ts", out: "api/admin/login.js" },
+  { in: "_api-src/admin/logout.ts", out: "api/admin/logout.js" },
+  { in: "_api-src/admin/me.ts", out: "api/admin/me.js" },
 ];
 
 console.log("Building API functions...");
