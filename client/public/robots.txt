@@ -6,18 +6,44 @@ Allow: /
 Disallow: /admin
 Disallow: /private
 
-# Specific rules for search engines
+# Google
 User-agent: Googlebot
 Allow: /
 Crawl-delay: 0
 
+# Bing
 User-agent: Bingbot
+Allow: /
+Crawl-delay: 1
+
+# Baidu (correct bot name)
+User-agent: Baiduspider
 Allow: /
 Crawl-delay: 1
 
 User-agent: Baidubot
 Allow: /
 Crawl-delay: 1
+
+# ByteDance / TikTok / Toutiao
+User-agent: Bytespider
+Allow: /
+
+# 360 Search
+User-agent: 360Spider
+Allow: /
+
+# Sogou
+User-agent: Sogou web spider
+Allow: /
+User-agent: Sogoubot
+Allow: /
+
+# Shenma (神马搜索 - UCWeb/Alibaba)
+User-agent: YisouSpider
+Allow: /
+User-agent: ShenmaSpider
+Allow: /
 
 # AI crawlers - allow for GEO
 User-agent: GPTBot
@@ -30,6 +56,10 @@ User-agent: ClaudeBot
 Allow: /
 
 User-agent: anthropic-ai
+Allow: /
+
+# Baidu AI (文心一言)
+User-agent: baidubrowser
 Allow: /
 
 # Sitemap location

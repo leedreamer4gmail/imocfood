@@ -124,3 +124,22 @@
 - [x] Change Li Meng title to: 原料进口、采购
 - [x] Enlarge all contact card QR codes by 1.2x
 - [x] Audit remaining SEO/GEO opportunities (Baidu, etc.)
+
+## Chinese Search Engine Optimization (2026-03-09)
+- [ ] Add Bytespider/360Spider/Sogoubot to robots.txt
+- [ ] Add Baidu AI (文心一言) section to llms.txt
+- [ ] Login to Baidu Webmaster Platform and add imocfood.com
+- [ ] Add Baidu verification meta tag to index.html
+- [ ] Submit sitemap to Baidu Webmaster Platform
+- [ ] Add 百度统计 (Baidu Analytics) script
+
+## Full Visibility Expansion (2026-03-09)
+- [ ] Register on 360 Search Webmaster (zhanzhang.so.com)
+- [ ] Add 360 verification meta tag to index.html
+- [ ] Add Bing Webmaster Tools verification
+- [ ] Add Bing verification meta tag to index.html
+- [ ] Add opensearch.xml for browser address bar search
+- [ ] Add PWA manifest.json for installability signal
+- [ ] Add Apple mobile web app meta tags
+- [ ] Add canonical URL tags to all pages
+- [ ] Fix robots.txt: mark Bytespider/360Spider/Sogoubot as done
