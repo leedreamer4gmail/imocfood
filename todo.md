@@ -206,3 +206,7 @@
 - [x] Replace shrimp image (xiagan_clean) with clean version (fish1.jpg) in Products.tsx seafood column
 - [x] Verify 4 individual animal icons (niu/zhu/ji/yu) are correctly used in Products.tsx
 - [x] Push changes to GitHub → Vercel deploy
+
+## Animal Icon Size Fix (2026-03-10 batch 8)
+- [x] Fix 4 animal icons to same height (120px fixed height, width auto) so all icons appear uniform size
+- [x] Push to GitHub → Vercel deploy

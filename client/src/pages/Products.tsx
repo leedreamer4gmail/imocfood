@@ -158,15 +158,16 @@ const Products = () => {
                       padding: '0 6px',
                     }}
                   >
-                    {/* Individual animal image - centered in column */}
-                    <div style={{ marginBottom: '12px', width: '100%', display: 'flex', justifyContent: 'center' }}>
+                    {/* Individual animal image - fixed height so all 4 icons are the same size */}
+                    <div style={{ marginBottom: '12px', width: '100%', height: '120px', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
                       <img
                         src={category.animalUrl}
                         alt={category.animalAlt}
                         style={{
-                          width: '90%',
-                          maxWidth: '140px',
-                          height: 'auto',
+                          width: 'auto',
+                          height: '120px',
+                          maxWidth: '150px',
+                          objectFit: 'contain',
                           display: 'block',
                         }}
                       />
