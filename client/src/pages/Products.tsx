@@ -2,13 +2,14 @@ import React from 'react';
 import { useLanguage } from '../contexts/LanguageContext';
 
 const Products = () => {
-  const characterImageUrl = 'https://d2xsxph8kpxj0f.cloudfront.net/85413465/Dn3NKGa7uppqoDB4SUPuXq/4man_b5b08e13.jpg';
   const taobaoQrUrl = 'https://d2xsxph8kpxj0f.cloudfront.net/85413465/Dn3NKGa7uppqoDB4SUPuXq/tb二维码_5374b85d.png';
   const { t, language } = useLanguage();
 
   const productCategories = [
     {
       title: t('products.bull'),
+      animalUrl: 'https://d2xsxph8kpxj0f.cloudfront.net/85413465/Dn3NKGa7uppqoDB4SUPuXq/animal_niu_e662ec88.jpg',
+      animalAlt: '牛 - Beef',
       products: [
         t('products.bull_1'),
         t('products.bull_2'),
@@ -30,6 +31,8 @@ const Products = () => {
     },
     {
       title: t('products.pig'),
+      animalUrl: 'https://d2xsxph8kpxj0f.cloudfront.net/85413465/Dn3NKGa7uppqoDB4SUPuXq/animal_zhu_2954513c.jpg',
+      animalAlt: '猪 - Pork',
       products: [
         t('products.pig_1'),
         t('products.pig_2'),
@@ -50,6 +53,8 @@ const Products = () => {
     },
     {
       title: t('products.chicken'),
+      animalUrl: 'https://d2xsxph8kpxj0f.cloudfront.net/85413465/Dn3NKGa7uppqoDB4SUPuXq/animal_ji_392b3163.jpg',
+      animalAlt: '鸡 - Chicken',
       products: [
         t('products.chicken_1'),
         t('products.chicken_2'),
@@ -71,6 +76,8 @@ const Products = () => {
     },
     {
       title: t('products.squid'),
+      animalUrl: 'https://d2xsxph8kpxj0f.cloudfront.net/85413465/Dn3NKGa7uppqoDB4SUPuXq/animal_yu_5bffcc3e.jpg',
+      animalAlt: '鱿鱼/海鲜 - Seafood',
       products: [
         t('products.squid_1'),
         t('products.squid_2'),
@@ -78,8 +85,8 @@ const Products = () => {
       ],
       images: [
         {
-          url: 'https://d2xsxph8kpxj0f.cloudfront.net/85413465/Dn3NKGa7uppqoDB4SUPuXq/seafood1_fc351648.jpg',
-          alt: '小李的庶民虾干 - Dried Shrimp',
+          url: 'https://d2xsxph8kpxj0f.cloudfront.net/85413465/Dn3NKGa7uppqoDB4SUPuXq/fish1_f4d66877.jpg',
+          alt: '小李的烤鱼干 - Dried Fish',
         },
         {
           url: 'https://d2xsxph8kpxj0f.cloudfront.net/85413465/Dn3NKGa7uppqoDB4SUPuXq/seafood2_4de98a78.jpg',
@@ -132,20 +139,7 @@ const Products = () => {
           >
             {/* Left Column - Characters and Product Grid */}
             <div>
-              {/* Combined character image */}
-              <div style={{ marginBottom: '24px' }}>
-                <img
-                  src={characterImageUrl}
-                  alt="Product Characters"
-                  style={{
-                    width: '100%',
-                    height: 'auto',
-                    display: 'block',
-                  }}
-                />
-              </div>
-
-              {/* 4-column product grid: title + list + images, all centered */}
+              {/* 4-column product grid: animal image + title + list + product images, all centered on same axis */}
               <div
                 style={{
                   display: 'grid',
@@ -164,6 +158,20 @@ const Products = () => {
                       padding: '0 6px',
                     }}
                   >
+                    {/* Individual animal image - centered in column */}
+                    <div style={{ marginBottom: '12px', width: '100%', display: 'flex', justifyContent: 'center' }}>
+                      <img
+                        src={category.animalUrl}
+                        alt={category.animalAlt}
+                        style={{
+                          width: '90%',
+                          maxWidth: '140px',
+                          height: 'auto',
+                          display: 'block',
+                        }}
+                      />
+                    </div>
+
                     {/* Category title */}
                     <h4
                       style={{
@@ -222,7 +230,7 @@ const Products = () => {
                           alt={img.alt}
                           style={{
                             width: '100%',
-                            maxWidth: '160px',
+                            maxWidth: '140px',
                             height: 'auto',
                             display: 'block',
                             borderRadius: '4px',

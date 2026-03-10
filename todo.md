@@ -200,3 +200,9 @@
 - [x] Add Douyin sameAs link to Organization schema
 - [x] Publish 5 GEO-optimized news articles to Chroma DB (品类起源/选料标准/OEM/一件代发/公司简介)
 - [x] Push all changes to GitHub → Vercel deploy
+
+## Product Page & Favicon Update (2026-03-10 batch 7)
+- [x] Add PNG favicon links (favicon-16x16.png, favicon-32x32.png) to index.html for better browser compatibility
+- [x] Replace shrimp image (xiagan_clean) with clean version (fish1.jpg) in Products.tsx seafood column
+- [x] Verify 4 individual animal icons (niu/zhu/ji/yu) are correctly used in Products.tsx
+- [x] Push changes to GitHub → Vercel deploy
