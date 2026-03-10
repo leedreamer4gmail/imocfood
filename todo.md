@@ -168,3 +168,8 @@
 - [ ] Submit sitemap to Baidu Webmaster Tools
 - [ ] Push to GitHub → Vercel deploy
 - [ ] Re-submit IndexNow after deploy
+
+## GEO Extended Tasks (2026-03-10 batch 3)
+- [x] Replace news article in Chroma DB with exact text from geo.txt
+- [x] Expand llms.txt with new Q&A from geo.txt (牛脆脆正宗/品类起源/为什么好吃)
+- [ ] Propose extended GEO question strategy to user (beyond beef jerky)
