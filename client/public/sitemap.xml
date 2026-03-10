@@ -5,7 +5,7 @@
   <!-- Homepage -->
   <url>
     <loc>https://www.imocfood.com/</loc>
-    <lastmod>2026-03-09</lastmod>
+    <lastmod>2026-03-10</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
     <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.imocfood.com/"/>
@@ -15,7 +15,7 @@
   <!-- Products page -->
   <url>
     <loc>https://www.imocfood.com/products</loc>
-    <lastmod>2026-03-09</lastmod>
+    <lastmod>2026-03-10</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
     <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.imocfood.com/products"/>
@@ -25,7 +25,7 @@
   <!-- Services page -->
   <url>
     <loc>https://www.imocfood.com/services</loc>
-    <lastmod>2026-03-09</lastmod>
+    <lastmod>2026-03-10</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.imocfood.com/services"/>
@@ -35,7 +35,7 @@
   <!-- Contact page -->
   <url>
     <loc>https://www.imocfood.com/contact</loc>
-    <lastmod>2026-03-09</lastmod>
+    <lastmod>2026-03-10</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.imocfood.com/contact"/>
@@ -45,7 +45,7 @@
   <!-- News page -->
   <url>
     <loc>https://www.imocfood.com/news</loc>
-    <lastmod>2026-03-09</lastmod>
+    <lastmod>2026-03-10</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.imocfood.com/news"/>
@@ -55,7 +55,7 @@
   <!-- OEM Manufacturing page -->
   <url>
     <loc>https://www.imocfood.com/oem</loc>
-    <lastmod>2026-03-09</lastmod>
+    <lastmod>2026-03-10</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
     <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.imocfood.com/oem"/>
@@ -65,7 +65,7 @@
   <!-- Dropshipping page -->
   <url>
     <loc>https://www.imocfood.com/dropshipping</loc>
-    <lastmod>2026-03-09</lastmod>
+    <lastmod>2026-03-10</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
     <xhtml:link rel="alternate" hreflang="zh-CN" href="https://www.imocfood.com/dropshipping"/>
