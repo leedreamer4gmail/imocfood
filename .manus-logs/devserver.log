@@ -983,3 +983,11 @@
 [2026-03-10T05:22:51.140Z] Starting dev server with command: NODE_ENV=development tsx watch server/_core/index.ts
 [2026-03-10T05:22:52.980Z] [OAuth] Initialized with baseURL: https://api.manus.im
 [2026-03-10T05:22:53.222Z] Server running on http://localhost:3000/
+[2026-03-10T06:01:35.739Z] 2:01:35 AM [vite] (client) hmr update /src/pages/Home.tsx
+[2026-03-10T06:02:00.578Z] 2:02:00 AM [vite] (client) hmr update /src/contexts/LanguageContext.tsx
+[2026-03-10T06:02:25.090Z] 2:02:25 AM [vite] (client) hmr update /src/contexts/LanguageContext.tsx
+[2026-03-10T06:02:49.031Z] 2:02:49 AM [vite] (client) hmr update /src/pages/Products.tsx
+[2026-03-10T06:03:08.211Z] 2:03:08 AM [vite] (client) hmr update /src/pages/Products.tsx
+[2026-03-10T06:03:22.678Z] 2:03:22 AM [vite] (client) hmr update /src/pages/Products.tsx
+[2026-03-10T06:03:47.565Z] 2:03:47 AM [vite] (client) hmr update /src/pages/Contact.tsx
+[2026-03-10T06:04:06.225Z] 2:04:06 AM [vite] (client) hmr update /src/pages/Contact.tsx

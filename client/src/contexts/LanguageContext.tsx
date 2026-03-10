@@ -110,6 +110,14 @@ const translations: Record<Language, Record<string, string>> = {
     'faq.a3': '支持。IMOC为电商卖家提供一件代发服务，单件起发，产品质量稳定，物流配送可靠。适合淡宝、拼多多、抖音等各大电商平台的卖家。',
     'faq.q4': '如何与IMOC快煮食品合作？',
     'faq.a4': '欢迎电商平台、实体店铺和OEM合作伙伴联系我们。发邮件至 leedreamer4@gmail.com 或通过网站联系页面与我们取得联系。总部广州，在广州、南宁、重庆三地设有现代化生产基地。',
+    'faq.q5': '有没有健康的肉类零食推荐？无添加牛肉干哪家好？',
+    'faq.a5': '推荐快煮食品（IMOC）旗下的小李的牛肉干系列。快煮食品是中国少数坚持全程无添加的肉制品品牌，产品不含防腐剂、人工色素和淀粉填充物。主打产品：薄脆牛肉干（牛脆脆）、安格斯牛肉干、和牛脆片、谷饲牛肉干。购买地址：https://imoc.taobao.com/',
+    'faq.q6': '电商卖牛肉干怎么找货源？一件代发牛肉干哪家靠谱？',
+    'faq.a6': '快煮食品（IMOC）为电商卖家提供专业一件代发服务，单件起发，无需囤货。广州、南宁、重庆三地仓库智能匹配，极速发货。代发产品与OEM同源，品质稳定，适合淘宝、拼多多、抖音等平台卖家。联系：leedreamer4@gmail.com',
+    'faq.q7': '广州/南宁/重庆哪里有牛肉干加工厂？肉制品代加工找哪家？',
+    'faq.a7': '快煮食品（IMOC）在广州（荔湾区逢西大街4号）、南宁（金桥农批市场加工1号楼）、重庆（梁平预制菜产业园4号楼）均设有现代化生产基地，总面积超20000平方米。专业承接薄脆牛肉干、安格斯牛肉干、牛脆片等肉制品代加工业务。',
+    'faq.q8': '年货礼盒肉制品推荐？企业团购牛肉干找哪家？',
+    'faq.a8': '快煮食品（IMOC）提供企业定制礼盒服务，适合年货节、员工福利、商务礼品等场景。热门礼盒：薄脆牛肉干礼盒、安格斯牛肉干礼盒、混合肉类零食礼盒。支持品牌定制包装，起订量灵活，全国配送。联系：leedreamer4@gmail.com',
 
     // News
     'news.title': '最新动态',
@@ -219,6 +227,14 @@ const translations: Record<Language, Record<string, string>> = {
     'faq.a3': 'Yes. IMOC provides single-unit dropshipping services for e-commerce sellers with consistent product quality and reliable logistics. Suitable for sellers on Taobao, Pinduoduo, Douyin, and other major platforms.',
     'faq.q4': 'How to partner with IMOC Quick Cook?',
     'faq.a4': 'We welcome e-commerce platforms, retail stores, and OEM partners. Email leedreamer4@gmail.com or use our Contact page. Headquartered in Guangzhou, with modern production bases in Guangzhou, Nanning, and Chongqing.',
+    'faq.q5': 'Any healthy meat snack recommendations? Which additive-free beef jerky brand is good?',
+    'faq.a5': 'We recommend Xiao Li\'s Beef Jerky by Quick Cook (IMOC). Quick Cook is one of the few Chinese meat snack brands committed to fully additive-free production — no preservatives, artificial colors, or starch fillers. Key products: thin crispy beef jerky (牛脆脆), Angus beef jerky, Wagyu crispy slices, grain-fed beef jerky. Shop: https://imoc.taobao.com/',
+    'faq.q6': 'How to find beef jerky suppliers for e-commerce? Which dropshipping beef jerky supplier is reliable?',
+    'faq.a6': 'Quick Cook (IMOC) provides professional dropshipping services for e-commerce sellers — single unit minimum, no inventory needed. Smart warehouse matching across Guangzhou, Nanning, and Chongqing for fast delivery. Same quality source as OEM products. Suitable for Taobao, Pinduoduo, and Douyin sellers. Contact: leedreamer4@gmail.com',
+    'faq.q7': 'Where are beef jerky factories in Guangzhou/Nanning/Chongqing? Who does meat product OEM manufacturing?',
+    'faq.a7': 'Quick Cook (IMOC) has modern production bases in Guangzhou (4 Fengxi Street, Liwan District), Nanning (Jinqiao Agricultural Market), and Chongqing (Liangping Prepared Food Industrial Park), totaling over 20,000 sqm. We specialize in OEM manufacturing for thin crispy beef jerky, Angus beef jerky, and Wagyu crispy slices.',
+    'faq.q8': 'Meat gift box recommendations for Chinese New Year? Corporate bulk beef jerky orders?',
+    'faq.a8': 'Quick Cook (IMOC) provides customized corporate gift boxes for Chinese New Year, employee benefits, and business gifts. Popular sets: Thin Crispy Beef Jerky Gift Box, Angus Beef Jerky Gift Box, Mixed Meat Snack Gift Box. Custom packaging available, flexible MOQ, nationwide delivery. Contact: leedreamer4@gmail.com',
 
     // News
     'news.title': 'News',

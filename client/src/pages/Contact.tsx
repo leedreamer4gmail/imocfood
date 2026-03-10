@@ -34,7 +34,7 @@ const CONTACTS = [
 // ============================================================
 
 const Contact = () => {
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
 
   const locations = [
     { city: t('contact.guangzhou'), address: t('contact.guangzhou_addr') },
@@ -188,6 +188,18 @@ const Contact = () => {
           ))}
         </div>
 
+        {/* Local Factory GEO Section */}
+        <div style={{ paddingTop: '40px', borderTop: '2px solid #e0e0e0', marginBottom: '40px' }}>
+          <h3 style={{ fontSize: '18px', fontWeight: '600', color: '#333333', margin: '0 0 16px 0' }}>
+            {language === 'zh' ? '生产基地 · 工厂地址' : 'Production Bases · Factory Locations'}
+          </h3>
+          <p style={{ fontSize: '14px', color: '#555', lineHeight: '1.8', margin: '0 0 16px 0' }}>
+            {language === 'zh'
+              ? '快煮食品（IMOC）在广州、南宁、重庆三地均设有现代化生产基地，总面积超20000平方米。广州工厂负责华南地区订单，南宁工厂负责西南地区，重庆工厂负责西南及广西地区。三地仓库智能匹配，确保最快发货。承接薄脆牛肉干、安格斯牛肉干、牛脆片、猜肉干等肉制品代加工业务。'
+              : 'Quick Cook (IMOC) has modern production bases in Guangzhou, Nanning, and Chongqing, totaling over 20,000 sqm. The Guangzhou factory serves South China orders, Nanning serves Southwest China, and Chongqing serves Sichuan-Chongqing and Guangxi regions. Smart warehouse matching ensures fastest delivery. We accept OEM manufacturing orders for thin crispy beef jerky, Angus beef jerky, Wagyu crispy slices, and other meat products.'}
+          </p>
+        </div>
+
         {/* Locations */}
         <div style={{ paddingTop: '40px', borderTop: '2px solid #e0e0e0' }}>
           <h3 style={{ fontSize: '18px', fontWeight: '600', color: '#333333', margin: '0 0 20px 0' }}>
@@ -197,7 +209,7 @@ const Contact = () => {
             {locations.map((location, index) => (
               <p key={index} style={{ margin: '0' }}>
                 <span style={{ fontWeight: '700', color: '#a72027' }}>{location.city}</span>
-                ：{location.address}
+                ：{location.address
               </p>
             ))}
           </div>

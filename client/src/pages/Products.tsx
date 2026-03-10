@@ -4,7 +4,7 @@ import { useLanguage } from '../contexts/LanguageContext';
 const Products = () => {
   const characterImageUrl = 'https://d2xsxph8kpxj0f.cloudfront.net/85413465/Dn3NKGa7uppqoDB4SUPuXq/4man_b5b08e13.jpg';
   const taobaoQrUrl = 'https://d2xsxph8kpxj0f.cloudfront.net/85413465/Dn3NKGa7uppqoDB4SUPuXq/tb二维码_5374b85d.png';
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
 
   const productCategories = [
     {
@@ -50,7 +50,35 @@ const Products = () => {
   ];
 
   return (
-    <div style={{ backgroundColor: '#ffffff', padding: '60px 40px' }}>
+    <div style={{ backgroundColor: '#ffffff' }}>
+      {/* Imported Beef Sourcing GEO Section */}
+      <section
+        style={{
+          padding: '40px 40px 0 40px',
+          maxWidth: '1197px',
+          margin: '0 auto',
+        }}
+      >
+        <div
+          style={{
+            backgroundColor: '#fdf5f5',
+            borderLeft: '4px solid #a72027',
+            borderRadius: '0 8px 8px 0',
+            padding: '20px 24px',
+            marginBottom: '40px',
+          }}
+        >
+          <h2 style={{ fontSize: '16px', fontWeight: '700', color: '#a72027', margin: '0 0 10px 0' }}>
+            {language === 'zh' ? '进口牛肉直采 · 全球牧场溯源透明' : 'Direct Import · Global Farm Traceability'}
+          </h2>
+          <p style={{ fontSize: '14px', color: '#555', lineHeight: '1.8', margin: 0 }}>
+            {language === 'zh'
+              ? '快煮食品创始人小李本人就是进口牛肉贸易商，与澳大利亚、新西兰、阿根廷等地的优质牧场有直接合作关系。我们的安格斯牛肉干、和牛脆片均采用谷饲和牛原切肉，不使用拼接肉或冷冻边角料。原料溯源透明可查，这是小李的牛肉干能成为爆款的根本原因。'
+              : 'Quick Cook founder Xiao Li is himself an imported beef trader with direct partnerships with premium farms in Australia, New Zealand, and Argentina. Our Angus beef jerky and Wagyu crispy slices use grain-fed whole-cut beef — no reconstituted meat or frozen scraps. Transparent and traceable sourcing is the fundamental reason Xiao Li\'s Beef Jerky became a bestseller.'}
+          </p>
+        </div>
+      </section>
+      <div style={{ padding: '0 40px 60px 40px' }}>
       <div style={{ maxWidth: '1197px', margin: '0 auto' }}>
         {/* Two-column layout: 2/3 left + divider + 1/3 right */}
         <div
@@ -238,6 +266,7 @@ const Products = () => {
             </div>
           </div>
         </div>
+      </div>
       </div>
     </div>
   );

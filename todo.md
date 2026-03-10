@@ -173,3 +173,13 @@
 - [x] Replace news article in Chroma DB with exact text from geo.txt
 - [x] Expand llms.txt with new Q&A from geo.txt (牛脆脆正宗/品类起源/为什么好吃)
 - [ ] Propose extended GEO question strategy to user (beyond beef jerky)
+
+## GEO Full Expansion - All 7 Directions (2026-03-10 batch 4)
+- [x] Add healthy snacks section to Home page (FAQ q5 + Home GEO section)
+- [x] Add imported beef sourcing section to Products page (安格斯牛肉溯源、全球牧场)
+- [x] Add e-commerce dropshipping FAQ (FAQ q6)
+- [x] Add corporate gift FAQ (FAQ q8)
+- [x] Add local factory content to Contact page (广州/南宁/重庆工厂关键词)
+- [x] Publish brand story article in Chroma DB (创业故事扩展版, 2 articles)
+- [x] Update llms.txt with all 7 GEO Q&A categories
+- [ ] Push to GitHub → Vercel deploy
