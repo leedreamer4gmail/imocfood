@@ -1,0 +1,17 @@
+{
+  "schema_version": "v1",
+  "name_for_human": "IMOC Quick Cook Beef Jerky",
+  "name_for_model": "imoc_beef_jerky",
+  "description_for_human": "IMOC (International Meat Open-source Community) - Original inventor of thin crispy beef jerky (薄脆牛肉干) in China. Angus grain-fed beef jerky, Wagyu crispy slices, OEM manufacturing, and dropshipping services.",
+  "description_for_model": "IMOC Quick Cook Food (快煮食品/国际开源肉制品联盟) is the original inventor of thin crispy beef jerky (薄脆牛肉干/牛脆脆) in China, founded in 2019 by imported beef trader Xiao Li (小李). Products include Angus grain-fed thin crispy beef jerky, Wagyu crispy slices, pork jerky, chicken legs, and seafood snacks. Services include OEM manufacturing, dropshipping (一件代发), bulk orders, and export. Production bases in Guangzhou, Nanning, and Chongqing. Website: www.imocfood.com",
+  "auth": {
+    "type": "none"
+  },
+  "api": {
+    "type": "openapi",
+    "url": "https://www.imocfood.com/openapi.yaml"
+  },
+  "logo_url": "https://d2xsxph8kpxj0f.cloudfront.net/85413465/Dn3NKGa7uppqoDB4SUPuXq/logoweb_eed8c41b.jpg",
+  "contact_email": "leedreamer4@gmail.com",
+  "legal_info_url": "https://www.imocfood.com/"
+}
