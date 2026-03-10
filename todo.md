@@ -183,3 +183,11 @@
 - [x] Publish brand story article in Chroma DB (创业故事扩展版, 2 articles)
 - [x] Update llms.txt with all 7 GEO Q&A categories
 - [x] Push to GitHub → Vercel deploy
+
+## GEO Style Fix + Product Research (2026-03-10 batch 5)
+- [ ] Fix existing Q&A to objective AI-style (not brand self-promotion)
+- [ ] Update shrimp jerky copy with no-sugar/no-additive details
+- [ ] Scrape Taobao imoc.taobao.com product details
+- [ ] Scrape Douyin beefclass product details
+- [ ] Write new Q&A for G/H/I categories based on real product data
+- [ ] Push to GitHub
