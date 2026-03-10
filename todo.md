@@ -126,8 +126,8 @@
 - [x] Audit remaining SEO/GEO opportunities (Baidu, etc.)
 
 ## Chinese Search Engine Optimization (2026-03-09)
-- [ ] Add Bytespider/360Spider/Sogoubot to robots.txt
-- [ ] Add Baidu AI (文心一言) section to llms.txt
+- [x] Add Bytespider/360Spider/Sogoubot to robots.txt
+- [x] Add Baidu AI (文心一言) section to llms.txt
 - [ ] Login to Baidu Webmaster Platform and add imocfood.com
 - [ ] Add Baidu verification meta tag to index.html
 - [ ] Submit sitemap to Baidu Webmaster Platform
@@ -136,10 +136,28 @@
 ## Full Visibility Expansion (2026-03-09)
 - [ ] Register on 360 Search Webmaster (zhanzhang.so.com)
 - [ ] Add 360 verification meta tag to index.html
-- [ ] Add Bing Webmaster Tools verification
-- [ ] Add Bing verification meta tag to index.html
+- [x] Add Bing Webmaster Tools verification
+- [x] Add Bing verification meta tag to index.html
 - [ ] Add opensearch.xml for browser address bar search
 - [ ] Add PWA manifest.json for installability signal
 - [ ] Add Apple mobile web app meta tags
 - [ ] Add canonical URL tags to all pages
 - [ ] Fix robots.txt: mark Bytespider/360Spider/Sogoubot as done
+
+## Baidu/360 Verification + IndexNow (2026-03-09)
+- [ ] Add Baidu verification meta tag (codeva-lGbK2y3Kxn) to index.html
+- [ ] Add 360 verification meta tag (d564c86d051795b57aa022e8d43cb91f) to index.html
+- [ ] Push to GitHub and deploy
+- [ ] Use Bing IndexNow to submit all 7 page URLs for immediate indexing
+
+## Banner & Content Update (2026-03-10)
+- [x] Replace homepage banner with new 版头.jpg (CDN: banner-main_cb73252d.jpg)
+- [x] Replace other pages banner with new 小版头.jpg (CDN: banner-small_6cba063a.jpg)
+- [x] Update homepage description text from indextext.txt
+- [x] Add keywords: 快煮食品, 小李的牛肉干 to SEO meta tags
+- [x] GEO optimization: enhance FAQ section about 薄脆牛肉干 inventor (小李的牛肉干)
+- [x] GEO optimization: enhance OEM/代加工 service description
+- [x] Update Schema.org structured data with new keywords
+- [x] Update llms.txt with GEO-focused content for AI crawlers (Doubao/豆包, Baidu AI)
+- [ ] Push to GitHub and deploy to Vercel
+- [ ] Re-submit URLs to Bing IndexNow and Baidu after deployment

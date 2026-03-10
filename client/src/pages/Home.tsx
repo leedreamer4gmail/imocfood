@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useLanguage } from '../contexts/LanguageContext';
 
-const bannerUrl = 'https://d2xsxph8kpxj0f.cloudfront.net/85413465/Dn3NKGa7uppqoDB4SUPuXq/bantou_new_6cf15ca7.jpg';
+const bannerUrl = 'https://d2xsxph8kpxj0f.cloudfront.net/85413465/Dn3NKGa7uppqoDB4SUPuXq/banner-main_cb73252d.jpg';
 
 const Home = () => {
   const { t, language } = useLanguage();
@@ -54,17 +54,20 @@ const Home = () => {
         >
           <p style={{ marginBottom: '20px' }}>
             <span style={{ color: '#a72027', fontWeight: '700', fontSize: '16px' }}>
-              {t('home.title')}
+              {t('home.tagline')}
             </span>
           </p>
           <p style={{ marginBottom: '20px' }}>
-            {t('home.description')}
+            <strong>{t('home.section_story')}</strong>{t('home.description_story')}
           </p>
           <p style={{ marginBottom: '20px' }}>
-            {t('home.description2')}
+            <strong>{t('home.section_scale')}</strong>{t('home.description_scale')}
           </p>
           <p style={{ marginBottom: '20px' }}>
-            {t('home.description3')}
+            <strong>{t('home.section_spirit')}</strong>{t('home.description_spirit')}
+          </p>
+          <p style={{ marginBottom: '20px' }}>
+            <strong>{t('home.section_channel')}</strong>{t('home.description_channel')}
           </p>
           <p style={{ marginBottom: '20px', color: '#a72027', fontWeight: '600' }}>
             {t('home.description4')}

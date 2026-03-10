@@ -320,7 +320,7 @@ function AppContent() {
       {currentPage !== 'home' && currentPage !== 'admin' && (
         <div style={{ display: 'flex', justifyContent: 'center', padding: 0, margin: 0, lineHeight: 0 }}>
           <img
-            src="https://d2xsxph8kpxj0f.cloudfront.net/85413465/Dn3NKGa7uppqoDB4SUPuXq/xiaobantou_new_b4233f04.jpg"
+            src="https://d2xsxph8kpxj0f.cloudfront.net/85413465/Dn3NKGa7uppqoDB4SUPuXq/banner-small_6cba063a.jpg"
             alt="IMOC international meat open-source community 国际开源肉制品联盟"
             style={{ display: 'block', maxWidth: '100%' }}
           />

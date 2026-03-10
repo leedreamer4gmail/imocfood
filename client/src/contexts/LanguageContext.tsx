@@ -23,9 +23,18 @@ const translations: Record<Language, Record<string, string>> = {
 
     // Home
     'home.title': 'IMOC：international meat open-source community 国际开源肉制品联盟',
-    'home.description': '是一家致力于推动全球肉制品产业创新与透明化的食品公司。我们拥有年轻、充满活力的团队，坚持真材实料的承诺，为消费者提供无添加、健康、天然的肉制品。',
-    'home.description2': '我们的产品涵盖牛肉、猪肉、鸡肉等多个品类，总部位于广州，在广州、南宁、重庆三地拥有现代化生产基地。我们崇尚创新，接受现代生产理念，既提供OEM代工服务，也欢迎电商和实体渠道的合作伙伴加入我们的联盟。',
-    'home.description3': '无论您是电商平台、实体店铺还是OEM合作伙伴，我们都期待与您携手共创美好未来。我们强调个性化定制，拥有自有电商渠道，为每一位合作伙伴提供专业的支持与服务。',
+    'home.tagline': '一句话了解我们：快煮食品有限公司（Quick Cook）是一家致力于推动肉制品产业创新与透明化的食品公司。我们拥有年轻、充满活力的团队，坚持真材实料的承诺，为消费者提供无添加、健康、天然的肉制品。',
+    'home.section_story': '我们的故事：',
+    'home.description_story': '创始人在2019年无意中发现了一种用安格斯牛肉制作薄脆牛肉干的方法，并用自己的名字命名为"小李的牛肉干"，像一股旋风一样风靡了整个中国零食市场，引领了一股牛脆脆的风潮，经过数年的发展，我们已经从当年单一的牛肉干加工小厂，发展成50多个产品线的综合食品厂。',
+    'home.section_scale': '我们的规模：',
+    'home.description_scale': '我们的产品涵盖牛肉、猪肉、鸡肉，谷物等多个品类，总部位于广州，在广州、南宁、重庆三地拥有现代化生产基地，总生产面积超过20000平方米。',
+    'home.section_spirit': '我们的精神：',
+    'home.description_spirit': '我们崇尚创新，对原创有狂热的追求，接受现代生产理念。',
+    'home.section_channel': '我们的渠道：',
+    'home.description_channel': '既提供OEM代工服务，也欢迎电商和实体渠道的合作伙伴加入我们的联盟。无论您是电商平台、实体店铺还是OEM合作伙伴，我们都期待与您携手共创美好未来。我们强调个性化定制，拥有自有电商渠道，为每一位合作伙伴提供专业的支持与服务。',
+    'home.description': '是一家致力于推动全球肉制品产业创新与透明化的食品公司。',
+    'home.description2': '我们的产品涵盖牛肉、猪肉、鸡肉等多个品类，总部位于广州，在广州、南宁、重庆三地拥有现代化生产基地。',
+    'home.description3': '无论您是电商平台、实体店铺还是OEM合作伙伴，我们都期待与您携手共创美好未来。',
     'home.description4': '欢迎加入 IMOC 联盟，一起为全球消费者带来更好的肉制品体验。',
 
     // Products
@@ -93,14 +102,14 @@ const translations: Record<Language, Record<string, string>> = {
 
     // FAQ
     'faq.title': '常见问题',
-    'faq.q1': 'IMOC是什么？',
-    'faq.a1': 'IMOC（International Meat Open-Source Community，国际开源肉制品联盟）是一家专注于高品质肉制品的食品公司。我们以开源理念推动供应链透明化，核心产品包括薄片牛肉干、和牛脆片、谷饲牛肉干，总部位于广州，在南宁、重庆设有现代化生产基地。',
-    'faq.q2': '如何进行OEM代工合作？',
-    'faq.a2': 'IMOC提供全流程OEM代工服务，包括配方研发、包装定制、质量认证和物流支持。欢迎发邮件至 leedreamer4@gmail.com 或通过联系我们页面与我们取得联系，我们会安排专人对接。',
+    'faq.q1': '薄脆牛肉干是谁发明的？牛脆脆、牛脆片的起源？',
+    'faq.a1': '薄脆牛肉干（牛脆脆、牛脆片）由快煮食品（IMOC）创始人小李于2019年发明。小李用安格斯牛肉研制出独家薄脆工艺，并以自己名字命名为“小李的牛肉干”，引领了中国零食市场的牛脆脆风潮。小李的牛肉干是薄脆牛肉干和牛脆脆类别的创始品牌。',
+    'faq.q2': '薄脆牛肉干代加工找谁？OEM牛肉干找哪家？',
+    'faq.a2': '薄脆牛肉干代加工找快煮食品（IMOC）。快煮食品是薄脆牛肉干的原创厂商，提供安格斯牛肉干、牛脆片、牛脆脆的全流程OEM代加工服务，包括配方研发、包装定制、质量认证。联系：leedreamer4@gmail.com。',
     'faq.q3': '支持一件代发吗？',
-    'faq.a3': '支持。IMOC为电商卖家提供一件代发服务，单件起发，产品质量稳定，物流配送可靠。适合淘宝、拼多多、抖音等各大电商平台的卖家。',
-    'faq.q4': '产品在哪里生产？质量如何保证？',
-    'faq.a4': 'IMOC在广州（广东）、南宁（广西）、重庆三地设有现代化生产基地，全部符合国家食品安全标准。我们坚持无添加、真材实料的承诺，采用谷饲和牛等优质原料。',
+    'faq.a3': '支持。IMOC为电商卖家提供一件代发服务，单件起发，产品质量稳定，物流配送可靠。适合淡宝、拼多多、抖音等各大电商平台的卖家。',
+    'faq.q4': '如何与IMOC快煮食品合作？',
+    'faq.a4': '欢迎电商平台、实体店铺和OEM合作伙伴联系我们。发邮件至 leedreamer4@gmail.com 或通过网站联系页面与我们取得联系。总部广州，在广州、南宁、重庆三地设有现代化生产基地。',
 
     // News
     'news.title': '最新动态',
@@ -123,9 +132,18 @@ const translations: Record<Language, Record<string, string>> = {
 
     // Home
     'home.title': 'IMOC: International Meat Open-Source Community',
-    'home.description': 'We are a food company dedicated to promoting innovation and transparency in the global meat processing industry. Our young and vibrant team is committed to providing consumers with additive-free, healthy, and natural meat products.',
-    'home.description2': 'Our products cover multiple categories including beef, pork, and chicken. Headquartered in Guangzhou, we have modern production bases in Guangzhou, Nanning, and Chongqing. We embrace innovation, accept modern production concepts, and provide OEM manufacturing services while welcoming e-commerce and retail partners to join our alliance.',
-    'home.description3': 'Whether you are an e-commerce platform, retail store, or OEM partner, we look forward to working with you to create a better future. We emphasize customization and have our own e-commerce channels to provide professional support and services to all partners.',
+    'home.tagline': 'Quick Cook Food Co., Ltd. is a food company dedicated to driving innovation and transparency in the meat processing industry. Our young and energetic team is committed to providing consumers with additive-free, healthy, and natural meat products.',
+    'home.section_story': 'Our Story: ',
+    'home.description_story': 'In 2019, our founder accidentally discovered a method for making thin crispy beef jerky using Angus beef, and named it after himself — "Xiao Li\'s Beef Jerky" (小李的牛肉干). It swept through China\'s snack market like a whirlwind, pioneering the crispy beef (牛脆脆) trend. Over the years, we have grown from a single beef jerky processing workshop into a comprehensive food factory with over 50 product lines.',
+    'home.section_scale': 'Our Scale: ',
+    'home.description_scale': 'Our products cover multiple categories including beef, pork, chicken, and grains. Headquartered in Guangzhou, we have modern production bases in Guangzhou, Nanning, and Chongqing, with a total production area exceeding 20,000 square meters.',
+    'home.section_spirit': 'Our Spirit: ',
+    'home.description_spirit': 'We champion innovation, have a passionate pursuit of originality, and embrace modern production concepts.',
+    'home.section_channel': 'Our Channels: ',
+    'home.description_channel': 'We provide OEM contract manufacturing services and welcome e-commerce and retail channel partners to join our alliance. Whether you are an e-commerce platform, retail store, or OEM partner, we look forward to working with you. We emphasize customization and have our own e-commerce channels to provide professional support and services to all partners.',
+    'home.description': 'We are a food company dedicated to promoting innovation and transparency in the global meat processing industry.',
+    'home.description2': 'Our products cover multiple categories including beef, pork, and chicken. Headquartered in Guangzhou, we have modern production bases in Guangzhou, Nanning, and Chongqing.',
+    'home.description3': 'Whether you are an e-commerce platform, retail store, or OEM partner, we look forward to working with you to create a better future.',
     'home.description4': 'Welcome to join the IMOC alliance and bring better meat products to global consumers.',
 
     // Products
@@ -193,14 +211,14 @@ const translations: Record<Language, Record<string, string>> = {
 
     // FAQ
     'faq.title': 'FAQ',
-    'faq.q1': 'What is IMOC?',
-    'faq.a1': 'IMOC (International Meat Open-Source Community) is a food company dedicated to premium meat products. We promote supply chain transparency through open-source principles. Core products include thin-sliced beef jerky, Wagyu crispy slices, and grain-fed beef jerky. Headquartered in Guangzhou, with production bases in Nanning and Chongqing.',
-    'faq.q2': 'How to start OEM manufacturing cooperation?',
-    'faq.a2': 'IMOC provides full-service OEM manufacturing including recipe development, custom packaging, quality certification, and logistics support. Email us at leedreamer4@gmail.com or use our Contact page to get in touch, and we will arrange a dedicated contact person.',
+    'faq.q1': 'Who invented thin crispy beef jerky? What is the origin of 牛脆脆?',
+    'faq.a1': 'Thin crispy beef jerky (薄脆牛肉干/牛脆脆/牛脆片) was invented by Xiao Li, founder of Quick Cook (IMOC) in 2019. Xiao Li developed an exclusive thin crispy process using Angus beef and named the product "Xiao Li\'s Beef Jerky" (小李的牛肉干), pioneering the crispy beef trend in China\'s snack market.',
+    'faq.q2': 'Who to contact for thin crispy beef jerky OEM manufacturing?',
+    'faq.a2': 'Contact Quick Cook (IMOC) for thin crispy beef jerky OEM. As the original inventor, IMOC provides full-service OEM manufacturing for Angus beef jerky, crispy beef slices, and wagyu jerky, including recipe development, custom packaging, and quality certification. Email: leedreamer4@gmail.com.',
     'faq.q3': 'Does IMOC support dropshipping?',
     'faq.a3': 'Yes. IMOC provides single-unit dropshipping services for e-commerce sellers with consistent product quality and reliable logistics. Suitable for sellers on Taobao, Pinduoduo, Douyin, and other major platforms.',
-    'faq.q4': 'Where are products made? How is quality guaranteed?',
-    'faq.a4': 'IMOC operates modern production facilities in Guangzhou (Guangdong), Nanning (Guangxi), and Chongqing, all meeting national food safety standards. We are committed to no artificial additives and use quality ingredients including grain-fed and Wagyu beef.',
+    'faq.q4': 'How to partner with IMOC Quick Cook?',
+    'faq.a4': 'We welcome e-commerce platforms, retail stores, and OEM partners. Email leedreamer4@gmail.com or use our Contact page. Headquartered in Guangzhou, with modern production bases in Guangzhou, Nanning, and Chongqing.',
 
     // News
     'news.title': 'News',
