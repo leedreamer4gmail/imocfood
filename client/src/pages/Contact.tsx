@@ -8,8 +8,8 @@ import { useLanguage } from '../contexts/LanguageContext';
 const CONTACTS = [
   {
     name: '李梦',
-    title: '原料进口、采购',
-    titleEn: 'Raw Material Import & Procurement',
+    title: '原料输入',
+    titleEn: 'Raw Material Input',
     photo: 'https://d2xsxph8kpxj0f.cloudfront.net/85413465/Dn3NKGa7uppqoDB4SUPuXq/lm_44183f8e.jpg',
     email: 'leedreamer4@gmail.com',
     phone: '',

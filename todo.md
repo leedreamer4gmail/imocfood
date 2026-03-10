@@ -215,4 +215,4 @@
 - [x] Add titleEn field to CONTACTS array in Contact.tsx with English job titles
 - [x] Display English title when language === 'en', Chinese title when language === 'zh'
 - [x] Also translate 电话/微信 labels to Tel/WeChat in English mode
-- [ ] Push to GitHub → Vercel deploy
+- [x] Push to GitHub → Vercel deploy
