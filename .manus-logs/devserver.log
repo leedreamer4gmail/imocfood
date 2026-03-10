@@ -977,3 +977,9 @@
 [2026-03-10T05:01:11.483Z] 1:01:11 AM [vite] (client) page reload index.html
 [2026-03-10T05:02:06.247Z] 1:02:06 AM [vite] (client) hmr update /src/contexts/LanguageContext.tsx
 [2026-03-10T05:02:25.536Z] 1:02:25 AM [vite] (client) hmr update /src/contexts/LanguageContext.tsx
+[2026-03-10T05:15:16.002Z] 1:15:16 AM [vite] (client) page reload index.html
+[2026-03-10T05:22:48.129Z] Dev server process group stopped
+[2026-03-10T05:22:48.189Z] Dev server exited with code -15
+[2026-03-10T05:22:51.140Z] Starting dev server with command: NODE_ENV=development tsx watch server/_core/index.ts
+[2026-03-10T05:22:52.980Z] [OAuth] Initialized with baseURL: https://api.manus.im
+[2026-03-10T05:22:53.222Z] Server running on http://localhost:3000/

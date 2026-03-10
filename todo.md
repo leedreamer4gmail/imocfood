@@ -159,5 +159,12 @@
 - [x] GEO optimization: enhance OEM/代加工 service description
 - [x] Update Schema.org structured data with new keywords
 - [x] Update llms.txt with GEO-focused content for AI crawlers (Doubao/豆包, Baidu AI)
-- [ ] Push to GitHub and deploy to Vercel
-- [ ] Re-submit URLs to Bing IndexNow and Baidu after deployment
+- [x] Push to GitHub and deploy to Vercel
+- [x] Re-submit URLs to Bing IndexNow and Baidu after deployment
+
+## ByteDance + Baidu + Article (2026-03-10 batch 2)
+- [ ] Add ByteDance verification meta tag to index.html
+- [ ] Write 薄脆牛肉干 origin story news article (Chinese + English)
+- [ ] Submit sitemap to Baidu Webmaster Tools
+- [ ] Push to GitHub → Vercel deploy
+- [ ] Re-submit IndexNow after deploy
