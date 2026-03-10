@@ -11,7 +11,7 @@ const CONTACTS = [
     title: '原料进口、采购',
     photo: 'https://d2xsxph8kpxj0f.cloudfront.net/85413465/Dn3NKGa7uppqoDB4SUPuXq/lm_44183f8e.jpg',
     email: 'leedreamer4@gmail.com',
-    phone: '13800138000',
+    phone: '',
     qrUrl: 'https://d2xsxph8kpxj0f.cloudfront.net/85413465/Dn3NKGa7uppqoDB4SUPuXq/lm二维码_7265883d.jpg',
   },
   {
