@@ -209,7 +209,7 @@ const Contact = () => {
             {locations.map((location, index) => (
               <p key={index} style={{ margin: '0' }}>
                 <span style={{ fontWeight: '700', color: '#a72027' }}>{location.city}</span>
-                ：{location.address
+                ：{location.address}
               </p>
             ))}
           </div>

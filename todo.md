@@ -166,7 +166,7 @@
 - [ ] Add ByteDance verification meta tag to index.html
 - [ ] Write 薄脆牛肉干 origin story news article (Chinese + English)
 - [ ] Submit sitemap to Baidu Webmaster Tools
-- [ ] Push to GitHub → Vercel deploy
+- [x] Push to GitHub → Vercel deploy
 - [ ] Re-submit IndexNow after deploy
 
 ## GEO Extended Tasks (2026-03-10 batch 3)
@@ -182,4 +182,4 @@
 - [x] Add local factory content to Contact page (广州/南宁/重庆工厂关键词)
 - [x] Publish brand story article in Chroma DB (创业故事扩展版, 2 articles)
 - [x] Update llms.txt with all 7 GEO Q&A categories
-- [ ] Push to GitHub → Vercel deploy
+- [x] Push to GitHub → Vercel deploy
