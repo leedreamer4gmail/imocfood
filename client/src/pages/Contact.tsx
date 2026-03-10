@@ -9,6 +9,7 @@ const CONTACTS = [
   {
     name: '李梦',
     title: '原料进口、采购',
+    titleEn: 'Raw Material Import & Procurement',
     photo: 'https://d2xsxph8kpxj0f.cloudfront.net/85413465/Dn3NKGa7uppqoDB4SUPuXq/lm_44183f8e.jpg',
     email: 'leedreamer4@gmail.com',
     phone: '',
@@ -17,6 +18,7 @@ const CONTACTS = [
   {
     name: '潘海露',
     title: '渠道合作, OEM加工',
+    titleEn: 'Channel Partnership & OEM',
     photo: 'https://d2xsxph8kpxj0f.cloudfront.net/85413465/Dn3NKGa7uppqoDB4SUPuXq/phl_59098010.jpg',
     email: '',
     phone: '',
@@ -25,6 +27,7 @@ const CONTACTS = [
   {
     name: '姚嘉琳 Queeny',
     title: '大宗发货',
+    titleEn: 'Bulk Order & Shipping',
     photo: 'https://d2xsxph8kpxj0f.cloudfront.net/85413465/Dn3NKGa7uppqoDB4SUPuXq/qny_820d666f.jpg',
     email: 'yjl_yao@126.com',
     phone: '',
@@ -129,9 +132,9 @@ const Contact = () => {
                 <h3 style={{ fontSize: '13px', fontWeight: '700', color: '#333', margin: '0 0 3px 0' }}>
                   {contact.name}
                 </h3>
-                {/* Title - always reserve space */}
+                {/* Title - always reserve space, switch language */}
                 <p style={{ fontSize: '11px', color: '#a72027', margin: '0 0 10px 0', minHeight: '14px' }}>
-                  {contact.title || '\u00a0'}
+                  {(language === 'en' ? contact.titleEn : contact.title) || '\u00a0'}
                 </p>
 
                 {/* Email - always show label */}
@@ -145,12 +148,12 @@ const Contact = () => {
 
                 {/* Phone - always show label */}
                 <p style={{ fontSize: '11px', color: '#555', margin: '0 0 10px 0' }}>
-                  电话：{contact.phone || ''}
+                  {language === 'en' ? 'Tel:' : '电话：'}{contact.phone || ''}
                 </p>
 
                 {/* WeChat QR - always show label, QR centered */}
                 <div style={{ paddingTop: '10px', borderTop: '1px solid #e0e0e0', textAlign: 'center' }}>
-                  <p style={{ fontSize: '11px', color: '#999', margin: '0 0 6px 0', textAlign: 'left' }}>微信：</p>
+                  <p style={{ fontSize: '11px', color: '#999', margin: '0 0 6px 0', textAlign: 'left' }}>{language === 'en' ? 'WeChat:' : '微信：'}</p>
                   {contact.qrUrl ? (
                     <img
                       src={contact.qrUrl}

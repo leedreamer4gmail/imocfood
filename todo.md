@@ -210,3 +210,9 @@
 ## Animal Icon Size Fix (2026-03-10 batch 8)
 - [x] Fix 4 animal icons to same height (120px fixed height, width auto) so all icons appear uniform size
 - [x] Push to GitHub → Vercel deploy
+
+## Contact Page Job Title Translation (2026-03-10 batch 10)
+- [x] Add titleEn field to CONTACTS array in Contact.tsx with English job titles
+- [x] Display English title when language === 'en', Chinese title when language === 'zh'
+- [x] Also translate 电话/微信 labels to Tel/WeChat in English mode
+- [ ] Push to GitHub → Vercel deploy

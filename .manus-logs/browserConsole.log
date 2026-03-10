@@ -353,3 +353,14 @@
 [2026-03-10T14:45:32.119Z] {"timestamp":1773153930114,"level":"DEBUG","args":["[Manus] Debug collector initialized (no rrweb, UI events only)"],"stack":null}
 [2026-03-10T14:45:32.119Z] {"timestamp":1773153930118,"level":"DEBUG","args":["[vite] connected."],"stack":null}
 [2026-03-10T14:45:32.119Z] {"timestamp":1773153930146,"level":"INFO","args":["%cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools","font-weight:bold"],"stack":null}
+[2026-03-10T14:47:36.697Z] {"timestamp":1773154054692,"level":"DEBUG","args":["[Manus] Debug collector initialized (no rrweb, UI events only)"],"stack":null}
+[2026-03-10T14:47:36.697Z] {"timestamp":1773154054706,"level":"DEBUG","args":["[vite] connected."],"stack":null}
+[2026-03-10T14:47:36.697Z] {"timestamp":1773154054756,"level":"INFO","args":["%cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools","font-weight:bold"],"stack":null}
+[2026-03-10T14:47:54.783Z] {"timestamp":1773154071754,"level":"DEBUG","args":["[Manus] Debug collector initialized (no rrweb, UI events only)"],"stack":null}
+[2026-03-10T14:47:56.768Z] {"timestamp":1773154076039,"level":"DEBUG","args":["[vite] connected."],"stack":null}
+[2026-03-10T14:52:44.119Z] {"timestamp":1773154362480,"level":"DEBUG","args":["[vite]","hot updated: /src/pages/Contact.tsx"],"stack":null}
+[2026-03-10T14:52:44.775Z] {"timestamp":1773154363183,"level":"DEBUG","args":["[vite]","hot updated: /src/pages/Contact.tsx"],"stack":null}
+[2026-03-10T14:52:52.119Z] {"timestamp":1773154371001,"level":"DEBUG","args":["[vite]","hot updated: /src/pages/Contact.tsx"],"stack":null}
+[2026-03-10T14:53:00.119Z] {"timestamp":1773154379634,"level":"DEBUG","args":["[vite]","hot updated: /src/pages/Contact.tsx"],"stack":null}
+[2026-03-10T14:53:44.780Z] {"timestamp":1773154371477,"level":"DEBUG","args":["[vite]","hot updated: /src/pages/Contact.tsx"],"stack":null}
+[2026-03-10T14:53:44.780Z] {"timestamp":1773154380068,"level":"DEBUG","args":["[vite]","hot updated: /src/pages/Contact.tsx"],"stack":null}
