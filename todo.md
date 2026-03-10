@@ -191,3 +191,12 @@
 - [ ] Scrape Douyin beefclass product details
 - [ ] Write new Q&A for G/H/I categories based on real product data
 - [ ] Push to GitHub
+
+## Optimization Batch (2026-03-10 batch 6)
+- [x] Fix keyword 薄片→薄脆 in title/meta/OG/Twitter/Schema throughout index.html
+- [x] Create favicon.ico from ICON512.png (multi-size: 16x16, 32x32, 48x48)
+- [x] Create apple-touch-icon.png (180x180) for iOS home screen
+- [x] Remove fake phone number 13800138000 from Contact.tsx and LocalBusiness schema
+- [x] Add Douyin sameAs link to Organization schema
+- [x] Publish 5 GEO-optimized news articles to Chroma DB (品类起源/选料标准/OEM/一件代发/公司简介)
+- [x] Push all changes to GitHub → Vercel deploy

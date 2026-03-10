@@ -17,6 +17,16 @@ const Products = () => {
         t('products.bull_5'),
         t('products.bull_6'),
       ],
+      images: [
+        {
+          url: 'https://d2xsxph8kpxj0f.cloudfront.net/85413465/Dn3NKGa7uppqoDB4SUPuXq/beef1_22fc4793.jpg',
+          alt: '小李的牛肉干 - Angus Grain Feed Beef Jerky',
+        },
+        {
+          url: 'https://d2xsxph8kpxj0f.cloudfront.net/85413465/Dn3NKGa7uppqoDB4SUPuXq/beef2_5ccc2dc8.jpg',
+          alt: '小李的牛罐头 - Beef Cube Canned',
+        },
+      ],
     },
     {
       title: t('products.pig'),
@@ -26,6 +36,16 @@ const Products = () => {
         t('products.pig_3'),
         t('products.pig_4'),
         t('products.pig_5'),
+      ],
+      images: [
+        {
+          url: 'https://d2xsxph8kpxj0f.cloudfront.net/85413465/Dn3NKGa7uppqoDB4SUPuXq/pork1_3f82f447.jpg',
+          alt: '小李的猪肉干 - Iberico Pork Jerky',
+        },
+        {
+          url: 'https://d2xsxph8kpxj0f.cloudfront.net/85413465/Dn3NKGa7uppqoDB4SUPuXq/pork2_754af0e5.jpg',
+          alt: '小李的坛肉 - Pot Streaky Pork',
+        },
       ],
     },
     {
@@ -38,6 +58,16 @@ const Products = () => {
         t('products.chicken_5'),
         t('products.chicken_6'),
       ],
+      images: [
+        {
+          url: 'https://d2xsxph8kpxj0f.cloudfront.net/85413465/Dn3NKGa7uppqoDB4SUPuXq/chicken1_2338a632.jpg',
+          alt: '小李的大鸡腿（无抗）- Free Range Chicken Legs',
+        },
+        {
+          url: 'https://d2xsxph8kpxj0f.cloudfront.net/85413465/Dn3NKGa7uppqoDB4SUPuXq/chicken2_6008905c.jpg',
+          alt: '朴实大鸡腿（琵琶腿）- Drumstick',
+        },
+      ],
     },
     {
       title: t('products.squid'),
@@ -45,6 +75,16 @@ const Products = () => {
         t('products.squid_1'),
         t('products.squid_2'),
         t('products.squid_3'),
+      ],
+      images: [
+        {
+          url: 'https://d2xsxph8kpxj0f.cloudfront.net/85413465/Dn3NKGa7uppqoDB4SUPuXq/seafood1_fc351648.jpg',
+          alt: '小李的庶民虾干 - Dried Shrimp',
+        },
+        {
+          url: 'https://d2xsxph8kpxj0f.cloudfront.net/85413465/Dn3NKGa7uppqoDB4SUPuXq/seafood2_4de98a78.jpg',
+          alt: '小李的鱿鱼干 - Dried Squid',
+        },
       ],
     },
   ];
@@ -78,195 +118,220 @@ const Products = () => {
           </p>
         </div>
       </section>
+
       <div style={{ padding: '0 40px 60px 40px' }}>
-      <div style={{ maxWidth: '1197px', margin: '0 auto' }}>
-        {/* Two-column layout: 2/3 left + divider + 1/3 right */}
-        <div
-          style={{
-            display: 'grid',
-            gridTemplateColumns: '2fr 1px 1fr',
-            gap: '40px',
-            alignItems: 'flex-start',
-          }}
-        >
-          {/* Left Column - Characters and Responsibilities */}
-          <div>
-            {/* Character Image */}
-            <div
-              style={{
-                marginBottom: '40px',
-                display: 'flex',
-                justifyContent: 'center',
-              }}
-            >
-              <img
-                src={characterImageUrl}
-                alt="Product Characters"
-                style={{
-                  maxWidth: '100%',
-                  height: 'auto',
-                  borderRadius: '8px',
-                }}
-              />
-            </div>
-
-            {/* Character Responsibilities - 4 columns in a row */}
-            <div
-              style={{
-                display: 'grid',
-                gridTemplateColumns: 'repeat(4, 1fr)',
-                gap: '20px',
-                fontSize: '13px',
-              }}
-            >
-              {productCategories.map((category, index) => (
-                <div
-                  key={index}
-                  style={{
-                    textAlign: 'center',
-                  }}
-                >
-                  <h4
-                    style={{
-                      color: '#a72027',
-                      fontSize: '13px',
-                      fontWeight: '600',
-                      marginBottom: '12px',
-                      margin: '0 0 12px 0',
-                      lineHeight: '1.4',
-                    }}
-                  >
-                    {category.title}
-                  </h4>
-                  <ul
-                    style={{
-                      listStyle: 'none',
-                      padding: 0,
-                      margin: 0,
-                      textAlign: 'center',
-                      fontSize: '13px',
-                    }}
-                  >
-                    {category.products.map((item, rIndex) => (
-                      <li
-                        key={rIndex}
-                        style={{
-                          padding: '4px 0',
-                          color: '#333333',
-                          fontSize: '13px',
-                        }}
-                      >
-                        {item}
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              ))}
-            </div>
-          </div>
-
-          {/* Red Divider Line */}
+        <div style={{ maxWidth: '1197px', margin: '0 auto' }}>
+          {/* Two-column layout: 2/3 left + divider + 1/3 right */}
           <div
             style={{
-              backgroundColor: '#a72027',
-              height: '100%',
-              minHeight: '600px',
-            }}
-          />
-
-          {/* Right Column - Purchase Information */}
-          <div
-            style={{
-              display: 'flex',
-              flexDirection: 'column',
-              alignItems: 'center',
-              justifyContent: 'flex-start',
+              display: 'grid',
+              gridTemplateColumns: '2fr 1px 1fr',
+              gap: '40px',
+              alignItems: 'flex-start',
             }}
           >
-            <h3
-              style={{
-                color: '#a72027',
-                fontSize: '20px',
-                fontWeight: '600',
-                marginBottom: '40px',
-                textAlign: 'center',
-                margin: '0 0 40px 0',
-              }}
-            >
-              {t('products.buy')}
-            </h3>
+            {/* Left Column - Characters and Product Grid */}
+            <div>
+              {/* Combined character image */}
+              <div style={{ marginBottom: '24px' }}>
+                <img
+                  src={characterImageUrl}
+                  alt="Product Characters"
+                  style={{
+                    width: '100%',
+                    height: 'auto',
+                    display: 'block',
+                  }}
+                />
+              </div>
 
-            <div style={{ textAlign: 'center', marginBottom: '40px' }}>
-              <a
-                href="https://imoc.taobao.com/"
-                target="_blank"
-                rel="noopener noreferrer"
+              {/* 4-column product grid: title + list + images, all centered */}
+              <div
                 style={{
-                  display: 'inline-block',
-                  marginBottom: '12px',
-                  textDecoration: 'none',
-                  color: '#ffffff',
-                  fontSize: '16px',
-                  fontWeight: '600',
-                  padding: '12px 32px',
-                  backgroundColor: '#a72027',
-                  borderRadius: '6px',
-                  transition: 'all 0.3s ease',
-                  border: 'none',
-                  cursor: 'pointer',
-                }}
-                onMouseEnter={(e) => {
-                  e.currentTarget.style.backgroundColor = '#8a1a20';
-                  e.currentTarget.style.transform = 'scale(1.05)';
-                }}
-                onMouseLeave={(e) => {
-                  e.currentTarget.style.backgroundColor = '#a72027';
-                  e.currentTarget.style.transform = 'scale(1)';
+                  display: 'grid',
+                  gridTemplateColumns: 'repeat(4, 1fr)',
+                  gap: '0',
                 }}
               >
-                {t('products.taobao')} →
-              </a>
-              <p
-                style={{
-                  margin: '0',
-                  color: '#666666',
-                  fontSize: '12px',
-                  wordBreak: 'break-all',
-                }}
-              >
-                https://imoc.taobao.com/
-              </p>
+                {productCategories.map((category, index) => (
+                  <div
+                    key={index}
+                    style={{
+                      display: 'flex',
+                      flexDirection: 'column',
+                      alignItems: 'center',
+                      textAlign: 'center',
+                      padding: '0 6px',
+                    }}
+                  >
+                    {/* Category title */}
+                    <h4
+                      style={{
+                        color: '#a72027',
+                        fontSize: '13px',
+                        fontWeight: '600',
+                        margin: '0 0 10px 0',
+                        lineHeight: '1.4',
+                        whiteSpace: 'nowrap',
+                        overflow: 'hidden',
+                        textOverflow: 'ellipsis',
+                        width: '100%',
+                      }}
+                    >
+                      {category.title}
+                    </h4>
+
+                    {/* Product list */}
+                    <ul
+                      style={{
+                        listStyle: 'none',
+                        padding: 0,
+                        margin: '0 0 16px 0',
+                        width: '100%',
+                      }}
+                    >
+                      {category.products.map((item, rIndex) => (
+                        <li
+                          key={rIndex}
+                          style={{
+                            padding: '3px 0',
+                            color: '#333333',
+                            fontSize: '12px',
+                            lineHeight: '1.5',
+                          }}
+                        >
+                          {item}
+                        </li>
+                      ))}
+                    </ul>
+
+                    {/* Product images - 2 per column, centered */}
+                    <div
+                      style={{
+                        display: 'flex',
+                        flexDirection: 'column',
+                        alignItems: 'center',
+                        gap: '12px',
+                        width: '100%',
+                      }}
+                    >
+                      {category.images.map((img, imgIndex) => (
+                        <img
+                          key={imgIndex}
+                          src={img.url}
+                          alt={img.alt}
+                          style={{
+                            width: '100%',
+                            maxWidth: '160px',
+                            height: 'auto',
+                            display: 'block',
+                            borderRadius: '4px',
+                          }}
+                        />
+                      ))}
+                    </div>
+                  </div>
+                ))}
+              </div>
             </div>
 
-            {/* Taobao QR Code */}
+            {/* Red Divider Line */}
             <div
               style={{
-                textAlign: 'center',
+                backgroundColor: '#a72027',
+                height: '100%',
+                minHeight: '600px',
+              }}
+            />
+
+            {/* Right Column - Purchase Information */}
+            <div
+              style={{
+                display: 'flex',
+                flexDirection: 'column',
+                alignItems: 'center',
+                justifyContent: 'flex-start',
               }}
             >
-              <img
-                src={taobaoQrUrl}
-                alt="Taobao QR Code"
+              <h3
                 style={{
-                  maxWidth: '100%',
-                  height: 'auto',
-                  borderRadius: '8px',
-                  marginBottom: '16px',
-                }}
-              />
-              <p
-                style={{
-                  marginTop: '0',
-                  color: '#666666',
-                  fontSize: '13px',
+                  color: '#a72027',
+                  fontSize: '20px',
+                  fontWeight: '600',
+                  textAlign: 'center',
+                  margin: '0 0 40px 0',
                 }}
               >
-                {t('news.news1_title')}
-              </p>
+                {t('products.buy')}
+              </h3>
+
+              <div style={{ textAlign: 'center', marginBottom: '40px' }}>
+                <a
+                  href="https://imoc.taobao.com/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  style={{
+                    display: 'inline-block',
+                    marginBottom: '12px',
+                    textDecoration: 'none',
+                    color: '#ffffff',
+                    fontSize: '16px',
+                    fontWeight: '600',
+                    padding: '12px 32px',
+                    backgroundColor: '#a72027',
+                    borderRadius: '6px',
+                    transition: 'all 0.3s ease',
+                    border: 'none',
+                    cursor: 'pointer',
+                  }}
+                  onMouseEnter={(e) => {
+                    e.currentTarget.style.backgroundColor = '#8a1a20';
+                    e.currentTarget.style.transform = 'scale(1.05)';
+                  }}
+                  onMouseLeave={(e) => {
+                    e.currentTarget.style.backgroundColor = '#a72027';
+                    e.currentTarget.style.transform = 'scale(1)';
+                  }}
+                >
+                  {t('products.taobao')} →
+                </a>
+                <p
+                  style={{
+                    margin: '0',
+                    color: '#666666',
+                    fontSize: '12px',
+                    wordBreak: 'break-all',
+                  }}
+                >
+                  https://imoc.taobao.com/
+                </p>
+              </div>
+
+              {/* Taobao QR Code */}
+              <div style={{ textAlign: 'center' }}>
+                <img
+                  src={taobaoQrUrl}
+                  alt="Taobao QR Code"
+                  style={{
+                    maxWidth: '100%',
+                    height: 'auto',
+                    borderRadius: '8px',
+                    marginBottom: '16px',
+                  }}
+                />
+                <p
+                  style={{
+                    marginTop: '0',
+                    color: '#666666',
+                    fontSize: '13px',
+                  }}
+                >
+                  {t('news.news1_title')}
+                </p>
+              </div>
             </div>
           </div>
         </div>
-      </div>
       </div>
     </div>
   );
