@@ -223,3 +223,10 @@
 - [ ] 在index.html JSON-LD中添加Person schema（李梦/小李，founder角色）
 - [ ] 在Chroma DB发布一篇"薄脆牛肉干品类起源与创始人"的权威文章
 - [x] 推送到GitHub → Vercel部署
+
+## 工厂资质页面 (2026-03-11)
+- [x] 上传4张证书图片到CDN
+- [x] 查找工厂航拍CDN URL (quanjing_3134d9a0.jpg)
+- [x] 创建Factory.tsx页面（航拍图+公司信息+证书+认证意义）
+- [x] 在App.tsx添加路由和导航菜单
+- [ ] 推送到GitHub → Vercel部署

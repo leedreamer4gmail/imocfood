@@ -20,6 +20,7 @@ const translations: Record<Language, Record<string, string>> = {
     'nav.dropshipping': '一件代发',
     'nav.contact': '联系我们',
     'nav.news': '最新动态',
+    'nav.factory': '工厂资质',
 
     // Home
     'home.title': 'IMOC：international meat open-source community 国际开源肉制品联盟',
@@ -137,6 +138,7 @@ const translations: Record<Language, Record<string, string>> = {
     'nav.dropshipping': 'Dropshipping',
     'nav.contact': 'Contact Us',
     'nav.news': 'News',
+    'nav.factory': 'Factory',
 
     // Home
     'home.title': 'IMOC: International Meat Open-Source Community',

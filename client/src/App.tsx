@@ -7,9 +7,10 @@ import News from './pages/News';
 import AdminNews from './pages/AdminNews';
 import OEM from './pages/OEM';
 import Dropshipping from './pages/Dropshipping';
+import Factory from './pages/Factory';
 import { LanguageProvider, useLanguage } from './contexts/LanguageContext';
 
-type Page = 'home' | 'products' | 'services' | 'contact' | 'news' | 'admin' | 'oem' | 'dropshipping';
+type Page = 'home' | 'products' | 'services' | 'contact' | 'news' | 'admin' | 'oem' | 'dropshipping' | 'factory';
 
 function AppContent() {
   const [currentPage, setCurrentPage] = useState<Page>('home');
@@ -32,6 +33,7 @@ function AppContent() {
     { id: 'home', label: t('nav.home') },
     { id: 'products', label: t('nav.products') },
     { id: 'services', label: t('nav.services') },
+    { id: 'factory', label: t('nav.factory') },
     { id: 'contact', label: t('nav.contact') },
     { id: 'news', label: t('nav.news') },
   ];
@@ -70,6 +72,10 @@ function AppContent() {
       dropshipping: {
         title: '一件代发服务 - 电商卖家首选 | IMOC Food',
         description: 'IMOC一件代发：您接单我们发货，省心省力。稳定的产品质量和可靠的物流配送，适合各类电商卖家。',
+      },
+      factory: {
+        title: '工厂资质 - FSSC22000 & HACCP认证 | IMOC Food',
+        description: '重庆快煮食品有限公司持有FSSC22000食品安全体系认证和HACCP危害分析关键控制点认证，生产许可证SC10450015550244，占地6000平方米，员工100人。',
       },
     };
     const meta = pageMeta[currentPage];
@@ -336,6 +342,7 @@ function AppContent() {
         {currentPage === 'news' && <News />}
         {currentPage === 'oem' && <OEM />}
         {currentPage === 'dropshipping' && <Dropshipping />}
+        {currentPage === 'factory' && <Factory />}
         {currentPage === 'admin' && <AdminNews />}
       </main>
 
