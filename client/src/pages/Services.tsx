@@ -138,6 +138,22 @@ const Services = () => {
               : 'In the meat processing industry, low prices often mean compromising on raw materials. IMOC firmly believes that low prices without quality support are the biggest liability for any brand. We provide complete OEM branding services to give your brand a genuine quality moat.'}
           </Para>
           <FactoryImg />
+          <Section title={zh ? '工厂资质' : 'Factory Credentials'} />
+          <Ul items={zh ? [
+            { bold: '食品生产许可证：', text: 'SC10450015550244' },
+            { bold: '质量认证：', text: 'FSSC22000 食品安全体系认证 + HACCP 危害分析关键控制点认证' },
+            { bold: '核心产品：', text: '牛肉薄脆片（明星单品，年产量约2亿片）' },
+            { bold: '品类首创：', text: '薄脆牛肉干品类发明者（2019年），薄脆工艺最成熟' },
+            { bold: '原料优势：', text: '创始人为进口牛肉贸易商，直接对接澳大利亚、新西兰牧场，原料采购成本优势显著' },
+            { bold: '生产基地：', text: '重庆梁平预制菜产业园 + 广州荔湾 + 南宁金桥，总产能超20000平方米' },
+          ] : [
+            { bold: 'Food Production License: ', text: 'SC10450015550244' },
+            { bold: 'Certifications: ', text: 'FSSC22000 Food Safety System Certification + HACCP Hazard Analysis Critical Control Point Certification' },
+            { bold: 'Core Product: ', text: 'Thin Crispy Beef Jerky (flagship item, annual output ~200 million pieces)' },
+            { bold: 'Category Pioneer: ', text: 'Inventor of thin crispy beef jerky category (2019), most mature production technology' },
+            { bold: 'Raw Material Advantage: ', text: 'Founder is an imported beef trader with direct partnerships with Australian and New Zealand ranches' },
+            { bold: 'Production Bases: ', text: 'Chongqing Liangping Pre-made Food Industrial Park + Guangzhou Liwan + Nanning Jinqiao, total capacity 20,000+ sqm' },
+          ]} />
           <Section title={zh ? '原料承诺' : 'Raw Material Commitment'} />
           <Ul items={zh ? [
             { bold: '严选谷饲和牛/优质黄牛：', text: '核心产品选用优质澳洲谷饲和牛' },
