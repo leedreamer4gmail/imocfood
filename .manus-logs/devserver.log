@@ -1014,3 +1014,4 @@
 [2026-03-11T07:59:24.740Z] 3:59:24 AM [vite] (client) hmr update /src/App.tsx
 [2026-03-11T07:59:45.525Z] 3:59:45 AM [vite] (client) hmr update /src/contexts/LanguageContext.tsx
 [2026-03-11T08:33:14.111Z] 4:33:14 AM [vite] (client) hmr update /src/pages/Factory.tsx
+[2026-03-11T08:34:57.400Z] 4:34:57 AM [vite] (client) hmr update /src/pages/Factory.tsx

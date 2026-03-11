@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { useLanguage } from '../contexts/LanguageContext';
 
 const FACTORY_IMAGE = 'https://d2xsxph8kpxj0f.cloudfront.net/85413465/Dn3NKGa7uppqoDB4SUPuXq/quanjing_3134d9a0.jpg';
@@ -13,7 +13,7 @@ const CERTS = [
     validCn: '有效期至 2028年8月20日',
     validEn: 'Valid until August 20, 2028',
     sigCn: '意义：FSSC22000是全球食品行业最高级别的食品安全管理体系认证，由国际食品安全认证基金会（FSSC）颁发，获得全球食品安全倡议（GFSI）认可。持有该证书意味着企业的食品安全管理体系符合ISO22000:2018及FSSC22000附加要求，能够系统性地识别和控制食品安全风险，是进入国际市场、大型零售商和出口的重要资质凭证。',
-    sigEn: 'Significance: FSSC22000 is the highest-level food safety management system certification in the global food industry, issued by the Foundation for Food Safety Certification (FSSC) and recognized by the Global Food Safety Initiative (GFSI). Holding this certificate means the company\'s food safety management system complies with ISO22000:2018 and FSSC22000 additional requirements, enabling systematic identification and control of food safety risks. It is a key credential for entering international markets, major retailers, and export channels.',
+    sigEn: "Significance: FSSC22000 is the highest-level food safety management system certification in the global food industry, issued by the Foundation for Food Safety Certification (FSSC) and recognized by the Global Food Safety Initiative (GFSI). Holding this certificate means the company's food safety management system complies with ISO22000:2018 and FSSC22000 additional requirements, enabling systematic identification and control of food safety risks. It is a key credential for entering international markets, major retailers, and export channels.",
   },
   {
     nameCn: 'HACCP 危害分析与关键控制点认证',
@@ -24,17 +24,59 @@ const CERTS = [
     validCn: '有效期至 2028年9月1日',
     validEn: 'Valid until September 1, 2028',
     sigCn: '意义：HACCP（危害分析与关键控制点）是国际公认的食品安全预防性管理体系，通过系统分析生产全流程中的生物、化学、物理危害，在关键控制点实施精准管控，从源头预防食品安全问题。该认证是国际食品贸易的基础门槛，也是国内外大型超市、连锁餐饮和出口业务的必备资质，证明企业具备科学规范的食品安全风险管控能力。',
-    sigEn: 'Significance: HACCP (Hazard Analysis and Critical Control Points) is an internationally recognized preventive food safety management system. It systematically analyzes biological, chemical, and physical hazards throughout the entire production process and implements precise control at critical control points to prevent food safety issues at the source. This certification is a fundamental requirement for international food trade and a mandatory qualification for large domestic and international supermarkets, chain restaurants, and export business, demonstrating the company\'s scientific and standardized food safety risk management capabilities.',
+    sigEn: "Significance: HACCP (Hazard Analysis and Critical Control Points) is an internationally recognized preventive food safety management system. It systematically analyzes biological, chemical, and physical hazards throughout the entire production process and implements precise control at critical control points to prevent food safety issues at the source. This certification is a fundamental requirement for international food trade and a mandatory qualification for large domestic and international supermarkets, chain restaurants, and export business, demonstrating the company's scientific and standardized food safety risk management capabilities.",
   },
 ];
 
 export default function Factory() {
-  const { language, t } = useLanguage();
+  const { language } = useLanguage();
   const isCn = language === 'zh';
-  const [expandedCert, setExpandedCert] = useState<number | null>(null);
+  const [lightboxImg, setLightboxImg] = useState<string | null>(null);
 
   return (
     <div style={{ backgroundColor: '#ffffff', paddingBottom: '60px' }}>
+
+      {/* Lightbox overlay */}
+      {lightboxImg && (
+        <div
+          onClick={() => setLightboxImg(null)}
+          style={{
+            position: 'fixed',
+            inset: 0,
+            backgroundColor: 'rgba(0,0,0,0.75)',
+            zIndex: 9999,
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            cursor: 'zoom-out',
+          }}
+        >
+          <img
+            src={lightboxImg}
+            alt="Certificate"
+            style={{
+              maxWidth: '90vw',
+              maxHeight: '90vh',
+              objectFit: 'contain',
+              borderRadius: '8px',
+              boxShadow: '0 8px 40px rgba(0,0,0,0.5)',
+              pointerEvents: 'none',
+            }}
+          />
+          <div style={{
+            position: 'absolute',
+            top: '20px',
+            right: '28px',
+            color: '#fff',
+            fontSize: '32px',
+            fontWeight: '300',
+            lineHeight: 1,
+            cursor: 'pointer',
+            userSelect: 'none',
+          }}>×</div>
+        </div>
+      )}
+
       {/* Factory Aerial Photo */}
       <div style={{ maxWidth: '900px', margin: '0 auto', padding: '24px 24px 0 24px' }}>
         <img
@@ -79,12 +121,12 @@ export default function Factory() {
               </tr>
               <tr>
                 <td style={{ fontWeight: '600', color: '#a72027', paddingRight: '16px', whiteSpace: 'nowrap', verticalAlign: 'top', paddingBottom: '8px' }}>
-                  {isCn ? '地址' : 'Address'}
+                  {isCn ? '生产地址' : 'Address'}
                 </td>
                 <td style={{ paddingBottom: '8px' }}>
                   {isCn
                     ? '重庆市梁平区双桂街道梁平高新区预制菜产业园4号楼第4层'
-                    : '4F, No.4, RTC Food Industrial Parks, High-Tech Zones, Shuanggui Street, Liangping District, Chongqing City, P.R. China'}
+                    : '4F, No.4, RTC Food Industrial Parks, High-Tech Zones, Shuanggui Street, Liangping District, Chongqing City, P.R.China'}
                 </td>
               </tr>
               <tr>
@@ -93,8 +135,8 @@ export default function Factory() {
                 </td>
                 <td style={{ paddingBottom: '8px' }}>
                   {isCn
-                    ? '占地6000平方米，员工100人，50吨级冷库5个，现代化流程设计，生产效率高，工序完善'
-                    : '6,000 sqm floor area, 100 employees, 5 × 50-ton cold storage units, modern process design, high production efficiency'}
+                    ? '占地6000平方米，员工100人，50吨级冷库5个，现代化流程设计，可完成大规模快速生产'
+                    : '6,000 sqm floor area, 100 employees, 5 cold storage units (50-ton capacity each), modern production process design for large-scale rapid production'}
                 </td>
               </tr>
               <tr>
@@ -134,24 +176,52 @@ export default function Factory() {
             <div style={{ padding: '20px', display: 'flex', gap: '20px', flexWrap: 'wrap' as const, alignItems: 'flex-start' }}>
               {/* Two certificate images side by side */}
               <div style={{ display: 'flex', gap: '12px', flexShrink: 0 }}>
-                <div style={{ textAlign: 'center' as const }}>
-                  <img
-                    src={cert.imgCn}
-                    alt={cert.nameCn}
-                    style={{ width: '140px', height: '198px', objectFit: 'cover', border: '1px solid #ddd', borderRadius: '4px', cursor: 'pointer' }}
-                    onClick={() => window.open(cert.imgCn, '_blank')}
-                  />
-                  <div style={{ fontSize: '11px', color: '#888', marginTop: '4px' }}>中文版</div>
-                </div>
-                <div style={{ textAlign: 'center' as const }}>
-                  <img
-                    src={cert.imgEn}
-                    alt={cert.nameEn}
-                    style={{ width: '140px', height: '198px', objectFit: 'cover', border: '1px solid #ddd', borderRadius: '4px', cursor: 'pointer' }}
-                    onClick={() => window.open(cert.imgEn, '_blank')}
-                  />
-                  <div style={{ fontSize: '11px', color: '#888', marginTop: '4px' }}>English</div>
-                </div>
+                {[
+                  { src: cert.imgCn, label: '中文版' },
+                  { src: cert.imgEn, label: 'English' },
+                ].map(({ src, label }) => (
+                  <div key={label} style={{ textAlign: 'center' as const }}>
+                    <div
+                      style={{ position: 'relative', display: 'inline-block', cursor: 'zoom-in' }}
+                      onMouseEnter={(e) => {
+                        const preview = e.currentTarget.querySelector('.cert-preview') as HTMLElement;
+                        if (preview) preview.style.opacity = '1';
+                      }}
+                      onMouseLeave={(e) => {
+                        const preview = e.currentTarget.querySelector('.cert-preview') as HTMLElement;
+                        if (preview) preview.style.opacity = '0';
+                      }}
+                      onClick={() => setLightboxImg(src)}
+                    >
+                      <img
+                        src={src}
+                        alt={label}
+                        style={{ width: '140px', height: '198px', objectFit: 'cover', border: '1px solid #ddd', borderRadius: '4px', display: 'block' }}
+                      />
+                      {/* Hover overlay hint */}
+                      <div
+                        className="cert-preview"
+                        style={{
+                          position: 'absolute',
+                          inset: 0,
+                          backgroundColor: 'rgba(0,0,0,0.35)',
+                          borderRadius: '4px',
+                          display: 'flex',
+                          alignItems: 'center',
+                          justifyContent: 'center',
+                          opacity: 0,
+                          transition: 'opacity 0.2s',
+                          pointerEvents: 'none',
+                        }}
+                      >
+                        <span style={{ color: '#fff', fontSize: '13px', fontWeight: '500' }}>
+                          {isCn ? '点击查看大图' : 'Click to enlarge'}
+                        </span>
+                      </div>
+                    </div>
+                    <div style={{ fontSize: '11px', color: '#888', marginTop: '4px' }}>{label}</div>
+                  </div>
+                ))}
               </div>
 
               {/* Cert Details */}
@@ -190,8 +260,8 @@ export default function Factory() {
           borderTop: '1px solid #eee',
         }}>
           {isCn
-            ? '点击证书图片可查看大图 · 如需核实证书真实性，请访问中国质量认证中心官网 www.cqc.com.cn'
-            : 'Click certificate images to view full size · To verify certificate authenticity, visit China Quality Certification Centre at www.cqc.com.cn'}
+            ? '鼠标悬停或点击证书图片可查看大图 · 如需核实证书真实性，请访问中国质量认证中心官网 www.cqc.com.cn'
+            : 'Hover or click certificate images to enlarge · To verify authenticity, visit China Quality Certification Centre at www.cqc.com.cn'}
         </div>
       </div>
     </div>
