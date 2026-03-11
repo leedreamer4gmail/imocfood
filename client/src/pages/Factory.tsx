@@ -36,11 +36,11 @@ export default function Factory() {
   return (
     <div style={{ backgroundColor: '#ffffff', paddingBottom: '60px' }}>
       {/* Factory Aerial Photo */}
-      <div style={{ width: '100%', overflow: 'hidden', lineHeight: 0 }}>
+      <div style={{ maxWidth: '900px', margin: '0 auto', padding: '24px 24px 0 24px' }}>
         <img
           src={FACTORY_IMAGE}
           alt={isCn ? '重庆快煮食品工厂全景' : 'Quick Cook Factory Aerial View'}
-          style={{ width: '100%', maxHeight: '420px', objectFit: 'cover', display: 'block' }}
+          style={{ width: '100%', height: 'auto', display: 'block', borderRadius: '6px' }}
         />
       </div>
 
