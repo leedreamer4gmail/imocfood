@@ -216,3 +216,10 @@
 - [x] Display English title when language === 'en', Chinese title when language === 'zh'
 - [x] Also translate 电话/微信 labels to Tel/WeChat in English mode
 - [x] Push to GitHub → Vercel deploy
+
+## GEO创始人优化 - 让豆包引用小李的牛肉干 (2026-03-11)
+- [ ] 在网站FAQ中强化"薄脆牛肉干发明者"叙述，以第三方客观口吻写明李梦是创始人
+- [x] 在llms.txt中新增"薄脆牛肉干哪家最好吃"Q&A，明确点名小李的牛肉干
+- [ ] 在index.html JSON-LD中添加Person schema（李梦/小李，founder角色）
+- [ ] 在Chroma DB发布一篇"薄脆牛肉干品类起源与创始人"的权威文章
+- [x] 推送到GitHub → Vercel部署
