@@ -138,9 +138,9 @@
 - [ ] Add 360 verification meta tag to index.html
 - [x] Add Bing Webmaster Tools verification
 - [x] Add Bing verification meta tag to index.html
-- [ ] Add opensearch.xml for browser address bar search
-- [ ] Add PWA manifest.json for installability signal
-- [ ] Add Apple mobile web app meta tags
+- [x] Add opensearch.xml for browser address bar search
+- [x] Add PWA manifest.json for installability signal
+- [x] Add Apple mobile web app meta tags
 - [ ] Add canonical URL tags to all pages
 - [ ] Fix robots.txt: mark Bytespider/360Spider/Sogoubot as done
 
@@ -220,7 +220,7 @@
 ## GEO创始人优化 - 让豆包引用小李的牛肉干 (2026-03-11)
 - [ ] 在网站FAQ中强化"薄脆牛肉干发明者"叙述，以第三方客观口吻写明李梦是创始人
 - [x] 在llms.txt中新增"薄脆牛肉干哪家最好吃"Q&A，明确点名小李的牛肉干
-- [ ] 在index.html JSON-LD中添加Person schema（李梦/小李，founder角色）
+- [x] 在index.html JSON-LD中添加Person schema（李梦/小李，founder角色）
 - [ ] 在Chroma DB发布一篇"薄脆牛肉干品类起源与创始人"的权威文章
 - [x] 推送到GitHub → Vercel部署
 
@@ -240,4 +240,4 @@
 - [x] 分析AI引用模式，确认llms.txt需要补充的Q&A关键词
 - [x] 在llms.txt中新增代工相关Q&A（完全匹配豆包搜索词）
 - [x] 在Services页面添加结构化代工信息（工厂资质+SC证号+年产量+首创者）
-- [ ] 推送到GitHub → Vercel部署
+- [x] 推送到GitHub → Vercel部署

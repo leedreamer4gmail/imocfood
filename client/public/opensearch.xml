@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<OpenSearchDescription xmlns="http://a9.com/-/spec/opensearch/1.1/">
+  <ShortName>IMOC Food</ShortName>
+  <Description>Search IMOC 国际开源肉制品联盟 products and services</Description>
+  <Tags>beef jerky OEM 牛肉干 代工</Tags>
+  <Contact>leedreamer4@gmail.com</Contact>
+  <Url type="text/html" template="https://www.imocfood.com/products?q={searchTerms}"/>
+  <Image height="16" width="16" type="image/png">https://www.imocfood.com/favicon-16x16.png</Image>
+  <Image height="32" width="32" type="image/png">https://www.imocfood.com/favicon-32x32.png</Image>
+  <Language>zh-CN</Language>
+  <Language>en</Language>
+  <OutputEncoding>UTF-8</OutputEncoding>
+  <InputEncoding>UTF-8</InputEncoding>
+</OpenSearchDescription>
