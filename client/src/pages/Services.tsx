@@ -2,7 +2,15 @@ import React, { useState } from 'react';
 import { useLanguage } from '../contexts/LanguageContext';
 
 const marketingQrUrl = 'https://d2xsxph8kpxj0f.cloudfront.net/85413465/Dn3NKGa7uppqoDB4SUPuXq/市场部微信_f2920d6e.jpg';
-const factoryImageUrl = 'https://d2xsxph8kpxj0f.cloudfront.net/85413465/Dn3NKGa7uppqoDB4SUPuXq/quanjing_3134d9a0.jpg';
+
+// Service-specific images
+const serviceImages = {
+  bulkOrder: 'https://d2xsxph8kpxj0f.cloudfront.net/85413465/Dn3NKGa7uppqoDB4SUPuXq/service-bulk-order_61cb0c92.jpg',
+  processing: 'https://d2xsxph8kpxj0f.cloudfront.net/85413465/Dn3NKGa7uppqoDB4SUPuXq/service-processing_9512cb85.jpg',
+  oem: 'https://d2xsxph8kpxj0f.cloudfront.net/85413465/Dn3NKGa7uppqoDB4SUPuXq/service-oem_2ea38fac.jpg',
+  dropshipping: 'https://d2xsxph8kpxj0f.cloudfront.net/85413465/Dn3NKGa7uppqoDB4SUPuXq/service-dropshipping_daee3f4c.jpg',
+  commission: 'https://d2xsxph8kpxj0f.cloudfront.net/85413465/Dn3NKGa7uppqoDB4SUPuXq/service-platform-commission_0898880a.jpg',
+};
 
 interface ServiceDetail {
   id: number;
@@ -40,15 +48,15 @@ const Services = () => {
     </ul>
   );
 
-  const FactoryImg = () => (
+  const ServiceImg = ({ src, alt, caption }: { src: string; alt: string; caption: string }) => (
     <figure style={{ margin: '16px 0 20px 0' }}>
       <img
-        src={factoryImageUrl}
-        alt={zh ? 'IMOC 重庆梁平预制菜产业园生产基地' : 'IMOC Production Base — Chongqing'}
+        src={src}
+        alt={alt}
         style={{ width: '100%', height: 'auto', borderRadius: '6px', boxShadow: '0 2px 12px rgba(0,0,0,0.1)' }}
       />
       <figcaption style={{ fontSize: '12px', color: '#999', textAlign: 'center', marginTop: '6px' }}>
-        {zh ? 'IMOC 重庆梁平预制菜产业园生产基地' : 'IMOC Production Base — Chongqing Liangping'}
+        {caption}
       </figcaption>
     </figure>
   );
@@ -79,7 +87,11 @@ const Services = () => {
               ? 'IMOC 提供完整的标准化产品目录，涵盖牛肉干、和牛脆片、猪肉干、鸡肉制品等多个品类。无论是超市采购、社区团购还是批发商，我们均可提供稳定的货源与统一的品质标准。'
               : 'IMOC offers a complete standardized product catalog covering beef jerky, Wagyu crispy slices, pork jerky, and chicken products. Whether for supermarket procurement, community group buying, or wholesale, we provide stable supply with consistent quality standards.'}
           </Para>
-          <FactoryImg />
+          <ServiceImg
+            src={serviceImages.bulkOrder}
+            alt={zh ? 'IMOC 大宗订货现场' : 'IMOC Bulk Order Warehouse'}
+            caption={zh ? 'IMOC 大宗订货备货现场' : 'IMOC Bulk Order Preparation'}
+          />
           <Section title={zh ? '适合人群' : 'Who It\'s For'} />
           <Ul items={zh ? [
             { bold: '超市/便利店：', text: '稳定供货，统一条码，支持陈列方案' },
@@ -107,7 +119,11 @@ const Services = () => {
               ? '如果您已经拥有优质的原料资源（如特定产地的牛肉、特种畜禽等），IMOC 可以为您提供来料加工服务。我们的专业技术团队将结合您的原料特性，量身定制加工工艺，确保最终产品口感与品质达到最优。'
               : 'If you already have quality raw material resources (such as beef from specific origins, specialty livestock, etc.), IMOC can provide toll processing services. Our technical team will tailor the processing method to your raw material characteristics, ensuring optimal taste and quality.'}
           </Para>
-          <FactoryImg />
+          <ServiceImg
+            src={serviceImages.processing}
+            alt={zh ? 'IMOC 来料加工车间' : 'IMOC Toll Processing Workshop'}
+            caption={zh ? 'IMOC 来料加工车间 — 专业技术团队全程把控品质' : 'IMOC Toll Processing — Quality controlled by our professional team'}
+          />
           <Section title={zh ? '服务流程' : 'Service Process'} />
           <Ul items={zh ? [
             { bold: '原料评估：', text: '我们对您的原料进行免费品质评估，确认可加工性' },
@@ -137,7 +153,11 @@ const Services = () => {
               ? '在肉类加工行业，低价往往意味着对原料的妥协。IMOC 坚信：失去品质支撑的低价，是品牌最大的负资产。我们提供完整的 OEM 贴牌服务，让您的品牌拥有真正的品质护城河。'
               : 'In the meat processing industry, low prices often mean compromising on raw materials. IMOC firmly believes that low prices without quality support are the biggest liability for any brand. We provide complete OEM branding services to give your brand a genuine quality moat.'}
           </Para>
-          <FactoryImg />
+          <ServiceImg
+            src={serviceImages.oem}
+            alt={zh ? 'IMOC OEM贴牌生产基地' : 'IMOC OEM Production Base'}
+            caption={zh ? 'IMOC 快煮食品生产基地 — SC认证工厂，FSSC22000 + HACCP 双认证' : 'IMOC Production Base — SC Certified, FSSC22000 + HACCP Dual Certified'}
+          />
           <Section title={zh ? '工厂资质' : 'Factory Credentials'} />
           <Ul items={zh ? [
             { bold: '食品生产许可证：', text: 'SC10450015550244' },
@@ -191,7 +211,11 @@ const Services = () => {
               ? '在流量昂贵的时代，选对产品就等于成功了一半。IMOC 为中小卖家、社区团长及内容创作者提供专业的一件代发服务，让您专注于营销，把繁琐的供应链与品质管控交给我们。'
               : 'In an era of expensive traffic, choosing the right product is half the battle. IMOC provides professional dropshipping services for small sellers, community leaders, and content creators — so you focus on marketing while we handle the supply chain.'}
           </Para>
-          <FactoryImg />
+          <ServiceImg
+            src={serviceImages.dropshipping}
+            alt={zh ? 'IMOC 一件代发仓库备货' : 'IMOC Dropshipping Warehouse'}
+            caption={zh ? 'IMOC 一件代发备货仓库 — 三地仓库智能匹配，极速发货' : 'IMOC Dropshipping Warehouse — 3 locations for fastest delivery'}
+          />
           <Section title={zh ? '核心爆款产品' : 'Core Hit Products'} />
           <Ul items={zh ? [
             { bold: '和牛脆片：', text: '澳洲谷饲和牛，1mm 极致薄脆，小红书/抖音流量宠儿' },
@@ -210,7 +234,7 @@ const Services = () => {
           ] : [
             { bold: 'Same Quality Source: ', text: 'Dropshipped products from the same source as OEM products — no bad reviews' },
             { bold: '3 Warehouses: ', text: 'Guangzhou, Nanning, Chongqing — smart matching for fastest delivery' },
-            { bold: 'Brand Authorization: ', text: 'Official "Xiao Li\'s Beef Jerky" endorsement for quality partners' },
+            { bold: 'Brand Authorization: ', text: 'Official "Li\'s Beef Jerky" endorsement for quality partners' },
           ]} />
           <ContactCta label={zh ? '申请成为代发合作伙伴' : 'Apply to become a dropshipping partner'} />
         </>
@@ -229,6 +253,11 @@ const Services = () => {
               ? '如果您是内容创作者、网红或拥有私域流量，IMOC 提供平台佣金合作模式。您只需将我们的店铺链接分享给粉丝，每笔成交订单您将获得约定比例的佣金，订单处理、发货、售后全部由 IMOC 负责。'
               : 'If you are a content creator, influencer, or have a private traffic community, IMOC offers a platform commission model. Simply share our store links with your followers, earn an agreed commission on every completed order — all order processing, shipping, and after-sales handled by IMOC.'}
           </Para>
+          <ServiceImg
+            src={serviceImages.commission}
+            alt={zh ? 'IMOC 平台佣金合作打包发货' : 'IMOC Platform Commission Order Fulfillment'}
+            caption={zh ? 'IMOC 订单打包发货现场 — 您负责引流，我们负责履约' : 'IMOC Order Fulfillment — You drive traffic, we handle the rest'}
+          />
           <Section title={zh ? '合作模式' : 'Cooperation Model'} />
           <Ul items={zh ? [
             { bold: '淘宝/抖音联盟：', text: '通过官方联盟平台设置佣金链接，合规透明' },
