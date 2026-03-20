@@ -39,7 +39,6 @@ function AppContent() {
     { id: 'factory', label: t('nav.factory') },
     { id: 'contact', label: t('nav.contact') },
     { id: 'news', label: t('nav.news') },
-    { id: 'b2b', label: 'B2B代工' },
   ];
 
   // Dynamic page title and meta description for SEO
