@@ -35,7 +35,6 @@ const Home = () => {
           alt="IMOC 国际开源肉制品联盟"
           style={{
             display: 'block',
-            width: '100%',
           }}
         />
       </section>
