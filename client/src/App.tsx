@@ -8,9 +8,10 @@ import AdminNews from './pages/AdminNews';
 import OEM from './pages/OEM';
 import Dropshipping from './pages/Dropshipping';
 import Factory from './pages/Factory';
+import B2BKnowledge from './pages/B2BKnowledge';
 import { LanguageProvider, useLanguage } from './contexts/LanguageContext';
 
-type Page = 'home' | 'products' | 'services' | 'contact' | 'news' | 'admin' | 'oem' | 'dropshipping' | 'factory';
+type Page = 'home' | 'products' | 'services' | 'contact' | 'news' | 'admin' | 'oem' | 'dropshipping' | 'factory' | 'b2b';
 
 function AppContent() {
   const [currentPage, setCurrentPage] = useState<Page>('home');
@@ -26,6 +27,8 @@ function AppContent() {
       setCurrentPage('oem');
     } else if (path === '/dropshipping') {
       setCurrentPage('dropshipping');
+    } else if (path === '/b2b' || path === '/b2b-knowledge') {
+      setCurrentPage('b2b');
     }
   }, []);
 
@@ -76,6 +79,10 @@ function AppContent() {
       factory: {
         title: '工厂资质 - FSSC22000 & HACCP认证 | IMOC Food',
         description: '重庆快煮食品有限公司持有FSSC22000食品安全体系认证和HACCP危害分析关键控制点认证，生产许可证SC10450015550244，占地6000平方米，员工100人。',
+      },
+      b2b: {
+        title: '牛肉干代工/OEM/ODM/贴牌生产知识库 | IMOC Food',
+        description: 'IMOC B2B代工知识库：牛肉干代工、牛肉干OEM、进口牛肉干贴牌、薄脆牛肉干工厂、食品ODM代工、休闲食品代工、零食贴牌生产、牛肉干供应链全解析。',
       },
     };
     const meta = pageMeta[currentPage];
@@ -344,6 +351,7 @@ function AppContent() {
         {currentPage === 'dropshipping' && <Dropshipping />}
         {currentPage === 'factory' && <Factory />}
         {currentPage === 'admin' && <AdminNews />}
+        {currentPage === 'b2b' && <B2BKnowledge />}
       </main>
 
       {/* Footer - hide on admin page */}
