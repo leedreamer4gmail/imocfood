@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useLanguage } from '../contexts/LanguageContext';
 
-const bannerUrl = 'https://files.manuscdn.com/user_upload_by_module/session_file/85413465/JbqMiNTZHKOoBiXa.jpg';
+const bannerUrl = 'https://d2xsxph8kpxj0f.cloudfront.net/85413465/Dn3NKGa7uppqoDB4SUPuXq/banner-main_cb73252d.jpg';
 
 const Home = () => {
   const { t, language } = useLanguage();
@@ -25,7 +25,6 @@ const Home = () => {
         style={{
           padding: 0,
           margin: 0,
-          overflow: 'hidden',
           display: 'flex',
           justifyContent: 'center',
           lineHeight: 0,
@@ -36,8 +35,7 @@ const Home = () => {
           alt="IMOC 国际开源肉制品联盟"
           style={{
             display: 'block',
-            maxWidth: '100%',   // 手机端缩放适应
-            flexShrink: 0,      // 桌面端不压缩
+            maxWidth: '100%',
           }}
         />
       </section>
