@@ -25,6 +25,7 @@ const Home = () => {
         style={{
           padding: 0,
           margin: 0,
+          overflow: 'hidden',
           display: 'flex',
           justifyContent: 'center',
           lineHeight: 0,
@@ -35,6 +36,8 @@ const Home = () => {
           alt="IMOC 国际开源肉制品联盟"
           style={{
             display: 'block',
+            maxWidth: '100%',   // 手机端缩放适应
+            flexShrink: 0,      // 桌面端不压缩
           }}
         />
       </section>
