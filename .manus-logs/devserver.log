@@ -1193,3 +1193,11 @@
 [2026-03-19T03:53:20.001Z] Starting dev server with command: NODE_ENV=development tsx watch server/_core/index.ts
 [2026-03-19T03:53:22.292Z] [OAuth] Initialized with baseURL: https://api.manus.im
 [2026-03-19T03:53:22.759Z] Server running on http://localhost:3000/
+[2026-04-21T08:19:12.237Z] Starting dev server with command: pnpm run dev
+[2026-04-21T08:19:13.196Z] 
+[2026-04-21T08:19:13.197Z] > imocfood@1.0.0 dev /home/ubuntu/imocfood
+[2026-04-21T08:19:13.197Z] > NODE_ENV=development tsx watch server/_core/index.ts
+[2026-04-21T08:19:13.197Z] 
+[2026-04-21T08:19:14.913Z] [OAuth] Initialized with baseURL: https://api.manus.im
+[2026-04-21T08:19:15.138Z] Server running on http://localhost:3000/
+[2026-04-21T14:09:53.668Z] 10:09:53 AM [vite] (client) hmr update /src/pages/Home.tsx
