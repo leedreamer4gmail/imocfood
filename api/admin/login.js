@@ -1,8 +1,15 @@
 // _api-src/admin/login.ts
 import { SignJWT } from "jose";
+import { createHash, randomInt } from "crypto";
 var ADMIN_USERNAME = "leedreamer";
 var JWT_SECRET = process.env.JWT_SECRET ?? "fallback-secret-change-me";
-var COOKIE_MAX_AGE = 60 * 60 * 24 * 30;
+var OTP_EXPIRY_SEC = 5 * 60;
+function generateOTP() {
+  return randomInt(1e5, 1e6).toString();
+}
+function hashOTP(otp) {
+  return createHash("sha256").update(otp).digest("hex");
+}
 async function handler(req, res) {
   res.setHeader("Access-Control-Allow-Origin", req.headers.origin ?? "*");
   res.setHeader("Access-Control-Allow-Credentials", "true");
@@ -21,13 +28,13 @@ async function handler(req, res) {
   if (username !== ADMIN_USERNAME) {
     return res.status(401).json({ error: "\u7528\u6237\u540D\u4E0D\u6B63\u786E" });
   }
+  const otp = generateOTP();
+  console.log(`[Admin OTP] \u9A8C\u8BC1\u7801 for ${username}: ${otp} (5\u5206\u949F\u5185\u6709\u6548)`);
   const secret = new TextEncoder().encode(JWT_SECRET);
-  const token = await new SignJWT({ role: "admin", username }).setProtectedHeader({ alg: "HS256" }).setIssuedAt().setExpirationTime("30d").sign(secret);
-  res.setHeader(
-    "Set-Cookie",
-    `admin_token=${token}; HttpOnly; Secure; SameSite=Lax; Path=/; Max-Age=${COOKIE_MAX_AGE}`
-  );
-  return res.status(200).json({ ok: true, message: "\u767B\u5F55\u6210\u529F" });
+  const challenge = await new SignJWT({ otpHash: hashOTP(otp), purpose: "admin-otp" }).setProtectedHeader({ alg: "HS256" }).setIssuedAt().setExpirationTime(`${OTP_EXPIRY_SEC}s`).sign(secret);
+  const adminPhone = process.env.ADMIN_PHONE ?? "";
+  const maskedPhone = adminPhone.length >= 8 ? adminPhone.slice(0, 3) + "****" + adminPhone.slice(-4) : "";
+  return res.status(200).json({ ok: true, challenge, maskedPhone });
 }
 export {
   handler as default
