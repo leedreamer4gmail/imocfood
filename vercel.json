@@ -3,7 +3,7 @@
   "outputDirectory": "dist/public",
   "installCommand": "pnpm install --frozen-lockfile",
   "redirects": [
-    { "source": "/finance", "destination": "https://leedreamer.cn", "permanent": false }
+    { "source": "/finance", "destination": "https://leedreamer.cn/company", "permanent": false }
   ],
   "rewrites": [
     { "source": "/((?!api/).*)", "destination": "/index.html" }
