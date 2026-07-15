@@ -3,7 +3,9 @@
   "outputDirectory": "dist/public",
   "installCommand": "pnpm install --frozen-lockfile",
   "redirects": [
-    { "source": "/finance", "destination": "https://leedreamer.cn/company", "permanent": false }
+    { "source": "/finance", "destination": "https://leedreamer.cn/company", "permanent": false },
+    { "source": "/houtai", "destination": "https://leedreamer.cn/houtai/", "permanent": false },
+    { "source": "/houtai/", "destination": "https://leedreamer.cn/houtai/", "permanent": false }
   ],
   "rewrites": [
     { "source": "/((?!api/).*)", "destination": "/index.html" }
