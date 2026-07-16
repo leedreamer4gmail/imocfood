@@ -1,15 +1,26 @@
 /**
- * Admin login API - username only, no password.
+ * Admin login API - step 1 of 2-step login.
  * POST /api/admin/login  { username }
- * → sets httpOnly JWT cookie "admin_token" if username === ADMIN_USERNAME
+ * → generates a 6-digit OTP, logs it to console (check Vercel function logs),
+ *   and returns a signed challenge token. The final JWT cookie is issued only
+ *   after OTP verification via POST /api/admin/verify-otp.
  */
 import type { VercelRequest, VercelResponse } from "@vercel/node";
 import { SignJWT } from "jose";
+import { createHash, randomInt } from "crypto";
 
 // Hardcoded admin username - not using env var to avoid Vercel BYOK override
 const ADMIN_USERNAME = "leedreamer";
 const JWT_SECRET = process.env.JWT_SECRET ?? "fallback-secret-change-me";
-const COOKIE_MAX_AGE = 60 * 60 * 24 * 30; // 30 days
+const OTP_EXPIRY_SEC = 5 * 60; // 5 minutes
+
+function generateOTP(): string {
+  return randomInt(100000, 1000000).toString();
+}
+
+function hashOTP(otp: string): string {
+  return createHash("sha256").update(otp).digest("hex");
+}
 
 export default async function handler(req: VercelRequest, res: VercelResponse) {
   res.setHeader("Access-Control-Allow-Origin", req.headers.origin ?? "*");
@@ -35,19 +46,23 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
     return res.status(401).json({ error: "用户名不正确" });
   }
 
-  // Issue JWT
+  // Generate a 6-digit OTP and log it to console (admin checks Vercel function logs)
+  const otp = generateOTP();
+  console.log(`[Admin OTP] 验证码 for ${username}: ${otp} (5分钟内有效)`);
+
+  // Build a signed challenge JWT that encodes the hashed OTP (not the OTP itself)
   const secret = new TextEncoder().encode(JWT_SECRET);
-  const token = await new SignJWT({ role: "admin", username })
+  const challenge = await new SignJWT({ otpHash: hashOTP(otp), purpose: "admin-otp" })
     .setProtectedHeader({ alg: "HS256" })
     .setIssuedAt()
-    .setExpirationTime("30d")
+    .setExpirationTime(`${OTP_EXPIRY_SEC}s`)
     .sign(secret);
 
-  // Set httpOnly cookie
-  res.setHeader(
-    "Set-Cookie",
-    `admin_token=${token}; HttpOnly; Secure; SameSite=Lax; Path=/; Max-Age=${COOKIE_MAX_AGE}`
-  );
+  // Mask the configured admin phone for display (e.g. 138****8888)
+  const adminPhone = process.env.ADMIN_PHONE ?? "";
+  const maskedPhone = adminPhone.length >= 8
+    ? adminPhone.slice(0, 3) + "****" + adminPhone.slice(-4)
+    : "";
 
-  return res.status(200).json({ ok: true, message: "登录成功" });
+  return res.status(200).json({ ok: true, challenge, maskedPhone });
 }
